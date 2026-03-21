@@ -65,7 +65,7 @@ export default async function BlogPostPage({ params }: PageProps) {
 
       <article>
         {/* Hero */}
-        <header className="pt-36 pb-16 px-8">
+        <header className="pt-24 md:pt-36 pb-10 md:pb-16 px-5 md:px-8">
           <div className="max-w-4xl mx-auto">
             <Breadcrumb
               items={[
@@ -82,7 +82,7 @@ export default async function BlogPostPage({ params }: PageProps) {
               Tüm Yazılar
             </Link>
 
-            <h1 className="text-4xl md:text-[3.5rem] font-extrabold tracking-[-0.04em] leading-[1.1] text-on-surface mb-8">
+            <h1 className="text-2xl sm:text-3xl md:text-[3.5rem] font-extrabold tracking-[-0.04em] leading-[1.1] text-on-surface mb-8">
               {post.title}
             </h1>
 
@@ -122,7 +122,7 @@ export default async function BlogPostPage({ params }: PageProps) {
 
         {/* Featured Image */}
         {post.mainImage && (
-          <div className="px-8 mb-16">
+          <div className="px-5 md:px-8 mb-16">
             <div className="max-w-5xl mx-auto">
               <Image
                 src={urlFor(post.mainImage)
@@ -133,7 +133,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                 alt={post.mainImage.alt || post.title}
                 width={1200}
                 height={630}
-                className="w-full rounded-[2rem] object-cover aspect-[2/1]"
+                className="w-full rounded-xl md:rounded-[2rem] object-cover aspect-[2/1]"
                 priority
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
               />
@@ -142,7 +142,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         )}
 
         {/* Content + TOC Sidebar */}
-        <div className="px-8 pb-20">
+        <div className="px-5 md:px-8 pb-20">
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[1fr_240px] gap-16">
             {/* Article Body */}
             <div className="max-w-3xl">
@@ -197,8 +197,8 @@ export default async function BlogPostPage({ params }: PageProps) {
       <RelatedPosts posts={relatedPosts} />
 
       {/* Bottom CTA */}
-      <section className="py-32 px-8">
-        <div className="max-w-7xl mx-auto bg-primary rounded-[3rem] p-16 md:p-32 text-center relative overflow-hidden">
+      <section className="py-16 md:py-32 px-5 md:px-8">
+        <div className="max-w-7xl mx-auto bg-primary rounded-[3rem] p-8 md:p-16 lg:p-32 text-center relative overflow-hidden">
           <div className="relative z-10 space-y-10">
             <h2 className="text-4xl md:text-5xl font-extrabold text-on-primary tracking-tight">
               Organik Büyümeye Başlayın.

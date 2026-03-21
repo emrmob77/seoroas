@@ -65,13 +65,13 @@ export default function IletisimPage() {
       />
 
       <main className="pt-32">
-        <section className="max-w-7xl mx-auto px-8 mb-12">
+        <section className="max-w-7xl mx-auto px-5 md:px-8 mb-12">
           <Breadcrumb items={[{ name: "İletişim", url: "/iletisim" }]} />
         </section>
 
-        <section className="max-w-7xl mx-auto px-8 mb-24">
+        <section className="max-w-7xl mx-auto px-5 md:px-8 mb-24">
           <div className="max-w-3xl">
-            <h1 className="text-5xl md:text-7xl font-extrabold text-on-surface tight-tracking mb-8">
+            <h1 className="text-3xl sm:text-4xl md:text-7xl font-extrabold text-on-surface tight-tracking mb-8">
               Birlikte{" "}
               <span className="text-primary italic">Büyüyelim.</span>
             </h1>
@@ -83,11 +83,11 @@ export default function IletisimPage() {
           </div>
         </section>
 
-        <section className="max-w-7xl mx-auto px-8 mb-40">
+        <section className="max-w-7xl mx-auto px-5 md:px-8 mb-20 md:mb-40">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-16">
             {/* Contact Form */}
             <div className="lg:col-span-3">
-              <div className="bg-surface-container-low rounded-[2rem] p-10 md:p-14">
+              <div className="bg-surface-container-low rounded-[2rem] p-6 md:p-10 lg:p-14">
                 <h2 className="text-2xl font-bold text-on-surface tight-tracking mb-10">
                   Ücretsiz SEO Analizi Talep Edin
                 </h2>

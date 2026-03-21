@@ -157,8 +157,8 @@ export default function FiyatlarPage() {
       <SchemaOrg schema={buildSchemas()} />
 
       {/* Hero */}
-      <section className="relative pt-40 pb-24 px-8 overflow-hidden">
-        <div className="max-w-7xl mx-auto text-center space-y-8">
+      <section className="relative pt-28 md:pt-36 pb-12 md:pb-20 px-5 md:px-8 overflow-hidden">
+        <div className="max-w-7xl mx-auto text-center space-y-6 md:space-y-8">
           <Breadcrumb items={[{ name: "SEO Fiyatları", url: "/seo-fiyatlari" }]} />
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface-container-low border border-outline-variant/10">
             <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
@@ -166,13 +166,13 @@ export default function FiyatlarPage() {
               Transparent Pricing
             </span>
           </span>
-          <h1 className="text-5xl md:text-[5rem] font-extrabold tight-tracking leading-[0.95] text-on-background max-w-4xl mx-auto">
+          <h1 className="text-3xl sm:text-4xl md:text-[4.5rem] font-extrabold tight-tracking leading-[0.95] text-on-background max-w-4xl mx-auto">
             SEO Fiyatları{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-dim">
               2026
             </span>
           </h1>
-          <p className="text-xl text-on-surface-variant max-w-2xl mx-auto font-light leading-relaxed">
+          <p className="text-base md:text-xl text-on-surface-variant max-w-2xl mx-auto font-light leading-relaxed">
             Şeffaf fiyatlandırma, sözleşmesiz çalışma. İşletmenizin büyüklüğüne
             ve hedeflerine uygun paketi seçin.
           </p>
@@ -180,7 +180,7 @@ export default function FiyatlarPage() {
       </section>
 
       {/* Packages */}
-      <section className="py-20 px-8">
+      <section className="py-12 md:py-20 px-5 md:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {packages.map((pkg) => (
@@ -250,9 +250,9 @@ export default function FiyatlarPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-32 px-8 bg-surface-container-low">
+      <section className="py-16 md:py-32 px-5 md:px-8 bg-surface-container-low">
         <div className="max-w-3xl mx-auto">
-          <div className="mb-20 text-center">
+          <div className="mb-10 md:mb-20 text-center">
             <h2 className="text-4xl font-extrabold tight-tracking mb-4 text-on-background">
               Sık Sorulan Sorular
             </h2>
@@ -288,8 +288,8 @@ export default function FiyatlarPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-32 px-8">
-        <div className="max-w-5xl mx-auto bg-primary rounded-[3rem] p-16 md:p-24 text-center relative overflow-hidden">
+      <section className="py-16 md:py-32 px-5 md:px-8">
+        <div className="max-w-5xl mx-auto bg-primary rounded-[3rem] p-8 md:p-16 lg:p-24 text-center relative overflow-hidden">
           <div className="relative z-10 space-y-8">
             <h2 className="text-4xl md:text-5xl font-extrabold tight-tracking text-on-primary">
               Size Özel Teklif Alın

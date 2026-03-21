@@ -96,7 +96,7 @@ export default function BursaSeoAjansiPage() {
       />
 
       {/* Hero */}
-      <header className="relative pt-40 pb-24 px-8 overflow-hidden">
+      <header className="relative pt-28 md:pt-36 pb-12 md:pb-20 px-5 md:px-8 overflow-hidden">
         <div
           className="absolute inset-0 opacity-20 -z-10"
           style={{
@@ -105,7 +105,7 @@ export default function BursaSeoAjansiPage() {
             backgroundSize: "32px 32px",
           }}
         />
-        <div className="max-w-7xl mx-auto space-y-12">
+        <div className="max-w-7xl mx-auto space-y-6 md:space-y-10">
           <Breadcrumb
             items={[{ name: "Bursa SEO Ajansı", url: "/bursa-seo-ajansi" }]}
           />
@@ -115,11 +115,11 @@ export default function BursaSeoAjansiPage() {
               Bursa Bölgesi Aktif
             </span>
           </div>
-          <h1 className="text-5xl md:text-[5rem] font-extrabold tracking-[-0.06em] leading-[0.95] text-on-surface max-w-4xl">
+          <h1 className="text-3xl sm:text-4xl md:text-[4.5rem] font-extrabold tracking-[-0.06em] leading-[0.95] text-on-surface max-w-4xl">
             Bursa{" "}
             <span className="text-primary italic">SEO</span> Ajansı.
           </h1>
-          <p className="text-xl text-on-surface-variant max-w-2xl font-light leading-relaxed">
+          <p className="text-base md:text-xl text-on-surface-variant max-w-2xl font-light leading-relaxed">
             Türkiye&apos;nin sanayi devi Bursa&apos;da üretim gücünüzü dijitale
             taşıyoruz. Otomotiv, tekstil ve gıda sektörlerinde arama
             motorlarının zirvesinde yer alın.
@@ -145,9 +145,9 @@ export default function BursaSeoAjansiPage() {
       </header>
 
       {/* Services */}
-      <section className="py-32 px-8">
+      <section className="py-16 md:py-32 px-5 md:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-10 md:mb-20 gap-8">
             <div className="space-y-4">
               <span className="text-primary font-bold tracking-widest text-xs uppercase">
                 Bursa SEO Hizmetleri
@@ -180,10 +180,10 @@ export default function BursaSeoAjansiPage() {
       </section>
 
       {/* Stats Dark Section */}
-      <section className="py-32 px-8 bg-[#0c0e10] text-white relative overflow-hidden">
+      <section className="py-16 md:py-32 px-5 md:px-8 bg-[#0c0e10] text-white relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-50" />
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-24 items-center">
+          <div className="grid md:grid-cols-3 gap-12 md:gap-24 items-center">
             <div className="md:col-span-1 space-y-6">
               <h2 className="text-4xl font-black tracking-tight leading-tight">
                 Marmara&apos;nın Sanayi Merkezinde Sonuçlar.
@@ -219,9 +219,9 @@ export default function BursaSeoAjansiPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-32 px-8">
+      <section className="py-16 md:py-32 px-5 md:px-8">
         <div className="max-w-3xl mx-auto">
-          <div className="mb-20 text-center">
+          <div className="mb-10 md:mb-20 text-center">
             <h2 className="text-4xl font-extrabold tight-tracking mb-4">
               Sık Sorulan Sorular
             </h2>
@@ -261,8 +261,8 @@ export default function BursaSeoAjansiPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-32 px-8">
-        <div className="max-w-7xl mx-auto bg-primary rounded-[3rem] p-16 md:p-32 text-center relative overflow-hidden">
+      <section className="py-16 md:py-32 px-5 md:px-8">
+        <div className="max-w-7xl mx-auto bg-primary rounded-[3rem] p-8 md:p-16 lg:p-32 text-center relative overflow-hidden">
           <div className="relative z-10 space-y-10">
             <h2 className="text-4xl md:text-5xl font-extrabold text-on-primary tight-tracking">
               Bursa&apos;da Dijital Dönüşümünüzü Başlatın.

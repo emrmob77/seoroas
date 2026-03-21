@@ -96,10 +96,10 @@ export default async function BlogPage() {
 
       <main className="pt-32">
         {/* Hero */}
-        <section className="max-w-7xl mx-auto px-8 mb-24">
+        <section className="max-w-7xl mx-auto px-5 md:px-8 mb-12 md:mb-24">
           <div className="flex flex-col gap-4 mb-8">
             <Breadcrumb items={[{ name: "Insights & Blog", url: "/blog" }]} />
-            <h1 className="text-5xl md:text-7xl font-extrabold text-on-surface tight-tracking max-w-4xl">
+            <h1 className="text-3xl sm:text-4xl md:text-7xl font-extrabold text-on-surface tight-tracking max-w-4xl">
               SEO Blog: Güncel Bilgi,{" "}
               <span className="text-primary italic">Uzman İçerik.</span>
             </h1>
@@ -107,7 +107,7 @@ export default async function BlogPage() {
         </section>
 
         {/* Category Filter */}
-        <section className="max-w-7xl mx-auto px-8 mb-20 overflow-x-auto">
+        <section className="max-w-7xl mx-auto px-5 md:px-8 mb-10 md:mb-20 overflow-x-auto">
           <div className="flex items-center gap-4 min-w-max pb-4">
             {categories.map((cat, i) => (
               <button
@@ -125,8 +125,8 @@ export default async function BlogPage() {
         </section>
 
         {/* Blog Grid */}
-        <section className="max-w-7xl mx-auto px-8 mb-40">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-24 gap-x-12">
+        <section className="max-w-7xl mx-auto px-5 md:px-8 mb-20 md:mb-40">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-12 md:gap-y-24 gap-x-6 md:gap-x-12">
             {/* Featured Post — spans 2 columns */}
             {featured && (
               <article className="md:col-span-2 group flex flex-col gap-8">
@@ -147,7 +147,7 @@ export default async function BlogPage() {
                     <span>{formatDate(featured.publishedAt)}</span>
                   </div>
                   <Link href={`/blog/${featured.slug.current}`}>
-                    <h2 className="text-4xl font-extrabold text-on-surface tight-tracking group-hover:text-primary transition-colors cursor-pointer">
+                    <h2 className="text-2xl md:text-4xl font-extrabold text-on-surface tight-tracking group-hover:text-primary transition-colors cursor-pointer">
                       {featured.title}
                     </h2>
                   </Link>
@@ -216,8 +216,8 @@ export default async function BlogPage() {
         </section>
 
         {/* Newsletter Section */}
-        <section className="max-w-7xl mx-auto px-8 mb-40">
-          <div className="bg-surface-container-low rounded-[2rem] p-12 md:p-24 flex flex-col md:flex-row items-center justify-between gap-12 relative overflow-hidden">
+        <section className="max-w-7xl mx-auto px-5 md:px-8 mb-20 md:mb-40">
+          <div className="bg-surface-container-low rounded-[2rem] p-8 md:p-12 lg:p-24 flex flex-col md:flex-row items-center justify-between gap-12 relative overflow-hidden">
             <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent pointer-events-none" />
             <div className="flex flex-col gap-6 max-w-lg z-10">
               <h2 className="text-4xl md:text-5xl font-extrabold text-on-surface tight-tracking leading-tight">
