@@ -585,10 +585,11 @@ Test edilecek:
 | 2 | FE-09 Newsletter CTA | Front-end | ✅ Tamamlandı |
 | 2 | MÜH-04 Lead Form Backend | Mühendis | ✅ Tamamlandı |
 | 2 | FE-10 FAQ Section | Front-end | ✅ Tamamlandı |
-| 3 | SEO-02 Fiyatlar sayfası brief | SEO Uzmanı | ⬜ Bekliyor |
-| 3 | MÜH-05 + FE-11 Fiyatlar sayfası | Mühendis + FE | ⬜ Bekliyor |
-| 3 | SEO-03 + FE-12 Hizmet alt sayfaları | SEO + FE | ⬜ Bekliyor |
-| 3 | SEO-04 + FE-13 Lokal sayfalar | SEO + FE | ⬜ Bekliyor |
+| 3 | SEO-02 Fiyatlar sayfası brief | SEO Uzmanı | ✅ Tamamlandı |
+| 3 | MÜH-05 + FE-11 Fiyatlar sayfası | Mühendis + FE | ✅ Tamamlandı |
+| 3 | SEO-03 + FE-12 Hizmet alt sayfaları (x6) | SEO + FE | ✅ Tamamlandı |
+| 3 | SEO-04 + FE-13 Lokal sayfalar (x5) | SEO + FE | ✅ Tamamlandı |
+| 3 | FE-02b Header & Footer nav güncelleme | Front-end | ✅ Tamamlandı |
 | 3 | MÜH-06 + FE-14 Blog altyapısı | Mühendis + FE | ⬜ Bekliyor |
 | 3 | SEO-05 İlk 3 blog yazısı | SEO Uzmanı | ⬜ Bekliyor |
 | 4 | MÜH-07 Performans opt. | Mühendis | ⬜ Bekliyor |
