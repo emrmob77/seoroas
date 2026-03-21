@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+
+<html class="light" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-error": "#fff7f7",
+              "on-primary-fixed-variant": "#4a47d2",
+              "secondary-fixed": "#e4e2e4",
+              "on-surface-variant": "#596065",
+              "outline": "#757c81",
+              "primary-fixed": "#e2dfff",
+              "inverse-surface": "#0c0e10",
+              "inverse-primary": "#8382ff",
+              "on-secondary": "#fbf8fa",
+              "on-primary": "#faf6ff",
+              "surface-container-highest": "#dde3e9",
+              "on-primary-fixed": "#2b22b5",
+              "on-secondary-container": "#525154",
+              "secondary": "#5f5f61",
+              "tertiary-container": "#fd9d06",
+              "tertiary": "#895300",
+              "on-error-container": "#782232",
+              "inverse-on-surface": "#9c9d9f",
+              "surface-container": "#ebeef2",
+              "error-dim": "#4f0116",
+              "surface-bright": "#f9f9fb",
+              "on-tertiary-fixed-variant": "#573300",
+              "on-surface": "#2d3338",
+              "on-secondary-fixed-variant": "#5c5b5d",
+              "surface-container-low": "#f2f4f6",
+              "primary": "#4d4ad5",
+              "tertiary-dim": "#784800",
+              "on-secondary-fixed": "#3f3f41",
+              "background": "#f9f9fb",
+              "tertiary-fixed": "#fd9d06",
+              "on-primary-container": "#403bc7",
+              "on-tertiary-container": "#4b2b00",
+              "tertiary-fixed-dim": "#eb9100",
+              "outline-variant": "#acb3b8",
+              "surface-dim": "#d3dbe2",
+              "primary-container": "#e2dfff",
+              "error": "#9e3f4e",
+              "secondary-container": "#e4e2e4",
+              "secondary-dim": "#535355",
+              "primary-fixed-dim": "#d2d0ff",
+              "on-tertiary-fixed": "#2b1600",
+              "surface": "#f9f9fb",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary": "#fff7f3",
+              "surface-variant": "#dde3e9",
+              "error-container": "#ff8b9a",
+              "on-background": "#2d3338",
+              "surface-tint": "#4d4ad5",
+              "secondary-fixed-dim": "#d6d3d6",
+              "primary-dim": "#403cc8",
+              "surface-container-high": "#e4e9ee"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+      .glass-nav { backdrop-filter: blur(32px); -webkit-backdrop-filter: blur(32px); }
+      .tight-tracking { tracking: -0.04em; }
+      .soft-shadow { shadow: 0 40px 100px rgba(0,0,0,0.04); }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/70 dark:bg-slate-950/70 backdrop-blur-3xl border-b border-slate-900/5 dark:border-slate-50/5 shadow-[0_40px_100px_rgba(0,0,0,0.04)]">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-full">
+<div class="text-xl font-bold tracking-tighter text-slate-900 dark:text-slate-50 font-headline">SEOROAS</div>
+<div class="hidden md:flex items-center space-x-10 font-['Manrope'] tracking-[-0.04em] font-medium text-sm">
+<a class="text-slate-900 dark:text-slate-50 font-semibold border-b border-indigo-500 transition-colors duration-500" href="#">Solutions</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-500" href="#">Methodology</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-500" href="#">Case Studies</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-500" href="#">Insights</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-semibold text-sm transition-all cubic-bezier(0.2,0.8,0.2,1) hover:scale-[1.02] shadow-sm">Get Started</button>
+</div>
+</nav>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex flex-col items-center justify-center px-6 overflow-hidden bg-surface-container-lowest">
+<div class="max-w-5xl w-full text-center space-y-12 z-10">
+<span class="inline-block px-4 py-1.5 rounded-full bg-primary-container text-on-primary-container text-xs font-bold tracking-widest uppercase">Ultra-Prestige E-Commerce SEO</span>
+<h1 class="text-6xl md:text-8xl font-black tracking-[-0.05em] text-on-surface leading-[0.9] font-headline">
+                    Architecting <br/><span class="text-primary italic font-light">Organic Wealth.</span>
+</h1>
+<p class="max-w-2xl mx-auto text-lg md:text-xl text-on-surface-variant leading-relaxed">
+                    SEOROAS transforms digital storefronts into high-yield assets. We don't just rank keywords; we engineer market dominance through technical precision and architectural SEO.
+                </p>
+<div class="flex flex-col md:flex-row items-center justify-center gap-6 pt-8">
+<button class="w-full md:w-auto px-10 py-5 bg-primary text-on-primary rounded-full text-lg font-bold transition-all hover:scale-105 shadow-xl shadow-primary/20">Audit Your Platform</button>
+<button class="w-full md:w-auto px-10 py-5 bg-surface-container-low text-on-surface border border-outline-variant/20 rounded-full text-lg font-bold transition-all hover:bg-surface-container-high">View Case Studies</button>
+</div>
+</div>
+<!-- Background Decorative Element -->
+<div class="absolute -bottom-24 -right-24 w-1/2 aspect-square bg-primary/5 rounded-full blur-[120px]"></div>
+<div class="absolute -top-24 -left-24 w-1/3 aspect-square bg-tertiary/5 rounded-full blur-[120px]"></div>
+</section>
+<!-- The Organic Sales Engine -->
+<section class="py-32 px-8 max-w-7xl mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+<div class="space-y-8">
+<h2 class="text-4xl md:text-5xl font-extrabold tracking-tighter leading-tight font-headline">The Organic <br/>Sales Engine</h2>
+<p class="text-lg text-on-surface-variant leading-relaxed max-w-xl">
+                        Traditional SEO is a cost. SEOROAS is an investment. Our methodology focuses on the "Bottom of the Funnel" – where visibility meets high-intent purchase behavior.
+                    </p>
+<div class="space-y-12 pt-8">
+<div class="flex gap-6 group">
+<div class="w-14 h-14 shrink-0 rounded-2xl bg-surface-container-high flex items-center justify-center transition-colors group-hover:bg-primary group-hover:text-on-primary">
+<span class="material-symbols-outlined text-3xl" data-icon="trending_up">trending_up</span>
+</div>
+<div>
+<h4 class="text-xl font-bold mb-2">Compounding ROI</h4>
+<p class="text-on-surface-variant">Unlike paid ads that stop when budgets dry up, our architectural framework builds permanent equity.</p>
+</div>
+</div>
+<div class="flex gap-6 group">
+<div class="w-14 h-14 shrink-0 rounded-2xl bg-surface-container-high flex items-center justify-center transition-colors group-hover:bg-primary group-hover:text-on-primary">
+<span class="material-symbols-outlined text-3xl" data-icon="conversion_path">conversion_path</span>
+</div>
+<div>
+<h4 class="text-xl font-bold mb-2">ROAS-First Focus</h4>
+<p class="text-on-surface-variant">We align technical optimization with your sales targets, prioritizing high-margin product categories.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative bg-surface-container-low rounded-[2.5rem] p-12 overflow-hidden aspect-square flex items-center justify-center">
+<img alt="" class="absolute inset-0 w-full h-full object-cover opacity-20 grayscale" data-alt="Abstract minimalist dashboard showing sales growth curves" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFcPe2XkpV01cGa82iLUKjMeeFKSOVesRrJO_gjJI2x49R_TaSUmET_b6KmIr3qzbjkCsCGQaZZmGeHCHdcyBPe6xxWuyMG0IeTz6ZeErfW3zHHsRw5J_9cNTbAnWvKh1uFlwtoaVfSU6sbmg24wt4THSwG2xM_bdqMeNRe2upefJSA775RGHd8UrDwf41kuEMTzD3v4iPl0BGcAQDeq5wkGsFGoptMejVgeS0adFguPXenLR-oNlrx8g9gusugRmPiBqCFV4v46I"/>
+<div class="relative z-10 w-full space-y-8">
+<div class="bg-white/80 backdrop-blur-xl p-8 rounded-3xl border border-white/50 shadow-2xl">
+<div class="flex justify-between items-end mb-4">
+<div>
+<p class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Organic Revenue</p>
+<p class="text-3xl font-black text-on-surface">+314%</p>
+</div>
+<div class="text-primary font-bold text-sm">YoY Growth</div>
+</div>
+<div class="h-32 flex items-end gap-2">
+<div class="flex-1 bg-surface-container-highest rounded-t-lg h-1/4"></div>
+<div class="flex-1 bg-surface-container-highest rounded-t-lg h-1/3"></div>
+<div class="flex-1 bg-surface-container-highest rounded-t-lg h-1/2"></div>
+<div class="flex-1 bg-primary rounded-t-lg h-[90%]"></div>
+<div class="flex-1 bg-primary rounded-t-lg h-full"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Service Scope - Bento Grid -->
+<section class="py-32 px-8 bg-surface-container-low">
+<div class="max-w-7xl mx-auto space-y-20">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-8">
+<div class="max-w-2xl">
+<h2 class="text-4xl md:text-5xl font-black tracking-tighter mb-6 font-headline">Engineered Precision.</h2>
+<p class="text-lg text-on-surface-variant">Our service scope covers the entire E-commerce ecosystem, from raw server logs to high-conversion product copy.</p>
+</div>
+<span class="text-primary font-mono text-sm tracking-widest font-bold">SCOPE // 02-26</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Technical E-com -->
+<div class="md:col-span-8 bg-surface-container-lowest p-10 rounded-[2.5rem] shadow-sm flex flex-col justify-between group hover:shadow-xl transition-all duration-700">
+<div class="space-y-4">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="settings_suggest">settings_suggest</span>
+<h3 class="text-3xl font-bold tracking-tight">Technical Architecture</h3>
+<p class="text-on-surface-variant max-w-lg">Crawl budget optimization, faceted navigation management, and lightning-fast Core Web Vitals designed for large-scale inventories.</p>
+</div>
+<div class="mt-12 flex flex-wrap gap-2">
+<span class="px-4 py-1.5 rounded-full border border-outline-variant/30 text-xs font-medium">Schema Markup</span>
+<span class="px-4 py-1.5 rounded-full border border-outline-variant/30 text-xs font-medium">Log File Analysis</span>
+<span class="px-4 py-1.5 rounded-full border border-outline-variant/30 text-xs font-medium">Edge SEO</span>
+</div>
+</div>
+<!-- Keyword Research -->
+<div class="md:col-span-4 bg-primary text-on-primary p-10 rounded-[2.5rem] shadow-lg flex flex-col justify-between">
+<div class="space-y-4">
+<span class="material-symbols-outlined text-on-primary text-4xl" data-icon="query_stats" data-weight="fill" style="font-variation-settings: 'FILL' 1;">query_stats</span>
+<h3 class="text-3xl font-bold tracking-tight">Intent Intelligence</h3>
+<p class="text-primary-container/80">Mapping commercial intent to high-margin SKUs through deep-layer semantic research.</p>
+</div>
+<div class="mt-8 text-6xl font-black opacity-20 text-right">02</div>
+</div>
+<!-- Category Opt -->
+<div class="md:col-span-4 bg-surface-container-lowest p-10 rounded-[2.5rem] shadow-sm flex flex-col justify-between group hover:shadow-xl transition-all duration-700">
+<div class="space-y-4">
+<span class="material-symbols-outlined text-secondary text-4xl" data-icon="grid_view">grid_view</span>
+<h3 class="text-2xl font-bold tracking-tight">Category Dominance</h3>
+<p class="text-on-surface-variant">Converting high-volume category pages into entry points for the entire sales funnel.</p>
+</div>
+</div>
+<!-- Product Opt -->
+<div class="md:col-span-4 bg-surface-container-lowest p-10 rounded-[2.5rem] shadow-sm flex flex-col justify-between group hover:shadow-xl transition-all duration-700">
+<div class="space-y-4">
+<span class="material-symbols-outlined text-secondary text-4xl" data-icon="shopping_bag">shopping_bag</span>
+<h3 class="text-2xl font-bold tracking-tight">Product PDP Mastery</h3>
+<p class="text-on-surface-variant">Optimizing unique product pages to win the "Buy Box" in organic search results.</p>
+</div>
+</div>
+<!-- Content -->
+<div class="md:col-span-4 bg-surface-container-lowest p-10 rounded-[2.5rem] shadow-sm flex flex-col justify-between group hover:shadow-xl transition-all duration-700">
+<div class="space-y-4">
+<span class="material-symbols-outlined text-secondary text-4xl" data-icon="auto_stories">auto_stories</span>
+<h3 class="text-2xl font-bold tracking-tight">Editorial Strategy</h3>
+<p class="text-on-surface-variant">High-authority content that builds brand equity while capturing informational intent.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Platform Expertise -->
+<section class="py-32 px-8">
+<div class="max-w-7xl mx-auto text-center space-y-16">
+<p class="text-xs font-bold tracking-[0.3em] uppercase text-on-surface-variant">Platform Mastery</p>
+<div class="flex flex-wrap justify-center items-center gap-16 md:gap-32 opacity-40 grayscale hover:grayscale-0 transition-all duration-1000">
+<!-- Platform Logos (Text Based with specific styles) -->
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-4xl" data-icon="storefront">storefront</span>
+<span class="text-2xl font-black tracking-tighter">Shopify Plus</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-4xl" data-icon="shopping_cart">shopping_cart</span>
+<span class="text-2xl font-black tracking-tighter">Magento 2</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-4xl" data-icon="web">web</span>
+<span class="text-2xl font-black tracking-tighter">WooCommerce</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-4xl" data-icon="cloud">cloud</span>
+<span class="text-2xl font-black tracking-tighter">Salesforce CC</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Case Study Visualization -->
+<section class="py-32 px-8 bg-inverse-surface text-on-primary overflow-hidden relative">
+<div class="max-w-7xl mx-auto relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+<div class="lg:col-span-5 space-y-8">
+<span class="text-primary font-bold tracking-widest text-sm uppercase">Fashion &amp; Apparel Case Study</span>
+<h2 class="text-5xl font-black tracking-tight leading-[1.1] font-headline">Redefining Growth for a Global Atelier.</h2>
+<p class="text-outline-variant text-lg">We scaled a premium footwear brand by restructuring their faceted navigation and prioritizing "High Luxury" search clusters.</p>
+<div class="pt-8 space-y-4">
+<div class="flex items-center justify-between border-b border-white/10 pb-4">
+<span class="text-sm font-medium text-outline-variant">Organic Transactions</span>
+<span class="text-2xl font-bold">+184%</span>
+</div>
+<div class="flex items-center justify-between border-b border-white/10 pb-4">
+<span class="text-sm font-medium text-outline-variant">Average Order Value</span>
+<span class="text-2xl font-bold">+22%</span>
+</div>
+<div class="flex items-center justify-between pb-4">
+<span class="text-sm font-medium text-outline-variant">Page Load Speed</span>
+<span class="text-2xl font-bold">-1.4s</span>
+</div>
+</div>
+</div>
+<div class="lg:col-span-7">
+<div class="bg-white/5 rounded-[3rem] p-4 md:p-12 border border-white/10 backdrop-blur-sm">
+<img alt="" class="rounded-[2rem] w-full h-[400px] object-cover shadow-2xl grayscale brightness-110" data-alt="High-end fashion studio with clean lighting and luxury items" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsokrHauGVG8BUk_L54aNNFeDO6-e21eoCVI7mU2w_CYaaBZ-wswZqrmG0EgzDytFbfw1G19ztOB4UOBk1q8kphEAR9U0SkNNkqXC4Hv4I5H_opPbbWPgxJQnM4u9XW_pxKz8xm057sGy0fG4EJoI7cuFogcxTnjbUeFEsHHVNnt310lwGCtVYp2Hs1dlYnWpL7E_sd1Jy5NN00Rq6QogRGQ2zsJstPfO1Qdn6m3efu9EGwKmYbzB7SuSep148XJvrZW0wJxAUICk"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Background element -->
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent pointer-events-none"></div>
+</section>
+<!-- FAQ -->
+<section class="py-32 px-8 max-w-4xl mx-auto">
+<h2 class="text-4xl font-black tracking-tighter text-center mb-20 font-headline">Frequently Asked Questions</h2>
+<div class="space-y-12">
+<div class="group cursor-pointer">
+<h4 class="text-xl font-bold mb-4 flex justify-between items-center group-hover:text-primary transition-colors">
+                        How long until we see measurable ROAS from SEO?
+                        <span class="material-symbols-outlined">add</span>
+</h4>
+<p class="text-on-surface-variant leading-relaxed">While technical wins can be seen in weeks, significant organic revenue shifts typically occur within 4-6 months of architectural implementation.</p>
+</div>
+<div class="group cursor-pointer">
+<h4 class="text-xl font-bold mb-4 flex justify-between items-center group-hover:text-primary transition-colors">
+                        Do you handle platform migrations?
+                        <span class="material-symbols-outlined">add</span>
+</h4>
+<p class="text-on-surface-variant leading-relaxed">Yes. Our migration framework ensures 100% equity retention and often leads to a post-launch growth surge due to optimized structure.</p>
+</div>
+<div class="group cursor-pointer">
+<h4 class="text-xl font-bold mb-4 flex justify-between items-center group-hover:text-primary transition-colors">
+                        Can you work with headless E-commerce setups?
+                        <span class="material-symbols-outlined">add</span>
+</h4>
+<p class="text-on-surface-variant leading-relaxed">Headless is our specialty. We optimize for React, Vue, and Next.js frameworks to ensure search engines can crawl your store perfectly.</p>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-32 px-8">
+<div class="max-w-7xl mx-auto bg-primary rounded-[3.5rem] p-12 md:p-24 text-center text-on-primary relative overflow-hidden">
+<div class="relative z-10 space-y-8 max-w-3xl mx-auto">
+<h2 class="text-5xl md:text-7xl font-black tracking-tighter leading-none font-headline">Secure Your Market <br/>Dominance.</h2>
+<p class="text-xl text-primary-container/90">Book a private consultation with our architectural SEO team to audit your platform's revenue potential.</p>
+<div class="pt-8">
+<button class="bg-surface-container-lowest text-primary px-12 py-6 rounded-full text-xl font-black transition-all hover:scale-105 shadow-2xl">Request Strategy Call</button>
+</div>
+</div>
+<!-- Abstract patterns -->
+<div class="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full -mr-48 -mt-48 blur-3xl"></div>
+<div class="absolute bottom-0 left-0 w-96 h-96 bg-black/10 rounded-full -ml-48 -mb-48 blur-3xl"></div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-950 w-full pt-24 pb-12 font-['Manrope'] tracking-[-0.02em] leading-[1.6]">
+<div class="max-w-7xl mx-auto px-12 grid grid-cols-2 md:grid-cols-4 gap-24">
+<div>
+<div class="text-3xl font-black tracking-tighter text-slate-900 dark:text-slate-50 mb-8 font-headline">SEOROAS</div>
+<p class="text-slate-500 dark:text-slate-400 max-w-xs">Architectural E-commerce SEO for brands that demand performance.</p>
+</div>
+<div class="space-y-4">
+<h5 class="font-bold text-slate-900 dark:text-slate-50">Services</h5>
+<ul class="space-y-3">
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-50 transition-all duration-300" href="#">Strategy</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-50 transition-all duration-300" href="#">Technical SEO</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-50 transition-all duration-300" href="#">Content Architecture</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-50 transition-all duration-300" href="#">Global Search</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h5 class="font-bold text-slate-900 dark:text-slate-50">Company</h5>
+<ul class="space-y-3">
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-50 transition-all duration-300" href="#">Privacy</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-50 transition-all duration-300" href="#">Terms</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-50 transition-all duration-300" href="#">LinkedIn</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-50 transition-all duration-300" href="#">Twitter</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h5 class="font-bold text-slate-900 dark:text-slate-50">Newsletter</h5>
+<div class="flex flex-col gap-4">
+<input class="bg-surface-container-low border-none rounded-full px-6 py-3 text-sm focus:ring-1 focus:ring-primary" placeholder="Your email" type="email"/>
+<button class="bg-primary text-on-primary rounded-full px-6 py-3 text-sm font-bold">Subscribe</button>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-12 mt-24 pt-8 border-t border-slate-900/5 dark:border-slate-50/5 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-slate-500 dark:text-slate-400 text-sm">© 2026 SEOROAS Architectural SEO. All rights reserved.</p>
+<div class="flex gap-8 text-sm">
+<a class="text-indigo-600 dark:text-indigo-400" href="#">Cookie Policy</a>
+<a class="text-slate-500 dark:text-slate-400" href="#">Legal Notice</a>
+</div>
+</div>
+</footer>
+</body></html>

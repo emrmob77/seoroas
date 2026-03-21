@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Referanslar &amp; Vaka Analizleri | SEOROAS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "inverse-primary": "#8382ff",
+              "background": "#f9f9fb",
+              "tertiary": "#895300",
+              "surface-dim": "#d3dbe2",
+              "on-secondary-fixed": "#3f3f41",
+              "on-tertiary": "#fff7f3",
+              "tertiary-fixed": "#fd9d06",
+              "on-primary-fixed": "#2b22b5",
+              "outline-variant": "#acb3b8",
+              "on-error-container": "#782232",
+              "on-secondary-fixed-variant": "#5c5b5d",
+              "surface-container-highest": "#dde3e9",
+              "tertiary-container": "#fd9d06",
+              "inverse-on-surface": "#9c9d9f",
+              "tertiary-dim": "#784800",
+              "secondary-dim": "#535355",
+              "on-secondary-container": "#525154",
+              "inverse-surface": "#0c0e10",
+              "on-surface": "#2d3338",
+              "surface-bright": "#f9f9fb",
+              "surface-container-lowest": "#ffffff",
+              "surface": "#f9f9fb",
+              "surface-container": "#ebeef2",
+              "surface-container-high": "#e4e9ee",
+              "on-tertiary-fixed": "#2b1600",
+              "surface-tint": "#4d4ad5",
+              "secondary-fixed": "#e4e2e4",
+              "secondary-container": "#e4e2e4",
+              "primary-container": "#e2dfff",
+              "on-tertiary-container": "#4b2b00",
+              "on-secondary": "#fbf8fa",
+              "outline": "#757c81",
+              "on-primary-fixed-variant": "#4a47d2",
+              "primary-fixed": "#e2dfff",
+              "on-primary-container": "#403bc7",
+              "on-background": "#2d3338",
+              "on-primary": "#faf6ff",
+              "tertiary-fixed-dim": "#eb9100",
+              "on-tertiary-fixed-variant": "#573300",
+              "secondary": "#5f5f61",
+              "on-error": "#fff7f7",
+              "primary-dim": "#403cc8",
+              "primary": "#4d4ad5",
+              "surface-variant": "#dde3e9",
+              "error": "#9e3f4e",
+              "secondary-fixed-dim": "#d6d3d6",
+              "primary-fixed-dim": "#d2d0ff",
+              "surface-container-low": "#f2f4f6",
+              "error-container": "#ff8b9a",
+              "on-surface-variant": "#596065",
+              "error-dim": "#4f0116"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        .glass-nav { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(32px); }
+        .tight-tracking { letter-spacing: -0.04em; }
+        .editorial-shadow { box-shadow: 0 40px 80px -20px rgba(0,0,0,0.04); }
+        .ghost-border { border: 0.5px solid rgba(172, 179, 184, 0.2); }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/70 dark:bg-zinc-950/70 backdrop-blur-2xl no-border border-b border-zinc-100/10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-none">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-8 h-20">
+<div class="text-xl font-bold tracking-tighter text-zinc-900 dark:text-white">SEOROAS</div>
+<div class="hidden md:flex items-center space-x-10">
+<a class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors font-manrope tracking-tight text-sm font-medium" href="#">Services</a>
+<a class="text-zinc-900 dark:text-white font-semibold border-b-2 border-indigo-600 pb-1 font-manrope tracking-tight text-sm" href="#">Case Studies</a>
+<a class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors font-manrope tracking-tight text-sm font-medium" href="#">About</a>
+<a class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors font-manrope tracking-tight text-sm font-medium" href="#">Insights</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-full text-sm font-bold tracking-tight hover:opacity-80 transition-opacity duration-300">Get Started</button>
+</div>
+</nav>
+<main class="pt-32">
+<!-- Section 1: Hero -->
+<section class="max-w-7xl mx-auto px-8 mb-24">
+<nav aria-label="Breadcrumb" class="flex mb-8">
+<ol class="flex items-center space-x-4 text-xs font-medium tracking-widest uppercase text-on-surface-variant/60">
+<li><a class="hover:text-primary transition-colors" href="#">Anasayfa</a></li>
+<li><span class="material-symbols-outlined text-[10px]">chevron_right</span></li>
+<li class="text-on-surface">Referanslar</li>
+</ol>
+</nav>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-end">
+<div class="md:col-span-8">
+<h1 class="text-6xl md:text-8xl font-extrabold tight-tracking leading-[0.9] text-on-surface mb-8">
+                        Rakamlarla Anlattığımız <br/><span class="text-primary">Başarı Hikayeleri</span>
+</h1>
+<p class="text-xl text-on-surface-variant max-w-2xl leading-relaxed">
+                        Kelimelerin ötesinde, somut verilerle tescillenmiş büyüme grafikleri. Her sektörün dinamiğine özel kurgulanmış SEO mimarisi.
+                    </p>
+</div>
+</div>
+<div class="mt-16 flex flex-wrap gap-4">
+<button class="px-8 py-3 rounded-full bg-primary text-on-primary text-sm font-bold tracking-tight">Tümü</button>
+<button class="px-8 py-3 rounded-full bg-surface-container-low text-on-surface-variant text-sm font-medium hover:bg-surface-container-high transition-colors">E-Ticaret</button>
+<button class="px-8 py-3 rounded-full bg-surface-container-low text-on-surface-variant text-sm font-medium hover:bg-surface-container-high transition-colors">B2B SaaS</button>
+<button class="px-8 py-3 rounded-full bg-surface-container-low text-on-surface-variant text-sm font-medium hover:bg-surface-container-high transition-colors">Sağlık</button>
+<button class="px-8 py-3 rounded-full bg-surface-container-low text-on-surface-variant text-sm font-medium hover:bg-surface-container-high transition-colors">Gayrimenkul</button>
+</div>
+</section>
+<!-- Section 2: Summary Stats -->
+<section class="bg-surface-container-low py-24 mb-32">
+<div class="max-w-7xl mx-auto px-8">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+<div class="space-y-2">
+<div class="text-5xl md:text-7xl font-extrabold tight-tracking text-primary">500+</div>
+<div class="text-xs uppercase tracking-widest font-bold text-on-surface-variant/70">Tamamlanan Proje</div>
+</div>
+<div class="space-y-2">
+<div class="text-5xl md:text-7xl font-extrabold tight-tracking text-primary">94%</div>
+<div class="text-xs uppercase tracking-widest font-bold text-on-surface-variant/70">Müşteri Sadakati</div>
+</div>
+<div class="space-y-2">
+<div class="text-5xl md:text-7xl font-extrabold tight-tracking text-primary">3.2X</div>
+<div class="text-xs uppercase tracking-widest font-bold text-on-surface-variant/70">Ortalama ROI Artışı</div>
+</div>
+<div class="space-y-2">
+<div class="text-5xl md:text-7xl font-extrabold tight-tracking text-primary">+240%</div>
+<div class="text-xs uppercase tracking-widest font-bold text-on-surface-variant/70">Organik Trafik İvmesi</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Case Study Grid -->
+<section class="max-w-7xl mx-auto px-8 mb-40">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Case 1: Moda -->
+<div class="group bg-surface-container-lowest rounded-xl p-2 editorial-shadow transition-all duration-500 hover:-translate-y-2">
+<div class="aspect-[4/3] rounded-lg overflow-hidden mb-6 relative">
+<img alt="Moda e-ticaret çekimi" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="High-end fashion e-commerce product photography lifestyle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0s33js5p_r81YFJ7C_zfrbnUQfX_ImptjdbxVbex8gLZjCsXhMxG_jm-qOecJIV_9CVOqMZhQbmZdgcrbRIxdKgyExqAR9z9SwyBX7f4f7A8CYxgE5fShsqhRO-y3TKPTllrDe96ssEgWVVbEMElvN9D18nkJkPZhcD6tpa4ZEAPIhD1KyEzksYvdIRpulHrerD3Vz7T7bVymfhJOPQMDFiNwRzCPqyWrf4_kSkIS-RpE2LqVJ18d4yecqyrOo0tuTycnhJO8ORA"/>
+<div class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider text-primary">E-Ticaret</div>
+</div>
+<div class="px-6 pb-8">
+<h3 class="text-2xl font-bold tight-tracking mb-4 group-hover:text-primary transition-colors">Moda Devinde %312 Gelir Artışı</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-8">Uluslararası bir moda markasının organik kanal gelirlerini 12 ayda 3 katına çıkardık.</p>
+<div class="grid grid-cols-3 gap-4 pt-6 border-t border-outline-variant/10">
+<div>
+<div class="text-xs text-on-surface-variant/60 mb-1">Trafik</div>
+<div class="text-lg font-bold text-primary">+180%</div>
+</div>
+<div>
+<div class="text-xs text-on-surface-variant/60 mb-1">Dönüşüm</div>
+<div class="text-lg font-bold text-primary">+45%</div>
+</div>
+<div>
+<div class="text-xs text-on-surface-variant/60 mb-1">Anahtar K.</div>
+<div class="text-lg font-bold text-primary">12k+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Case 2: B2B SaaS -->
+<div class="group bg-surface-container-lowest rounded-xl p-2 editorial-shadow transition-all duration-500 hover:-translate-y-2">
+<div class="aspect-[4/3] rounded-lg overflow-hidden mb-6 relative">
+<img alt="SaaS dashboard analizi" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Modern SaaS dashboard visualization and clean interface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBh1oeeJyCtcSjFSVG8YSzYOFVYbHduqI0cCaVzNIzG3Bp4tsEhIyCG_fbpwSC0fX8EZXns77oMVXcLIgWSXCtX9rhCn6V40Mg4_TmlypOChUDvdpPtNIIOqTrxV771xXcYKPsuPJ6MMjpDl32q_wvmwU4EY5WGcY7L9eVKoDi4JAT2bhpVdPQ0veRGf35wbUsNdYyg-oNr7XTchYiODDIxeLrVvk1nuC0hx_6gKgROzpM97fMggWF6nnyx8MxjZWI57zrqLPC4XxQ"/>
+<div class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider text-primary">B2B SaaS</div>
+</div>
+<div class="px-6 pb-8">
+<h3 class="text-2xl font-bold tight-tracking mb-4 group-hover:text-primary transition-colors">Global SaaS Lead Lead Gen Stratejisi</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-8">CRM yazılımı için her ay 2.500+ nitelikli demo talebi üreten içerik hunisi mimarisi.</p>
+<div class="grid grid-cols-3 gap-4 pt-6 border-t border-outline-variant/10">
+<div>
+<div class="text-xs text-on-surface-variant/60 mb-1">Demo</div>
+<div class="text-lg font-bold text-primary">+210%</div>
+</div>
+<div>
+<div class="text-xs text-on-surface-variant/60 mb-1">CPL</div>
+<div class="text-lg font-bold text-primary">-35%</div>
+</div>
+<div>
+<div class="text-xs text-on-surface-variant/60 mb-1">Global Sıra</div>
+<div class="text-lg font-bold text-primary">#1</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Case 3: Hukuk -->
+<div class="group bg-surface-container-lowest rounded-xl p-2 editorial-shadow transition-all duration-500 hover:-translate-y-2">
+<div class="aspect-[4/3] rounded-lg overflow-hidden mb-6 relative">
+<img alt="Hukuk bürosu detayı" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Minimalist law office aesthetic and professional setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0jNL_ZlPenptldTBGIdc5u6_NLom5COWwMNZU-lfIfxzzXB7IaUZZLh-rywnu0ADxfvj8D-qzQaZbinNtgUE_SJi8NGPgM3x76eWQBXyI2R_FC9275HQ9r77IdNavt6s04CZ5AgJwTrSY-yI1HR4NbcChgYjkkjz3Rd8iWJcZIL4c08hfV0cjnTt0JwicGJELP-V-4mEIWoQmTrDChdii4OXcOemccLo4bSDLptt1UGqw2JPzDQfuHr7TSEgEgMfGvr_BWtE_4ZI"/>
+<div class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider text-primary">Hukuk</div>
+</div>
+<div class="px-6 pb-8">
+<h3 class="text-2xl font-bold tight-tracking mb-4 group-hover:text-primary transition-colors">Otorite Odaklı Hukuki SEO</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-8">Zorlu hukuki terimlerde Google ilk sayfa dominasyonu ve prestij artışı.</p>
+<div class="grid grid-cols-3 gap-4 pt-6 border-t border-outline-variant/10">
+<div>
+<div class="text-xs text-on-surface-variant/60 mb-1">Görünürlük</div>
+<div class="text-lg font-bold text-primary">+125%</div>
+</div>
+<div>
+<div class="text-xs text-on-surface-variant/60 mb-1">Güven Skoru</div>
+<div class="text-lg font-bold text-primary">92/100</div>
+</div>
+<div>
+<div class="text-xs text-on-surface-variant/60 mb-1">Tıklama</div>
+<div class="text-lg font-bold text-primary">4.2k</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Case 4: Sağlık -->
+<div class="group bg-surface-container-lowest rounded-xl p-2 editorial-shadow transition-all duration-500 hover:-translate-y-2">
+<div class="aspect-[4/3] rounded-lg overflow-hidden mb-6 relative">
+<img alt="Sağlık kliniği modern" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Modern healthcare clinic interior with bright light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCydF9RnuaJ0QDcCrLHDN6JDYiMo6CoSwVcXA0aGyOGq23ghXCUkDu7Zb3hvY5UCzQ-p0koVG9yR341Rjg6fWRqn_-ZB87uhP_PtUaQObrKnLDu40cbnicj0nRbmxAAC7BYbUB5NemaZmh7Y5f7q1fVsWPBHmxERPhLV5kzoQvfXUQorTIxFAnr7Dx3SZfZxkVQOClzrwrrketoVJ14G2XUHgyDO_FY2ilGyhNBQA9X-MkfX1MQxGna3lluit7xhFOzB74IDw4LZVk"/>
+<div class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider text-primary">Sağlık</div>
+</div>
+<div class="px-6 pb-8">
+<h3 class="text-2xl font-bold tight-tracking mb-4 group-hover:text-primary transition-colors">Sağlık Turizminde Dijital Köprü</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-8">Avrupa pazarından gelen hasta randevularını 240% artıran çok dilli SEO çalışması.</p>
+<div class="grid grid-cols-3 gap-4 pt-6 border-t border-outline-variant/10">
+<div>
+<div class="text-xs text-on-surface-variant/60 mb-1">Randevu</div>
+<div class="text-lg font-bold text-primary">+240%</div>
+</div>
+<div>
+<div class="text-xs text-on-surface-variant/60 mb-1">ROI</div>
+<div class="text-lg font-bold text-primary">5.5X</div>
+</div>
+<div>
+<div class="text-xs text-on-surface-variant/60 mb-1">Diller</div>
+<div class="text-lg font-bold text-primary">4</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Case 5: Eğitim -->
+<div class="group bg-surface-container-lowest rounded-xl p-2 editorial-shadow transition-all duration-500 hover:-translate-y-2">
+<div class="aspect-[4/3] rounded-lg overflow-hidden mb-6 relative">
+<img alt="Eğitim kampüsü" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Clean academic campus or library environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLqjb3EEDIcHmFeMXgV77xmZzfO9pSk0KPVDRwzeRDD2fwti9s1ruFSvhgeUqhJEqGu2fzNm2_91bCPtYPtD_XSuFhdFTKCadUt0TtVS3EtheC6drRYfylUc-WMY2o6i6Zxi8Lp56w2IMF2AtT7529aS0x4nnSQKPKjpkveNHBMnKeCq73ES-9wuZRTj7udroEWCIjDk2ptIoWluLs3UkhY_RVPzsZMo0arlr608qOA4aVZubL4P31MBvO4X52BqB_02-hqMMIU8I"/>
+<div class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider text-primary">Eğitim</div>
+</div>
+<div class="px-6 pb-8">
+<h3 class="text-2xl font-bold tight-tracking mb-4 group-hover:text-primary transition-colors">Üniversite Tercih Dönemi Dominasyonu</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-8">3 ayda kritik terimlerde ilk 3 sıra hedefiyle rekor başvuru sayısı.</p>
+<div class="grid grid-cols-3 gap-4 pt-6 border-t border-outline-variant/10">
+<div>
+<div class="text-xs text-on-surface-variant/60 mb-1">Başvuru</div>
+<div class="text-lg font-bold text-primary">+90%</div>
+</div>
+<div>
+<div class="text-xs text-on-surface-variant/60 mb-1">Erişim</div>
+<div class="text-lg font-bold text-primary">1.2M</div>
+</div>
+<div>
+<div class="text-xs text-on-surface-variant/60 mb-1">Sıralama</div>
+<div class="text-lg font-bold text-primary">Top 3</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Case 6: Gayrimenkul -->
+<div class="group bg-surface-container-lowest rounded-xl p-2 editorial-shadow transition-all duration-500 hover:-translate-y-2">
+<div class="aspect-[4/3] rounded-lg overflow-hidden mb-6 relative">
+<img alt="Lüks gayrimenkul bina" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Modern skyscraper architectural exterior photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9PrXI8NvTCTYfGMCEoIjR9oncU0E9Cx-oJOejG6hzVDLoO1av8Kay4vjviqI6ZA3xDUh0mYxA9bM2Sz8KMk0kG92XvHA0BY04bmj0Slj8Q-110dgvtWal8cZ6cG5nkQHJ8b5H0rLkn_u-MYbO587LGyNKJO37WnFdLiz8-FANnRuQwWnw0e13hreG2P9JHrAD2BR3geu3pETEuF7z08PRbj55Pn6-i670rW8gIl-a0RwCBnOElnEHFrBBYJdFUpJJsmejSXPaf4I"/>
+<div class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider text-primary">Gayrimenkul</div>
+</div>
+<div class="px-6 pb-8">
+<h3 class="text-2xl font-bold tight-tracking mb-4 group-hover:text-primary transition-colors">Lüks Konut Satışlarında %40 Artış</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-8">Niche hedeflerle yüksek bütçeli konut projelerinde nitelikli lead üretimi.</p>
+<div class="grid grid-cols-3 gap-4 pt-6 border-t border-outline-variant/10">
+<div>
+<div class="text-xs text-on-surface-variant/60 mb-1">Satış</div>
+<div class="text-lg font-bold text-primary">+40%</div>
+</div>
+<div>
+<div class="text-xs text-on-surface-variant/60 mb-1">Lead</div>
+<div class="text-lg font-bold text-primary">1.8k</div>
+</div>
+<div>
+<div class="text-xs text-on-surface-variant/60 mb-1">CPA</div>
+<div class="text-lg font-bold text-primary">-22%</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Customer Testimonials -->
+<section class="max-w-7xl mx-auto px-8 mb-40">
+<h2 class="text-4xl font-extrabold tight-tracking mb-16 text-center">İş Ortaklarımız Ne Diyor?</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Testimonial 1 -->
+<div class="bg-surface-container-low p-10 rounded-xl relative">
+<div class="flex text-primary mb-6">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-lg font-medium leading-relaxed italic mb-8 text-on-surface">"Organik trafiğimizin bir yılda 3 katına çıkması sadece başlangıçtı. Asıl farkı, gelen trafiğin satışa dönme hızında hissettik."</p>
+<div class="flex items-center space-x-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest overflow-hidden">
+<img alt="Ahmet B." class="w-full h-full object-cover" data-alt="Portrait of professional businessman smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFHM5Qb_E3d6ftESVTYgo_22EPc24fBiJaReIjvjWreShZhhWB6L2PVGTfjOaeHNfUpuwCV7LHnLjawWwvdAOoFeUxuiboieKrAUWdKNwbIfxfGk-x2mdCHnJ5F5BlBN1yc5j1q4AXXUNEmRAqLKF-1kIePn8fi6F22ZoDCeSOcufUTOPq8UmLFOj8p144Q2wDNG-fFuvv_7zUkqa3-jt7MGskkAqEwdmGM0vCRRnAWC6PMdqck2mSIGueNhK46_1lz2cw6SRPNog"/>
+</div>
+<div>
+<div class="font-bold text-sm">Ahmet B.</div>
+<div class="text-xs text-on-surface-variant uppercase tracking-wider">Moda CEO</div>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="bg-surface-container-low p-10 rounded-xl relative lg:translate-y-12">
+<div class="flex text-primary mb-6">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-lg font-medium leading-relaxed italic mb-8 text-on-surface">"SEO'yu sadece bir teknik iş olarak görüyorduk, SEOROAS bize bunun bir iş stratejisi olduğunu kanıtladı."</p>
+<div class="flex items-center space-x-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest overflow-hidden">
+<img alt="Selin K." class="w-full h-full object-cover" data-alt="Professional woman portrait business attire" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAk_eYUY6IYOej4aAm5GKLcdzTilPe-Fjot7w6z_pUpiPf1NO-kb-BvT5_uo79t7lMU4Lgoz1Z0h15u6bw3kN6XM9OGQuefSULwaxwCOOTrGj0fdYJRONcdtln35jE7EMwXJC9u80kohW7DRdN2fKxz84s9Cl2kTqKe9hmBauNo7gQb2bisJwHCc0jZvls27mugdTrpzROSx8-MmDmhwjUZXh3nIZUWix10je-mOaXhbSpBrshk9RgJCvuQNuD96lpbNceKyxhjHkY"/>
+</div>
+<div>
+<div class="font-bold text-sm">Selin K.</div>
+<div class="text-xs text-on-surface-variant uppercase tracking-wider">SaaS Pazarlama Müdürü</div>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="bg-surface-container-low p-10 rounded-xl relative">
+<div class="flex text-primary mb-6">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-lg font-medium leading-relaxed italic mb-8 text-on-surface">"E-ticaret hacmimiz o kadar hızlı büyüdü ki, operasyon merkezimizi büyütmek zorunda kaldık. Teşekkürler."</p>
+<div class="flex items-center space-x-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest overflow-hidden">
+<img alt="Murat Y." class="w-full h-full object-cover" data-alt="Corporate man portrait neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASB0F7NSPoOLx8eSLq7LsBiMm3L_E89uDZHUjLHcrg4Zyg1bMNZUeBtuMno6jdDsL_l-PZjyfI7f-pg1FwDCkYfVC9823cKIrAwqLduGTiaJZtF5TNO-FZTsonHxHjfI8ogDFT6GKZo-661VaWiYF9QMRlcgg5Sf1xr2LikcSSC1DiccxPTu8OfaYOz5I4f5TWBo9WcxIemumJcTggPsZo0I28fJ436reux00WBmmoMh4S7QAaJhshjaAbdlRGb0CtHwEtt1iQEtw"/>
+</div>
+<div>
+<div class="font-bold text-sm">Murat Y.</div>
+<div class="text-xs text-on-surface-variant uppercase tracking-wider">E-Ticaret Direktörü</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 5: CTA -->
+<section class="max-w-7xl mx-auto px-8 mb-24">
+<div class="bg-primary rounded-3xl p-12 md:p-24 text-center text-on-primary relative overflow-hidden">
+<div class="absolute inset-0 opacity-10">
+<div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.2),transparent)]"></div>
+</div>
+<div class="relative z-10">
+<h2 class="text-5xl md:text-7xl font-extrabold tight-tracking mb-8 leading-none">
+                        Siz de Bu Başarı Hikayelerinin <br/>Parçası Olun
+                    </h2>
+<p class="text-xl opacity-80 max-w-2xl mx-auto mb-12">
+                        Markanızın dijital potansiyelini rakamlarla keşfedin. Ücretsiz ön analiz raporu için bugün iletişime geçin.
+                    </p>
+<div class="flex flex-col md:flex-row items-center justify-center gap-6">
+<button class="bg-white text-primary px-10 py-5 rounded-full text-lg font-bold tracking-tight hover:scale-105 transition-transform duration-300">Strateji Toplantısı Planla</button>
+<button class="bg-primary-container/20 backdrop-blur-md text-white border border-white/20 px-10 py-5 rounded-full text-lg font-bold tracking-tight hover:bg-white/10 transition-colors">Tüm Vakaları İncele</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full pt-24 pb-12 bg-zinc-50 dark:bg-zinc-900">
+<div class="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="text-lg font-black tracking-tighter text-zinc-900 dark:text-white">SEOROAS</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-manrope text-xs tracking-widest uppercase text-zinc-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors" href="#">Privacy Policy</a>
+<a class="font-manrope text-xs tracking-widest uppercase text-zinc-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors" href="#">Terms of Service</a>
+<a class="font-manrope text-xs tracking-widest uppercase text-zinc-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors" href="#">LinkedIn</a>
+<a class="font-manrope text-xs tracking-widest uppercase text-zinc-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors" href="#">Contact</a>
+</div>
+<div class="font-manrope text-xs tracking-widest uppercase text-zinc-400">© 2026 SEOROAS. Precision SEO Architecture.</div>
+</div>
+</footer>
+</body></html>

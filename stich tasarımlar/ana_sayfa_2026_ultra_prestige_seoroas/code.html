@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SEOROAS | Advanced SEO Performance</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "surface-container": "#ebeef2",
+                "tertiary": "#895300",
+                "on-secondary": "#fbf8fa",
+                "error-dim": "#4f0116",
+                "tertiary-container": "#fd9d06",
+                "surface-variant": "#dde3e9",
+                "tertiary-dim": "#784800",
+                "on-tertiary-container": "#4b2b00",
+                "on-primary": "#faf6ff",
+                "inverse-on-surface": "#9c9d9f",
+                "secondary-fixed": "#e4e2e4",
+                "primary-dim": "#403cc8",
+                "primary-fixed-dim": "#d2d0ff",
+                "background": "#f9f9fb",
+                "primary-container": "#e2dfff",
+                "on-secondary-container": "#525154",
+                "surface-container-low": "#f2f4f6",
+                "on-primary-fixed-variant": "#4a47d2",
+                "on-primary-fixed": "#2b22b5",
+                "on-tertiary-fixed": "#2b1600",
+                "secondary": "#5f5f61",
+                "on-primary-container": "#403bc7",
+                "outline-variant": "#acb3b8",
+                "surface-tint": "#4d4ad5",
+                "surface-dim": "#d3dbe2",
+                "surface-container-lowest": "#ffffff",
+                "error": "#9e3f4e",
+                "surface": "#f9f9fb",
+                "surface-container-highest": "#dde3e9",
+                "on-background": "#2d3338",
+                "inverse-surface": "#0c0e10",
+                "primary-fixed": "#e2dfff",
+                "surface-bright": "#f9f9fb",
+                "on-surface-variant": "#596065",
+                "on-error": "#fff7f7",
+                "error-container": "#ff8b9a",
+                "outline": "#757c81",
+                "on-tertiary": "#fff7f3",
+                "on-tertiary-fixed-variant": "#573300",
+                "inverse-primary": "#8382ff",
+                "tertiary-fixed": "#fd9d06",
+                "on-surface": "#2d3338",
+                "secondary-fixed-dim": "#d6d3d6",
+                "surface-container-high": "#e4e9ee",
+                "on-secondary-fixed": "#3f3f41",
+                "primary": "#4d4ad5",
+                "on-error-container": "#782232",
+                "tertiary-fixed-dim": "#eb9100",
+                "secondary-dim": "#535355",
+                "on-secondary-fixed-variant": "#5c5b5d",
+                "secondary-container": "#e4e2e4"
+              },
+              fontFamily: {
+                "headline": ["Manrope", "sans-serif"],
+                "body": ["Manrope", "sans-serif"],
+                "label": ["Manrope", "sans-serif"]
+              },
+              borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+            },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-nav {
+            backdrop-filter: blur(32px);
+            -webkit-backdrop-filter: blur(32px);
+        }
+        .tight-tracking {
+            letter-spacing: -0.04em;
+        }
+        .soft-shadow {
+            box-shadow: 0 40px 80px rgba(0,0,0,0.04), 0 10px 30px rgba(0,0,0,0.02);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body overflow-x-hidden">
+<!-- Top Navigation Shell -->
+<nav class="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl rounded-full border-[0.5px] border-white/20 dark:border-slate-700/30 bg-white/70 backdrop-blur-3xl shadow-[0_20px_50px_rgba(0,0,0,0.04)] flex justify-between items-center px-8 py-3 z-50">
+<div class="text-xl font-bold tracking-[0.2em] uppercase text-slate-900">SEOROAS</div>
+<div class="hidden md:flex items-center space-x-10">
+<a class="font-manrope tracking-[0.1em] font-semibold text-sm uppercase text-indigo-600 border-b-[1.5px] border-indigo-600 pb-1" href="#">Solutions</a>
+<a class="font-manrope tracking-[0.1em] font-light text-sm uppercase text-slate-500 hover:text-slate-900 transition-colors duration-500 ease-[cubic-bezier(0.2,0.8,0.2,1)]" href="#">Methodology</a>
+<a class="font-manrope tracking-[0.1em] font-light text-sm uppercase text-slate-500 hover:text-slate-900 transition-colors duration-500 ease-[cubic-bezier(0.2,0.8,0.2,1)]" href="#">Case Studies</a>
+<a class="font-manrope tracking-[0.1em] font-light text-sm uppercase text-slate-500 hover:text-slate-900 transition-colors duration-500 ease-[cubic-bezier(0.2,0.8,0.2,1)]" href="#">Insights</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest hover:opacity-90 active:scale-95 transition-all duration-200">
+            Start Audit
+        </button>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative min-height-[1024px] pt-48 pb-32 px-8 overflow-hidden">
+<div class="max-w-7xl mx-auto flex flex-col items-center text-center">
+<div class="inline-flex items-center space-x-2 bg-surface-container-low px-4 py-1.5 rounded-full mb-8">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+<span class="text-[10px] uppercase tracking-[0.2em] font-bold text-on-surface-variant">The 2026 Performance Standard</span>
+</div>
+<h1 class="text-6xl md:text-[5.5rem] font-extrabold leading-[1.05] tight-tracking text-on-background max-w-5xl mb-12">
+                    10X Organik <br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-dim">Trafik Büyümesi</span>
+</h1>
+<p class="text-lg md:text-xl text-on-surface-variant max-w-2xl font-light leading-relaxed mb-16">
+                    Veriye dayalı stratejiler ve mimari SEO optimizasyonu ile markanızın dijital varlığını yeniden inşa ediyoruz. Görünürlük bir seçenek değil, bir standarttır.
+                </p>
+<!-- Stat Strip (Glassmorphic Card) -->
+<div class="w-full max-w-4xl bg-white/40 backdrop-blur-xl border-[0.5px] border-outline-variant/20 rounded-3xl p-8 md:p-12 soft-shadow flex flex-wrap justify-between items-center gap-8">
+<div class="flex flex-col items-start">
+<span class="text-4xl font-extrabold text-primary tracking-tighter">98%</span>
+<span class="text-[10px] uppercase tracking-widest font-bold text-on-surface-variant mt-1">Client Retention</span>
+</div>
+<div class="w-px h-12 bg-outline-variant/20 hidden md:block"></div>
+<div class="flex flex-col items-start">
+<span class="text-4xl font-extrabold text-on-background tracking-tighter">+420%</span>
+<span class="text-[10px] uppercase tracking-widest font-bold text-on-surface-variant mt-1">Avg. Traffic Lift</span>
+</div>
+<div class="w-px h-12 bg-outline-variant/20 hidden md:block"></div>
+<div class="flex flex-col items-start">
+<span class="text-4xl font-extrabold text-on-background tracking-tighter">14.2M</span>
+<span class="text-[10px] uppercase tracking-widest font-bold text-on-surface-variant mt-1">Keywords Tracked</span>
+</div>
+<button class="bg-primary text-white p-4 rounded-full flex items-center justify-center hover:scale-105 transition-transform duration-300">
+<span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Background subtle architectural elements -->
+<div class="absolute top-1/2 left-0 -translate-y-1/2 -z-10 opacity-20 pointer-events-none">
+<div class="w-96 h-96 rounded-full bg-primary/10 blur-[120px]"></div>
+</div>
+<div class="absolute bottom-0 right-0 -z-10 opacity-20 pointer-events-none">
+<div class="w-[30rem] h-[30rem] rounded-full bg-indigo-500/10 blur-[150px]"></div>
+</div>
+</section>
+<!-- Services Section (Architectural Tiles) -->
+<section class="py-32 px-8 bg-surface-container-low">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-24 gap-8">
+<div class="max-w-xl">
+<span class="text-primary font-bold text-[10px] uppercase tracking-[0.3em] mb-4 block">Architectural Services</span>
+<h2 class="text-4xl md:text-5xl font-extrabold tight-tracking text-on-background">Büyümeyi Şansa Bırakmayan Çözümler.</h2>
+</div>
+<p class="text-on-surface-variant max-w-sm font-light leading-relaxed">
+                        Her projemiz, teknik mükemmellik ve kullanıcı odaklı içerik stratejisi üzerine inşa edilmiş birer dijital yapıdır.
+                    </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Service 1 -->
+<div class="bg-surface-container-lowest p-12 rounded-2xl border-[0.5px] border-outline-variant/10 hover:shadow-2xl transition-all duration-700 ease-[cubic-bezier(0.2,0.8,0.2,1)] group">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/5 rounded-full mb-8 group-hover:bg-primary transition-colors duration-500">
+<span class="material-symbols-outlined text-primary group-hover:text-white" data-icon="architecture">architecture</span>
+</div>
+<h3 class="text-xl font-bold mb-4">Teknik SEO Denetimi</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed font-light">Web sitenizin altyapısını arama motorları için kusursuz hale getiriyor, tarama bütçesini optimize ediyoruz.</p>
+</div>
+<!-- Service 2 -->
+<div class="bg-surface-container-lowest p-12 rounded-2xl border-[0.5px] border-outline-variant/10 hover:shadow-2xl transition-all duration-700 ease-[cubic-bezier(0.2,0.8,0.2,1)] group">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/5 rounded-full mb-8 group-hover:bg-primary transition-colors duration-500">
+<span class="material-symbols-outlined text-primary group-hover:text-white" data-icon="edit_note">edit_note</span>
+</div>
+<h3 class="text-xl font-bold mb-4">İçerik Stratejisi</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed font-light">Kullanıcı niyetini temel alan, otorite kuran ve dönüşüm odaklı editoryal planlamalar sunuyoruz.</p>
+</div>
+<!-- Service 3 -->
+<div class="bg-surface-container-lowest p-12 rounded-2xl border-[0.5px] border-outline-variant/10 hover:shadow-2xl transition-all duration-700 ease-[cubic-bezier(0.2,0.8,0.2,1)] group">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/5 rounded-full mb-8 group-hover:bg-primary transition-colors duration-500">
+<span class="material-symbols-outlined text-primary group-hover:text-white" data-icon="link">link</span>
+</div>
+<h3 class="text-xl font-bold mb-4">Otorite İnşası</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed font-light">Yüksek kaliteli backlink profilleri ve PR entegreli bağlantı stratejileri ile domain otoritenizi yükseltiyoruz.</p>
+</div>
+<!-- Service 4 -->
+<div class="bg-surface-container-lowest p-12 rounded-2xl border-[0.5px] border-outline-variant/10 hover:shadow-2xl transition-all duration-700 ease-[cubic-bezier(0.2,0.8,0.2,1)] group">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/5 rounded-full mb-8 group-hover:bg-primary transition-colors duration-500">
+<span class="material-symbols-outlined text-primary group-hover:text-white" data-icon="monitoring">monitoring</span>
+</div>
+<h3 class="text-xl font-bold mb-4">Veri Analitiği</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed font-light">Tüm SEO süreçlerini ölçülebilir KPI'lar ve gelişmiş raporlama araçlarıyla şeffaf bir şekilde yönetiyoruz.</p>
+</div>
+<!-- Service 5 -->
+<div class="bg-surface-container-lowest p-12 rounded-2xl border-[0.5px] border-outline-variant/10 hover:shadow-2xl transition-all duration-700 ease-[cubic-bezier(0.2,0.8,0.2,1)] group">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/5 rounded-full mb-8 group-hover:bg-primary transition-colors duration-500">
+<span class="material-symbols-outlined text-primary group-hover:text-white" data-icon="location_on">location_on</span>
+</div>
+<h3 class="text-xl font-bold mb-4">Yerel SEO</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed font-light">Bölgesel aramalarda zirveye çıkarak fiziksel ve dijital trafik arasındaki köprüyü güçlendiriyoruz.</p>
+</div>
+<!-- Service 6 -->
+<div class="bg-surface-container-lowest p-12 rounded-2xl border-[0.5px] border-outline-variant/10 hover:shadow-2xl transition-all duration-700 ease-[cubic-bezier(0.2,0.8,0.2,1)] group">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/5 rounded-full mb-8 group-hover:bg-primary transition-colors duration-500">
+<span class="material-symbols-outlined text-primary group-hover:text-white" data-icon="shopping_bag">shopping_bag</span>
+</div>
+<h3 class="text-xl font-bold mb-4">E-Ticaret SEO</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed font-light">Ürün sayfalarınızı satış makinelerine dönüştürüyor, kategori bazlı görünürlük sağlıyoruz.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Process Section -->
+<section class="py-32 px-8">
+<div class="max-w-7xl mx-auto">
+<div class="mb-24 text-center">
+<span class="text-primary font-bold text-[10px] uppercase tracking-[0.3em] mb-4 block">Our Methodology</span>
+<h2 class="text-4xl md:text-5xl font-extrabold tight-tracking text-on-background">4 Adımda Başarı Mimarisi</h2>
+</div>
+<div class="relative">
+<!-- Progress Line -->
+<div class="absolute top-1/2 left-0 w-full h-px bg-outline-variant/10 hidden lg:block -translate-y-1/2"></div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+<div class="relative z-10 bg-background pt-8 pr-8">
+<div class="text-primary/10 text-8xl font-black absolute -top-8 -left-4 pointer-events-none">01</div>
+<h4 class="text-xl font-bold mb-4 relative">Keşif ve Analiz</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed font-light">Mevcut durum tespiti ve rakip analizi ile yol haritasını belirliyoruz.</p>
+</div>
+<div class="relative z-10 bg-background pt-8 pr-8">
+<div class="text-primary/10 text-8xl font-black absolute -top-8 -left-4 pointer-events-none">02</div>
+<h4 class="text-xl font-bold mb-4 relative">Strateji Tasarımı</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed font-light">Markanıza özel, veriye dayalı ve ölçeklenebilir bir plan oluşturuyoruz.</p>
+</div>
+<div class="relative z-10 bg-background pt-8 pr-8">
+<div class="text-primary/10 text-8xl font-black absolute -top-8 -left-4 pointer-events-none">03</div>
+<h4 class="text-xl font-bold mb-4 relative">Uygulama</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed font-light">Teknik ve içerik bazlı optimizasyonları titizlikle hayata geçiriyoruz.</p>
+</div>
+<div class="relative z-10 bg-background pt-8 pr-8">
+<div class="text-primary/10 text-8xl font-black absolute -top-8 -left-4 pointer-events-none">04</div>
+<h4 class="text-xl font-bold mb-4 relative">Ölçümleme</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed font-light">Sürekli takip ve iyileştirme ile ROI hedeflerine ulaşıyoruz.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Case Studies (Success Stories) -->
+<section class="py-32 px-8 bg-surface-container-low/50 overflow-hidden">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row items-baseline justify-between mb-20 gap-4">
+<h2 class="text-4xl md:text-5xl font-extrabold tight-tracking">Purity in Results.</h2>
+<a class="text-primary text-xs font-bold uppercase tracking-widest border-b-[0.5px] border-primary pb-1 hover:opacity-70 transition-opacity" href="#">View All Cases</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+<div class="space-y-12">
+<div class="aspect-[4/5] bg-surface-variant rounded-3xl overflow-hidden relative group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" data-alt="Abstract data visualization with high contrast" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtfBiNqMA_uR2V9FZWRp9mNg81dbi3rbc2WKqdK-YaUT1AY9yQQC2WxCgSSDpGuWMaE5RaLWOZsrvxgNaVre9yg5Z_H23VsU1u9VxtDZgKkBgKhUZUlBjbfZ7zwf97_OKxZusAiDfsWSIPWKOAqCZSqtAuzk6GdWcXmX3GcqVcUSIZFxSrCkHOfyIMpA0lXA5sUeDKxCyT1wOQAp_JGxA9Y34OZ03g_lunBz66wfqZkjwvhnkM1HAWmk2VcrvgSkSkNo78l87yITw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent flex flex-col justify-end p-12 text-white">
+<span class="text-[10px] uppercase tracking-[0.2em] font-bold mb-2">Fintech Growth</span>
+<h3 class="text-3xl font-bold tight-tracking">Z Global</h3>
+</div>
+</div>
+<div class="max-w-md">
+<p class="text-2xl font-light leading-snug italic text-on-background mb-6">"SEOROAS, SEO'yu bir pazarlama kanalı olmaktan çıkarıp bir büyüme motoruna dönüştürdü. Veri vizyonları eşsiz."</p>
+<div class="flex items-center space-x-4">
+<div class="w-12 h-12 rounded-full bg-outline-variant/30 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Headshot of a male executive" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBj1SBDSGz84G-gj6nCTXV7ZjpDiXQ-P3lvfHUNMo-sR7e2hYfNbzsgnN26_FlQ6PbqiVxUrq-MGoOJHsIxk6QNes6LL4qd_O2BLcC5fNJF-rleLaRP1U1cgTtPZfjdzF16S4CT_IWmaXpsT_KWj4cH3PxMqwuXqmGXzUXj2o24_2Rrg7BH2iN8V6iTSE1hoQA29Wi-IiwMvpPZx9uZTq5e-YZ_0TVU0yN5m8XCOUONeHbEWvdg7hDCrJo9mbCp4B8AvQ0VVhH4fWk"/>
+</div>
+<div>
+<p class="text-sm font-bold uppercase tracking-widest">Caner Yılmaz</p>
+<p class="text-xs text-on-surface-variant">CMO, Z Global</p>
+</div>
+</div>
+</div>
+</div>
+<div class="space-y-12 md:mt-32">
+<div class="aspect-[4/5] bg-surface-variant rounded-3xl overflow-hidden relative group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" data-alt="Professional office environment with minimalist design" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVdyn0MvFKju9DgQNiT1uPG0e5VyMXnqV7MWr_HKeC-M1amm17D7cfK50ZCnUMq8DnWmN5ThCLieJmprksGJmGhMh4E3YMPBgVtug-dgOWTuPWZJ8ho8vbUxUrTh5aWX8fSPoe3IJ6MMQWG6nTbd5AlpKRlZizc-OgzCe9NjQ173uWqn7BnkKMv_zk1fG0QYB-FK59uE-hn2BMBXH8QFONt0hdRWUyYHLhCPJp9MhACzagvoHvufGdbfA-94Dgt0L6X6OqDM999fE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent flex flex-col justify-end p-12 text-white">
+<span class="text-[10px] uppercase tracking-[0.2em] font-bold mb-2">Retail Transformation</span>
+<h3 class="text-3xl font-bold tight-tracking">Luxo E-commerce</h3>
+</div>
+</div>
+<div class="max-w-md">
+<p class="text-2xl font-light leading-snug italic text-on-background mb-6">"Mimarimizdeki hataları 48 saatte tespit ettiler. Trafiğimiz 6 ay içinde %280 oranında artış gösterdi."</p>
+<div class="flex items-center space-x-4">
+<div class="w-12 h-12 rounded-full bg-outline-variant/30 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Headshot of a female executive" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5_Pxi62Z20GNim3NNBWY-xsYdHWcyXfaQgd2aBaysvyXzJE6EoR5siGOURT427q1pYjj206RTaNVI5yG_7iPPDfsD6N4q59NWS2ffZHf-UQW3I30X0VYdusDUcGh0fqx3ZNJs3yMG05X26giDTrtuqW4sQcImP-cm-8-ZtHGUjaTH2ryHY_t_oXzqDOO0TI1DaowAnTEXi1PcZKeJ10cJeaUM7uStG59ZRt2nhRZVyD4-Ckee7-_uHqxYtBS7OV30d9ugiIQV3OU"/>
+</div>
+<div>
+<p class="text-sm font-bold uppercase tracking-widest">Selin Aktaş</p>
+<p class="text-xs text-on-surface-variant">Founder, Luxo</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="py-32 px-8">
+<div class="max-w-3xl mx-auto">
+<div class="mb-20 text-center">
+<h2 class="text-4xl font-extrabold tight-tracking mb-4">Sıkça Sorulanlar</h2>
+<p class="text-on-surface-variant font-light">Şeffaflık ilkemizdir. Aklınızdaki soruları yanıtlıyoruz.</p>
+</div>
+<div class="space-y-4">
+<details class="group bg-surface-container-low rounded-2xl p-6 cursor-pointer open:bg-surface-container-high transition-colors">
+<summary class="list-none flex justify-between items-center font-bold text-lg">
+                            SEO çalışmaları ne kadar sürede sonuç verir?
+                            <span class="material-symbols-outlined transition-transform group-open:rotate-180" data-icon="expand_more">expand_more</span>
+</summary>
+<p class="mt-4 text-on-surface-variant leading-relaxed font-light">
+                            SEO uzun vadeli bir yatırımdır. Genellikle stratejik iyileştirmelerin ardından ilk verimli sonuçları 3-6 ay arasında görmeye başlarız. Sektör rekabetine göre bu süre değişkenlik gösterebilir.
+                        </p>
+</details>
+<details class="group bg-surface-container-low rounded-2xl p-6 cursor-pointer open:bg-surface-container-high transition-colors">
+<summary class="list-none flex justify-between items-center font-bold text-lg">
+                            Hangi sektörlerle çalışıyorsunuz?
+                            <span class="material-symbols-outlined transition-transform group-open:rotate-180" data-icon="expand_more">expand_more</span>
+</summary>
+<p class="mt-4 text-on-surface-variant leading-relaxed font-light">
+                            E-ticaret, SaaS, Fintech ve Kurumsal Hizmetler başta olmak üzere, organik büyümenin kritik olduğu tüm ölçeklenebilir iş modelleriyle çalışıyoruz.
+                        </p>
+</details>
+<details class="group bg-surface-container-low rounded-2xl p-6 cursor-pointer open:bg-surface-container-high transition-colors">
+<summary class="list-none flex justify-between items-center font-bold text-lg">
+                            Garantili sıralama veriyor musunuz?
+                            <span class="material-symbols-outlined transition-transform group-open:rotate-180" data-icon="expand_more">expand_more</span>
+</summary>
+<p class="mt-4 text-on-surface-variant leading-relaxed font-light">
+                            Hiçbir etik SEO ajansı %100 sıralama garantisi vermez. Bizim taahhüdümüz; trafik artışı, teknik mükemmellik ve veriye dayalı performans iyileştirmesidir.
+                        </p>
+</details>
+</div>
+</div>
+</section>
+<!-- CTA Form Section -->
+<section class="py-32 px-8 mb-32">
+<div class="max-w-5xl mx-auto bg-white/70 backdrop-blur-3xl rounded-[3rem] p-12 md:p-24 soft-shadow border-[0.5px] border-outline-variant/10 text-center relative overflow-hidden">
+<div class="relative z-10">
+<h2 class="text-4xl md:text-5xl font-extrabold tight-tracking mb-8">Ücretsiz SEO Analizi Başlatın</h2>
+<p class="text-on-surface-variant max-w-xl mx-auto mb-16 font-light leading-relaxed">
+                        Mevcut durumunuzu profesyonel bir bakış açısıyla değerlendirelim. Sizin için en uygun büyüme planını birlikte kurgulayalım.
+                    </p>
+<form class="max-w-lg mx-auto space-y-8">
+<div class="relative group">
+<input class="w-full bg-surface-container-low border-b-primary border-t-0 border-l-0 border-r-0 border-b-[0.5px] focus:border-b-[1.5px] focus:ring-0 px-4 py-4 transition-all duration-300 outline-none" placeholder="İsim Soyisim" type="text"/>
+</div>
+<div class="relative group">
+<input class="w-full bg-surface-container-low border-b-primary border-t-0 border-l-0 border-r-0 border-b-[0.5px] focus:border-b-[1.5px] focus:ring-0 px-4 py-4 transition-all duration-300 outline-none" placeholder="Kurumsal E-posta" type="email"/>
+</div>
+<div class="relative group">
+<input class="w-full bg-surface-container-low border-b-primary border-t-0 border-l-0 border-r-0 border-b-[0.5px] focus:border-b-[1.5px] focus:ring-0 px-4 py-4 transition-all duration-300 outline-none" placeholder="Web Sitesi URL" type="url"/>
+</div>
+<button class="w-full bg-primary text-white py-6 rounded-full font-bold uppercase tracking-[0.2em] text-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-300 mt-8">
+                            Analizi Gönder
+                        </button>
+</form>
+</div>
+<!-- Abstract shape in CTA background -->
+<div class="absolute -bottom-24 -right-24 w-96 h-96 bg-primary/5 rounded-full blur-[100px] pointer-events-none"></div>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="bg-slate-50 w-full pt-32 pb-12">
+<div class="max-w-7xl mx-auto px-8 flex flex-col items-start space-y-24">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-16 w-full">
+<div class="col-span-1 md:col-span-1">
+<div class="text-lg font-black tracking-tighter text-slate-900 mb-8 uppercase">SEOROAS</div>
+<p class="text-slate-400 font-manrope text-xs leading-relaxed max-w-xs uppercase tracking-widest">
+                        Digital Architecture for the Performance Era.
+                    </p>
+</div>
+<div>
+<h5 class="font-bold text-[10px] uppercase tracking-widest text-slate-900 mb-6">Navigation</h5>
+<ul class="space-y-4">
+<li><a class="font-manrope text-xs tracking-widest uppercase text-slate-400 hover:text-indigo-600 transition-colors duration-300" href="#">Privacy</a></li>
+<li><a class="font-manrope text-xs tracking-widest uppercase text-slate-400 hover:text-indigo-600 transition-colors duration-300" href="#">Terms</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold text-[10px] uppercase tracking-widest text-slate-900 mb-6">Social</h5>
+<ul class="space-y-4">
+<li><a class="font-manrope text-xs tracking-widest uppercase text-slate-400 hover:text-indigo-600 transition-colors duration-300" href="#">LinkedIn</a></li>
+<li><a class="font-manrope text-xs tracking-widest uppercase text-slate-400 hover:text-indigo-600 transition-colors duration-300" href="#">Contact</a></li>
+</ul>
+</div>
+<div class="md:text-right">
+<h5 class="font-bold text-[10px] uppercase tracking-widest text-slate-900 mb-6">Headquarters</h5>
+<p class="font-manrope text-xs tracking-widest uppercase text-slate-400">
+                        Istanbul / London / Dubai
+                    </p>
+</div>
+</div>
+<div class="w-full flex justify-between items-center border-t border-slate-200/30 pt-12">
+<div class="font-manrope text-xs tracking-widest uppercase text-slate-400">© 2026 SEOROAS. ALL RIGHTS RESERVED.</div>
+<div class="flex space-x-8">
+<span class="material-symbols-outlined text-slate-300" data-icon="shield">shield</span>
+<span class="material-symbols-outlined text-slate-300" data-icon="verified_user">verified_user</span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

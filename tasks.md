@@ -431,17 +431,17 @@ Her lokal sayfa:
 **Rol:** Yazılım Mühendisi + Front-end Uzmanı
 **Süre:** 8 saat
 
-- [ ] `app/blog/[slug]/page.tsx` → `export const dynamic = 'force-dynamic'`  (SSR)
-- [ ] `getPostBySlug(slug)` GROQ sorgusu → her istekte Sanity'den çek
-- [ ] `generateMetadata()` → Sanity'deki seoTitle/seoDescription'dan oluştur
-- [ ] Blog liste sayfası (`/blog/`) → `getAllPosts()` SSR ile
-- [ ] Blog detay şablonu: Breadcrumb, TOC sidebar, author box, related posts
-- [ ] `<PortableText>` renderer → Sanity body alanını HTML'e çevirir
-- [ ] Sanity görüntüleri → `@sanity/image-url` + `next/image` (cdn.sanity.io)
-- [ ] Article Schema JSON-LD (publishedAt, author Sanity'den)
-- [ ] Okuma ilerleme çubuğu (scroll %)
-- [ ] İnline CTA kutuları (Portable Text içinde özel block)
-- [ ] Sosyal paylaşım butonları
+- [x] `app/blog/[slug]/page.tsx` → `export const dynamic = 'force-dynamic'`  (SSR)
+- [x] `getPostBySlug(slug)` GROQ sorgusu → her istekte Sanity'den çek
+- [x] `generateMetadata()` → Sanity'deki seoTitle/seoDescription'dan oluştur
+- [x] Blog liste sayfası (`/blog/`) → `getAllPosts()` SSR ile
+- [x] Blog detay şablonu: Breadcrumb, TOC sidebar, author box, related posts
+- [x] `<PortableText>` renderer → Sanity body alanını HTML'e çevirir
+- [x] Sanity görüntüleri → `@sanity/image-url` + `next/image` (cdn.sanity.io)
+- [x] Article Schema JSON-LD (publishedAt, author Sanity'den)
+- [x] Okuma ilerleme çubuğu (scroll %)
+- [x] İnline CTA kutuları (Portable Text içinde özel block)
+- [x] Sosyal paylaşım butonları
 
 ---
 
@@ -590,7 +590,7 @@ Test edilecek:
 | 3 | SEO-03 + FE-12 Hizmet alt sayfaları (x6) | SEO + FE | ✅ Tamamlandı |
 | 3 | SEO-04 + FE-13 Lokal sayfalar (x5) | SEO + FE | ✅ Tamamlandı |
 | 3 | FE-02b Header & Footer nav güncelleme | Front-end | ✅ Tamamlandı |
-| 3 | MÜH-06 + FE-14 Blog altyapısı | Mühendis + FE | ⬜ Bekliyor |
+| 3 | MÜH-06 + FE-14 Blog altyapısı | Mühendis + FE | ✅ Tamamlandı |
 | 3 | SEO-05 İlk 3 blog yazısı | SEO Uzmanı | ⬜ Bekliyor |
 | 4 | MÜH-07 Performans opt. | Mühendis | ⬜ Bekliyor |
 | 4 | MÜH-08 Teknik SEO audit | Mühendis + SEO | ⬜ Bekliyor |
