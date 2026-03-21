@@ -144,7 +144,10 @@ function PostImage({ post, aspect = "square" }: { post: Post; aspect?: "wide" | 
 
 export default async function BlogPage() {
   const sanityPosts = await getAllPosts();
-  const posts = sanityPosts.length > 0 ? sanityPosts : fallbackPosts;
+  const posts =
+    Array.isArray(sanityPosts) && sanityPosts.length > 0
+      ? sanityPosts
+      : fallbackPosts;
 
   const featured = posts[0];
   const secondary = posts[1];

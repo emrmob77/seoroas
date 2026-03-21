@@ -16,5 +16,10 @@ export async function sanityFetch<T>(query: string, params?: Record<string, unkn
   if (!sanityClient) {
     return [] as unknown as T;
   }
-  return sanityClient.fetch<T>(query, params ?? {});
+  try {
+    return await sanityClient.fetch<T>(query, params ?? {});
+  } catch {
+    console.warn("[Sanity] Fetch failed for query, returning empty result");
+    return [] as unknown as T;
+  }
 }
