@@ -9,6 +9,36 @@ interface SeoParams {
   path: string;
   ogImage?: string;
   noIndex?: boolean;
+  noFollow?: boolean;
+  canonicalUrl?: string;
+}
+
+/**
+ * Sanity'den gelen seo object alanlarını standart parametrelere dönüştürür.
+ * Sanity değeri varsa onu, yoksa fallback değerini kullanır.
+ */
+export function mergeSanitySeo(
+  defaults: SeoParams,
+  sanitySeo?: {
+    seoTitle?: string;
+    seoDescription?: string;
+    noIndex?: boolean;
+    noFollow?: boolean;
+    canonicalUrl?: string;
+    ogImage?: { asset?: { url?: string } };
+  } | null
+): SeoParams {
+  if (!sanitySeo) return defaults;
+
+  return {
+    title: sanitySeo.seoTitle || defaults.title,
+    description: sanitySeo.seoDescription || defaults.description,
+    path: defaults.path,
+    ogImage: sanitySeo.ogImage?.asset?.url || defaults.ogImage,
+    noIndex: sanitySeo.noIndex ?? defaults.noIndex,
+    noFollow: sanitySeo.noFollow ?? defaults.noFollow,
+    canonicalUrl: sanitySeo.canonicalUrl || defaults.canonicalUrl,
+  };
 }
 
 export function generateSeoMetadata({
@@ -17,9 +47,18 @@ export function generateSeoMetadata({
   path,
   ogImage,
   noIndex,
+  noFollow,
+  canonicalUrl,
 }: SeoParams): Metadata {
-  const url = `${SITE_URL}${path}`;
+  const url = canonicalUrl || `${SITE_URL}${path}`;
   const fullTitle = path === "/" ? title : `${title} | ${SITE_NAME}`;
+
+  const robotsDirectives: { index: boolean; follow: boolean } = {
+    index: !noIndex,
+    follow: !noFollow,
+  };
+
+  const hasCustomRobots = noIndex || noFollow;
 
   return {
     title: fullTitle,
@@ -42,6 +81,6 @@ export function generateSeoMetadata({
       title: fullTitle,
       description,
     },
-    robots: noIndex ? { index: false, follow: false } : undefined,
+    robots: hasCustomRobots ? robotsDirectives : undefined,
   };
 }

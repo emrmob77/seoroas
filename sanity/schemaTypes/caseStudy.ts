@@ -43,5 +43,10 @@ export const caseStudy = defineType({
       type: "array",
       of: [{ type: "block" }],
     }),
+    defineField({
+      name: "seo",
+      title: "SEO Ayarları",
+      type: "seoFields",
+    }),
   ],
 });

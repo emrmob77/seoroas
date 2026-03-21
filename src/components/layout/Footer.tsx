@@ -9,6 +9,8 @@ const serviceLinks = [
   { name: "İçerik SEO", href: "/seo/icerik-seo" },
   { name: "WordPress SEO", href: "/seo/wordpress-seo" },
   { name: "Shopify SEO", href: "/seo/shopify-seo" },
+  { name: "Kurumsal SEO", href: "/seo/kurumsal-seo" },
+  { name: "SEO Ajansı", href: "/seo/seo-ajansi" },
   { name: "SEO Danışmanlığı", href: "/seo-danismanligi" },
   { name: "SEO Fiyatları", href: "/seo-fiyatlari" },
 ];

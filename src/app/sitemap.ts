@@ -21,6 +21,8 @@ const staticPages = [
   { path: "/seo/icerik-seo", changeFrequency: "monthly" as const, priority: 0.8 },
   { path: "/seo/wordpress-seo", changeFrequency: "monthly" as const, priority: 0.8 },
   { path: "/seo/shopify-seo", changeFrequency: "monthly" as const, priority: 0.8 },
+  { path: "/seo/seo-ajansi", changeFrequency: "monthly" as const, priority: 0.9 },
+  { path: "/seo/kurumsal-seo", changeFrequency: "monthly" as const, priority: 0.8 },
   { path: "/hizmetler/google-tag-manager", changeFrequency: "monthly" as const, priority: 0.7 },
   { path: "/hizmetler/meta-pixel-capi", changeFrequency: "monthly" as const, priority: 0.7 },
   { path: "/hizmetler/tiktok-pixel", changeFrequency: "monthly" as const, priority: 0.7 },

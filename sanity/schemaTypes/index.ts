@@ -5,13 +5,19 @@ import { localPage } from "./localPage";
 import { faq } from "./faq";
 import { testimonial } from "./testimonial";
 import { siteSettings } from "./siteSettings";
+import { seoFields } from "./seoFields";
+import { redirect } from "./redirect";
+import { category } from "./category";
 
 export const schemaTypes = [
+  seoFields,
   post,
   service,
   caseStudy,
   localPage,
   faq,
   testimonial,
+  category,
+  redirect,
   siteSettings,
 ];

@@ -18,6 +18,8 @@ import {
   Tag,
   BarChart3,
   MonitorSmartphone,
+  Building2,
+  Briefcase,
 } from "lucide-react";
 
 const seoServices = [
@@ -29,6 +31,8 @@ const seoServices = [
   { name: "İçerik SEO", href: "/seo/icerik-seo", icon: FileText },
   { name: "WordPress SEO", href: "/seo/wordpress-seo", icon: Globe },
   { name: "Shopify SEO", href: "/seo/shopify-seo", icon: Store },
+  { name: "Kurumsal SEO", href: "/seo/kurumsal-seo", icon: Building2 },
+  { name: "SEO Ajansı", href: "/seo/seo-ajansi", icon: Briefcase },
 ];
 
 const trackingServices = [
@@ -148,12 +152,12 @@ export function Header() {
                 onMouseEnter={openDropdown}
                 onMouseLeave={closeDropdown}
               >
-                <div className="bg-white/95 backdrop-blur-xl rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.12)] border border-zinc-200/30 p-5 w-[820px]">
+                <div className="bg-white/95 backdrop-blur-xl rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.12)] border border-zinc-200/30 p-5 w-[880px]">
                   <div className="grid grid-cols-4 gap-5">
                     {/* SEO col 1 */}
                     <div>
                       <div className="text-[10px] font-bold uppercase tracking-widest text-zinc-400 px-2 mb-2">SEO</div>
-                      {seoServices.slice(0, 4).map((s) => (
+                      {seoServices.slice(0, 5).map((s) => (
                         <Link
                           key={s.href}
                           href={s.href}
@@ -168,7 +172,7 @@ export function Header() {
                     {/* SEO col 2 */}
                     <div>
                       <div className="text-[10px] font-bold uppercase tracking-widest text-zinc-400 px-2 mb-2">&nbsp;</div>
-                      {seoServices.slice(4).map((s) => (
+                      {seoServices.slice(5).map((s) => (
                         <Link
                           key={s.href}
                           href={s.href}

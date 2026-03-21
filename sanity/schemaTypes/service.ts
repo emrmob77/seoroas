@@ -46,17 +46,9 @@ export const service = defineType({
       of: [{ type: "reference", to: [{ type: "faq" }] }],
     }),
     defineField({
-      name: "seoTitle",
-      title: "SEO Başlık",
-      type: "string",
-      validation: (rule) => rule.max(60),
-    }),
-    defineField({
-      name: "seoDescription",
-      title: "SEO Açıklama",
-      type: "text",
-      rows: 2,
-      validation: (rule) => rule.max(160),
+      name: "seo",
+      title: "SEO Ayarları",
+      type: "seoFields",
     }),
   ],
 });
