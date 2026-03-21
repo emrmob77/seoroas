@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GTM Setup &amp; Management | SEOROAS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-tint": "#4d4ad5",
+              "surface-container-lowest": "#ffffff",
+              "surface-dim": "#d3dbe2",
+              "error": "#9e3f4e",
+              "surface-container-low": "#f2f4f6",
+              "on-primary-fixed": "#2b22b5",
+              "on-primary-fixed-variant": "#4a47d2",
+              "on-tertiary-fixed": "#2b1600",
+              "outline-variant": "#acb3b8",
+              "on-primary-container": "#403bc7",
+              "secondary": "#5f5f61",
+              "secondary-fixed": "#e4e2e4",
+              "on-primary": "#faf6ff",
+              "inverse-on-surface": "#9c9d9f",
+              "primary-fixed-dim": "#d2d0ff",
+              "primary-dim": "#403cc8",
+              "primary-container": "#e2dfff",
+              "background": "#f9f9fb",
+              "on-secondary-container": "#525154",
+              "tertiary": "#895300",
+              "surface-container": "#ebeef2",
+              "tertiary-container": "#fd9d06",
+              "surface-variant": "#dde3e9",
+              "on-secondary": "#fbf8fa",
+              "error-dim": "#4f0116",
+              "on-tertiary-container": "#4b2b00",
+              "tertiary-dim": "#784800",
+              "on-error-container": "#782232",
+              "secondary-dim": "#535355",
+              "tertiary-fixed-dim": "#eb9100",
+              "secondary-container": "#e4e2e4",
+              "on-secondary-fixed-variant": "#5c5b5d",
+              "on-tertiary-fixed-variant": "#573300",
+              "on-tertiary": "#fff7f3",
+              "surface-container-high": "#e4e9ee",
+              "secondary-fixed-dim": "#d6d3d6",
+              "on-surface": "#2d3338",
+              "tertiary-fixed": "#fd9d06",
+              "inverse-primary": "#8382ff",
+              "primary": "#4d4ad5",
+              "on-secondary-fixed": "#3f3f41",
+              "surface-bright": "#f9f9fb",
+              "outline": "#757c81",
+              "on-error": "#fff7f7",
+              "error-container": "#ff8b9a",
+              "on-surface-variant": "#596065",
+              "surface": "#f9f9fb",
+              "surface-container-highest": "#dde3e9",
+              "on-background": "#2d3338",
+              "inverse-surface": "#0c0e10",
+              "primary-fixed": "#e2dfff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+        font-size: 20px;
+      }
+      .text-display-lg { font-size: 3.5rem; line-height: 1.1; letter-spacing: -0.04em; font-weight: 800; }
+      .text-headline-lg { font-size: 2.25rem; line-height: 1.2; letter-spacing: -0.03em; font-weight: 700; }
+      .glass-nav { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(32px); }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 no-border bg-opacity-70 backdrop-blur-xl bg-white/70 shadow-[0_8px_32px_0_rgba(0,0,0,0.04)]">
+<div class="flex justify-between items-center w-full px-8 py-6 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-bold tracking-tighter text-slate-900">SEOROAS</div>
+<div class="hidden md:flex items-center space-x-12 font-manrope tracking-tight font-medium text-sm">
+<a class="text-indigo-600 font-semibold border-b-2 border-indigo-600 pb-1" href="#">Solutions</a>
+<a class="text-slate-500 hover:text-slate-900 transition-colors" href="#">Framework</a>
+<a class="text-slate-500 hover:text-slate-900 transition-colors" href="#">Case Studies</a>
+<a class="text-slate-500 hover:text-slate-900 transition-colors" href="#">Contact</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-semibold text-sm hover:opacity-80 transition-opacity duration-300">
+                Get Audit
+            </button>
+</div>
+</nav>
+<main class="pt-32">
+<!-- Hero Section: The Architectural Void -->
+<section class="relative px-8 py-24 md:py-48 max-w-screen-2xl mx-auto flex flex-col items-start overflow-hidden">
+<div class="absolute top-0 right-0 -z-10 w-2/3 h-full opacity-10">
+<img class="w-full h-full object-cover" data-alt="Abstract architectural wireframe geometry white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBf9jPff-W4Ead6JyucW4UGB6smYsmNUWzQwB5iXvf2C6CF604HGwUech892CJMZzFxWqKQLF1ENp5rWC5PI__2zWvJqIB9x4NhPU1coytkbdgVNWTD3tBrXrEA5WpN_o6eb2DKaLhWpE2nsGT-Ev12x_ZfaHCd1Dzywj8XyBMCsIUEdkS8UgYQU-Z8339OOQRBmLHORwCQme9ojVqoyzqhk6Dlnx4HueRVo9CWkrKQ3pOsN7IYEtn9WXvNqVZXQbQczVQsdV6lPek"/>
+</div>
+<div class="max-w-4xl">
+<span class="inline-block text-primary font-bold tracking-widest uppercase text-[10px] mb-6">Tracking Architecture</span>
+<h1 class="text-display-lg text-slate-900 mb-8">
+                    Precise Tracking Infrastructure
+                </h1>
+<p class="text-lg text-on-surface-variant max-w-2xl font-light leading-relaxed mb-12">
+                    In a data-driven ecosystem, precision is not a feature—it is the foundation. We architect GTM containers that eliminate tracking blind spots and maximize marketing performance.
+                </p>
+<div class="flex space-x-6">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-full font-bold shadow-lg hover:shadow-primary/20 transition-all duration-300">Start Integration</button>
+<button class="bg-surface-container-lowest/70 backdrop-blur-xl border-[0.5px] border-outline-variant/20 px-8 py-4 rounded-full font-bold text-slate-700 hover:bg-surface-container-low transition-colors">Methodology</button>
+</div>
+</div>
+</section>
+<!-- Benefits: Tonal Layering (Bento Style) -->
+<section class="px-8 py-24 bg-surface-container-low">
+<div class="max-w-screen-2xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
+<div class="md:col-span-4 bg-surface-container-lowest p-12 rounded-xl flex flex-col justify-between border-[0.5px] border-outline-variant/10">
+<div>
+<span class="material-symbols-outlined text-primary mb-6" data-icon="dashboard_customize">dashboard_customize</span>
+<h3 class="text-2xl font-bold tracking-tight mb-4">Centralized Management</h3>
+</div>
+<p class="text-on-surface-variant font-light text-sm leading-relaxed">
+                            Control every pixel, event, and script from a single point of truth. Reduce technical debt and operational complexity.
+                        </p>
+</div>
+<div class="md:col-span-4 bg-primary text-on-primary p-12 rounded-xl flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-on-primary mb-6" data-icon="speed">speed</span>
+<h3 class="text-2xl font-bold tracking-tight mb-4">Faster Page Load</h3>
+</div>
+<p class="opacity-80 font-light text-sm leading-relaxed">
+                            Replace heavy hard-coded scripts with streamlined GTM tags. Optimize Core Web Vitals while maintaining robust data streams.
+                        </p>
+</div>
+<div class="md:col-span-4 bg-surface-container-lowest p-12 rounded-xl flex flex-col justify-between border-[0.5px] border-outline-variant/10">
+<div>
+<span class="material-symbols-outlined text-primary mb-6" data-icon="biotech">biotech</span>
+<h3 class="text-2xl font-bold tracking-tight mb-4">Accurate Data</h3>
+</div>
+<p class="text-on-surface-variant font-light text-sm leading-relaxed">
+                            Eliminate double-counting and missing conversion signals. Achieve over 99.8% data integrity across all platforms.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Process: Vertical Editorial Rhythm (Detailed for High-End Corporate) -->
+<section class="px-8 py-32 max-w-screen-2xl mx-auto">
+<div class="flex flex-col lg:flex-row gap-20">
+<div class="lg:w-1/3">
+<h2 class="text-headline-lg sticky top-40">Enterprise Deployment Architecture</h2>
+<p class="mt-6 text-on-surface-variant font-light text-lg">A rigorous 5-stage framework engineered for institutional-grade tracking precision and global compliance.</p>
+<div class="mt-12 p-8 bg-surface-container-low rounded-xl border-l-4 border-primary">
+<span class="material-symbols-outlined text-primary mb-4" data-icon="security">security</span>
+<p class="text-sm font-semibold text-slate-900 mb-2">Compliance Optimized</p>
+<p class="text-xs text-on-surface-variant">Built to exceed GDPR, CCPA, and upcoming privacy sandbox requirements.</p>
+</div>
+</div>
+<div class="lg:w-2/3 space-y-32">
+<!-- Step 1 -->
+<div class="group border-l-[0.5px] border-outline-variant/30 pl-12 relative">
+<div class="absolute -left-[5px] top-0 w-2.5 h-2.5 bg-primary rounded-full"></div>
+<span class="text-xs font-bold text-primary tracking-widest uppercase mb-4 block">Stage 01</span>
+<h4 class="text-3xl font-bold mb-6 group-hover:text-primary transition-colors">Infrastructure &amp; Container Architecture</h4>
+<div class="flex flex-col md:flex-row gap-8">
+<p class="text-on-surface-variant font-light leading-relaxed text-lg flex-1">
+                                We design a multi-container hierarchy (Web, Server, Mobile) tailored for global scalability. This involves setting up custom GTM environments (Staging, Production) and workspaces to facilitate seamless, simultaneous team collaboration without deployment conflicts.
+                            </p>
+<div class="md:w-48 flex-shrink-0">
+<span class="material-symbols-outlined text-slate-300 text-6xl" data-icon="account_tree">account_tree</span>
+</div>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="group border-l-[0.5px] border-outline-variant/30 pl-12 relative">
+<div class="absolute -left-[5px] top-0 w-2.5 h-2.5 bg-primary rounded-full"></div>
+<span class="text-xs font-bold text-primary tracking-widest uppercase mb-4 block">Stage 02</span>
+<h4 class="text-3xl font-bold mb-6 group-hover:text-primary transition-colors">Data Layer (dataLayer) Engineering</h4>
+<div class="flex flex-col md:flex-row gap-8">
+<p class="text-on-surface-variant font-light leading-relaxed text-lg flex-1">
+                                Implementing a robust, standardized dataLayer object structure. We map custom variables for complex e-commerce (Enhanced Ecommerce), encrypted user IDs, and dynamic session attributes, ensuring a pristine data flow to all downstream marketing and analytics platforms.
+                            </p>
+<div class="md:w-48 flex-shrink-0">
+<span class="material-symbols-outlined text-slate-300 text-6xl" data-icon="database">database</span>
+</div>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="group border-l-[0.5px] border-outline-variant/30 pl-12 relative">
+<div class="absolute -left-[5px] top-0 w-2.5 h-2.5 bg-primary rounded-full"></div>
+<span class="text-xs font-bold text-primary tracking-widest uppercase mb-4 block">Stage 03</span>
+<h4 class="text-3xl font-bold mb-6 group-hover:text-primary transition-colors">Advanced Event Tracking &amp; Triggers</h4>
+<div class="flex flex-col md:flex-row gap-8">
+<p class="text-on-surface-variant font-light leading-relaxed text-lg flex-1">
+                                Configuration of complex custom event listeners beyond standard interactions. We track scroll depth velocity, video interaction milestones, AJAX form states, and specific DOM elements via CSS selectors. All triggers include sophisticated exception handling for tag firing resilience.
+                            </p>
+<div class="md:w-48 flex-shrink-0">
+<span class="material-symbols-outlined text-slate-300 text-6xl" data-icon="mouse">mouse</span>
+</div>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="group border-l-[0.5px] border-outline-variant/30 pl-12 relative">
+<div class="absolute -left-[5px] top-0 w-2.5 h-2.5 bg-primary rounded-full"></div>
+<span class="text-xs font-bold text-primary tracking-widest uppercase mb-4 block">Stage 04</span>
+<h4 class="text-3xl font-bold mb-6 group-hover:text-primary transition-colors">Server-Side GTM Implementation</h4>
+<div class="flex flex-col md:flex-row gap-8">
+<p class="text-on-surface-variant font-light leading-relaxed text-lg flex-1">
+                                Transitioning from traditional client-side to modern server-side tracking. This enhances site performance (Core Web Vitals), effectively bypasses ad-blockers, and significantly boosts data privacy through controlled proxying. Includes custom tracking domain configuration on your own infrastructure.
+                            </p>
+<div class="md:w-48 flex-shrink-0">
+<span class="material-symbols-outlined text-slate-300 text-6xl" data-icon="dns">dns</span>
+</div>
+</div>
+</div>
+<!-- Step 5 -->
+<div class="group border-l-[0.5px] border-outline-variant/30 pl-12 relative">
+<div class="absolute -left-[5px] top-0 w-2.5 h-2.5 bg-primary rounded-full"></div>
+<span class="text-xs font-bold text-primary tracking-widest uppercase mb-4 block">Stage 05</span>
+<h4 class="text-3xl font-bold mb-6 group-hover:text-primary transition-colors">Quality Assurance &amp; Testing</h4>
+<div class="flex flex-col md:flex-row gap-8">
+<p class="text-on-surface-variant font-light leading-relaxed text-lg flex-1">
+                                Utilizing advanced GTM Preview Mode and real-time Tag Assistant monitors. We execute automated regression testing for tag consistency across all modern browsers and device breakpoints, ensuring 100% verification before the final production deployment.
+                            </p>
+<div class="md:w-48 flex-shrink-0">
+<span class="material-symbols-outlined text-slate-300 text-6xl" data-icon="verified_user">verified_user</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SSS (FAQ): Minimalist Glass Cards -->
+<section class="px-8 py-32 bg-slate-50">
+<div class="max-w-4xl mx-auto">
+<h2 class="text-headline-lg text-center mb-20">Frequently Asked Questions</h2>
+<div class="space-y-6">
+<div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+<h5 class="text-lg font-bold mb-4 flex justify-between items-center">
+                            Can GTM slow down my website?
+                            <span class="material-symbols-outlined text-primary" data-icon="add">add</span>
+</h5>
+<p class="text-on-surface-variant font-light leading-relaxed">
+                            Actually, GTM can improve performance by asynchronously loading scripts. We ensure your container is "lean" by removing redundant tags and optimizing firing rules.
+                        </p>
+</div>
+<div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+<h5 class="text-lg font-bold mb-4 flex justify-between items-center">
+                            How long does a full setup take?
+                            <span class="material-symbols-outlined text-primary" data-icon="add">add</span>
+</h5>
+<p class="text-on-surface-variant font-light leading-relaxed">
+                            A standard high-precision implementation typically takes 5-7 business days, including data layer audits and thorough debugging phases.
+                        </p>
+</div>
+<div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+<h5 class="text-lg font-bold mb-4 flex justify-between items-center">
+                            Is it compatible with SPA (React/Vue)?
+                            <span class="material-symbols-outlined text-primary" data-icon="add">add</span>
+</h5>
+<p class="text-on-surface-variant font-light leading-relaxed">
+                            Yes. We specialize in Virtual Page View tracking and History Change triggers designed specifically for Single Page Applications.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="px-8 py-40 max-w-screen-2xl mx-auto text-center">
+<h2 class="text-display-lg text-slate-900 mb-8">Ready for Precision?</h2>
+<p class="text-xl text-on-surface-variant font-light mb-12 max-w-2xl mx-auto">
+                Stop guessing. Start tracking with mathematical certainty.
+            </p>
+<button class="bg-primary text-on-primary px-12 py-5 rounded-full font-bold text-lg hover:opacity-90 transition-all transform hover:scale-105 shadow-2xl shadow-primary/20">
+                Book Infrastructure Audit
+            </button>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-20 border-t border-slate-100 bg-slate-50">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 max-w-screen-2xl mx-auto">
+<div class="mb-8 md:mb-0">
+<div class="text-lg font-black tracking-tighter text-slate-900 mb-2">SEOROAS</div>
+<p class="font-manrope text-xs tracking-widest uppercase text-slate-400">© 2026 SEOROAS. Architectural Precision in Data.</p>
+</div>
+<div class="flex gap-12">
+<div class="flex flex-col gap-3">
+<span class="font-bold text-[10px] uppercase tracking-widest text-slate-400 mb-2">Pixels</span>
+<a class="text-indigo-600 font-semibold text-xs tracking-widest uppercase" href="#">GTM Setup</a>
+<a class="text-slate-400 hover:text-indigo-600 transition-colors text-xs tracking-widest uppercase" href="#">Meta Pixel</a>
+<a class="text-slate-400 hover:text-indigo-600 transition-colors text-xs tracking-widest uppercase" href="#">TikTok Pixel</a>
+</div>
+<div class="flex flex-col gap-3">
+<span class="font-bold text-[10px] uppercase tracking-widest text-slate-400 mb-2">Legal</span>
+<a class="text-slate-400 hover:text-indigo-600 transition-colors text-xs tracking-widest uppercase" href="#">Privacy Policy</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

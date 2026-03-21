@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html class="light" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed-dim": "#d6d3d6",
+              "surface-bright": "#f9f9fb",
+              "primary-dim": "#403cc8",
+              "on-error": "#fff7f7",
+              "on-secondary-container": "#525154",
+              "on-primary-fixed": "#2b22b5",
+              "primary-container": "#e2dfff",
+              "on-background": "#2d3338",
+              "surface-container-low": "#f2f4f6",
+              "on-tertiary-fixed": "#2b1600",
+              "on-tertiary": "#fff7f3",
+              "on-secondary": "#fbf8fa",
+              "tertiary-container": "#fd9d06",
+              "surface-container-lowest": "#ffffff",
+              "on-primary-fixed-variant": "#4a47d2",
+              "inverse-primary": "#8382ff",
+              "surface-container": "#ebeef2",
+              "primary-fixed-dim": "#d2d0ff",
+              "tertiary-fixed": "#fd9d06",
+              "secondary-fixed": "#e4e2e4",
+              "error-container": "#ff8b9a",
+              "surface": "#f9f9fb",
+              "on-secondary-fixed": "#3f3f41",
+              "surface-dim": "#d3dbe2",
+              "secondary": "#5f5f61",
+              "on-tertiary-container": "#4b2b00",
+              "secondary-container": "#e4e2e4",
+              "on-tertiary-fixed-variant": "#573300",
+              "secondary-dim": "#535355",
+              "inverse-on-surface": "#9c9d9f",
+              "surface-variant": "#dde3e9",
+              "background": "#f9f9fb",
+              "tertiary-fixed-dim": "#eb9100",
+              "outline": "#757c81",
+              "surface-container-highest": "#dde3e9",
+              "on-surface-variant": "#596065",
+              "tertiary-dim": "#784800",
+              "error": "#9e3f4e",
+              "surface-container-high": "#e4e9ee",
+              "outline-variant": "#acb3b8",
+              "on-error-container": "#782232",
+              "primary-fixed": "#e2dfff",
+              "tertiary": "#895300",
+              "on-primary-container": "#403bc7",
+              "error-dim": "#4f0116",
+              "on-secondary-fixed-variant": "#5c5b5d",
+              "surface-tint": "#4d4ad5",
+              "inverse-surface": "#0c0e10",
+              "on-surface": "#2d3338",
+              "on-primary": "#faf6ff",
+              "primary": "#4d4ad5"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; background-color: #f9f9fb; color: #2d3338; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        .glass-input { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(8px); border: 0.5px solid rgba(172, 179, 184, 0.3); }
+        .glass-input:focus { border-bottom: 1.5px solid #4d4ad5; outline: none; background: rgba(255, 255, 255, 0.9); }
+        .hero-gradient { background: radial-gradient(circle at top right, rgba(77, 74, 213, 0.05), transparent 40%); }
+    </style>
+</head>
+<body class="selection:bg-primary/20">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-2xl border-b border-slate-200/20 shadow-[0_8px_32px_0_rgba(0,0,0,0.04)]">
+<div class="flex justify-between items-center px-8 py-4 max-w-full">
+<div class="text-2xl font-bold tracking-tighter text-slate-900">AURA</div>
+<div class="hidden md:flex space-x-8">
+<a class="font-manrope tracking-tight text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors" href="#">Services</a>
+<a class="font-manrope tracking-tight text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors" href="#">Case Studies</a>
+<a class="font-manrope tracking-tight text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors" href="#">About</a>
+<a class="font-manrope tracking-tight text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors" href="#">Insights</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full text-sm font-medium hover:opacity-80 transition-opacity duration-300">Start Project</button>
+</div>
+</nav>
+<main class="pt-32 pb-24">
+<!-- Hero Section -->
+<section class="px-8 max-w-7xl mx-auto hero-gradient">
+<nav class="mb-6">
+<ol class="flex items-center space-x-2 text-xs uppercase tracking-widest text-on-surface-variant font-medium">
+<li><a class="hover:text-primary transition-colors" href="#">Ana Sayfa</a></li>
+<li class="text-outline-variant">/</li>
+<li class="text-primary">İletişim</li>
+</ol>
+</nav>
+<h1 class="text-6xl md:text-8xl font-extrabold tracking-tighter text-on-surface leading-[0.9] mb-20">
+                Bizimle <br/> <span class="text-primary-dim">İletişime Geçin</span>
+</h1>
+</section>
+<!-- Bento Grid Info & Form -->
+<section class="px-8 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Contact Details -->
+<div class="lg:col-span-4 space-y-8">
+<div class="p-10 bg-surface-container-low rounded-xl border-[0.5px] border-outline-variant/20 hover:bg-surface-container transition-colors duration-500 group">
+<span class="material-symbols-outlined text-primary mb-6 text-3xl">location_on</span>
+<h3 class="text-xs font-black uppercase tracking-widest text-on-surface-variant mb-2">Adres</h3>
+<p class="text-xl font-semibold tracking-tight leading-relaxed">Levent, Büyükdere Cd. No:126,<br/>34394 Beşiktaş/İstanbul</p>
+</div>
+<div class="p-10 bg-surface-container-low rounded-xl border-[0.5px] border-outline-variant/20 hover:bg-surface-container transition-colors duration-500">
+<span class="material-symbols-outlined text-primary mb-6 text-3xl">call</span>
+<h3 class="text-xs font-black uppercase tracking-widest text-on-surface-variant mb-2">Telefon</h3>
+<p class="text-xl font-semibold tracking-tight">+90 5XX XXX XX XX</p>
+</div>
+<div class="p-10 bg-surface-container-low rounded-xl border-[0.5px] border-outline-variant/20 hover:bg-surface-container transition-colors duration-500">
+<span class="material-symbols-outlined text-primary mb-6 text-3xl">alternate_email</span>
+<h3 class="text-xs font-black uppercase tracking-widest text-on-surface-variant mb-2">E-posta</h3>
+<p class="text-xl font-semibold tracking-tight">info@seoroas.com</p>
+</div>
+<div class="p-10 bg-surface-container-low rounded-xl border-[0.5px] border-outline-variant/20 hover:bg-surface-container transition-colors duration-500">
+<span class="material-symbols-outlined text-primary mb-6 text-3xl">schedule</span>
+<h3 class="text-xs font-black uppercase tracking-widest text-on-surface-variant mb-2">Mesai Saatleri</h3>
+<p class="text-xl font-semibold tracking-tight">Pzt - Cum: 09:00 - 18:00</p>
+</div>
+</div>
+<!-- Form Section -->
+<div class="lg:col-span-8 bg-surface-container-lowest p-12 rounded-xl shadow-[0_40px_80px_-15px_rgba(0,0,0,0.05)] border-[0.5px] border-outline-variant/10">
+<div class="mb-12">
+<h2 class="text-4xl font-bold tracking-tighter mb-4">Ücretsiz SEO Analizi İsteyin</h2>
+<p class="text-on-surface-variant text-lg leading-relaxed max-w-xl">Web sitenizin potansiyelini keşfedin. Uzman ekibimiz size özel bir strateji hazırlasın.</p>
+</div>
+<form class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-10">
+<div class="flex flex-col space-y-2">
+<label class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Ad Soyad</label>
+<input class="glass-input p-4 rounded-lg text-sm transition-all duration-300" placeholder="John Doe" type="text"/>
+</div>
+<div class="flex flex-col space-y-2">
+<label class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Şirket Adı</label>
+<input class="glass-input p-4 rounded-lg text-sm transition-all duration-300" placeholder="Şirketiniz" type="text"/>
+</div>
+<div class="flex flex-col space-y-2">
+<label class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">E-posta Adresi</label>
+<input class="glass-input p-4 rounded-lg text-sm transition-all duration-300" placeholder="email@domain.com" type="email"/>
+</div>
+<div class="flex flex-col space-y-2">
+<label class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Telefon</label>
+<input class="glass-input p-4 rounded-lg text-sm transition-all duration-300" placeholder="+90" type="tel"/>
+</div>
+<div class="md:col-span-2 flex flex-col space-y-2">
+<label class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Web Sitesi</label>
+<input class="glass-input p-4 rounded-lg text-sm transition-all duration-300" placeholder="https://www.ornek.com" type="url"/>
+</div>
+<div class="flex flex-col space-y-2">
+<label class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Hizmet Türü</label>
+<select class="glass-input p-4 rounded-lg text-sm transition-all duration-300 appearance-none bg-no-repeat bg-[right_1rem_center]">
+<option>Teknik SEO</option>
+<option>İçerik Stratejisi</option>
+<option>Backlink Analizi</option>
+<option>Kurumsal SEO</option>
+</select>
+</div>
+<div class="flex flex-col space-y-2">
+<label class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Aylık Bütçe</label>
+<select class="glass-input p-4 rounded-lg text-sm transition-all duration-300 appearance-none">
+<option>10.000₺ - 25.000₺</option>
+<option>25.000₺ - 50.000₺</option>
+<option>50.000₺+</option>
+</select>
+</div>
+<div class="md:col-span-2 flex flex-col space-y-2">
+<label class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Mesajınız</label>
+<textarea class="glass-input p-4 rounded-lg text-sm transition-all duration-300" placeholder="Projenizden bahsedin..." rows="4"></textarea>
+</div>
+<div class="md:col-span-2 pt-4">
+<button class="w-full bg-primary text-on-primary font-bold py-5 rounded-full hover:shadow-2xl hover:shadow-primary/30 transition-all duration-500 ease-[cubic-bezier(0.2,0.8,0.2,1)] transform hover:-translate-y-1" type="submit">
+                            Analiz Talebini Gönder
+                        </button>
+</div>
+</form>
+</div>
+</section>
+<!-- Maps Section -->
+<section class="mt-24 px-8 max-w-7xl mx-auto">
+<div class="relative w-full h-[500px] bg-surface-container rounded-3xl overflow-hidden border-[0.5px] border-outline-variant/20 shadow-inner group">
+<div class="absolute inset-0 bg-slate-400 grayscale mix-blend-multiply opacity-20"></div>
+<img alt="Map view" class="w-full h-full object-cover grayscale brightness-105 contrast-75" data-alt="Minimalist grayscale satellite map view of Istanbul streets" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzFAmo4J-mpdX4SrFeN9zUvOvEB0Tvdgtb1aps0NhX8g1lYVNT84kr4d87UyRVOZLjHgjAnHzf_dNjTr4ujolaRdZETjz-nezfXtxJBdZxN4b4aceodqfrOgLBmbQYfsjNfT1znNVI4xVgROSRDYMYwxiO4pXPMcy-7fe3F9J7olqANViPFNgF91AQ2wiRq7cSTJFfsFSbLluMxvXHHv-JWisH2-VLjmdfL-qqssMfbXZCtSgl3T-HAuQ_h1S9-3_SMdo5BH35yyw"/>
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="bg-primary text-white p-6 rounded-full shadow-2xl animate-pulse">
+<span class="material-symbols-outlined text-4xl" data-weight="fill">location_on</span>
+</div>
+</div>
+<div class="absolute bottom-8 left-8 bg-white/80 backdrop-blur-xl p-6 rounded-2xl border-[0.5px] border-outline-variant/20 max-w-xs shadow-xl">
+<h4 class="font-bold mb-2">Genel Merkez</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">İstanbul'un kalbinde, verinin ve teknolojinin buluşma noktasındayız.</p>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="mt-32 px-8 max-w-3xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-extrabold tracking-tighter mb-4">Hızlı Sorular</h2>
+<div class="w-12 h-1 bg-primary mx-auto rounded-full"></div>
+</div>
+<div class="space-y-6">
+<div class="p-8 bg-surface-container-low rounded-xl border-[0.5px] border-transparent hover:border-primary/20 transition-all cursor-pointer group">
+<div class="flex justify-between items-center">
+<h4 class="font-bold text-lg tracking-tight">Analiz süreci ne kadar sürer?</h4>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors">add</span>
+</div>
+<div class="mt-4 text-on-surface-variant leading-relaxed text-sm hidden group-hover:block">
+                        Web sitenizin kapsamına bağlı olarak ücretsiz ön analiz raporunuzu genellikle 48 saat içinde hazırlayıp size iletiyoruz.
+                    </div>
+</div>
+<div class="p-8 bg-surface-container-low rounded-xl border-[0.5px] border-transparent hover:border-primary/20 transition-all cursor-pointer group">
+<div class="flex justify-between items-center">
+<h4 class="font-bold text-lg tracking-tight">Minimum sözleşme süresi var mı?</h4>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors">add</span>
+</div>
+<div class="mt-4 text-on-surface-variant leading-relaxed text-sm hidden group-hover:block">
+                        SEO bir süreç olduğu için en iyi sonuçlar için 6 aylık stratejik planlar öneriyoruz, ancak esnek çalışma modellerimiz de mevcut.
+                    </div>
+</div>
+<div class="p-8 bg-surface-container-low rounded-xl border-[0.5px] border-transparent hover:border-primary/20 transition-all cursor-pointer group">
+<div class="flex justify-between items-center">
+<h4 class="font-bold text-lg tracking-tight">Ofiste toplantı yapabilir miyiz?</h4>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors">add</span>
+</div>
+<div class="mt-4 text-on-surface-variant leading-relaxed text-sm hidden group-hover:block">
+                        Elbette. Kahvemizi içmek ve projenizi detaylandırmak için Levent ofisimize her zaman bekleriz. Lütfen randevu alınız.
+                    </div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-20 px-12 border-t border-slate-100 dark:border-slate-900 bg-slate-50">
+<div class="grid grid-cols-1 md:flex md:justify-between items-center w-full max-w-7xl mx-auto">
+<div class="mb-8 md:mb-0">
+<div class="text-lg font-black text-slate-900 mb-2">AURA</div>
+<p class="font-manrope text-xs tracking-widest uppercase text-slate-400">© 2026 AURA SEO. Architecture of Search.</p>
+</div>
+<div class="flex space-x-10">
+<a class="font-manrope text-xs tracking-widest uppercase text-slate-400 hover:text-indigo-600 transition-colors duration-300" href="#">Privacy</a>
+<a class="font-manrope text-xs tracking-widest uppercase text-slate-400 hover:text-indigo-600 transition-colors duration-300" href="#">Terms</a>
+<a class="font-manrope text-xs tracking-widest uppercase text-slate-400 hover:text-indigo-600 transition-colors duration-300" href="#">Twitter</a>
+<a class="font-manrope text-xs tracking-widest uppercase text-slate-400 hover:text-indigo-600 transition-colors duration-300" href="#">LinkedIn</a>
+</div>
+</div>
+</footer>
+</body></html>

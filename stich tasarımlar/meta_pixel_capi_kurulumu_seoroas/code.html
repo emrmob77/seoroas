@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SEOROAS | Meta Pixel &amp; Conversions API (CAPI) Setup</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-tint": "#4d4ad5",
+              "surface-container-lowest": "#ffffff",
+              "surface-dim": "#d3dbe2",
+              "error": "#9e3f4e",
+              "surface-container-low": "#f2f4f6",
+              "on-primary-fixed": "#2b22b5",
+              "on-primary-fixed-variant": "#4a47d2",
+              "on-tertiary-fixed": "#2b1600",
+              "outline-variant": "#acb3b8",
+              "on-primary-container": "#403bc7",
+              "secondary": "#5f5f61",
+              "secondary-fixed": "#e4e2e4",
+              "on-primary": "#faf6ff",
+              "inverse-on-surface": "#9c9d9f",
+              "primary-fixed-dim": "#d2d0ff",
+              "primary-dim": "#403cc8",
+              "primary-container": "#e2dfff",
+              "background": "#f9f9fb",
+              "on-secondary-container": "#525154",
+              "tertiary": "#895300",
+              "surface-container": "#ebeef2",
+              "tertiary-container": "#fd9d06",
+              "surface-variant": "#dde3e9",
+              "on-secondary": "#fbf8fa",
+              "error-dim": "#4f0116",
+              "on-tertiary-container": "#4b2b00",
+              "tertiary-dim": "#784800",
+              "on-error-container": "#782232",
+              "secondary-dim": "#535355",
+              "tertiary-fixed-dim": "#eb9100",
+              "secondary-container": "#e4e2e4",
+              "on-secondary-fixed-variant": "#5c5b5d",
+              "on-tertiary-fixed-variant": "#573300",
+              "on-tertiary": "#fff7f3",
+              "surface-container-high": "#e4e9ee",
+              "secondary-fixed-dim": "#d6d3d6",
+              "on-surface": "#2d3338",
+              "tertiary-fixed": "#fd9d06",
+              "inverse-primary": "#8382ff",
+              "primary": "#4d4ad5",
+              "on-secondary-fixed": "#3f3f41",
+              "surface-bright": "#f9f9fb",
+              "outline": "#757c81",
+              "on-error": "#fff7f7",
+              "error-container": "#ff8b9a",
+              "on-surface-variant": "#596065",
+              "surface": "#f9f9fb",
+              "surface-container-highest": "#dde3e9",
+              "on-background": "#2d3338",
+              "inverse-surface": "#0c0e10",
+              "primary-fixed": "#e2dfff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+        }
+        .architectural-blur {
+            backdrop-filter: blur(32px);
+            -webkit-backdrop-filter: blur(32px);
+        }
+        .tight-tracking {
+            letter-spacing: -0.04em;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 0.5px solid rgba(172, 179, 184, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary/20">
+<!-- Top Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 bg-white/70 dark:bg-slate-900/70 backdrop-blur-2xl no-border bg-opacity-70 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(0,0,0,0.04)]">
+<div class="flex justify-between items-center w-full px-8 py-6 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-bold tracking-tighter text-slate-900 dark:text-white cursor-pointer transition-all cubic-bezier(0.2,0.8,0.2,1) hover:opacity-80">SEOROAS</div>
+<div class="hidden md:flex space-x-12 items-center">
+<a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors font-manrope tracking-tight font-medium text-sm" href="#">Solutions</a>
+<a class="text-indigo-600 dark:text-indigo-400 font-semibold border-b-2 border-indigo-600 pb-1 font-manrope tracking-tight text-sm" href="#">Framework</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors font-manrope tracking-tight font-medium text-sm" href="#">Case Studies</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors font-manrope tracking-tight font-medium text-sm" href="#">Contact</a>
+</div>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-full font-semibold text-sm hover:opacity-90 transition-all cubic-bezier(0.2,0.8,0.2,1) shadow-lg shadow-primary/20">
+                Get Audit
+            </button>
+</div>
+</nav>
+<main class="pt-32">
+<!-- Hero Section -->
+<section class="px-8 max-w-screen-2xl mx-auto mb-40">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
+<div class="lg:col-span-8">
+<span class="text-primary font-label text-xs tracking-[0.3em] uppercase mb-6 block">Precision Integration</span>
+<h1 class="text-6xl md:text-8xl font-headline font-extrabold tight-tracking text-on-surface leading-[0.95] mb-12">
+                        Master Your <br/> Ad Performance
+                    </h1>
+<p class="text-xl md:text-2xl text-on-surface-variant max-w-2xl font-light leading-relaxed">
+                        Bridge the measurement gap. We implement high-fidelity Meta Pixel and Conversions API (CAPI) architectures that reclaim lost data and fuel algorithmic success.
+                    </p>
+</div>
+<div class="lg:col-span-4 flex justify-end">
+<div class="w-full aspect-square bg-surface-container-low rounded-xl relative overflow-hidden group">
+<img alt="Abstract Data Visualization" class="w-full h-full object-cover grayscale opacity-40 group-hover:scale-105 transition-transform duration-700" data-alt="Abstract blue and white digital network visualization" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNbBwN7csZBDVVAE_Qr2k6jEY12ITq2MUKJJ3jFq9Q5LObY6aGP3paxDf0yZNZ0Cu7CAmAZ_qIBXzdAcTLDZpm845_bfBEHMb7KsI-whCxuH2uVce-I3RGYElt-VojI5OuAGCpUxWdrvA85_3r3cyQ2fN-OhqVTifufSuY5L022HaSVVpLaX39koFbG9WBSfCMwn4F2QPjhJUPf86Pe1y4KecNCEh30--19ucMkGUj3ouw9yeieC5bW5Lko5m4xdTEJmePAOUjJtg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Value Propositions (The Architectural Void approach) -->
+<section class="bg-surface-container-low py-40">
+<div class="px-8 max-w-screen-2xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-24">
+<div class="space-y-6">
+<span class="material-symbols-outlined text-4xl text-primary" data-icon="hub">hub</span>
+<h3 class="text-2xl font-headline font-bold tight-tracking">Advanced Matching</h3>
+<p class="text-on-surface-variant font-light leading-relaxed">Leverage first-party data to increase match rates across Facebook and Instagram platforms, ensuring your ads reach the right intent-driven users.</p>
+</div>
+<div class="space-y-6">
+<span class="material-symbols-outlined text-4xl text-primary" data-icon="trending_down">trending_down</span>
+<h3 class="text-2xl font-headline font-bold tight-tracking">Lower CPA</h3>
+<p class="text-on-surface-variant font-light leading-relaxed">By capturing offline and server-side signals, we reduce the noise in your attribution window, driving down acquisition costs through cleaner data.</p>
+</div>
+<div class="space-y-6">
+<span class="material-symbols-outlined text-4xl text-primary" data-icon="rebase_edit">rebase_edit</span>
+<h3 class="text-2xl font-headline font-bold tight-tracking">Better Retargeting</h3>
+<p class="text-on-surface-variant font-light leading-relaxed">Re-engage customers with surgical precision. Our setups bypass browser limitations to maintain robust custom audience health.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Implementation Steps - Asymmetric Layout -->
+<section class="py-40 px-8 max-w-screen-2xl mx-auto">
+<div class="mb-24">
+<h2 class="text-4xl font-headline font-bold tight-tracking mb-4">The Implementation Path</h2>
+<div class="h-1 w-24 bg-primary"></div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-32 items-start">
+<div class="space-y-32">
+<div class="group">
+<div class="flex items-center gap-8 mb-6">
+<span class="text-5xl font-black text-surface-container-highest opacity-50 font-headline">01</span>
+<h4 class="text-2xl font-bold font-headline">Pixel Creation &amp; Hygiene</h4>
+</div>
+<p class="text-on-surface-variant leading-relaxed max-w-md ml-20">We audited existing assets or deploy a clean, unified Pixel structure designed for cross-domain stability.</p>
+</div>
+<div class="group">
+<div class="flex items-center gap-8 mb-6">
+<span class="text-5xl font-black text-surface-container-highest opacity-50 font-headline">03</span>
+<h4 class="text-2xl font-bold font-headline">CAPI Integration</h4>
+</div>
+<p class="text-on-surface-variant leading-relaxed max-w-md ml-20">Server-side implementation via GTM Server-Side or direct API Gateway to bypass ad-blockers and iOS privacy restrictions.</p>
+</div>
+</div>
+<div class="space-y-32 lg:mt-64">
+<div class="group">
+<div class="flex items-center gap-8 mb-6">
+<span class="text-5xl font-black text-surface-container-highest opacity-50 font-headline">02</span>
+<h4 class="text-2xl font-bold font-headline">Event Mapping</h4>
+</div>
+<p class="text-on-surface-variant leading-relaxed max-w-md ml-20">Granular mapping of standard and custom events—from 'ViewContent' to deep-funnel 'Purchase' conversions.</p>
+</div>
+<div class="group">
+<div class="flex items-center gap-8 mb-6">
+<span class="text-5xl font-black text-surface-container-highest opacity-50 font-headline">04</span>
+<h4 class="text-2xl font-bold font-headline">Domain Verification</h4>
+</div>
+<p class="text-on-surface-variant leading-relaxed max-w-md ml-20">DNS-level validation and Aggregated Event Measurement (AEM) configuration for post-iOS 14.5 compliance.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Case Study Snippet - Bento Grid Style -->
+<section class="py-40 px-8 max-w-screen-2xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="md:col-span-2 bg-inverse-surface p-16 rounded-xl text-surface-container-lowest flex flex-col justify-between min-h-[500px]">
+<div>
+<span class="text-primary-fixed-dim uppercase tracking-widest text-xs font-label">Case Study: Luxury E-commerce</span>
+<h2 class="text-5xl font-headline font-bold tight-tracking mt-8 mb-12">Restoring 34% of "Lost" Attribution Data.</h2>
+</div>
+<div class="grid grid-cols-2 gap-12">
+<div>
+<div class="text-4xl font-bold font-headline">+118%</div>
+<div class="text-surface-dim font-light text-sm uppercase tracking-wider mt-2">Measured ROAS</div>
+</div>
+<div>
+<div class="text-4xl font-bold font-headline">-22%</div>
+<div class="text-surface-dim font-light text-sm uppercase tracking-wider mt-2">Blended CPA</div>
+</div>
+</div>
+</div>
+<div class="bg-primary p-12 rounded-xl text-on-primary flex flex-col justify-center items-center text-center">
+<span class="material-symbols-outlined text-6xl mb-8" data-icon="rocket_launch">rocket_launch</span>
+<h3 class="text-3xl font-headline font-bold mb-6">Ready for Scale?</h3>
+<p class="mb-10 text-primary-fixed opacity-90">Stop guessing which ads are working. Get your server-side tracking ready today.</p>
+<button class="w-full bg-white text-primary py-4 rounded-full font-bold hover:bg-opacity-90 transition-all">Start Project</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-20 border-t border-slate-100 dark:border-slate-800/50 bg-slate-50 dark:bg-slate-950">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 max-w-screen-2xl mx-auto gap-8">
+<div class="text-lg font-black tracking-tighter text-slate-900 dark:text-white">SEOROAS</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-manrope text-xs tracking-widest uppercase text-slate-400 hover:text-indigo-600 transition-colors" href="#">GTM Setup</a>
+<a class="font-manrope text-xs tracking-widest uppercase text-slate-900 dark:text-white" href="#">Meta Pixel</a>
+<a class="font-manrope text-xs tracking-widest uppercase text-slate-400 hover:text-indigo-600 transition-colors" href="#">TikTok Pixel</a>
+<a class="font-manrope text-xs tracking-widest uppercase text-slate-400 hover:text-indigo-600 transition-colors" href="#">Privacy Policy</a>
+</div>
+<div class="text-slate-400 font-manrope text-[10px] tracking-widest uppercase">
+                © 2026 SEOROAS. Architectural Precision in Data.
+            </div>
+</div>
+</footer>
+</body></html>

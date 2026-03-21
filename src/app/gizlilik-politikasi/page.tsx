@@ -14,7 +14,7 @@ export const metadata: Metadata = generateSeoMetadata({
 
 export default function GizlilikPolitikasiPage() {
   return (
-    <main className="pt-32">
+    <main className="pt-24">
       <section className="max-w-7xl mx-auto px-8 mb-12">
         <Breadcrumb
           items={[{ name: "Gizlilik Politikası", url: "/gizlilik-politikasi" }]}

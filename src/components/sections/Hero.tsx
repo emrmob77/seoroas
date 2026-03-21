@@ -9,7 +9,7 @@ const stats = [
 
 export function Hero() {
   return (
-    <section className="relative min-h-[80vh] md:min-h-screen pt-28 md:pt-48 pb-16 md:pb-32 px-5 md:px-8 overflow-hidden">
+    <section className="relative min-h-[80vh] md:min-h-screen pt-24 md:pt-40 pb-16 md:pb-32 px-5 md:px-8 overflow-hidden">
       <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
         {/* Badge */}
         <div className="inline-flex items-center space-x-2 bg-surface-container-low px-4 py-1.5 rounded-full mb-8">

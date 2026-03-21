@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Check, ArrowRight } from "lucide-react";
 import { generateSeoMetadata } from "@/lib/seo";
 import { SchemaOrg } from "@/components/seo/SchemaOrg";
-import { Breadcrumb } from "@/components/layout/Breadcrumb";
+import { SubpageHero } from "@/components/sections/SubpageHero";
 
 export const dynamic = "force-dynamic";
 
@@ -156,28 +156,19 @@ export default function FiyatlarPage() {
     <>
       <SchemaOrg schema={buildSchemas()} />
 
-      {/* Hero */}
-      <section className="relative pt-28 md:pt-36 pb-12 md:pb-20 px-5 md:px-8 overflow-hidden">
-        <div className="max-w-7xl mx-auto text-center space-y-6 md:space-y-8">
-          <Breadcrumb items={[{ name: "SEO Fiyatları", url: "/seo-fiyatlari" }]} />
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface-container-low border border-outline-variant/10">
-            <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-            <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-on-surface-variant">
-              Transparent Pricing
-            </span>
-          </span>
-          <h1 className="text-3xl sm:text-4xl md:text-[4.5rem] font-extrabold tight-tracking leading-[0.95] text-on-background max-w-4xl mx-auto">
+      <SubpageHero
+        breadcrumb={[{ name: "SEO Fiyatları", url: "/seo-fiyatlari" }]}
+        badge="Transparent Pricing"
+        title={
+          <>
             SEO Fiyatları{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-dim">
               2026
             </span>
-          </h1>
-          <p className="text-base md:text-xl text-on-surface-variant max-w-2xl mx-auto font-light leading-relaxed">
-            Şeffaf fiyatlandırma, sözleşmesiz çalışma. İşletmenizin büyüklüğüne
-            ve hedeflerine uygun paketi seçin.
-          </p>
-        </div>
-      </section>
+          </>
+        }
+        subtitle="Şeffaf fiyatlandırma, sözleşmesiz çalışma. İşletmenizin büyüklüğüne ve hedeflerine uygun paketi seçin."
+      />
 
       {/* Packages */}
       <section className="py-12 md:py-20 px-5 md:px-8">

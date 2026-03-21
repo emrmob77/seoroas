@@ -1,0 +1,51 @@
+"use client";
+
+import { useState } from "react";
+
+export function NewsletterSidebar() {
+  const [email, setEmail] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+
+  function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    if (!email) return;
+    setSubmitted(true);
+  }
+
+  return (
+    <div className="bg-primary text-on-primary rounded-xl p-8 relative overflow-hidden">
+      <div className="relative z-10">
+        <h3 className="text-xl font-bold tracking-[-0.02em] mb-4">
+          Haftalık SEO Bülteni
+        </h3>
+        <p className="text-sm opacity-80 mb-6 leading-relaxed">
+          Algoritma güncellemeleri ve SEO stratejileri ile öne çıkın.
+        </p>
+
+        {submitted ? (
+          <p className="text-sm font-semibold py-3">
+            Kaydınız alındı, teşekkürler!
+          </p>
+        ) : (
+          <form onSubmit={handleSubmit} className="space-y-3">
+            <input
+              className="w-full bg-on-primary/10 border-none rounded-lg py-3 px-4 text-sm placeholder:text-on-primary/50 focus:ring-1 focus:ring-on-primary/30 text-on-primary"
+              placeholder="E-posta adresiniz"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+            <button
+              type="submit"
+              className="w-full bg-on-primary text-primary py-3 rounded-lg text-sm font-bold hover:opacity-90 transition-opacity"
+            >
+              Abone Ol
+            </button>
+          </form>
+        )}
+      </div>
+      <div className="absolute -bottom-8 -right-8 w-32 h-32 bg-on-primary/5 rounded-full blur-3xl" />
+    </div>
+  );
+}

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { generateSeoMetadata } from "@/lib/seo";
 import { SchemaOrg } from "@/components/seo/SchemaOrg";
-import { Breadcrumb } from "@/components/layout/Breadcrumb";
+import { SubpageHero } from "@/components/sections/SubpageHero";
 
 export const dynamic = "force-dynamic";
 
@@ -95,54 +95,23 @@ export default function BursaSeoAjansiPage() {
         ]}
       />
 
-      {/* Hero */}
-      <header className="relative pt-28 md:pt-36 pb-12 md:pb-20 px-5 md:px-8 overflow-hidden">
-        <div
-          className="absolute inset-0 opacity-20 -z-10"
-          style={{
-            backgroundImage:
-              "radial-gradient(#acb3b8 0.5px, transparent 0.5px)",
-            backgroundSize: "32px 32px",
-          }}
-        />
-        <div className="max-w-7xl mx-auto space-y-6 md:space-y-10">
-          <Breadcrumb
-            items={[{ name: "Bursa SEO Ajansı", url: "/bursa-seo-ajansi" }]}
-          />
-          <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-surface-container-low border border-outline-variant/10">
-            <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-            <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-on-surface-variant">
-              Bursa Bölgesi Aktif
-            </span>
-          </div>
-          <h1 className="text-3xl sm:text-4xl md:text-[4.5rem] font-extrabold tracking-[-0.06em] leading-[0.95] text-on-surface max-w-4xl">
+      <SubpageHero
+        breadcrumb={[
+          { name: "Bursa SEO Ajansı", url: "/bursa-seo-ajansi" },
+        ]}
+        badge="Bursa Bölgesi Aktif"
+        title={
+          <>
             Bursa{" "}
-            <span className="text-primary italic">SEO</span> Ajansı.
-          </h1>
-          <p className="text-base md:text-xl text-on-surface-variant max-w-2xl font-light leading-relaxed">
-            Türkiye&apos;nin sanayi devi Bursa&apos;da üretim gücünüzü dijitale
-            taşıyoruz. Otomotiv, tekstil ve gıda sektörlerinde arama
-            motorlarının zirvesinde yer alın.
-          </p>
-          <div className="flex flex-wrap gap-8 pt-6">
-            {stats.map((s, i) => (
-              <div key={s.label} className="flex items-center gap-8">
-                {i > 0 && (
-                  <div className="w-px h-12 bg-outline-variant/20" />
-                )}
-                <div className="flex flex-col gap-1">
-                  <span className="text-3xl font-bold tracking-tighter">
-                    {s.value}
-                  </span>
-                  <span className="text-[11px] uppercase tracking-widest text-on-surface-variant">
-                    {s.label}
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </header>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-dim">
+              SEO
+            </span>{" "}
+            Ajansı.
+          </>
+        }
+        subtitle="Türkiye'nin sanayi devi Bursa'da üretim gücünüzü dijitale taşıyoruz. Otomotiv, tekstil ve gıda sektörlerinde arama motorlarının zirvesinde yer alın."
+        stats={stats}
+      />
 
       {/* Services */}
       <section className="py-16 md:py-32 px-5 md:px-8">

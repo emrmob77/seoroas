@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { generateSeoMetadata } from "@/lib/seo";
 import { SchemaOrg } from "@/components/seo/SchemaOrg";
-import { Breadcrumb } from "@/components/layout/Breadcrumb";
+import { SubpageHero } from "@/components/sections/SubpageHero";
 
 export const dynamic = "force-dynamic";
 
@@ -61,53 +61,27 @@ export default function ETicaretSeoPage() {
         ]}
       />
 
-      {/* Hero */}
-      <header className="relative pt-28 md:pt-36 pb-12 md:pb-20 px-5 md:px-8 overflow-hidden">
-        <div
-          className="absolute inset-0 opacity-20 -z-10"
-          style={{
-            backgroundImage: "radial-gradient(#acb3b8 0.5px, transparent 0.5px)",
-            backgroundSize: "32px 32px",
-          }}
-        />
-        <div className="max-w-7xl mx-auto space-y-6 md:space-y-10">
-          <Breadcrumb
-            items={[
-              { name: "SEO Hizmetleri", url: "/seo-fiyatlari" },
-              { name: "E-Ticaret SEO", url: "/seo/e-ticaret-seo" },
-            ]}
-          />
-          <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-surface-container-low border border-outline-variant/10">
-            <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-            <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-on-surface-variant">
-              Revenue Engine: Active
-            </span>
-          </div>
-          <h1 className="text-3xl sm:text-4xl md:text-[4.5rem] font-extrabold tracking-[-0.06em] leading-[0.95] text-on-surface max-w-4xl">
+      <SubpageHero
+        breadcrumb={[
+          { name: "SEO Hizmetleri", url: "/seo-fiyatlari" },
+          { name: "E-Ticaret SEO", url: "/seo/e-ticaret-seo" },
+        ]}
+        badge="Revenue Engine: Active"
+        title={
+          <>
             E-Ticaret{" "}
-            <span className="text-primary italic">SEO</span> ile Organik Satışlarınızı Artırın.
-          </h1>
-          <p className="text-base md:text-xl text-on-surface-variant max-w-2xl font-light leading-relaxed">
-            Ürün ve kategori sayfalarınızı optimize ederek organik arama
-            trafiğini sürdürülebilir satışa dönüştürüyoruz.
-          </p>
-          <div className="flex flex-wrap gap-8 pt-6">
-            <div className="flex flex-col gap-1">
-              <span className="text-3xl font-bold tracking-tighter">+314%</span>
-              <span className="text-[11px] uppercase tracking-widest text-on-surface-variant">
-                Organic Revenue
-              </span>
-            </div>
-            <div className="w-px h-12 bg-outline-variant/20 self-center" />
-            <div className="flex flex-col gap-1">
-              <span className="text-3xl font-bold tracking-tighter">8.4x</span>
-              <span className="text-[11px] uppercase tracking-widest text-on-surface-variant">
-                ROAS
-              </span>
-            </div>
-          </div>
-        </div>
-      </header>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-dim">
+              SEO
+            </span>{" "}
+            ile Organik Satışlarınızı Artırın.
+          </>
+        }
+        subtitle="Ürün ve kategori sayfalarınızı optimize ederek organik arama trafiğini sürdürülebilir satışa dönüştürüyoruz."
+        stats={[
+          { value: "+314%", label: "Organic Revenue" },
+          { value: "8.4x", label: "ROAS" },
+        ]}
+      />
 
       {/* Bento Grid Services */}
       <section className="py-16 md:py-32 px-5 md:px-8">

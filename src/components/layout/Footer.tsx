@@ -7,7 +7,16 @@ const serviceLinks = [
   { name: "Lokal SEO", href: "/seo/lokal-seo" },
   { name: "E-ticaret SEO", href: "/seo/e-ticaret-seo" },
   { name: "İçerik SEO", href: "/seo/icerik-seo" },
+  { name: "WordPress SEO", href: "/seo/wordpress-seo" },
+  { name: "Shopify SEO", href: "/seo/shopify-seo" },
+  { name: "SEO Danışmanlığı", href: "/seo-danismanligi" },
   { name: "SEO Fiyatları", href: "/seo-fiyatlari" },
+];
+
+const trackingLinks = [
+  { name: "Google Tag Manager", href: "/hizmetler/google-tag-manager" },
+  { name: "Meta Pixel & CAPI", href: "/hizmetler/meta-pixel-capi" },
+  { name: "TikTok Pixel", href: "/hizmetler/tiktok-pixel" },
 ];
 
 const cityLinks = [
@@ -19,6 +28,9 @@ const cityLinks = [
 ];
 
 const companyLinks = [
+  { name: "Hakkımızda", href: "/hakkimizda" },
+  { name: "Referanslar", href: "/referanslar" },
+  { name: "SEO Danışmanlığı", href: "/seo-danismanligi" },
   { name: "Blog", href: "/blog" },
   { name: "İletişim", href: "/iletisim" },
   { name: "Gizlilik Politikası", href: "/gizlilik-politikasi" },
@@ -35,7 +47,7 @@ export function Footer() {
   return (
     <footer className="bg-slate-50 w-full pt-32 pb-12">
       <div className="max-w-7xl mx-auto px-8 flex flex-col items-start space-y-24">
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-12 md:gap-8 w-full">
+        <div className="grid grid-cols-2 md:grid-cols-6 gap-12 md:gap-8 w-full">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <div className="text-lg font-black tracking-tighter text-slate-900 mb-8 uppercase">
@@ -64,6 +76,22 @@ export function Footer() {
             </h5>
             <ul className="space-y-4">
               {serviceLinks.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className={linkClass}>
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Takip & Analitik */}
+          <div>
+            <h5 className="font-bold text-[10px] uppercase tracking-widest text-slate-900 mb-6">
+              Takip & Analitik
+            </h5>
+            <ul className="space-y-4">
+              {trackingLinks.map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className={linkClass}>
                     {link.name}
