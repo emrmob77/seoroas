@@ -81,7 +81,7 @@ function deskStructure(S: StructureBuilder) {
 
 export default defineConfig({
   basePath: '/studio',
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || '67vl8x07',
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || 'production',
   plugins: [
     structureTool({ structure: deskStructure }),
