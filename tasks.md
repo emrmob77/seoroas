@@ -82,7 +82,7 @@ Görevler:
 - [x] `faq.ts` şeması → question, answer (Portable Text)
 - [x] `testimonial.ts` şeması → author, company, quote, rating
 - [x] `siteSettings.ts` → singleton, site geneli bilgiler
-- [x] Studio deploy: `npx sanity deploy` → `studio.seoroas.com`
+- [x] Studio deploy: Embedded Sanity Studio → `/studio` route (next-sanity/studio)
 
 **Çıktı:** Sanity Studio erişilebilir, tüm şemalar tanımlı, ilk test içeriği girilmiş
 
@@ -453,14 +453,14 @@ Her lokal sayfa:
 2. "SEO Analizi Nasıl Yapılır?" (500 arama, KD:1)
 3. "Kurumsal SEO Nedir?" (250 arama, KD:2)
 
-Her yazı (Sanity Studio'da doldurulacak alanlar):
-- [ ] `title` → H1 olacak başlık
-- [ ] `slug` → URL (Türkçe karakter yok)
-- [ ] `seoTitle` → 50-60 karakter, keyword ile başlar
-- [ ] `seoDescription` → 145-160 karakter, CTA içerir
-- [ ] `body` → Min 2,000 kelime, Portable Text editörde
-- [ ] `mainImage` → Featured image (Sanity CDN'e yüklenir, otomatik WebP)
-- [ ] İç link önerileri: Portable Text içinde `/seo/` linkleri
+**WordPress Migration ile 17 yazı Sanity'ye aktarıldı** (scripts/migrate-wp.ts):
+- [x] `title` → H1 olacak başlık
+- [x] `slug` → URL (Türkçe karakter yok)
+- [x] `seoTitle` → 50-60 karakter, keyword ile başlar
+- [x] `seoDescription` → 145-160 karakter, CTA içerir
+- [x] `body` → Portable Text formatında (HTML'den dönüştürüldü)
+- [x] `mainImage` → Featured image (Sanity CDN'e yüklendi, 16/17 yazıda)
+- [ ] İç link önerileri: Portable Text içinde `/seo/` linkleri (manuel düzenleme gerekli)
 
 ---
 
@@ -591,7 +591,7 @@ Test edilecek:
 | 3 | SEO-04 + FE-13 Lokal sayfalar (x5) | SEO + FE | ✅ Tamamlandı |
 | 3 | FE-02b Header & Footer nav güncelleme | Front-end | ✅ Tamamlandı |
 | 3 | MÜH-06 + FE-14 Blog altyapısı | Mühendis + FE | ✅ Tamamlandı |
-| 3 | SEO-05 İlk 3 blog yazısı | SEO Uzmanı | ⬜ Bekliyor |
+| 3 | SEO-05 Blog içerikleri (WP→Sanity 17 yazı) | SEO + Mühendis | ✅ Tamamlandı |
 | 4 | MÜH-07 Performans opt. | Mühendis | ⬜ Bekliyor |
 | 4 | MÜH-08 Teknik SEO audit | Mühendis + SEO | ⬜ Bekliyor |
 | 4 | FE-15 Responsive test | Front-end | ⬜ Bekliyor |
