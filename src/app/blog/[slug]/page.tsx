@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { PortableText } from "@portabletext/react";
@@ -123,14 +124,18 @@ export default async function BlogPostPage({ params }: PageProps) {
         {post.mainImage && (
           <div className="px-8 mb-16">
             <div className="max-w-5xl mx-auto">
-              <img
+              <Image
                 src={urlFor(post.mainImage)
                   .width(1200)
                   .height(630)
                   .format("webp")
                   .url()}
                 alt={post.mainImage.alt || post.title}
+                width={1200}
+                height={630}
                 className="w-full rounded-[2rem] object-cover aspect-[2/1]"
+                priority
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
               />
             </div>
           </div>

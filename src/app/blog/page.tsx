@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { generateSeoMetadata } from "@/lib/seo";
@@ -37,18 +38,22 @@ function formatDate(date: string) {
   });
 }
 
-function PostImage({ post, aspect = "square" }: { post: Post; aspect?: "wide" | "square" }) {
+function PostImage({ post, aspect = "square", priority = false }: { post: Post; aspect?: "wide" | "square"; priority?: boolean }) {
   const aspectClass = aspect === "wide" ? "aspect-[16/9]" : "aspect-square";
   if (post.mainImage) {
     const dim = aspect === "wide" ? { w: 900, h: 506 } : { w: 600, h: 600 };
+    const imgUrl = urlFor(post.mainImage).width(dim.w).height(dim.h).format("webp").url();
     return (
       <div className={`${aspectClass} overflow-hidden rounded-xl bg-surface-container-high relative`}>
-        <img
-          src={urlFor(post.mainImage).width(dim.w).height(dim.h).format("webp").url()}
+        <Image
+          src={imgUrl}
           alt={post.mainImage.alt || post.title}
+          width={dim.w}
+          height={dim.h}
           className="w-full h-full object-cover grayscale opacity-90 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000"
           style={{ transitionTimingFunction: "cubic-bezier(0.2, 0.8, 0.2, 1)" }}
-          loading="lazy"
+          priority={priority}
+          sizes={aspect === "wide" ? "(max-width: 768px) 100vw, 66vw" : "(max-width: 768px) 100vw, 33vw"}
         />
       </div>
     );
@@ -127,7 +132,7 @@ export default async function BlogPage() {
               <article className="md:col-span-2 group flex flex-col gap-8">
                 <Link href={`/blog/${featured.slug.current}`}>
                   <div className="relative">
-                    <PostImage post={featured} aspect="wide" />
+                    <PostImage post={featured} aspect="wide" priority />
                     <div className="absolute top-6 left-6">
                       <span className="px-4 py-1.5 bg-white/90 backdrop-blur-md rounded-full text-[10px] font-bold uppercase tracking-widest text-primary shadow-sm">
                         Trend

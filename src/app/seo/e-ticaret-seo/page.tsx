@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { generateSeoMetadata } from "@/lib/seo";
 import { SchemaOrg } from "@/components/seo/SchemaOrg";
+import { Breadcrumb } from "@/components/layout/Breadcrumb";
 
 export const dynamic = "force-dynamic";
 
@@ -70,6 +71,12 @@ export default function ETicaretSeoPage() {
           }}
         />
         <div className="max-w-7xl mx-auto space-y-12">
+          <Breadcrumb
+            items={[
+              { name: "SEO Hizmetleri", url: "/seo-fiyatlari" },
+              { name: "E-Ticaret SEO", url: "/seo/e-ticaret-seo" },
+            ]}
+          />
           <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-surface-container-low border border-outline-variant/10">
             <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
             <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-on-surface-variant">

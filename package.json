@@ -25,6 +25,7 @@
     "sanity": "^5.17.1"
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "^16.2.1",
     "@tailwindcss/postcss": "^4",
     "@types/jsdom": "^28.0.1",
     "@types/node": "^20.19.37",

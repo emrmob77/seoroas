@@ -5,5 +5,5 @@ module.exports = {
   sitemapSize: 7000,
   changefreq: "weekly",
   priority: 0.7,
-  exclude: ["/api/*", "/tesekkurler"],
+  exclude: ["/api/*", "/studio/*", "/tesekkurler"],
 };

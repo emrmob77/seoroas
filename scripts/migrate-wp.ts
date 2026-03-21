@@ -140,7 +140,8 @@ function htmlToPortableText(html: string): unknown[] {
     });
 
     return blocks.filter(
-      (b: Record<string, unknown>) =>
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (b: any) =>
         !(b._type === "block" && Array.isArray(b.children) && b.children.length === 1 && b.children[0].text === "")
     );
   } catch (err) {

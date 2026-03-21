@@ -13,6 +13,9 @@ const manrope = Manrope({
   subsets: ["latin", "latin-ext"],
   display: "swap",
   variable: "--font-manrope",
+  preload: true,
+  fallback: ["system-ui", "Arial", "sans-serif"],
+  adjustFontFallback: true,
 });
 
 export const metadata: Metadata = {

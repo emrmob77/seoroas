@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ["/api/", "/admin/", "/tesekkurler"],
+      disallow: ["/api/", "/admin/", "/studio/", "/tesekkurler"],
     },
     sitemap: "https://seoroas.com/sitemap.xml",
   };
