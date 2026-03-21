@@ -460,7 +460,7 @@ Her yazı (Sanity Studio'da doldurulacak alanlar):
 - [ ] `seoDescription` → 145-160 karakter, CTA içerir
 - [ ] `body` → Min 2,000 kelime, Portable Text editörde
 - [ ] `mainImage` → Featured image (Sanity CDN'e yüklenir, otomatik WebP)
-- [ ] İç link önerileri: Portable Text içinde `/seo-hizmetleri/` linkleri
+- [ ] İç link önerileri: Portable Text içinde `/seo/` linkleri
 
 ---
 
@@ -568,23 +568,23 @@ Test edilecek:
 
 | Sprint | Görev | Rol | Durum |
 |---|---|---|---|
-| 0 | MÜH-01 Proje + Sanity kurulumu | Mühendis | ⬜ Bekliyor |
-| 0 | MÜH-01b Sanity Studio şemaları | Mühendis | ⬜ Bekliyor |
-| 0 | MÜH-01c SSR veri katmanı (GROQ) | Mühendis | ⬜ Bekliyor |
-| 0 | MÜH-02 Klasör yapısı | Mühendis | ⬜ Bekliyor |
-| 1 | MÜH-03 Layout & SEO altyapısı | Mühendis | ⬜ Bekliyor |
-| 1 | FE-01 UI bileşen kütüphanesi | Front-end | ⬜ Bekliyor |
-| 1 | FE-02 Header & Navigation | Front-end | ⬜ Bekliyor |
-| 1 | FE-03 Footer | Front-end | ⬜ Bekliyor |
-| 2 | SEO-01 Ana sayfa brief | SEO Uzmanı | ⬜ Bekliyor |
-| 2 | FE-04 Hero Section | Front-end | ⬜ Bekliyor |
-| 2 | FE-05 Stats Section | Front-end | ⬜ Bekliyor |
-| 2 | FE-06 Hizmetler Section | Front-end | ⬜ Bekliyor |
-| 2 | FE-07 Vaka Çalışmaları | Front-end | ⬜ Bekliyor |
-| 2 | FE-08 Blog Section | Front-end | ⬜ Bekliyor |
-| 2 | FE-09 Newsletter CTA | Front-end | ⬜ Bekliyor |
-| 2 | MÜH-04 Lead Form Backend | Mühendis | ⬜ Bekliyor |
-| 2 | FE-10 FAQ Section | Front-end | ⬜ Bekliyor |
+| 0 | MÜH-01 Proje + Sanity kurulumu | Mühendis | ✅ Tamamlandı |
+| 0 | MÜH-01b Sanity Studio şemaları | Mühendis | ✅ Tamamlandı |
+| 0 | MÜH-01c SSR veri katmanı (GROQ) | Mühendis | ✅ Tamamlandı |
+| 0 | MÜH-02 Klasör yapısı | Mühendis | ✅ Tamamlandı |
+| 1 | MÜH-03 Layout & SEO altyapısı | Mühendis | ✅ Tamamlandı |
+| 1 | FE-01 UI bileşen kütüphanesi | Front-end | ✅ Tamamlandı |
+| 1 | FE-02 Header & Navigation | Front-end | ✅ Tamamlandı |
+| 1 | FE-03 Footer | Front-end | ✅ Tamamlandı |
+| 2 | SEO-01 Ana sayfa brief | SEO Uzmanı | ✅ Tamamlandı |
+| 2 | FE-04 Hero Section | Front-end | ✅ Tamamlandı |
+| 2 | FE-05 Stats Section | Front-end | ✅ Tamamlandı |
+| 2 | FE-06 Hizmetler Section | Front-end | ✅ Tamamlandı |
+| 2 | FE-07 Vaka Çalışmaları | Front-end | ✅ Tamamlandı |
+| 2 | FE-08 Blog Section | Front-end | ✅ Tamamlandı |
+| 2 | FE-09 Newsletter CTA | Front-end | ✅ Tamamlandı |
+| 2 | MÜH-04 Lead Form Backend | Mühendis | ✅ Tamamlandı |
+| 2 | FE-10 FAQ Section | Front-end | ✅ Tamamlandı |
 | 3 | SEO-02 Fiyatlar sayfası brief | SEO Uzmanı | ⬜ Bekliyor |
 | 3 | MÜH-05 + FE-11 Fiyatlar sayfası | Mühendis + FE | ⬜ Bekliyor |
 | 3 | SEO-03 + FE-12 Hizmet alt sayfaları | SEO + FE | ⬜ Bekliyor |

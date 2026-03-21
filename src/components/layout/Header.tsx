@@ -5,24 +5,24 @@ import Link from "next/link";
 import { Menu, X, ChevronDown, Search, Code, Link as LinkIcon, MapPin, ShoppingCart, FileText } from "lucide-react";
 
 const services = [
-  { name: "On-Page SEO", href: "/seo-hizmetleri/on-page-seo", icon: Search },
-  { name: "Teknik SEO", href: "/seo-hizmetleri/teknik-seo", icon: Code },
-  { name: "Link Building", href: "/seo-hizmetleri/link-building", icon: LinkIcon },
-  { name: "Lokal SEO", href: "/seo-hizmetleri/lokal-seo", icon: MapPin },
-  { name: "E-ticaret SEO", href: "/seo-hizmetleri/e-ticaret-seo", icon: ShoppingCart },
-  { name: "İçerik SEO", href: "/seo-hizmetleri/icerik-seo", icon: FileText },
+  { name: "On-Page SEO", href: "/seo/on-page-seo", icon: Search },
+  { name: "Teknik SEO", href: "/seo/teknik-seo", icon: Code },
+  { name: "Link Building", href: "/seo/link-building", icon: LinkIcon },
+  { name: "Lokal SEO", href: "/seo/lokal-seo", icon: MapPin },
+  { name: "E-ticaret SEO", href: "/seo/e-ticaret-seo", icon: ShoppingCart },
+  { name: "İçerik SEO", href: "/seo/icerik-seo", icon: FileText },
 ];
 
 const navLinks = [
+  { name: "Metodoloji", href: "/metodoloji" },
+  { name: "Referanslar", href: "/vaka-calismalari" },
   { name: "Blog", href: "/blog" },
-  { name: "Fiyatlar", href: "/seo-fiyatlari" },
-  { name: "Hakkımızda", href: "/hakkimizda" },
 ];
 
 export function Header() {
-  const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
@@ -36,120 +36,119 @@ export function Header() {
     } else {
       document.body.style.overflow = "";
     }
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [mobileOpen]);
 
   return (
-    <header
-      className={`sticky top-0 z-50 transition-all duration-200 ${
-        scrolled ? "bg-white shadow-sm" : "bg-white/95 backdrop-blur-sm"
-      }`}
-    >
-      <div className="max-w-[1200px] mx-auto px-6">
-        <nav className="flex items-center justify-between h-[72px] md:h-[56px]">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 shrink-0">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-              <rect width="32" height="32" rx="8" fill="#1A56DB" />
-              <path d="M8 20.5C8 17.5 10 15.5 13 15.5C10.5 15.5 9 13.5 9 11.5C9 9 11 7 14 7H20V11H15C14 11 13.5 11.5 13.5 12.25C13.5 13 14 13.5 15 13.5H20V17.5H14.5C13.25 17.5 12.5 18.25 12.5 19.25C12.5 20.25 13.25 21 14.5 21H20V25H13C10 25 8 23 8 20.5Z" fill="white"/>
-            </svg>
-            <span className="text-xl font-bold text-dark">
-              SEO<span className="text-primary">ROAS</span>
-            </span>
+    <header className="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-50">
+      <nav
+        className={`rounded-full border-[0.5px] border-white/20 bg-white/70 backdrop-blur-3xl flex justify-between items-center px-8 py-3 transition-shadow duration-300 ${
+          scrolled ? "shadow-[0_20px_50px_rgba(0,0,0,0.08)]" : "shadow-[0_20px_50px_rgba(0,0,0,0.04)]"
+        }`}
+      >
+        {/* Logo */}
+        <Link href="/" className="text-xl font-bold tracking-[0.2em] uppercase text-slate-900">
+          SEOROAS
+        </Link>
+
+        {/* Desktop Nav */}
+        <div className="hidden md:flex items-center space-x-10">
+          {/* Hizmetler Dropdown */}
+          <div
+            className="relative"
+            onMouseEnter={() => setServicesOpen(true)}
+            onMouseLeave={() => setServicesOpen(false)}
+          >
+            <button
+              className="tracking-[0.1em] font-light text-sm uppercase text-on-surface-variant hover:text-on-surface transition-colors duration-500 flex items-center gap-1"
+              aria-expanded={servicesOpen}
+              aria-haspopup="true"
+            >
+              Çözümler
+              <ChevronDown
+                className={`h-3.5 w-3.5 transition-transform duration-300 ${servicesOpen ? "rotate-180" : ""}`}
+              />
+            </button>
+
+            {servicesOpen && (
+              <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4">
+                <div className="bg-white/90 backdrop-blur-xl rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.08)] border-[0.5px] border-outline-variant/20 p-4 grid grid-cols-2 gap-1 w-[420px]">
+                  {services.map((s) => (
+                    <Link
+                      key={s.href}
+                      href={s.href}
+                      className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-surface-container-low transition-colors"
+                    >
+                      <div className="w-8 h-8 flex items-center justify-center bg-primary/5 rounded-full">
+                        <s.icon className="h-4 w-4 text-primary" />
+                      </div>
+                      <span className="text-sm font-medium text-on-surface">{s.name}</span>
+                    </Link>
+                  ))}
+                  <Link
+                    href="/seo"
+                    className="col-span-2 text-center text-xs font-bold uppercase tracking-widest text-primary hover:opacity-70 mt-2 pt-3 border-t border-outline-variant/20 transition-opacity"
+                  >
+                    Tüm Hizmetler →
+                  </Link>
+                </div>
+              </div>
+            )}
+          </div>
+
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="tracking-[0.1em] font-light text-sm uppercase text-on-surface-variant hover:text-on-surface transition-colors duration-500"
+            >
+              {link.name}
+            </Link>
+          ))}
+        </div>
+
+        {/* CTA + Mobile Toggle */}
+        <div className="flex items-center gap-4">
+          <Link
+            href="/iletisim"
+            className="hidden md:inline-flex bg-primary text-on-primary px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest hover:opacity-90 active:scale-95 transition-all duration-200"
+          >
+            Analiz Başlat
           </Link>
 
-          {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-8">
-            {/* Hizmetler Dropdown */}
-            <div
-              className="relative"
-              onMouseEnter={() => setServicesOpen(true)}
-              onMouseLeave={() => setServicesOpen(false)}
-            >
-              <button
-                className="flex items-center gap-1 text-sm font-medium text-dark hover:text-primary transition-colors"
-                aria-expanded={servicesOpen}
-                aria-haspopup="true"
-              >
-                Hizmetler
-                <ChevronDown className={`h-4 w-4 transition-transform ${servicesOpen ? "rotate-180" : ""}`} />
-              </button>
-
-              {servicesOpen && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2">
-                  <div className="bg-white rounded-xl shadow-lg border border-border p-4 grid grid-cols-2 gap-1 w-[420px]">
-                    {services.map((s) => (
-                      <Link
-                        key={s.href}
-                        href={s.href}
-                        className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-light transition-colors"
-                      >
-                        <s.icon className="h-5 w-5 text-primary shrink-0" />
-                        <span className="text-sm font-medium text-dark">{s.name}</span>
-                      </Link>
-                    ))}
-                    <Link
-                      href="/seo-hizmetleri"
-                      className="col-span-2 text-center text-sm font-medium text-primary hover:underline mt-2 pt-2 border-t border-border"
-                    >
-                      Tüm Hizmetleri Gör →
-                    </Link>
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-sm font-medium text-dark hover:text-primary transition-colors"
-              >
-                {link.name}
-              </Link>
-            ))}
-          </div>
-
-          {/* CTA + Mobile Toggle */}
-          <div className="flex items-center gap-4">
-            <Link
-              href="/iletisim"
-              className="hidden md:inline-flex items-center bg-accent hover:bg-accent-dark text-white text-sm font-bold px-5 py-2.5 rounded-lg transition-colors"
-            >
-              Ücretsiz SEO Analizi
-            </Link>
-
-            <button
-              className="md:hidden p-2 -mr-2"
-              onClick={() => setMobileOpen(!mobileOpen)}
-              aria-label={mobileOpen ? "Menüyü kapat" : "Menüyü aç"}
-            >
-              {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button>
-          </div>
-        </nav>
-      </div>
+          <button
+            className="md:hidden p-2 -mr-2"
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label={mobileOpen ? "Menüyü kapat" : "Menüyü aç"}
+          >
+            {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
+      </nav>
 
       {/* Mobile Drawer */}
       {mobileOpen && (
-        <div className="md:hidden fixed inset-0 top-[56px] bg-white z-40 overflow-y-auto">
-          <div className="px-6 py-6 flex flex-col gap-2">
-            {/* Hizmetler */}
+        <div className="md:hidden fixed inset-0 top-16 bg-white/95 backdrop-blur-xl z-40 overflow-y-auto">
+          <div className="px-8 py-8 flex flex-col gap-2">
             <button
               onClick={() => setServicesOpen(!servicesOpen)}
-              className="flex items-center justify-between py-3 text-base font-medium text-dark"
+              className="flex items-center justify-between py-4 text-sm font-bold uppercase tracking-widest text-on-surface"
             >
-              Hizmetler
-              <ChevronDown className={`h-5 w-5 transition-transform ${servicesOpen ? "rotate-180" : ""}`} />
+              Çözümler
+              <ChevronDown
+                className={`h-5 w-5 transition-transform ${servicesOpen ? "rotate-180" : ""}`}
+              />
             </button>
             {servicesOpen && (
-              <div className="pl-4 flex flex-col gap-1 mb-2">
+              <div className="pl-4 flex flex-col gap-1 mb-4">
                 {services.map((s) => (
                   <Link
                     key={s.href}
                     href={s.href}
                     onClick={() => setMobileOpen(false)}
-                    className="flex items-center gap-3 py-2.5 text-sm text-gray hover:text-primary"
+                    className="flex items-center gap-3 py-3 text-sm text-on-surface-variant hover:text-primary"
                   >
                     <s.icon className="h-4 w-4" />
                     {s.name}
@@ -163,7 +162,7 @@ export function Header() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
-                className="py-3 text-base font-medium text-dark border-t border-border"
+                className="py-4 text-sm font-bold uppercase tracking-widest text-on-surface border-t border-outline-variant/20"
               >
                 {link.name}
               </Link>
@@ -172,9 +171,9 @@ export function Header() {
             <Link
               href="/iletisim"
               onClick={() => setMobileOpen(false)}
-              className="mt-4 w-full text-center bg-accent hover:bg-accent-dark text-white font-bold py-3 rounded-lg transition-colors"
+              className="mt-6 w-full text-center bg-primary text-on-primary font-bold uppercase tracking-widest text-xs py-4 rounded-full transition-opacity hover:opacity-90"
             >
-              Ücretsiz SEO Analizi
+              Analiz Başlat
             </Link>
           </div>
         </div>
