@@ -28,90 +28,6 @@ const categories = [
   "AI & SEO",
 ];
 
-const fallbackPosts: Post[] = [
-  {
-    _id: "1",
-    title: "Google 2026 Algoritma Güncellemeleri ve Generative Search Deneyimi",
-    slug: { current: "google-2026-algoritma-guncellemeleri" },
-    publishedAt: "2026-04-14",
-    excerpt:
-      "Yapay zeka odaklı arama motoru optimizasyonunda yeni dönem başlıyor. SEOROAS uzmanları, Google'ın yeni Search Generative Experience mimarisini ve 2026 algoritma hedeflerini derinlemesine analiz ediyor.",
-    body: [],
-    seoTitle: "Google 2026 Algoritma Güncellemeleri",
-    seoDescription: "",
-    mainImage: null as unknown as Post["mainImage"],
-    author: "SEOROAS",
-    readingTime: 14,
-  },
-  {
-    _id: "2",
-    title:
-      "Core Web Vitals Optimizasyonu: LCP ve INP Metriklerinde Devrim",
-    slug: { current: "core-web-vitals-optimizasyonu" },
-    publishedAt: "2026-04-12",
-    excerpt:
-      "Web sitenizin hızını ve etkileşimini artırmak için modern tarayıcı standartlarına uygun optimizasyon teknikleri.",
-    body: [],
-    seoTitle: "Core Web Vitals Optimizasyonu",
-    seoDescription: "",
-    mainImage: null as unknown as Post["mainImage"],
-    author: "SEOROAS",
-    readingTime: 10,
-  },
-  {
-    _id: "3",
-    title:
-      "E-Ticaret SEO Rehberi: Dönüşüm Odaklı Kategori Optimizasyonu",
-    slug: { current: "e-ticaret-seo-rehberi" },
-    publishedAt: "2026-04-10",
-    excerpt:
-      "Büyük ölçekli e-ticaret sitelerinde mimari yapılandırma ve ürün sayfa otoritesini artırma stratejileri.",
-    body: [],
-    seoTitle: "E-Ticaret SEO Rehberi",
-    seoDescription: "",
-    mainImage: null as unknown as Post["mainImage"],
-    author: "SEOROAS",
-    readingTime: 15,
-  },
-  {
-    _id: "4",
-    title:
-      "Enterprise SEO Dashboard: Veri Analitiğinde Mimari Yaklaşım",
-    slug: { current: "enterprise-seo-dashboard" },
-    publishedAt: "2026-04-08",
-    excerpt:
-      "Karmaşık SEO verilerini anlamlı içgörülere dönüştürmek için kullanılan yeni nesil analitik araçlar.",
-    body: [],
-    seoTitle: "Enterprise SEO Dashboard",
-    seoDescription: "",
-    mainImage: null as unknown as Post["mainImage"],
-    author: "SEOROAS",
-    readingTime: 12,
-  },
-  {
-    _id: "5",
-    title:
-      "Semantic Content Strategy: Kelimelerin Ötesinde Otorite Kurmak",
-    slug: { current: "semantic-content-strategy" },
-    publishedAt: "2026-04-05",
-    excerpt:
-      "Arama niyetini anlamak ve konusal otorite (topical authority) oluşturmak için semantik içerik kurgusu.",
-    body: [],
-    seoTitle: "Semantic Content Strategy",
-    seoDescription: "",
-    mainImage: null as unknown as Post["mainImage"],
-    author: "SEOROAS",
-    readingTime: 8,
-  },
-];
-
-const categoryMap: Record<string, string> = {
-  "1": "AI & SEO",
-  "2": "Teknik SEO",
-  "3": "E-Ticaret SEO",
-  "4": "SEO Araçları",
-  "5": "İçerik SEO",
-};
 
 function formatDate(date: string) {
   return new Date(date).toLocaleDateString("tr-TR", {
@@ -143,15 +59,22 @@ function PostImage({ post, aspect = "square" }: { post: Post; aspect?: "wide" | 
 }
 
 export default async function BlogPage() {
-  const sanityPosts = await getAllPosts();
-  const posts =
-    Array.isArray(sanityPosts) && sanityPosts.length > 0
-      ? sanityPosts
-      : fallbackPosts;
+  const posts = await getAllPosts();
+
+  if (!Array.isArray(posts) || posts.length === 0) {
+    return (
+      <main className="pt-32 pb-40">
+        <section className="max-w-7xl mx-auto px-8 text-center">
+          <h1 className="text-5xl font-extrabold text-on-surface tight-tracking mb-6">Blog</h1>
+          <p className="text-on-surface-variant text-lg">Henüz yazı bulunmuyor. Yakında burada olacak.</p>
+        </section>
+      </main>
+    );
+  }
 
   const featured = posts[0];
   const secondary = posts[1];
-  const grid = posts.slice(2, 5);
+  const grid = posts.slice(2);
 
   return (
     <>
@@ -214,7 +137,7 @@ export default async function BlogPage() {
                 </Link>
                 <div className="flex flex-col gap-4 max-w-2xl">
                   <div className="flex items-center gap-4 text-[10px] font-bold text-on-surface-variant uppercase tracking-[0.2em]">
-                    <span>{categoryMap[featured._id] || "SEO"}</span>
+                    <span>SEO</span>
                     <span className="w-1 h-1 bg-outline-variant rounded-full" />
                     <span>{formatDate(featured.publishedAt)}</span>
                   </div>
@@ -245,7 +168,7 @@ export default async function BlogPage() {
                 </Link>
                 <div className="flex flex-col gap-3">
                   <div className="flex items-center gap-3 text-[10px] font-bold text-on-surface-variant uppercase tracking-[0.2em]">
-                    <span>{categoryMap[secondary._id] || "SEO"}</span>
+                    <span>SEO</span>
                     <span className="w-1 h-1 bg-outline-variant rounded-full" />
                     <span>{formatDate(secondary.publishedAt)}</span>
                   </div>
@@ -269,7 +192,7 @@ export default async function BlogPage() {
                 </Link>
                 <div className="flex flex-col gap-3">
                   <div className="flex items-center gap-3 text-[10px] font-bold text-on-surface-variant uppercase tracking-[0.2em]">
-                    <span>{categoryMap[post._id] || "SEO"}</span>
+                    <span>SEO</span>
                     <span className="w-1 h-1 bg-outline-variant rounded-full" />
                     <span>{formatDate(post.publishedAt)}</span>
                   </div>
