@@ -42,13 +42,13 @@ npx sanity@latest init --env   # Sanity projesi oluştur, .env'e yazar
 ```
 
 Yapılandırma:
-- [ ] `next.config.ts` → image domains (cdn.sanity.io), headers, runtime: 'edge'
-- [ ] `tailwind.config.ts` → custom colors, fonts (Inter)
-- [ ] `tsconfig.json` → path aliases (`@/components`, `@/lib`, `@/types`, `@/sanity`)
-- [ ] `.env.local` → `NEXT_PUBLIC_SANITY_PROJECT_ID`, `NEXT_PUBLIC_SANITY_DATASET`, `SANITY_API_TOKEN`, `RESEND_API_KEY`, `GA_ID`
-- [ ] ESLint + Prettier + Husky kurulumu
-- [ ] `src/sanity/client.ts` → Sanity client (apiCDN: true, SSR için)
-- [ ] `src/sanity/image.ts` → `@sanity/image-url` builder
+- [x] `next.config.ts` → image domains (cdn.sanity.io), headers, runtime: 'edge'
+- [x] `tailwind.config.ts` → custom colors, fonts (Inter)
+- [x] `tsconfig.json` → path aliases (`@/components`, `@/lib`, `@/types`, `@/sanity`)
+- [x] `.env.local` → `NEXT_PUBLIC_SANITY_PROJECT_ID`, `NEXT_PUBLIC_SANITY_DATASET`, `SANITY_API_TOKEN`, `RESEND_API_KEY`, `GA_ID`
+- [x] ESLint + Prettier + Husky kurulumu
+- [x] `src/sanity/client.ts` → Sanity client (apiCDN: true, SSR için)
+- [x] `src/sanity/image.ts` → `@sanity/image-url` builder
 
 **Çıktı:** `npm run dev` çalışıyor, Sanity projesi oluşturulmuş, Vercel'e bağlı
 
@@ -75,14 +75,14 @@ sanity/
 ```
 
 Görevler:
-- [ ] `post.ts` şeması → title, slug, publishedAt, excerpt, body (Portable Text), seoTitle, seoDescription, mainImage
-- [ ] `service.ts` şeması → title, slug, shortDesc, body, icon, faqs[]
-- [ ] `caseStudy.ts` şeması → client, industry, result, body, beforeAfter
-- [ ] `localPage.ts` şeması → city, slug, title, body, faqs[]
-- [ ] `faq.ts` şeması → question, answer (Portable Text)
-- [ ] `testimonial.ts` şeması → author, company, quote, rating
-- [ ] `siteSettings.ts` → singleton, site geneli bilgiler
-- [ ] Studio deploy: `npx sanity deploy` → `studio.seoroas.com`
+- [x] `post.ts` şeması → title, slug, publishedAt, excerpt, body (Portable Text), seoTitle, seoDescription, mainImage
+- [x] `service.ts` şeması → title, slug, shortDesc, body, icon, faqs[]
+- [x] `caseStudy.ts` şeması → client, industry, result, body, beforeAfter
+- [x] `localPage.ts` şeması → city, slug, title, body, faqs[]
+- [x] `faq.ts` şeması → question, answer (Portable Text)
+- [x] `testimonial.ts` şeması → author, company, quote, rating
+- [x] `siteSettings.ts` → singleton, site geneli bilgiler
+- [x] Studio deploy: `npx sanity deploy` → `studio.seoroas.com`
 
 **Çıktı:** Sanity Studio erişilebilir, tüm şemalar tanımlı, ilk test içeriği girilmiş
 
@@ -105,9 +105,9 @@ src/sanity/
 ```
 
 Her query dosyasında:
-- [ ] GROQ sorgusu tanımla (`groq` template literal)
-- [ ] TypeScript tipi tanımla (`Post`, `Service` vb.)
-- [ ] `sanityFetch()` helper → `fetch(query, { next: { revalidate: 0 } })` — TAM SSR
+- [x] GROQ sorgusu tanımla (`groq` template literal)
+- [x] TypeScript tipi tanımla (`Post`, `Service` vb.)
+- [x] `sanityFetch()` helper → `fetch(query, { next: { revalidate: 0 } })` — TAM SSR
 
 **Kritik not:** `revalidate: 0` → Her istekte Sanity API'ya sorgu gönderir. Sanity CDN sayesinde ~50-100ms'de yanıt döner.
 
@@ -190,16 +190,16 @@ src/
 **Bağımlılık:** MÜH-01, MÜH-01b, MÜH-01c tamamlanmış olmalı
 
 Görevler:
-- [ ] `app/layout.tsx` → Inter font (next/font), GA4 Script, viewport meta, `export const dynamic = 'force-dynamic'` (tam SSR)
-- [ ] `lib/seo.ts` → generateMetadata helper (Sanity'den gelen seoTitle/seoDescription kullanır)
-- [ ] `lib/schema.ts` → LocalBusiness, Service, Article, FAQPage schema factory fonksiyonları
-- [ ] `lib/portableText.ts` → `@portabletext/react` ile Sanity Portable Text renderer (özel bileşenlerle)
-- [ ] `components/seo/SchemaOrg.tsx` → JSON-LD script injector
-- [ ] `next-sitemap.config.js` → Sanity'den tüm slug'ları çeker, sitemap üretir
-- [ ] Security headers → `next.config.ts` içinde + `Cache-Control: s-maxage=60, stale-while-revalidate`
-- [ ] robots.txt → `app/robots.ts`
-- [ ] 404 sayfası → `app/not-found.tsx`
-- [ ] SSR doğrulama: `export const dynamic = 'force-dynamic'` her `page.tsx`'de
+- [x] `app/layout.tsx` → Inter font (next/font), GA4 Script, viewport meta, `export const dynamic = 'force-dynamic'` (tam SSR)
+- [x] `lib/seo.ts` → generateMetadata helper (Sanity'den gelen seoTitle/seoDescription kullanır)
+- [x] `lib/schema.ts` → LocalBusiness, Service, Article, FAQPage schema factory fonksiyonları
+- [x] `lib/portableText.ts` → `@portabletext/react` ile Sanity Portable Text renderer (özel bileşenlerle)
+- [x] `components/seo/SchemaOrg.tsx` → JSON-LD script injector
+- [x] `next-sitemap.config.js` → Sanity'den tüm slug'ları çeker, sitemap üretir
+- [x] Security headers → `next.config.ts` içinde + `Cache-Control: s-maxage=60, stale-while-revalidate`
+- [x] robots.txt → `app/robots.ts`
+- [x] 404 sayfası → `app/not-found.tsx`
+- [x] SSR doğrulama: `export const dynamic = 'force-dynamic'` her `page.tsx`'de
 
 **Test:** `npm run build` hatasız, tüm sayfalar SSR (Static değil), Lighthouse SEO: 100
 
@@ -211,12 +211,12 @@ Görevler:
 **Bağımlılık:** MÜH-01, klasör yapısı
 
 Görevler:
-- [ ] `Button.tsx` → primary, secondary, accent varyantları (design.md spec)
-- [ ] `Card.tsx` → hover animasyonu ile (transform + shadow)
-- [ ] `Badge.tsx` → küçük etiket komponenti
-- [ ] `Input.tsx` → focus ring, error state
-- [ ] `Accordion.tsx` → FAQ için, CSS only animasyon
-- [ ] `Breadcrumb.tsx` → BreadcrumbList schema entegre
+- [x] `Button.tsx` → primary, secondary, accent varyantları (design.md spec)
+- [x] `Card.tsx` → hover animasyonu ile (transform + shadow)
+- [x] `Badge.tsx` → küçük etiket komponenti
+- [x] `Input.tsx` → focus ring, error state
+- [x] `Accordion.tsx` → FAQ için, CSS only animasyon
+- [x] `Breadcrumb.tsx` → BreadcrumbList schema entegre
 
 Storybook veya not: Her bileşen için `/* design.md reference: ... */` yorum satırı ekle.
 
@@ -227,13 +227,13 @@ Storybook veya not: Her bileşen için `/* design.md reference: ... */` yorum sa
 **Süre:** 6 saat
 
 Görevler:
-- [ ] Desktop sticky header (scroll'da shadow ekle)
-- [ ] Hizmetler mega-menu dropdown (Backlinko Articles dropdown mimarisi)
-- [ ] Arama ikonu + arama overlay
-- [ ] "Ücretsiz SEO Analizi" CTA butonu — accent turuncu
-- [ ] Mobile hamburger → full-screen nav drawer
-- [ ] Active route highlight
-- [ ] Logo: SVG inline (0 HTTP isteği)
+- [x] Desktop sticky header (scroll'da shadow ekle)
+- [x] Hizmetler mega-menu dropdown (Backlinko Articles dropdown mimarisi)
+- [x] Arama ikonu + arama overlay
+- [x] "Ücretsiz SEO Analizi" CTA butonu — accent turuncu
+- [x] Mobile hamburger → full-screen nav drawer
+- [x] Active route highlight
+- [x] Logo: SVG inline (0 HTTP isteği)
 
 **Erişilebilirlik:** aria-expanded, aria-haspopup, focus trap mobile drawer
 
@@ -244,11 +244,11 @@ Görevler:
 **Süre:** 3 saat
 
 Görevler:
-- [ ] 4 kolon layout (Logo/About, Hizmetler, Şirket, Sosyal)
-- [ ] Legal links (Gizlilik, KVKK, Kullanım Şartları)
-- [ ] Sosyal medya ikonları (Lucide)
-- [ ] Copyright satırı
-- [ ] Mobile: 2 kolon → 1 kolon stack
+- [x] 4 kolon layout (Logo/About, Hizmetler, Şirket, Sosyal)
+- [x] Legal links (Gizlilik, KVKK, Kullanım Şartları)
+- [x] Sosyal medya ikonları (Lucide)
+- [x] Copyright satırı
+- [x] Mobile: 2 kolon → 1 kolon stack
 
 ---
 
@@ -260,12 +260,12 @@ Görevler:
 **Çıktı:** `content/homepage-brief.md`
 
 Teslim edilecekler:
-- [ ] H1 metni (hedef: "seo ajansı")
-- [ ] Title tag ve meta description
-- [ ] H2 başlıkları listesi (LSI keyword'ler dahil)
-- [ ] Hero section CTA metni
-- [ ] FAQ soruları ve cevapları (10 adet, FAQ Schema için)
-- [ ] İç link hedefleri haritası
+- [x] H1 metni (hedef: "seo ajansı")
+- [x] Title tag ve meta description
+- [x] H2 başlıkları listesi (LSI keyword'ler dahil)
+- [x] Hero section CTA metni
+- [x] FAQ soruları ve cevapları (10 adet, FAQ Schema için)
+- [x] İç link hedefleri haritası
 
 ---
 
@@ -275,15 +275,15 @@ Teslim edilecekler:
 **Bağımlılık:** SEO-01, FE-01
 
 Görevler:
-- [ ] Başlık (H1) → büyük, bold, Inter font
-- [ ] Alt başlık metni
-- [ ] Trust badge ("Türkiye'nin #1 SEO Ajansı" / Google Partner)
-- [ ] Domain input + "Ücretsiz Analiz Al" submit butonu
-- [ ] 3 adet trust signal satırı (checkbox ikonları)
-- [ ] Müşteri logoları şeridi (6 logo, grayscale, hover renkli)
-- [ ] Mobile responsive: full-width input, stacked layout
-- [ ] **LCP optimizasyonu:** Hero'da `priority={true}` image, no lazy loading
-- [ ] Arka plan: subtle SVG grid pattern (CSS, 0 HTTP isteği)
+- [x] Başlık (H1) → büyük, bold, Inter font
+- [x] Alt başlık metni
+- [x] Trust badge ("Türkiye'nin #1 SEO Ajansı" / Google Partner)
+- [x] Domain input + "Ücretsiz Analiz Al" submit butonu
+- [x] 3 adet trust signal satırı (checkbox ikonları)
+- [x] Müşteri logoları şeridi (6 logo, grayscale, hover renkli)
+- [x] Mobile responsive: full-width input, stacked layout
+- [x] **LCP optimizasyonu:** Hero'da `priority={true}` image, no lazy loading
+- [x] Arka plan: subtle SVG grid pattern (CSS, 0 HTTP isteği)
 
 ---
 
@@ -291,10 +291,10 @@ Görevler:
 **Rol:** Front-end Uzmanı
 **Süre:** 3 saat
 
-- [ ] 4 adet rakam kartı (200+ müşteri, %340 trafik artışı, %98 memnuniyet, 7 yıl)
-- [ ] CountUp animasyonu (Intersection Observer tetiklemeli, lazy)
-- [ ] Light gray arka plan (#F9FAFB)
-- [ ] Mobile: 2x2 grid
+- [x] 4 adet rakam kartı (200+ müşteri, %340 trafik artışı, %98 memnuniyet, 7 yıl)
+- [x] CountUp animasyonu (Intersection Observer tetiklemeli, lazy)
+- [x] Light gray arka plan (#F9FAFB)
+- [x] Mobile: 2x2 grid
 
 ---
 
@@ -302,12 +302,12 @@ Görevler:
 **Rol:** Front-end Uzmanı
 **Süre:** 5 saat
 
-- [ ] Section başlığı (H2)
-- [ ] 6 adet hizmet kartı (3x2 grid)
+- [x] Section başlığı (H2)
+- [x] 6 adet hizmet kartı (3x2 grid)
   - On-Page SEO, Teknik SEO, Link Building, Lokal SEO, E-ticaret SEO, İçerik SEO
-- [ ] Her kartta: Lucide ikon, başlık, kısa açıklama, "Detay →" linki
-- [ ] Hover animasyonu (lift + shadow)
-- [ ] Card bileşenini kullan (FE-01)
+- [x] Her kartta: Lucide ikon, başlık, kısa açıklama, "Detay →" linki
+- [x] Hover animasyonu (lift + shadow)
+- [x] Card bileşenini kullan (FE-01)
 
 ---
 
@@ -315,10 +315,10 @@ Görevler:
 **Rol:** Front-end Uzmanı
 **Süre:** 4 saat
 
-- [ ] Büyük + 2 küçük kart layout (masonry benzeri)
-- [ ] Her vakada: başlık, sektör, sonuç rakamı, okuma linki
-- [ ] Hover'da görüntü overlay
-- [ ] "Tüm Vaka Çalışmaları →" CTA
+- [x] Büyük + 2 küçük kart layout (masonry benzeri)
+- [x] Her vakada: başlık, sektör, sonuç rakamı, okuma linki
+- [x] Hover'da görüntü overlay
+- [x] "Tüm Vaka Çalışmaları →" CTA
 
 ---
 
@@ -327,10 +327,10 @@ Görevler:
 **Süre:** 4 saat
 (Backlinko "Latest How-To Guides" mimarisi)
 
-- [ ] Büyük featured + 3 küçük grid layout
-- [ ] Yazar adı, tarih, okuma süresi meta
-- [ ] Lazy loaded görüntüler (WebP)
-- [ ] "Tüm Rehberleri Gör →" CTA
+- [x] Büyük featured + 3 küçük grid layout
+- [x] Yazar adı, tarih, okuma süresi meta
+- [x] Lazy loaded görüntüler (WebP)
+- [x] "Tüm Rehberleri Gör →" CTA
 
 ---
 
@@ -338,21 +338,21 @@ Görevler:
 **Rol:** Front-end Uzmanı
 **Süre:** 3 saat
 
-- [ ] Koyu mavi arka plan (Primary #1A56DB)
-- [ ] E-posta input + "Abone Ol" butonu
-- [ ] Spam disclaimer metni
-- [ ] Mobile full-width
+- [x] Koyu mavi arka plan (Primary #1A56DB)
+- [x] E-posta input + "Abone Ol" butonu
+- [x] Spam disclaimer metni
+- [x] Mobile full-width
 
 ### [MÜH-04] Lead Form Backend
 **Rol:** Yazılım Mühendisi
 **Süre:** 4 saat
 
-- [ ] `app/api/lead/route.ts` → POST handler
-- [ ] Resend API ile e-posta bildirimi (yeni lead geldiğinde)
-- [ ] Honeypot spam koruması
-- [ ] Rate limiting (10 istek/dakika/IP)
-- [ ] Başarılı submit → `/tesekkurler/` yönlendirmesi (GA4 conversion)
-- [ ] Hata durumu → kullanıcıya anlamlı mesaj
+- [x] `app/api/lead/route.ts` → POST handler
+- [x] Resend API ile e-posta bildirimi (yeni lead geldiğinde)
+- [x] Honeypot spam koruması
+- [x] Rate limiting (10 istek/dakika/IP)
+- [x] Başarılı submit → `/tesekkurler/` yönlendirmesi (GA4 conversion)
+- [x] Hata durumu → kullanıcıya anlamlı mesaj
 
 ---
 
@@ -360,10 +360,10 @@ Görevler:
 **Rol:** Front-end Uzmanı
 **Süre:** 3 saat
 
-- [ ] Accordion bileşenini kullan (FE-01)
-- [ ] 10 adet S&C (SEO-01'den gelenler)
-- [ ] FAQPage Schema JSON-LD enjeksiyonu
-- [ ] CSS animasyonu (max-height transition)
+- [x] Accordion bileşenini kullan (FE-01)
+- [x] 10 adet S&C (SEO-01'den gelenler)
+- [x] FAQPage Schema JSON-LD enjeksiyonu
+- [x] CSS animasyonu (max-height transition)
 
 ---
 
@@ -373,10 +373,10 @@ Görevler:
 **Rol:** SEO Uzmanı
 **Süre:** 3 saat
 
-- [ ] H1: "SEO Fiyatları 2026" ile başlayan başlık
-- [ ] 3 paket yapısı (Başlangıç, Profesyonel, Kurumsal)
-- [ ] 15 adet SSS sorusu (seo fiyatları, seo ajansı, ne kadar sürer vb.)
-- [ ] Title: "SEO Fiyatları 2026 | Türkiye Güncel Paketler | SEOROAS"
+- [x] H1: "SEO Fiyatları 2026" ile başlayan başlık
+- [x] 3 paket yapısı (Başlangıç, Profesyonel, Kurumsal)
+- [x] 15 adet SSS sorusu (seo fiyatları, seo ajansı, ne kadar sürer vb.)
+- [x] Title: "SEO Fiyatları 2026 | Türkiye Güncel Paketler | SEOROAS"
 
 ---
 
@@ -385,13 +385,13 @@ Görevler:
 **Süre:** 6 saat
 **Bağımlılık:** SEO-02
 
-- [ ] Sayfa şablonu (page.tsx)
-- [ ] generateMetadata (SEO-02'den)
-- [ ] PriceSpecification + FAQPage Schema
-- [ ] 3 kolon paket karşılaştırma tablosu (en popüler vurgulu)
-- [ ] SSS accordion (15 soru)
-- [ ] "Size Özel Teklif Al" formu (MÜH-04 API'ını kullan)
-- [ ] Sticky CTA mobile
+- [x] Sayfa şablonu (page.tsx)
+- [x] generateMetadata (SEO-02'den)
+- [x] PriceSpecification + FAQPage Schema
+- [x] 3 kolon paket karşılaştırma tablosu (en popüler vurgulu)
+- [x] SSS accordion (15 soru)
+- [x] "Size Özel Teklif Al" formu (MÜH-04 API'ını kullan)
+- [x] Sticky CTA mobile
 
 ---
 
@@ -400,13 +400,13 @@ Görevler:
 **Süre:** 12 saat (6 sayfa × 2 saat)
 
 Her hizmet sayfası için:
-- [ ] SEO brief (H1, meta, H2'ler, FAQ)
-- [ ] Service Schema
-- [ ] Sayfa içeriği (min 1,500 kelime)
-- [ ] Hizmet süreci section (numbered steps)
-- [ ] Mini case study
-- [ ] SSS (5 soru, FAQPage Schema)
-- [ ] CTA bölümü
+- [x] SEO brief (H1, meta, H2'ler, FAQ)
+- [x] Service Schema
+- [x] Sayfa içeriği (min 1,500 kelime)
+- [x] Hizmet süreci section (numbered steps)
+- [x] Mini case study
+- [x] SSS (5 soru, FAQPage Schema)
+- [x] CTA bölümü
 
 Sayfalar: on-page-seo, teknik-seo, link-building, lokal-seo, e-ticaret-seo, icerik-seo
 
@@ -417,11 +417,11 @@ Sayfalar: on-page-seo, teknik-seo, link-building, lokal-seo, e-ticaret-seo, icer
 **Süre:** 10 saat (5 şehir × 2 saat)
 
 Her lokal sayfa:
-- [ ] H1: "[Şehir] SEO Ajansı" (kesin keyword match)
-- [ ] LocalBusiness Schema (şehire özel areaServed)
-- [ ] Şehre özel referanslar/istatistikler
-- [ ] Google Maps embed
-- [ ] 5 adet şehir özel SSS
+- [x] H1: "[Şehir] SEO Ajansı" (kesin keyword match)
+- [x] LocalBusiness Schema (şehire özel areaServed)
+- [x] Şehre özel referanslar/istatistikler
+- [x] Google Maps embed
+- [x] 5 adet şehir özel SSS
 
 Şehirler: İstanbul, Ankara, İzmir, Bursa, Antalya
 
