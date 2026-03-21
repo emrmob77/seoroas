@@ -24,6 +24,10 @@ const nextConfig: NextConfig = {
           key: "Strict-Transport-Security",
           value: "max-age=63072000; includeSubDomains; preload",
         },
+        {
+          key: "Cache-Control",
+          value: "s-maxage=60, stale-while-revalidate=3600",
+        },
       ],
     },
   ],
