@@ -3,6 +3,7 @@ import { Manrope } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { CookieBanner } from "@/components/layout/CookieBanner";
 import { SchemaOrg } from "@/components/seo/SchemaOrg";
 import { localBusinessSchema, webSiteSchema } from "@/lib/schema";
 import "./globals.css";
@@ -65,6 +66,7 @@ export default function RootLayout({
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        <CookieBanner />
         <Analytics />
       </body>
     </html>

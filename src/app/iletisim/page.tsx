@@ -153,6 +153,25 @@ export default function IletisimPage() {
                     <input type="text" name="company_fax" tabIndex={-1} autoComplete="off" />
                   </div>
 
+                  <label className="flex items-start gap-3 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      name="kvkk"
+                      required
+                      className="mt-1 h-4 w-4 rounded accent-primary"
+                    />
+                    <span className="text-xs text-on-surface-variant leading-relaxed">
+                      <Link href="/gizlilik-politikasi" className="text-primary hover:underline" target="_blank">
+                        Gizlilik Politikası
+                      </Link>
+                      {" "}ve{" "}
+                      <Link href="/kullanim-sartlari" className="text-primary hover:underline" target="_blank">
+                        KVKK Aydınlatma Metni
+                      </Link>
+                      &apos;ni okudum ve kabul ediyorum.
+                    </span>
+                  </label>
+
                   <button
                     type="submit"
                     className="w-full md:w-auto px-12 py-5 bg-primary text-on-primary font-bold rounded-full hover:bg-primary-dim transition-all shadow-xl shadow-primary/20 tracking-widest uppercase text-xs flex items-center justify-center gap-3 group"
