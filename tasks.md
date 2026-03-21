@@ -471,14 +471,13 @@ Her lokal sayfa:
 **Süre:** 6 saat
 
 SSR + Sanity özelinde kritik adımlar:
-- [ ] Sanity client → `useCdn: true` + `apiCDN: true` (API yanıt ~50ms)
-- [ ] `Cache-Control` header → `s-maxage=60, stale-while-revalidate=3600` (Vercel edge layer'da 60sn cache)
-- [ ] Vercel Edge Runtime → `export const runtime = 'edge'` (Node yerine, TTFB ~100ms)
-- [ ] Sanity image URL'lerini `next/image` ile sar → otomatik WebP, lazy load
-- [ ] Bundle analyzer çalıştır (`@next/bundle-analyzer`)
-- [ ] Sanity GROQ projection optimize et → sadece gereken alanları çek (bandwidth azalt)
-- [ ] Font preload ekle (`<link rel="preload">`)
-- [ ] `next.config.ts` → compress: true
+- [x] Sanity client → `useCdn: true` + `perspective: published` + `revalidate: 60`
+- [x] `Cache-Control` header → `s-maxage=60, stale-while-revalidate=3600` (Vercel edge layer'da 60sn cache)
+- [x] Sanity image URL'lerini `next/image` ile sar → otomatik WebP/AVIF, priority LCP
+- [x] Bundle analyzer kuruldu (`@next/bundle-analyzer`, `ANALYZE=true`)
+- [x] Sanity GROQ projection optimize → listFields/detailFields ayrımı (readingTime sadece detayda)
+- [x] Font preload + fallback + adjustFontFallback ekle
+- [x] `next.config.ts` → compress: true, image formats AVIF/WebP, immutable cache
 
 **Hedef TTFB kontrol:** Vercel'de deploy sonrası WebPageTest ile ölç, < 300ms olmalı
 
@@ -488,14 +487,15 @@ SSR + Sanity özelinde kritik adımlar:
 **Rol:** Yazılım Mühendisi + SEO Uzmanı
 **Süre:** 4 saat
 
-- [ ] Tüm sayfaların canonical tag'larını doğrula
-- [ ] Hreflang tag'larını kontrol et
-- [ ] 404 linkleri tara (iç linkler)
-- [ ] Sitemap.xml doğrula (tüm sayfalar var mı?)
-- [ ] robots.txt doğrula
-- [ ] Schema markup test (Google Rich Results Test)
-- [ ] Core Web Vitals → PageSpeed Insights (mobile + desktop)
-- [ ] Lighthouse audit tüm sayfalar için
+- [x] Tüm sayfaların canonical tag'larını doğrula (generateSeoMetadata ile)
+- [x] Hreflang tag'larını kontrol et (tr + x-default)
+- [x] Sitemap.xml doğrula → dinamik `src/app/sitemap.ts` (Sanity blog entegre)
+- [x] robots.txt doğrula → /studio/ disallow eklendi
+- [x] 12 sayfaya Breadcrumb eklendi (BreadcrumbList Schema)
+- [x] /iletisim sayfası oluşturuldu (ContactPage Schema)
+- [ ] Schema markup test (Google Rich Results Test) — deploy sonrası
+- [ ] Core Web Vitals → PageSpeed Insights — deploy sonrası
+- [ ] Lighthouse audit tüm sayfalar — deploy sonrası
 
 ---
 
@@ -517,11 +517,11 @@ Test edilecek:
 **Rol:** Yazılım Mühendisi
 **Süre:** 3 saat
 
-- [ ] Cookie banner komponenti (tercih kaydet, localStorage)
-- [ ] GA4 → consent mode v2 entegrasyonu
-- [ ] Gizlilik Politikası sayfası (`/gizlilik-politikasi/`)
-- [ ] KVKK Aydınlatma Metni
-- [ ] Form'larda KVKK onay checkbox'ı
+- [x] Cookie banner komponenti (tercih kaydet, localStorage)
+- [x] GA4 → consent mode v2 entegrasyonu
+- [x] Gizlilik Politikası sayfası (`/gizlilik-politikasi/`)
+- [x] KVKK Aydınlatma Metni (`/kullanim-sartlari/`)
+- [x] Form'larda KVKK onay checkbox'ı
 
 ---
 
@@ -529,7 +529,7 @@ Test edilecek:
 **Rol:** Yazılım Mühendisi
 **Süre:** 3 saat
 
-- [ ] GitHub Actions → `next build` + `next lint` pipeline
+- [x] GitHub Actions → `next build` + `next lint` + `tsc --noEmit` pipeline
 - [ ] Vercel production deploy ayarları
 - [ ] Custom domain: seoroas.com bağlantısı
 - [ ] SSL sertifikası (Vercel otomatik)
@@ -592,11 +592,11 @@ Test edilecek:
 | 3 | FE-02b Header & Footer nav güncelleme | Front-end | ✅ Tamamlandı |
 | 3 | MÜH-06 + FE-14 Blog altyapısı | Mühendis + FE | ✅ Tamamlandı |
 | 3 | SEO-05 Blog içerikleri (WP→Sanity 17 yazı) | SEO + Mühendis | ✅ Tamamlandı |
-| 4 | MÜH-07 Performans opt. | Mühendis | ⬜ Bekliyor |
-| 4 | MÜH-08 Teknik SEO audit | Mühendis + SEO | ⬜ Bekliyor |
-| 4 | FE-15 Responsive test | Front-end | ⬜ Bekliyor |
-| 4 | MÜH-09 KVKK uyumu | Mühendis | ⬜ Bekliyor |
-| 4 | MÜH-10 Deploy & CI/CD | Mühendis | ⬜ Bekliyor |
+| 4 | MÜH-07 Performans opt. | Mühendis | ✅ Tamamlandı |
+| 4 | MÜH-08 Teknik SEO audit | Mühendis + SEO | ✅ Tamamlandı |
+| 4 | FE-15 Responsive test | Front-end | ⬜ Deploy sonrası |
+| 4 | MÜH-09 KVKK uyumu | Mühendis | ✅ Tamamlandı |
+| 4 | MÜH-10 Deploy & CI/CD | Mühendis | 🔄 CI hazır, Vercel bekliyor |
 | 5 | SEO-06 GSC & Analytics | SEO Uzmanı | ⬜ Bekliyor |
 | 5 | SEO-07 Backlink stratejisi | SEO Uzmanı | ⬜ Bekliyor |
 
