@@ -460,7 +460,7 @@ Her lokal sayfa:
 - [x] `seoDescription` → 145-160 karakter, CTA içerir
 - [x] `body` → Portable Text formatında (HTML'den dönüştürüldü)
 - [x] `mainImage` → Featured image (Sanity CDN'e yüklendi, 16/17 yazıda)
-- [ ] İç link önerileri: Portable Text içinde `/seo/` linkleri (manuel düzenleme gerekli)
+- [ ] İç link önerileri: Portable Text içinde `/seo/` linkleri (Sanity Studio'dan manuel düzenleme gerekli)
 
 ---
 
@@ -493,9 +493,9 @@ SSR + Sanity özelinde kritik adımlar:
 - [x] robots.txt doğrula → /studio/ disallow eklendi
 - [x] 12 sayfaya Breadcrumb eklendi (BreadcrumbList Schema)
 - [x] /iletisim sayfası oluşturuldu (ContactPage Schema)
-- [ ] Schema markup test (Google Rich Results Test) — deploy sonrası
-- [ ] Core Web Vitals → PageSpeed Insights — deploy sonrası
-- [ ] Lighthouse audit tüm sayfalar — deploy sonrası
+- [x] Schema markup test — Tüm sayfaların JSON-LD yapıları doğrulandı (LocalBusiness, WebSite, Service, ProfessionalService, FAQPage, Blog, BreadcrumbList)
+- [ ] Core Web Vitals → PageSpeed Insights — canlı site üzerinde kontrol edilecek
+- [ ] Lighthouse audit tüm sayfalar — canlı site üzerinde kontrol edilecek
 
 ---
 
@@ -530,11 +530,32 @@ Test edilecek:
 **Süre:** 3 saat
 
 - [x] GitHub Actions → `next build` + `next lint` + `tsc --noEmit` pipeline
-- [ ] Vercel production deploy ayarları
+- [x] Vercel production deploy ayarları (seoroas.vercel.app)
 - [ ] Custom domain: seoroas.com bağlantısı
-- [ ] SSL sertifikası (Vercel otomatik)
-- [ ] Preview deployments (her PR için)
-- [ ] Environment variables production'da set edildi
+- [x] SSL sertifikası (Vercel otomatik)
+- [x] Preview deployments (her PR için)
+- [x] Environment variables production'da set edildi (SANITY_PROJECT_ID, DATASET, API_TOKEN)
+
+---
+
+### [MÜH-11] SEO Migration Altyapısı (WordPress → Next.js)
+**Rol:** Yazılım Mühendisi
+**Süre:** 6 saat
+**Durum:** ✅ Tamamlandı
+
+- [x] Sanity `seoFields` object type (noIndex, noFollow, canonical, ogImage, focusKeyword)
+- [x] Sanity `redirect` document type (Sanity Studio'dan 301/302 yönetimi)
+- [x] Sanity `category` document type + post'a categories referans eklendi
+- [x] Mevcut şemalar güncellendi (post, service, localPage, caseStudy → seo object)
+- [x] siteSettings genişletildi (defaultOgImage, GA4, GTM, verification kodları, sosyal profiller)
+- [x] Sanity Structure Builder ile organize Studio sidebar
+- [x] `src/middleware.ts` → Sanity'den dinamik 301 redirect + trailing slash normalize
+- [x] `scripts/seed-redirects.ts` → 23 WP migration redirect'i Sanity'ye yüklendi
+- [x] `/seo/seo-ajansi` sayfası oluşturuldu
+- [x] `/seo/kurumsal-seo` sayfası oluşturuldu
+- [x] `lib/seo.ts` güncellendi (noFollow, canonicalUrl override, mergeSanitySeo helper)
+- [x] Sitemap, Header, Footer yeni sayfalarla güncellendi
+- [x] Sanity Studio Vercel'de çalışır durumda (CORS + env vars)
 
 ---
 
@@ -594,9 +615,10 @@ Test edilecek:
 | 3 | SEO-05 Blog içerikleri (WP→Sanity 17 yazı) | SEO + Mühendis | ✅ Tamamlandı |
 | 4 | MÜH-07 Performans opt. | Mühendis | ✅ Tamamlandı |
 | 4 | MÜH-08 Teknik SEO audit | Mühendis + SEO | ✅ Tamamlandı |
-| 4 | FE-15 Responsive test | Front-end | ⬜ Deploy sonrası |
+| 4 | FE-15 Responsive test | Front-end | ✅ Canlı site kontrol edildi |
 | 4 | MÜH-09 KVKK uyumu | Mühendis | ✅ Tamamlandı |
-| 4 | MÜH-10 Deploy & CI/CD | Mühendis | 🔄 CI hazır, Vercel bekliyor |
+| 4 | MÜH-10 Deploy & CI/CD | Mühendis | ✅ Vercel deploy + Studio çalışıyor |
+| 4 | MÜH-11 SEO Migration Altyapısı | Mühendis | ✅ Sanity SEO fields, 301 redirect, yeni sayfalar |
 | 5 | SEO-06 GSC & Analytics | SEO Uzmanı | ⬜ Bekliyor |
 | 5 | SEO-07 Backlink stratejisi | SEO Uzmanı | ⬜ Bekliyor |
 
