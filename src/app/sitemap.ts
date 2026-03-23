@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 import { sanityClient } from "@/sanity/client";
 
+export const revalidate = 60;
+
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://seoroas.com";
 
 const staticPages = [
@@ -47,7 +49,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   if (sanityClient) {
     try {
       const seoEntries = await sanityClient.fetch<PageSeoEntry[]>(
-        `*[_type == "pageSeo" && (isPublished == false || noIndex == true)]{ pagePath, isPublished, noIndex }`
+        `*[_type == "pageSeo" && (isPublished == false || noIndex == true)]{ pagePath, isPublished, noIndex }`,
+        {},
+        { next: { revalidate: 60 } }
       );
       excludedPaths = new Set(seoEntries.map((e) => e.pagePath));
     } catch {
@@ -67,7 +71,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   if (sanityClient) {
     try {
       const posts = await sanityClient.fetch<{ slug: string; updatedAt: string }[]>(
-        `*[_type == "post"] | order(publishedAt desc) { "slug": slug.current, "updatedAt": _updatedAt }`
+        `*[_type == "post"] | order(publishedAt desc) { "slug": slug.current, "updatedAt": _updatedAt }`,
+        {},
+        { next: { revalidate: 60 } }
       );
 
       for (const post of posts) {

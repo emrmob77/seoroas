@@ -32,6 +32,7 @@ export interface NavigationData {
   footerTagline: string;
   footerColumns: FooterColumn[];
   footerBottomCities: string[];
+  hiddenPaths: string[];
 }
 
 const NAVIGATION_QUERY = `*[_type == "navigation"][0]{
@@ -45,8 +46,17 @@ const NAVIGATION_QUERY = `*[_type == "navigation"][0]{
   footerBottomCities
 }`;
 
+const HIDDEN_PAGES_QUERY = `*[_type == "pageSeo" && isPublished == false].pagePath`;
+
 export async function fetchNavigation(): Promise<NavigationData | null> {
-  const data = await sanityFetch<NavigationData | null>(NAVIGATION_QUERY);
-  if (!data || !data.mainLinks) return null;
-  return data;
+  const [data, hiddenPaths] = await Promise.all([
+    sanityFetch<NavigationData | null>(NAVIGATION_QUERY),
+    sanityFetch<string[]>(HIDDEN_PAGES_QUERY),
+  ]);
+
+  if (!data || !data.mainLinks) {
+    return { hiddenPaths: hiddenPaths ?? [] } as NavigationData;
+  }
+
+  return { ...data, hiddenPaths: hiddenPaths ?? [] };
 }

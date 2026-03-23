@@ -69,9 +69,15 @@ interface FooterProps {
 }
 
 export function Footer({ navigation }: FooterProps) {
-  const footerColumns = navigation?.footerColumns?.length
+  const hidden = new Set(navigation?.hiddenPaths ?? []);
+  const isVisible = (url: string) => !hidden.has(url);
+
+  const rawColumns = navigation?.footerColumns?.length
     ? navigation.footerColumns
     : defaultFooterColumns;
+  const footerColumns = rawColumns
+    .map((col) => ({ ...col, links: col.links.filter((l) => isVisible(l.url)) }))
+    .filter((col) => col.links.length > 0);
   const tagline = navigation?.footerTagline || defaultTagline;
   const cities = navigation?.footerBottomCities?.length
     ? navigation.footerBottomCities

@@ -132,13 +132,19 @@ export function Header({ navigation }: HeaderProps) {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const closeTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
 
+  const hidden = new Set(navigation?.hiddenPaths ?? []);
+  const isVisible = (url: string) => !hidden.has(url);
+
   const megaMenuTitle = navigation?.megaMenuTitle || defaultMegaMenuTitle;
-  const megaMenuGroups = navigation?.megaMenuGroups?.length ? navigation.megaMenuGroups : defaultMegaMenuGroups;
-  const mainLinks = navigation?.mainLinks?.length ? navigation.mainLinks : defaultMainLinks;
+  const rawMegaMenuGroups = navigation?.megaMenuGroups?.length ? navigation.megaMenuGroups : defaultMegaMenuGroups;
+  const megaMenuGroups = rawMegaMenuGroups
+    .map((g) => ({ ...g, links: g.links.filter((l) => isVisible(l.url)) }))
+    .filter((g) => g.links.length > 0);
+  const mainLinks = (navigation?.mainLinks?.length ? navigation.mainLinks : defaultMainLinks).filter((l) => isVisible(l.url));
   const ctaButton = navigation?.ctaButton?.title ? navigation.ctaButton : defaultCtaButton;
-  const megaMenuBottomLinks = navigation?.megaMenuBottomLinks?.length
+  const megaMenuBottomLinks = (navigation?.megaMenuBottomLinks?.length
     ? navigation.megaMenuBottomLinks
-    : defaultMegaMenuBottomLinks;
+    : defaultMegaMenuBottomLinks).filter((l) => isVisible(l.url));
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
