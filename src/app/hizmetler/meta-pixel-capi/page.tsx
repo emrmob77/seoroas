@@ -78,7 +78,7 @@ export default function MetaPixelCapiPage() {
 
       <SubpageHero
         breadcrumb={[
-          { name: "Hizmetler", url: "#" },
+          { name: "Hizmetler", url: "/hizmetler" },
           { name: "Meta Pixel & CAPI", url: "/hizmetler/meta-pixel-capi" },
         ]}
         badge="Meta Ads · Measurement"

@@ -20,7 +20,7 @@ export function Breadcrumb({ items }: BreadcrumbProps) {
       <SchemaOrg schema={breadcrumbSchema(allItems)} />
       <ol className="inline-flex items-center gap-1 text-sm text-on-surface-variant">
         {allItems.map((item, index) => (
-          <li key={item.url} className="flex items-center gap-1">
+          <li key={`${index}-${item.url}`} className="flex items-center gap-1">
             {index > 0 && <ChevronRight className="h-3.5 w-3.5" />}
             {index === allItems.length - 1 ? (
               <span className="text-on-surface font-medium">{item.name}</span>

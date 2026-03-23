@@ -63,7 +63,7 @@ export default function ETicaretSeoPage() {
 
       <SubpageHero
         breadcrumb={[
-          { name: "SEO Hizmetleri", url: "/seo-fiyatlari" },
+          { name: "SEO", url: "/seo" },
           { name: "E-Ticaret SEO", url: "/seo/e-ticaret-seo" },
         ]}
         badge="Revenue Engine: Active"

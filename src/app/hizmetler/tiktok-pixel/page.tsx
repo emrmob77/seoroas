@@ -62,7 +62,7 @@ export default function TikTokPixelPage() {
 
       <SubpageHero
         breadcrumb={[
-          { name: "Hizmetler", url: "#" },
+          { name: "Hizmetler", url: "/hizmetler" },
           { name: "TikTok Pixel", url: "/hizmetler/tiktok-pixel" },
         ]}
         badge="TikTok Ads · Signals"

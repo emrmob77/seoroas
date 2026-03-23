@@ -63,7 +63,7 @@ export default function LokalSeoPage() {
 
       <SubpageHero
         breadcrumb={[
-          { name: "SEO Hizmetleri", url: "/seo-fiyatlari" },
+          { name: "SEO", url: "/seo" },
           { name: "Lokal SEO", url: "/seo/lokal-seo" },
         ]}
         badge="Local Radar: Active"

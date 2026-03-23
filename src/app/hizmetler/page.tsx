@@ -168,8 +168,7 @@ export default function HizmetlerPage() {
 
       <SubpageHero
         breadcrumb={[
-          { name: "Ana Sayfa", url: "/" },
-          { name: "Hizmetlerimiz", url: "/hizmetler" },
+          { name: "Hizmetler", url: "/hizmetler" },
         ]}
         badge="Bütünsel Dijital Mimari"
         title={

@@ -98,7 +98,7 @@ export default function WordPressSeoPage() {
 
       <SubpageHero
         breadcrumb={[
-          { name: "Çözümler", url: "/seo-fiyatlari" },
+          { name: "SEO", url: "/seo" },
           { name: "WordPress SEO", url: "/seo/wordpress-seo" },
         ]}
         badge="WordPress · Kurumsal SEO"

@@ -89,7 +89,7 @@ export default function ShopifySeoPage() {
 
       <SubpageHero
         breadcrumb={[
-          { name: "Çözümler", url: "/seo-fiyatlari" },
+          { name: "SEO", url: "/seo" },
           { name: "Shopify SEO", url: "/seo/shopify-seo" },
         ]}
         badge="Shopify · Commerce SEO"

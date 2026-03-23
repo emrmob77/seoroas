@@ -63,7 +63,7 @@ export default function LinkBuildingPage() {
 
       <SubpageHero
         breadcrumb={[
-          { name: "SEO Hizmetleri", url: "/seo-fiyatlari" },
+          { name: "SEO", url: "/seo" },
           { name: "Link Building", url: "/seo/link-building" },
         ]}
         badge="Authority Engine: Active"

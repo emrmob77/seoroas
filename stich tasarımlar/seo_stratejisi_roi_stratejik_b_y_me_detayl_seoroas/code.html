@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-highest": "#dde3e9",
+              "on-primary": "#faf6ff",
+              "on-secondary": "#fbf8fa",
+              "secondary": "#5f5f61",
+              "on-primary-fixed": "#2b22b5",
+              "on-secondary-container": "#525154",
+              "on-surface-variant": "#596065",
+              "on-error": "#fff7f7",
+              "secondary-fixed": "#e4e2e4",
+              "on-primary-fixed-variant": "#4a47d2",
+              "inverse-primary": "#8382ff",
+              "primary-fixed": "#e2dfff",
+              "inverse-surface": "#0c0e10",
+              "outline": "#757c81",
+              "on-surface": "#2d3338",
+              "on-secondary-fixed-variant": "#5c5b5d",
+              "surface-bright": "#f9f9fb",
+              "on-tertiary-fixed-variant": "#573300",
+              "tertiary-dim": "#784800",
+              "surface-container-low": "#f2f4f6",
+              "primary": "#4d4ad5",
+              "tertiary-container": "#fd9d06",
+              "surface-container": "#ebeef2",
+              "error-dim": "#4f0116",
+              "tertiary": "#895300",
+              "on-error-container": "#782232",
+              "inverse-on-surface": "#9c9d9f",
+              "on-tertiary-container": "#4b2b00",
+              "tertiary-fixed-dim": "#eb9100",
+              "outline-variant": "#acb3b8",
+              "background": "#f9f9fb",
+              "on-secondary-fixed": "#3f3f41",
+              "on-primary-container": "#403bc7",
+              "tertiary-fixed": "#fd9d06",
+              "on-background": "#2d3338",
+              "surface-variant": "#dde3e9",
+              "error-container": "#ff8b9a",
+              "surface-tint": "#4d4ad5",
+              "surface-container-high": "#e4e9ee",
+              "secondary-fixed-dim": "#d6d3d6",
+              "primary-dim": "#403cc8",
+              "error": "#9e3f4e",
+              "primary-container": "#e2dfff",
+              "surface-dim": "#d3dbe2",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary": "#fff7f3",
+              "secondary-dim": "#535355",
+              "secondary-container": "#e4e2e4",
+              "surface": "#f9f9fb",
+              "primary-fixed-dim": "#d2d0ff",
+              "on-tertiary-fixed": "#2b1600"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        .blur-gradient {
+            background: radial-gradient(circle at 50% 50%, rgba(77, 74, 213, 0.05) 0%, rgba(249, 249, 251, 0) 70%);
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(32px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 rounded-full mt-4 max-w-5xl mx-auto left-0 right-0 border border-slate-200/20 bg-white/70 dark:bg-slate-950/70 backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.04)] flex justify-between items-center px-8 py-3">
+<div class="text-2xl font-bold tracking-tighter text-slate-900 dark:text-white">SEOROAS</div>
+<div class="hidden md:flex items-center space-x-8 font-['Manrope'] tracking-[-0.04em] font-light text-sm">
+<a class="text-slate-500 dark:text-slate-400 hover:text-indigo-500 transition-all duration-500" href="#">Portfolio</a>
+<a class="text-indigo-600 dark:text-indigo-400 border-b-2 border-indigo-600 pb-1" href="#">Services</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-indigo-500 transition-all duration-500" href="#">Philosophy</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-indigo-500 transition-all duration-500" href="#">Inquiry</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-medium text-sm active:scale-95 transition-transform">Start Project</button>
+</nav>
+<main class="relative pt-32">
+<!-- Hero Section -->
+<section class="max-w-7xl mx-auto px-6 py-24 md:py-48 text-center relative">
+<div class="absolute inset-0 blur-gradient -z-10"></div>
+<div class="inline-flex items-center space-x-2 bg-surface-container-low px-4 py-1.5 rounded-full mb-8">
+<span class="text-[10px] uppercase tracking-widest font-bold text-primary">Strategic Growth</span>
+<span class="w-1 h-1 bg-outline-variant rounded-full"></span>
+<span class="text-[10px] uppercase tracking-widest font-medium text-on-surface-variant">Variation 2.0</span>
+</div>
+<h1 class="text-5xl md:text-8xl font-extrabold tracking-[-0.04em] leading-[0.95] mb-12 text-on-surface max-w-5xl mx-auto">
+                Organic ROI Engineered for Business Growth
+            </h1>
+<p class="text-lg md:text-xl text-on-surface-variant max-w-2xl mx-auto font-light leading-relaxed mb-12">
+                We bridge the gap between technical search dominance and quantifiable corporate revenue. SEO is no longer about clicks; it's about architecting high-intent acquisition systems.
+            </p>
+<div class="flex flex-col md:flex-row justify-center items-center gap-6">
+<button class="bg-primary text-on-primary px-10 py-4 rounded-full font-semibold hover:shadow-xl transition-all duration-500">View Growth Model</button>
+<button class="text-on-surface font-semibold flex items-center group">
+                    Analyze My CAC
+                    <span class="material-symbols-outlined ml-2 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</section>
+<!-- Market & Competitor Intelligence -->
+<section class="py-32 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid md:grid-cols-2 gap-24 items-center">
+<div>
+<span class="text-xs uppercase tracking-[0.3em] font-bold text-primary block mb-6">Market Intelligence</span>
+<h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-8">Mapping the Invisible: Keyword Gap Analysis</h2>
+<p class="text-on-surface-variant leading-relaxed mb-8">
+                            Our 'Authority Engine' framework identifies exactly where your competitors are capturing value and where the structural voids exist in your market. We don't just find keywords; we find revenue clusters.
+                        </p>
+<div class="space-y-6">
+<div class="flex items-start space-x-4">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">analytics</span>
+</div>
+<div>
+<h4 class="font-bold text-lg mb-1">Intent Cluster Mapping</h4>
+<p class="text-sm text-on-surface-variant">Visualizing the full purchase journey from awareness to conversion.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">hub</span>
+</div>
+<div>
+<h4 class="font-bold text-lg mb-1">Competitor Vulnerability Scan</h4>
+<p class="text-sm text-on-surface-variant">Locating weaknesses in established authority to seize top-tier rankings.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative aspect-square bg-surface-container-lowest rounded-3xl p-8 shadow-2xl overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent"></div>
+<!-- Abstract Technical Diagram -->
+<div class="h-full w-full flex flex-col justify-between">
+<div class="flex justify-between items-end h-1/2 gap-2">
+<div class="w-full bg-primary/20 rounded-t-lg h-1/4"></div>
+<div class="w-full bg-primary/40 rounded-t-lg h-2/3"></div>
+<div class="w-full bg-primary rounded-t-lg h-full"></div>
+<div class="w-full bg-primary/60 rounded-t-lg h-3/4"></div>
+</div>
+<div class="border-t border-outline-variant/20 pt-8 flex justify-between text-[10px] font-bold tracking-widest uppercase text-on-surface-variant">
+<span>Domain Alpha</span>
+<span>Market Share</span>
+<span>Growth Yield</span>
+</div>
+</div>
+<img class="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-20 pointer-events-none" data-alt="Abstract data visualization dashboard for market intelligence" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBa9bs6IyVU1eedRok4TCUur_dfF2bLqsTSCwjnYe1FnjlRKPKaHt1TSHRxQW7iqDBVF5JZuLTRMpCM2WmmGQg3kDG8IgJm_1SJWcj5S724gne5wTcyKT-5rAs3OPGx4WRdOHRgFQgYp3ZRaL2MON-pdGidPKIZyu_YvT0D404mCwktUDiCFUeWTtuud1wnsBPWn7oQHpDl2LwfbWKdry5hyHB8ffWxwTuQGnNPzt10wjE-bqUIjPHEidZhRyURCSnE4zBwuhBC_m8"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Next-Gen Predictive SEO -->
+<section class="py-32 overflow-hidden">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-24">
+<h2 class="text-4xl md:text-6xl font-black tracking-tighter mb-6">AI-Powered Content Gap Detection</h2>
+<p class="text-on-surface-variant max-w-xl mx-auto font-light">Utilizing predictive ranking analysis to forecast traffic shifts before they happen.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="bg-surface-container-lowest p-10 rounded-3xl border border-outline-variant/10 hover:border-primary/20 transition-all duration-500">
+<span class="material-symbols-outlined text-4xl text-primary mb-6">psychology</span>
+<h3 class="text-xl font-bold mb-4 tracking-tight">Predictive Ranking</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">ML algorithms that simulate SERP changes based on 500+ ranking signals and historical algorithm volatility.</p>
+</div>
+<div class="bg-surface-container-lowest p-10 rounded-3xl border border-outline-variant/10 hover:border-primary/20 transition-all duration-500">
+<span class="material-symbols-outlined text-4xl text-primary mb-6">dynamic_feed</span>
+<h3 class="text-xl font-bold mb-4 tracking-tight">Velocity Optimization</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">Dynamic prioritization of content updates to maintain top-of-page visibility for high-conversion terms.</p>
+</div>
+<div class="bg-surface-container-lowest p-10 rounded-3xl border border-outline-variant/10 hover:border-primary/20 transition-all duration-500">
+<span class="material-symbols-outlined text-4xl text-primary mb-6">network_check</span>
+<h3 class="text-xl font-bold mb-4 tracking-tight">Signal Analysis</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">Real-time monitoring of user behavior signals to adjust on-page architecture for maximum algorithmic alignment.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Traffic to Revenue -->
+<section class="py-32 bg-inverse-surface text-surface">
+<div class="max-w-7xl mx-auto px-6 grid md:grid-cols-12 gap-12 items-center">
+<div class="md:col-span-7">
+<h2 class="text-4xl md:text-6xl font-bold tracking-tighter mb-10">Traffic to Revenue: Behavior Science</h2>
+<p class="text-inverse-on-surface text-lg font-light mb-12 max-w-xl">
+                        A click is a cost; a conversion is an investment. We employ conversion path engineering to ensure organic users don't just arrive, but take action.
+                    </p>
+<div class="grid grid-cols-2 gap-12">
+<div>
+<div class="text-4xl font-bold text-primary-fixed mb-2 tracking-tighter">84%</div>
+<p class="text-xs uppercase tracking-widest font-semibold text-inverse-on-surface">Avg. Retention Boost</p>
+</div>
+<div>
+<div class="text-4xl font-bold text-primary-fixed mb-2 tracking-tighter">12.4x</div>
+<p class="text-xs uppercase tracking-widest font-semibold text-inverse-on-surface">ROI Efficiency</p>
+</div>
+</div>
+</div>
+<div class="md:col-span-5">
+<div class="relative aspect-[4/5] bg-white/5 rounded-2xl overflow-hidden group">
+<img class="w-full h-full object-cover opacity-60 grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="Business professionals analyzing revenue growth charts" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJcHLTtTlEaNmTT7TRXeFD7PrDDdSFd_cY_4deriZa6ihv-ZTMg6YQnzckovLUAgMoyjO9FWUmRxm_SmXjq8-Jxf3623JyjxtSRcc33AmKNoy_M4foP6UvI2v8rwXoZobPWPbWpmhhQVMy_ObalpqpYYnTOSigNN7D9EC6KaRs0zTfimRUBjmUj0UcqbRj1fe7mwzhcveJwx_OzlM6kIMcqUByelSCwV_4j6TYFmjycVcf-OtyCguXL6uoN9nh6uXm_bBvPus3FGc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface via-transparent"></div>
+<div class="absolute bottom-8 left-8 right-8">
+<p class="text-sm font-light italic">"The transition from volume-based SEO to value-based growth was the single largest lever in our Q4 acquisition strategy."</p>
+<div class="mt-4 flex items-center space-x-3">
+<div class="w-1 h-8 bg-primary"></div>
+<span class="text-xs font-bold uppercase tracking-widest">CMO, Fintech Global</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Radical Transparency -->
+<section class="py-32 bg-surface">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div class="max-w-xl">
+<span class="text-xs uppercase tracking-[0.3em] font-bold text-primary block mb-4">Integrity in Data</span>
+<h2 class="text-4xl md:text-5xl font-bold tracking-tight">Radical Transparency</h2>
+</div>
+<p class="text-on-surface-variant max-w-sm mb-2">Real-time intelligence dashboards with 100% attribution. No dark traffic, no vanity metrics.</p>
+</div>
+<div class="grid md:grid-cols-2 gap-16">
+<div class="space-y-12">
+<div class="border-b border-outline-variant/20 pb-8">
+<h4 class="text-xl font-bold mb-3 tracking-tight">Real-time Attribution</h4>
+<p class="text-sm text-on-surface-variant">Trace every dollar of organic revenue back to the specific content and keyword that originated the session.</p>
+</div>
+<div class="border-b border-outline-variant/20 pb-8">
+<h4 class="text-xl font-bold mb-3 tracking-tight">Live SERP Tracking</h4>
+<p class="text-sm text-on-surface-variant">Continuous monitoring of market share shifts with instant alerts for significant competitive moves.</p>
+</div>
+<div class="border-b border-outline-variant/20 pb-8">
+<h4 class="text-xl font-bold mb-3 tracking-tight">Executive Summary Layer</h4>
+<p class="text-sm text-on-surface-variant">High-level financial summaries for stakeholders alongside deep-dive technical health metrics.</p>
+</div>
+</div>
+<div class="glass-panel rounded-3xl p-1 shadow-2xl overflow-hidden border border-outline-variant/10">
+<div class="bg-surface-container-low h-[400px] rounded-[22px] flex flex-col items-center justify-center p-12 text-center">
+<span class="material-symbols-outlined text-primary text-6xl mb-6" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<h5 class="text-2xl font-bold mb-4">Enterprise Insights Portal</h5>
+<p class="text-sm text-on-surface-variant mb-8">Access your live growth data 24/7. Fully integrated with CRM and ERP systems.</p>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-full text-sm font-bold">Request Demo Portal</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- The 12-Month Trajectory -->
+<section class="py-32 bg-surface-container-low/50">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-24">
+<h2 class="text-4xl md:text-6xl font-black tracking-tighter">The 12-Month Trajectory</h2>
+</div>
+<div class="relative">
+<div class="hidden md:block absolute top-0 left-1/2 -ml-px w-px h-full bg-outline-variant/30"></div>
+<div class="space-y-24">
+<!-- Q1 -->
+<div class="relative flex flex-col md:flex-row items-center justify-between">
+<div class="md:w-[45%] text-right hidden md:block">
+<h3 class="text-2xl font-bold mb-2">Technical Foundations</h3>
+<p class="text-on-surface-variant text-sm">Eliminating structural debt and core web vital optimization.</p>
+</div>
+<div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center z-10 shadow-lg text-on-primary font-bold">01</div>
+<div class="md:w-[45%] text-left md:hidden block mt-4">
+<h3 class="text-2xl font-bold mb-2">Technical Foundations</h3>
+<p class="text-on-surface-variant text-sm">Eliminating structural debt and core web vital optimization.</p>
+</div>
+<div class="md:w-[45%] text-left hidden md:block">
+<div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm border border-outline-variant/5">
+<ul class="text-xs space-y-2 text-on-surface-variant font-medium">
+<li class="flex items-center"><span class="w-1.5 h-1.5 bg-primary rounded-full mr-2"></span> Architecture Audit</li>
+<li class="flex items-center"><span class="w-1.5 h-1.5 bg-primary rounded-full mr-2"></span> Speed Performance Optimization</li>
+<li class="flex items-center"><span class="w-1.5 h-1.5 bg-primary rounded-full mr-2"></span> Semantic HTML Overhaul</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Q2 -->
+<div class="relative flex flex-col md:flex-row items-center justify-between">
+<div class="md:w-[45%] text-right hidden md:block">
+<div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm border border-outline-variant/5">
+<ul class="text-xs space-y-2 text-on-surface-variant font-medium">
+<li class="flex items-center justify-end">Keyword Cluster Mapping <span class="w-1.5 h-1.5 bg-primary rounded-full ml-2"></span></li>
+<li class="flex items-center justify-end">Authority Pillar Content <span class="w-1.5 h-1.5 bg-primary rounded-full ml-2"></span></li>
+<li class="flex items-center justify-end">Topic Salience Engineering <span class="w-1.5 h-1.5 bg-primary rounded-full ml-2"></span></li>
+</ul>
+</div>
+</div>
+<div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center z-10 shadow-lg text-on-primary font-bold">02</div>
+<div class="md:w-[45%] text-left mt-4 md:mt-0">
+<h3 class="text-2xl font-bold mb-2">The Authority Engine</h3>
+<p class="text-on-surface-variant text-sm">Dominating niche topical clusters with high-intent content pillars.</p>
+</div>
+</div>
+<!-- Q3 -->
+<div class="relative flex flex-col md:flex-row items-center justify-between">
+<div class="md:w-[45%] text-right hidden md:block">
+<h3 class="text-2xl font-bold mb-2">Scale &amp; Acquisition</h3>
+<p class="text-on-surface-variant text-sm">Aggressive growth of conversion-focused long-tail variants.</p>
+</div>
+<div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center z-10 shadow-lg text-on-primary font-bold">03</div>
+<div class="md:w-[45%] text-left md:hidden block mt-4">
+<h3 class="text-2xl font-bold mb-2">Scale &amp; Acquisition</h3>
+<p class="text-on-surface-variant text-sm">Aggressive growth of conversion-focused long-tail variants.</p>
+</div>
+<div class="md:w-[45%] text-left hidden md:block">
+<div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm border border-outline-variant/5">
+<ul class="text-xs space-y-2 text-on-surface-variant font-medium">
+<li class="flex items-center"><span class="w-1.5 h-1.5 bg-primary rounded-full mr-2"></span> Conversion Path Testing</li>
+<li class="flex items-center"><span class="w-1.5 h-1.5 bg-primary rounded-full mr-2"></span> AI-Assisted Scale</li>
+<li class="flex items-center"><span class="w-1.5 h-1.5 bg-primary rounded-full mr-2"></span> Global Link Equity Acquisition</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Q4 -->
+<div class="relative flex flex-col md:flex-row items-center justify-between">
+<div class="md:w-[45%] text-right hidden md:block">
+<div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm border border-outline-variant/5">
+<ul class="text-xs space-y-2 text-on-surface-variant font-medium">
+<li class="flex items-center justify-end">Predictive SERP Adjustments <span class="w-1.5 h-1.5 bg-primary rounded-full ml-2"></span></li>
+<li class="flex items-center justify-end">Market Dominance Monitoring <span class="w-1.5 h-1.5 bg-primary rounded-full ml-2"></span></li>
+<li class="flex items-center justify-end">Strategic Pivot Analysis <span class="w-1.5 h-1.5 bg-primary rounded-full ml-2"></span></li>
+</ul>
+</div>
+</div>
+<div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center z-10 shadow-lg text-on-primary font-bold">04</div>
+<div class="md:w-[45%] text-left mt-4 md:mt-0">
+<h3 class="text-2xl font-bold mb-2">Compound Dominance</h3>
+<p class="text-on-surface-variant text-sm">Utilizing authority to capture zero-click and high-barrier SERPs.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Strategic Intelligence FAQ -->
+<section class="py-32">
+<div class="max-w-4xl mx-auto px-6">
+<div class="mb-20 text-center">
+<h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">Strategic Intelligence FAQ</h2>
+<p class="text-on-surface-variant">Addressing the core financial and operational concerns of corporate stakeholders.</p>
+</div>
+<div class="space-y-8">
+<details class="group bg-surface-container-low rounded-2xl overflow-hidden p-8 transition-all duration-300">
+<summary class="flex justify-between items-center cursor-pointer list-none">
+<h4 class="text-xl font-bold tracking-tight">Volume vs. Value: How do you prioritize terms?</h4>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="mt-6 text-on-surface-variant leading-relaxed">
+<p>We utilize a Proprietary Value Index (PVI) that factors in search volume, conversion probability, and average customer lifetime value. High volume is useless without commercial intent; our priority is always aligned with your bottom line.</p>
+</div>
+</details>
+<details class="group bg-surface-container-low rounded-2xl overflow-hidden p-8 transition-all duration-300">
+<summary class="flex justify-between items-center cursor-pointer list-none">
+<h4 class="text-xl font-bold tracking-tight">What is the methodology behind AI-powered SEO?</h4>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="mt-6 text-on-surface-variant leading-relaxed">
+<p>Our AI doesn't just write text. We use Large Language Models for semantic entity analysis, natural language understanding (NLU) optimization, and identifying structural data gaps that search engines are actively looking to fill in your niche.</p>
+</div>
+</details>
+<details class="group bg-surface-container-low rounded-2xl overflow-hidden p-8 transition-all duration-300">
+<summary class="flex justify-between items-center cursor-pointer list-none">
+<h4 class="text-xl font-bold tracking-tight">How does this strategy reduce blended CAC?</h4>
+<span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<div class="mt-6 text-on-surface-variant leading-relaxed">
+<p>By capturing users early in the consideration phase through organic search, we nurture them through the funnel at a zero incremental cost-per-click. This creates a high-authority brand halo that increases the performance of your paid media, effectively lowering your overall Customer Acquisition Cost.</p>
+</div>
+</details>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-32 px-6">
+<div class="max-w-7xl mx-auto bg-primary rounded-[3rem] p-12 md:p-32 relative overflow-hidden text-center text-on-primary shadow-2xl">
+<div class="absolute inset-0 bg-gradient-to-br from-primary-dim/50 to-transparent"></div>
+<h2 class="text-4xl md:text-7xl font-extrabold tracking-tighter mb-12 relative z-10">Architect Your <br class="hidden md:block"/>Organic Future.</h2>
+<div class="relative z-10 flex flex-col md:flex-row justify-center items-center gap-6">
+<button class="bg-on-primary text-primary px-10 py-5 rounded-full font-bold text-lg hover:scale-105 transition-transform">Request Strategy Audit</button>
+<button class="border border-on-primary/30 px-10 py-5 rounded-full font-bold text-lg hover:bg-on-primary/10 transition-all">Download ROI Matrix</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full pt-32 pb-12 bg-slate-50 dark:bg-slate-900/50">
+<div class="max-w-7xl mx-auto px-12 flex flex-col md:flex-row justify-between items-end">
+<div class="mb-8 md:mb-0">
+<div class="font-black tracking-tighter text-slate-400 text-3xl mb-4">SEOROAS</div>
+<p class="font-['Manrope'] tracking-[-0.02em] text-xs uppercase text-slate-400">© 2026 SEOROAS. Architectural Digital Presence.</p>
+</div>
+<div class="flex space-x-8 font-['Manrope'] tracking-[-0.02em] text-xs uppercase">
+<a class="text-slate-400 hover:text-indigo-500 transition-colors" href="#">Privacy</a>
+<a class="text-slate-400 hover:text-indigo-500 transition-colors" href="#">Terms</a>
+<a class="text-slate-400 hover:text-indigo-500 transition-colors" href="#">LinkedIn</a>
+<a class="text-slate-400 hover:text-indigo-500 transition-colors" href="#">Studio</a>
+</div>
+</div>
+</footer>
+</body></html>

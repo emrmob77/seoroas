@@ -204,8 +204,7 @@ export default function SeoPage() {
 
       <SubpageHero
         breadcrumb={[
-          { name: "Ana Sayfa", url: "/" },
-          { name: "SEO Hizmetleri", url: "/seo" },
+          { name: "SEO", url: "/seo" },
         ]}
         badge="Organik Büyüme Mühendisliği"
         title={

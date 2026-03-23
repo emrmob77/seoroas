@@ -89,7 +89,7 @@ export default function KurumsalSeoPage() {
 
       <SubpageHero
         breadcrumb={[
-          { name: "SEO Hizmetleri", url: "/seo-fiyatlari" },
+          { name: "SEO", url: "/seo" },
           { name: "Kurumsal SEO", url: "/seo/kurumsal-seo" },
         ]}
         badge="Enterprise Scale SEO"

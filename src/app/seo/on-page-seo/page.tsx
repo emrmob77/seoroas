@@ -63,7 +63,7 @@ export default function OnPageSeoPage() {
 
       <SubpageHero
         breadcrumb={[
-          { name: "SEO Hizmetleri", url: "/seo-fiyatlari" },
+          { name: "SEO", url: "/seo" },
           { name: "On-Page SEO", url: "/seo/on-page-seo" },
         ]}
         badge="Content Layer: Active"

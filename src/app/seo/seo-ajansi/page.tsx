@@ -99,7 +99,7 @@ export default function SeoAjansiPage() {
 
       <SubpageHero
         breadcrumb={[
-          { name: "SEO Hizmetleri", url: "/seo-fiyatlari" },
+          { name: "SEO", url: "/seo" },
           { name: "SEO Ajansı", url: "/seo/seo-ajansi" },
         ]}
         badge="Trusted SEO Partner"

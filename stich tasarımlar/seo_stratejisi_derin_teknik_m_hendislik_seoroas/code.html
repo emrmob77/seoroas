@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SEOROAS | Architectural Search Engineering</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-dim": "#403cc8",
+              "surface-dim": "#d3dbe2",
+              "on-secondary-container": "#525154",
+              "surface-container": "#ebeef2",
+              "on-tertiary": "#fff7f3",
+              "on-surface": "#2d3338",
+              "secondary-container": "#e4e2e4",
+              "background": "#f9f9fb",
+              "secondary-dim": "#535355",
+              "surface-container-high": "#e4e9ee",
+              "on-secondary-fixed-variant": "#5c5b5d",
+              "outline": "#757c81",
+              "surface-variant": "#dde3e9",
+              "on-background": "#2d3338",
+              "on-primary": "#faf6ff",
+              "tertiary-container": "#fd9d06",
+              "on-primary-fixed-variant": "#4a47d2",
+              "tertiary-fixed-dim": "#eb9100",
+              "primary": "#4d4ad5",
+              "on-error-container": "#782232",
+              "secondary-fixed-dim": "#d6d3d6",
+              "primary-fixed-dim": "#d2d0ff",
+              "on-tertiary-fixed-variant": "#573300",
+              "inverse-primary": "#8382ff",
+              "outline-variant": "#acb3b8",
+              "on-secondary-fixed": "#3f3f41",
+              "surface-container-lowest": "#ffffff",
+              "error": "#9e3f4e",
+              "tertiary": "#895300",
+              "inverse-surface": "#0c0e10",
+              "surface-tint": "#4d4ad5",
+              "secondary-fixed": "#e4e2e4",
+              "on-primary-container": "#403bc7",
+              "tertiary-dim": "#784800",
+              "error-dim": "#4f0116",
+              "surface-bright": "#f9f9fb",
+              "surface-container-low": "#f2f4f6",
+              "primary-fixed": "#e2dfff",
+              "inverse-on-surface": "#9c9d9f",
+              "surface": "#f9f9fb",
+              "on-error": "#fff7f7",
+              "error-container": "#ff8b9a",
+              "surface-container-highest": "#dde3e9",
+              "on-surface-variant": "#596065",
+              "tertiary-fixed": "#fd9d06",
+              "on-tertiary-container": "#4b2b00",
+              "on-primary-fixed": "#2b22b5",
+              "on-tertiary-fixed": "#2b1600",
+              "on-secondary": "#fbf8fa",
+              "primary-container": "#e2dfff",
+              "secondary": "#5f5f61"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+            font-size: 20px;
+        }
+        .architectural-grid {
+            background-image: radial-gradient(circle, #acb3b8 0.5px, transparent 0.5px);
+            background-size: 40px 40px;
+        }
+        .ghost-border {
+            border: 0.5px solid rgba(172, 179, 184, 0.2);
+        }
+        .premium-shadow {
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.04), 0 20px 50px -20px rgba(0,0,0,0.02);
+        }
+        body {
+            font-family: 'Manrope', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary selection:text-white">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/70 dark:bg-slate-900/70 backdrop-blur-2xl">
+<div class="flex justify-between items-center w-full px-8 py-6 max-w-[1440px] mx-auto">
+<div class="text-2xl font-bold tracking-tighter text-slate-900 dark:text-white font-['Manrope']">SEOROAS</div>
+<div class="hidden md:flex items-center space-x-10 font-['Manrope'] tracking-[-0.04em] font-medium">
+<a class="text-[#5E5CE6] border-b-2 border-[#5E5CE6] pb-1 cursor-pointer transition-all duration-300" href="#">Strategy</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer transition-all duration-300" href="#">Audit</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer transition-all duration-300" href="#">Content</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer transition-all duration-300" href="#">Authority</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors cursor-pointer transition-all duration-300" href="#">ROI</a>
+</div>
+<button class="bg-primary text-white px-6 py-2.5 rounded-full font-medium text-sm hover:opacity-80 transition-opacity cursor-pointer">Consultation</button>
+</div>
+</nav>
+<main class="pt-32">
+<!-- Hero Section -->
+<section class="px-8 max-w-[1440px] mx-auto mb-40 relative">
+<div class="architectural-grid absolute inset-0 -z-10 opacity-20"></div>
+<div class="flex flex-col lg:flex-row items-end justify-between gap-12 pt-20">
+<div class="max-w-4xl">
+<span class="text-primary font-semibold tracking-widest text-xs uppercase mb-6 block">The Analytical Architect</span>
+<h1 class="text-7xl md:text-8xl font-extrabold tracking-[-0.06em] leading-[0.9] text-on-surface mb-12">
+                    Architectural Search Engineering.
+                </h1>
+<p class="text-xl md:text-2xl text-on-surface-variant font-light leading-relaxed max-w-2xl">
+                    Engineering digital structures that dominate the information landscape through technical precision, semantic authority, and algorithmic alignment.
+                </p>
+</div>
+<div class="w-full lg:w-1/3 aspect-square bg-surface-container-low rounded-full relative overflow-hidden ghost-border flex items-center justify-center">
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent"></div>
+<div class="w-4/5 h-4/5 relative flex items-center justify-center">
+<div class="absolute w-full h-px bg-primary/20 rotate-45"></div>
+<div class="absolute w-full h-px bg-primary/20 -rotate-45"></div>
+<div class="w-48 h-48 rounded-full border border-primary/30 flex items-center justify-center">
+<div class="w-32 h-32 rounded-full border border-primary/50 flex items-center justify-center">
+<div class="w-16 h-16 rounded-full bg-primary/10 backdrop-blur-sm ghost-border flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="hub">hub</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Audit (The Foundation) -->
+<section class="py-32 px-8 bg-surface-container-low">
+<div class="max-w-[1440px] mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-baseline mb-24 gap-8">
+<h2 class="text-5xl font-bold tracking-tighter text-on-surface">Technical Foundation.</h2>
+<p class="text-on-surface-variant max-w-md font-light text-lg">Our diagnostic protocol ensures infrastructure is mathematically optimized for efficiency and algorithmic ingestion.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-outline-variant/20 ghost-border rounded-xl overflow-hidden">
+<div class="bg-surface p-12 hover:bg-surface-container-lowest transition-colors group">
+<span class="material-symbols-outlined text-primary mb-8" data-icon="architecture">architecture</span>
+<h3 class="text-xl font-bold mb-4 tracking-tight">Crawl Optimization</h3>
+<p class="text-on-surface-variant font-light text-sm leading-relaxed mb-6">Optimizing robot routing and budget allocation via log file analysis and orphan page mitigation for 100% index coverage.</p>
+<div class="text-[10px] uppercase tracking-widest text-primary/60 font-bold">Protocol A.01</div>
+</div>
+<div class="bg-surface p-12 hover:bg-surface-container-lowest transition-colors group">
+<span class="material-symbols-outlined text-primary mb-8" data-icon="speed">speed</span>
+<h3 class="text-xl font-bold mb-4 tracking-tight">Vitals 2026</h3>
+<p class="text-on-surface-variant font-light text-sm leading-relaxed mb-6">INP engineering, CSS containment, and advanced image decoding to exceed the 'Good' threshold on all variations.</p>
+<div class="text-[10px] uppercase tracking-widest text-primary/60 font-bold">Protocol B.14</div>
+</div>
+<div class="bg-surface p-12 hover:bg-surface-container-lowest transition-colors group">
+<span class="material-symbols-outlined text-primary mb-8" data-icon="schema">schema</span>
+<h3 class="text-xl font-bold mb-4 tracking-tight">Entity Schema</h3>
+<p class="text-on-surface-variant font-light text-sm leading-relaxed mb-6">Custom JSON-LD implementation mapping nodes to Knowledge Graphs, ensuring entity-based search dominance.</p>
+<div class="text-[10px] uppercase tracking-widest text-primary/60 font-bold">Protocol C.09</div>
+</div>
+<div class="bg-surface p-12 hover:bg-surface-container-lowest transition-colors group">
+<span class="material-symbols-outlined text-primary mb-8" data-icon="terminal">terminal</span>
+<h3 class="text-xl font-bold mb-4 tracking-tight">Headless SEO</h3>
+<p class="text-on-surface-variant font-light text-sm leading-relaxed mb-6">Advanced SSR and hydration auditing for SPA architectures to prevent Javascript execution latency in indexing.</p>
+<div class="text-[10px] uppercase tracking-widest text-primary/60 font-bold">Protocol D.22</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Semantic Content Architecture -->
+<section class="py-40 px-8">
+<div class="max-w-[1440px] mx-auto grid lg:grid-cols-2 gap-24 items-center">
+<div class="relative">
+<div class="aspect-square bg-surface-container rounded-3xl p-12 flex items-center justify-center">
+<div class="w-full h-full border-[0.5px] border-outline-variant/30 rounded-full flex items-center justify-center relative">
+<div class="w-1/2 h-1/2 bg-white rounded-full shadow-2xl flex flex-col items-center justify-center z-10 ghost-border">
+<span class="text-[10px] font-bold tracking-[0.2em] text-primary uppercase mb-2">Core Entity</span>
+<div class="w-12 h-1 bg-primary rounded-full"></div>
+</div>
+<div class="absolute top-10 left-1/4 w-20 h-20 bg-surface-container-high rounded-full ghost-border flex items-center justify-center animate-pulse">
+<div class="w-2 h-2 bg-on-surface-variant rounded-full"></div>
+</div>
+<div class="absolute bottom-20 right-10 w-24 h-24 bg-surface-container-high rounded-full ghost-border flex items-center justify-center">
+<div class="w-2 h-2 bg-on-surface-variant rounded-full"></div>
+</div>
+<div class="absolute top-1/2 right-4 w-16 h-16 bg-surface-container-high rounded-full ghost-border flex items-center justify-center">
+<div class="w-2 h-2 bg-on-surface-variant rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<h2 class="text-5xl font-bold tracking-tighter mb-8">Semantic Velocity.</h2>
+<p class="text-lg text-on-surface-variant font-light leading-relaxed mb-10">
+                    Keyword density is obsolete in the era of Generative AI. We build <span class="text-on-surface font-semibold">Knowledge Graph Connectors</span> that define your authority within N-tuple data structures.
+                </p>
+<ul class="space-y-8">
+<li class="flex gap-6">
+<div class="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center shrink-0">
+<span class="text-primary font-bold text-xs">01</span>
+</div>
+<div>
+<h4 class="font-bold mb-2">LLM-Readability Layer</h4>
+<p class="text-sm text-on-surface-variant font-light">Structuring data in LLM-native formats to ensure your entities are primary citations in SGE snapshots.</p>
+</div>
+</li>
+<li class="flex gap-6">
+<div class="w-10 h-10 rounded-full bg-primary/5 flex items-center justify-center shrink-0">
+<span class="text-primary font-bold text-xs">02</span>
+</div>
+<div>
+<h4 class="font-bold mb-2">Entity Connectivity</h4>
+<p class="text-sm text-on-surface-variant font-light">Linking on-page nodes to established Wikidata and DBpedia identifiers for unambiguous authority signals.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Authority Engineering -->
+<section class="py-40 px-8 bg-on-surface text-white rounded-[4rem] mx-4">
+<div class="max-w-[1440px] mx-auto flex flex-col items-center text-center">
+<span class="text-primary-fixed-dim font-bold tracking-[0.3em] text-[10px] uppercase mb-12">Authority Engineering</span>
+<h2 class="text-5xl md:text-7xl font-bold tracking-tight mb-12 max-w-4xl">Precision Acquisition.</h2>
+<p class="text-surface-variant text-xl font-light leading-relaxed max-w-2xl mb-24 opacity-80">
+                Editorial-grade acquisition from globally recognized domains, engineered for maximum topical relevance and graph strength.
+            </p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 w-full">
+<div class="p-8 border border-white/10 rounded-3xl backdrop-blur-sm">
+<div class="text-4xl font-extrabold text-primary-fixed-dim mb-4 tracking-tighter">DR 80+</div>
+<p class="text-sm font-light text-surface-variant">Strategic acquisition from domains with organic traffic exceeding 1M+ and elite authority metrics.</p>
+</div>
+<div class="p-8 border border-white/10 rounded-3xl backdrop-blur-sm">
+<div class="text-4xl font-extrabold text-primary-fixed-dim mb-4 tracking-tighter">Clean Path</div>
+<p class="text-sm font-light text-surface-variant">100% manual outreach with zero automated footprints, PBN signals, or low-utility directory links.</p>
+</div>
+<div class="p-8 border border-white/10 rounded-3xl backdrop-blur-sm">
+<div class="text-4xl font-extrabold text-primary-fixed-dim mb-4 tracking-tighter">Topical</div>
+<p class="text-sm font-light text-surface-variant">Mapping the graph so every link provides direct topical juice to your specific entity clusters.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Algorithm Monitoring -->
+<section class="py-40 px-8">
+<div class="max-w-[1440px] mx-auto">
+<div class="bg-surface-container-low rounded-[3rem] p-12 md:p-24 ghost-border">
+<div class="flex flex-col lg:flex-row gap-20">
+<div class="lg:w-1/3">
+<h2 class="text-4xl font-bold tracking-tighter mb-6">Algorithm Sentinels.</h2>
+<p class="text-on-surface-variant font-light mb-8">Real-time monitoring tracking 40k+ SERP shifts per hour to detect unannounced core updates before they impact revenue.</p>
+<div class="flex items-center gap-4 text-primary font-bold text-sm">
+<span class="relative flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
+</span>
+                            LIVE MONITORING ACTIVE
+                        </div>
+</div>
+<div class="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="bg-surface p-8 rounded-2xl premium-shadow ghost-border">
+<div class="flex justify-between items-center mb-6">
+<span class="text-xs font-bold text-on-surface-variant">Volatility Index</span>
+<span class="text-xs bg-error/10 text-error px-2 py-1 rounded">High Alert</span>
+</div>
+<div class="h-32 flex items-end gap-1 mb-4">
+<div class="flex-1 bg-primary/20 h-[30%] rounded-t"></div>
+<div class="flex-1 bg-primary/20 h-[45%] rounded-t"></div>
+<div class="flex-1 bg-primary/20 h-[40%] rounded-t"></div>
+<div class="flex-1 bg-primary/20 h-[70%] rounded-t"></div>
+<div class="flex-1 bg-primary/40 h-[90%] rounded-t"></div>
+<div class="flex-1 bg-primary h-[100%] rounded-t"></div>
+</div>
+<p class="text-[10px] text-on-surface-variant text-center">Last 24 Hours Movement</p>
+</div>
+<div class="bg-surface p-8 rounded-2xl premium-shadow ghost-border">
+<div class="text-xs font-bold text-on-surface-variant mb-6">Mitigation Queue</div>
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<span class="text-xs font-light">Core Update Patch #09</span>
+<span class="text-[10px] text-primary">Applied</span>
+</div>
+<div class="w-full h-px bg-outline-variant/20"></div>
+<div class="flex justify-between items-center">
+<span class="text-xs font-light">Schema Validation L3</span>
+<span class="text-[10px] text-primary">Scanning</span>
+</div>
+<div class="w-full h-px bg-outline-variant/20"></div>
+<div class="flex justify-between items-center">
+<span class="text-xs font-light">Cache Invalidation</span>
+<span class="text-[10px] text-on-surface-variant">Idle</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ROI & KPI Framework -->
+<section class="py-40 px-8 bg-surface-container-lowest">
+<div class="max-w-[1440px] mx-auto">
+<div class="text-center mb-32">
+<h2 class="text-6xl font-bold tracking-tighter mb-6">Success Framework.</h2>
+<p class="text-on-surface-variant font-light max-w-2xl mx-auto">Technical KPIs that drive EBITDA through precision organic acquisition.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+<div>
+<div class="text-primary font-bold text-5xl tracking-tighter mb-4">98.4%</div>
+<h4 class="text-xl font-bold mb-4 tracking-tight">Indexation Rate</h4>
+<p class="text-sm text-on-surface-variant font-light leading-relaxed">Percentage of deep-level nodes successfully indexed and maintained within the primary index.</p>
+</div>
+<div>
+<div class="text-primary font-bold text-5xl tracking-tighter mb-4">4.2x</div>
+<h4 class="text-xl font-bold mb-4 tracking-tight">Crawl Frequency</h4>
+<p class="text-sm text-on-surface-variant font-light leading-relaxed">Incremental increase in bot visits per day across critical conversion-path entity clusters.</p>
+</div>
+<div>
+<div class="text-primary font-bold text-5xl tracking-tighter mb-4">0.82</div>
+<h4 class="text-xl font-bold mb-4 tracking-tight">Semantic Score</h4>
+<p class="text-sm text-on-surface-variant font-light leading-relaxed">Proprietary relevance score measuring entity alignment with target intent clusters.</p>
+</div>
+<div>
+<div class="text-primary font-bold text-5xl tracking-tighter mb-4">88%</div>
+<h4 class="text-xl font-bold mb-4 tracking-tight">Authority ROAS</h4>
+<p class="text-sm text-on-surface-variant font-light leading-relaxed">Direct correlation between link acquisition spend and incremental revenue growth.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ (SSS) Section -->
+<section class="py-40 px-8">
+<div class="max-w-4xl mx-auto">
+<h2 class="text-4xl font-bold tracking-tighter mb-20">Intelligence Repository.</h2>
+<div class="space-y-0">
+<div class="group py-10 border-b border-outline-variant/20">
+<button class="flex justify-between items-center w-full text-left">
+<span class="text-xl font-bold tracking-tight">How does SEOROAS prepare for Google's SGE?</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="add">add</span>
+</button>
+<div class="hidden mt-6 text-on-surface-variant font-light leading-relaxed">
+                        We utilize a 'Source-Likelihood' scoring system that structures content in N-tuple formats, making it highly compatible for LLM extraction and Generative AI snapshots.
+                    </div>
+</div>
+<div class="group py-10 border-b border-outline-variant/20">
+<button class="flex justify-between items-center w-full text-left">
+<span class="text-xl font-bold tracking-tight">What is 'CUI' and why do you measure it?</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="add">add</span>
+</button>
+<div class="hidden mt-6 text-on-surface-variant font-light leading-relaxed">
+                        CUI (Content Utility Index) is our internal metric that combines time-on-page with cross-referencing conversion paths to determine if content satisfies the user's specific informational need.
+                    </div>
+</div>
+<div class="group py-10 border-b border-outline-variant/20">
+<button class="flex justify-between items-center w-full text-left">
+<span class="text-xl font-bold tracking-tight">How do you handle INP and Interaction Vitals?</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="add">add</span>
+</button>
+<div class="hidden mt-6 text-on-surface-variant font-light leading-relaxed">
+                        We optimize the main thread by offloading heavy Javascript to web workers and utilizing CSS containment, ensuring that Interaction to Next Paint (INP) stays below the 200ms threshold.
+                    </div>
+</div>
+<div class="group py-10 border-b border-outline-variant/20">
+<button class="flex justify-between items-center w-full text-left">
+<span class="text-xl font-bold tracking-tight">What defines your 'Architectural' approach?</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="add">add</span>
+</button>
+<div class="hidden mt-6 text-on-surface-variant font-light leading-relaxed">
+                        Most agencies look at pages; we look at the graph. We design the relationships between every data point to create a resilient, self-reinforcing information architecture.
+                    </div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-24 bg-[#f2f4f6] dark:bg-slate-950 font-['Manrope'] text-sm tracking-tight">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 max-w-[1440px] mx-auto">
+<div class="mb-12 md:mb-0">
+<div class="text-lg font-bold tracking-tighter text-slate-900 dark:text-white mb-2">SEOROAS</div>
+<div class="text-slate-400">© 2026 SEOROAS. Precision Search Engineering.</div>
+</div>
+<div class="flex gap-12 text-slate-400">
+<a class="hover:text-[#5E5CE6] transition-colors ease-in-out" href="#">Privacy</a>
+<a class="hover:text-[#5E5CE6] transition-colors ease-in-out" href="#">Terms</a>
+<a class="hover:text-[#5E5CE6] transition-colors ease-in-out" href="#">Methodology</a>
+<a class="hover:text-[#5E5CE6] transition-colors ease-in-out" href="#">Intelligence</a>
+</div>
+</div>
+</footer>
+<script>
+    // Simple FAQ toggle logic
+    document.querySelectorAll('section button').forEach(button => {
+        button.addEventListener('click', () => {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('.material-symbols-outlined');
+            const isHidden = content.classList.contains('hidden');
+            
+            content.classList.toggle('hidden');
+            icon.textContent = isHidden ? 'remove' : 'add';
+        });
+    });
+</script>
+</body></html>

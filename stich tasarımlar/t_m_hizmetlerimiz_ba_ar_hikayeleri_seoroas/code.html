@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Services | SEOROAS - Architectural Precision in Search</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary": "#5f5f61",
+              "outline": "#757c81",
+              "surface-container-highest": "#dde3e9",
+              "inverse-on-surface": "#9c9d9f",
+              "on-surface": "#2d3338",
+              "on-primary-container": "#403bc7",
+              "inverse-surface": "#0c0e10",
+              "tertiary-dim": "#784800",
+              "error": "#9e3f4e",
+              "surface": "#f9f9fb",
+              "tertiary": "#895300",
+              "on-secondary": "#fbf8fa",
+              "on-background": "#2d3338",
+              "surface-container": "#ebeef2",
+              "primary-container": "#e2dfff",
+              "on-error-container": "#782232",
+              "secondary-dim": "#535355",
+              "on-tertiary": "#fff7f3",
+              "on-surface-variant": "#596065",
+              "secondary-fixed": "#e4e2e4",
+              "primary-dim": "#403cc8",
+              "surface-bright": "#f9f9fb",
+              "on-secondary-fixed": "#3f3f41",
+              "outline-variant": "#acb3b8",
+              "primary": "#4d4ad5",
+              "on-tertiary-fixed-variant": "#573300",
+              "background": "#f9f9fb",
+              "on-secondary-container": "#525154",
+              "surface-container-high": "#e4e9ee",
+              "surface-dim": "#d3dbe2",
+              "on-primary-fixed": "#2b22b5",
+              "on-primary-fixed-variant": "#4a47d2",
+              "on-tertiary-fixed": "#2b1600",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-fixed": "#fd9d06",
+              "tertiary-container": "#fd9d06",
+              "primary-fixed-dim": "#d2d0ff",
+              "on-primary": "#faf6ff",
+              "error-container": "#ff8b9a",
+              "inverse-primary": "#8382ff",
+              "surface-tint": "#4d4ad5",
+              "surface-variant": "#dde3e9",
+              "secondary-fixed-dim": "#d6d3d6",
+              "on-error": "#fff7f7",
+              "surface-container-low": "#f2f4f6",
+              "primary-fixed": "#e2dfff",
+              "on-tertiary-container": "#4b2b00",
+              "error-dim": "#4f0116",
+              "secondary-container": "#e4e2e4",
+              "on-secondary-fixed-variant": "#5c5b5d",
+              "tertiary-fixed-dim": "#eb9100"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24; }
+        .hero-gradient { background: radial-gradient(circle at 50% 50%, rgba(77, 74, 213, 0.03) 0%, transparent 70%); }
+        .glass-card { backdrop-filter: blur(24px); background: rgba(255, 255, 255, 0.4); }
+        .hairline-border { border: 0.5px solid rgba(0, 0, 0, 0.08); }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-2xl no-line border-b border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.04)]">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-[1440px] mx-auto">
+<div class="text-xl font-bold tracking-tighter text-slate-900">SEOROAS</div>
+<div class="hidden md:flex space-x-10 items-center">
+<a class="text-slate-600 hover:text-slate-900 transition-colors font-['Manrope'] tracking-tight font-medium text-sm" href="#">Solutions</a>
+<a class="text-indigo-600 border-b-2 border-indigo-600 pb-1 font-['Manrope'] tracking-tight font-medium text-sm" href="#">Methodology</a>
+<a class="text-slate-600 hover:text-slate-900 transition-colors font-['Manrope'] tracking-tight font-medium text-sm" href="#">Case Studies</a>
+<a class="text-slate-600 hover:text-slate-900 transition-colors font-['Manrope'] tracking-tight font-medium text-sm" href="#">Insights</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-medium text-sm hover:opacity-80 transition-opacity duration-300">
+                Start Audit
+            </button>
+</div>
+</nav>
+<main class="pt-32">
+<!-- Hero Header -->
+<section class="px-8 mb-40 relative hero-gradient overflow-hidden">
+<div class="max-w-[1440px] mx-auto text-center py-20">
+<span class="inline-block px-4 py-1.5 mb-8 text-[10px] uppercase tracking-[0.3em] font-bold text-primary border border-primary/20 rounded-full">Systems Integrity</span>
+<h1 class="text-[3.5rem] md:text-[5rem] font-extrabold tracking-[-0.04em] leading-[1.05] text-on-surface mb-8">
+                    All-in-One Digital <br/> Growth <span class="text-primary italic font-light">Architecture</span>.
+                </h1>
+<p class="max-w-2xl mx-auto text-lg text-on-surface-variant font-light leading-relaxed">
+                    SEOROAS engineered a modular approach to digital dominance. We treat search visibility as a structural challenge, requiring architectural precision and cross-channel synergy.
+                </p>
+</div>
+</section>
+<!-- Main Services Grid -->
+<section class="px-8 mb-40">
+<div class="max-w-[1440px] mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+<!-- SEO Consulting -->
+<div class="group p-10 bg-surface-container-low rounded-xl transition-all duration-500 hover:bg-surface-container-lowest hover:shadow-[0_40px_80px_rgba(0,0,0,0.04)]">
+<span class="material-symbols-outlined text-primary text-3xl mb-8">architecture</span>
+<h3 class="text-2xl font-bold tracking-tight mb-4">SEO Consulting &amp; Strategy</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-8">Architectural blueprints for long-term equity. We move beyond basic keywords to build ROI models based on competitor gap analysis and market volatility.</p>
+<ul class="space-y-3 text-xs font-semibold text-primary uppercase tracking-wider">
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span> Keyword Blueprinting</li>
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span> Competitor Arbitrage</li>
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span> ROI Financial Modeling</li>
+</ul>
+</div>
+<!-- Technical SEO -->
+<div class="group p-10 bg-surface-container-low rounded-xl transition-all duration-500 hover:bg-surface-container-lowest hover:shadow-[0_40px_80px_rgba(0,0,0,0.04)]">
+<span class="material-symbols-outlined text-primary text-3xl mb-8">terminal</span>
+<h3 class="text-2xl font-bold tracking-tight mb-4">Technical SEO Excellence</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-8">Hard-engineering for site performance. Eliminating crawl friction and optimizing Core Web Vitals through server-level refinements and code cleanup.</p>
+<ul class="space-y-3 text-xs font-semibold text-primary uppercase tracking-wider">
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span> Core Web Vitals Audit</li>
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span> Crawl Budget Efficiency</li>
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span> Log File Intelligence</li>
+</ul>
+</div>
+<!-- Performance Marketing -->
+<div class="group p-10 bg-surface-container-low rounded-xl transition-all duration-500 hover:bg-surface-container-lowest hover:shadow-[0_40px_80px_rgba(0,0,0,0.04)]">
+<span class="material-symbols-outlined text-primary text-3xl mb-8">ads_click</span>
+<h3 class="text-2xl font-bold tracking-tight mb-4">Google Ads &amp; Performance</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-8">Precision-targeted acquisition. We balance search, display, and remarketing to maximize ROAS without sacrificing brand integrity.</p>
+<ul class="space-y-3 text-xs font-semibold text-primary uppercase tracking-wider">
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span> Semantic Ad Targeting</li>
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span> Remarketing Funnels</li>
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span> Predictive ROAS Optimization</li>
+</ul>
+</div>
+<!-- Local SEO -->
+<div class="group p-10 bg-surface-container-low rounded-xl transition-all duration-500 hover:bg-surface-container-lowest hover:shadow-[0_40px_80px_rgba(0,0,0,0.04)]">
+<span class="material-symbols-outlined text-primary text-3xl mb-8">distance</span>
+<h3 class="text-2xl font-bold tracking-tight mb-4">Local SEO &amp; GEO Dominance</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-8">Proximity-based visibility protocols. Dominating local markets through GBP optimization and systematic geo-targeting for multi-location enterprises.</p>
+<ul class="space-y-3 text-xs font-semibold text-primary uppercase tracking-wider">
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span> GBP Optimization</li>
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span> Citation Structural integrity</li>
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span> Hyper-Local Landing Pages</li>
+</ul>
+</div>
+<!-- Platform Expertise -->
+<div class="group p-10 bg-surface-container-low rounded-xl transition-all duration-500 hover:bg-surface-container-lowest hover:shadow-[0_40px_80px_rgba(0,0,0,0.04)]">
+<span class="material-symbols-outlined text-primary text-3xl mb-8">database</span>
+<h3 class="text-2xl font-bold tracking-tight mb-4">Platform Expertise</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-8">Specialized frameworks for WordPress and Shopify. We optimize Liquid templates and plugin configurations for native speed and SEO fluidity.</p>
+<ul class="space-y-3 text-xs font-semibold text-primary uppercase tracking-wider">
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span> WordPress Core Hardening</li>
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span> Shopify Liquid Optimization</li>
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span> Plugin Conflict Resolution</li>
+</ul>
+</div>
+<!-- Tracking & Analytics -->
+<div class="group p-10 bg-surface-container-low rounded-xl transition-all duration-500 hover:bg-surface-container-lowest hover:shadow-[0_40px_80px_rgba(0,0,0,0.04)]">
+<span class="material-symbols-outlined text-primary text-3xl mb-8">query_stats</span>
+<h3 class="text-2xl font-bold tracking-tight mb-4">Tracking &amp; Analytics</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-8">Measurement infrastructure. From GTM implementation to Server-Side tracking, we ensure every attribution is precise and actionable.</p>
+<ul class="space-y-3 text-xs font-semibold text-primary uppercase tracking-wider">
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span> Server-Side GTM Setup</li>
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span> Advanced Event Schema</li>
+<li class="flex items-center gap-2"><span class="w-1 h-1 bg-primary rounded-full"></span> Cross-Domain Attribution</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Success Stories / Case Studies (NEW) -->
+<section class="px-8 py-40 bg-surface-container-lowest">
+<div class="max-w-[1440px] mx-auto">
+<div class="mb-24 flex flex-col items-center text-center">
+<span class="text-[10px] uppercase tracking-[0.4em] font-extrabold text-primary/60 mb-6">Empirical Evidence</span>
+<h2 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-6">Structural Success <span class="text-primary italic font-light">Stories</span>.</h2>
+<p class="text-on-surface-variant max-w-2xl font-light text-lg">Measurable delta achieved through architectural search engineering and rigorous technical implementation.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Case Study 01 -->
+<div class="glass-card hairline-border p-12 rounded-3xl transition-transform duration-700 hover:-translate-y-2 group">
+<div class="flex justify-between items-start mb-12">
+<span class="text-[10px] font-bold tracking-[0.2em] text-primary uppercase">E-Commerce &amp; Retail</span>
+<span class="material-symbols-outlined text-primary/30 group-hover:text-primary transition-colors">shopping_bag</span>
+</div>
+<h3 class="text-2xl font-bold tracking-tight mb-8">Global Fashion House</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-12">Systematic scale of a Shopify Plus architecture through Liquid optimization and semantic content modeling.</p>
+<div class="space-y-6">
+<div class="flex items-end gap-3">
+<span class="text-4xl font-extrabold tracking-tighter text-on-surface">+340%</span>
+<span class="text-[10px] uppercase font-bold text-on-surface-variant pb-1.5">Traffic</span>
+</div>
+<div class="flex items-end gap-3">
+<span class="text-4xl font-extrabold tracking-tighter text-on-surface">+285%</span>
+<span class="text-[10px] uppercase font-bold text-on-surface-variant pb-1.5">Sales</span>
+</div>
+</div>
+<div class="mt-12 pt-8 border-t border-black/5">
+<a class="text-xs font-bold uppercase tracking-widest text-primary flex items-center gap-2 group-hover:gap-4 transition-all" href="#">
+                        View Audit Path <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Case Study 02 -->
+<div class="glass-card hairline-border p-12 rounded-3xl transition-transform duration-700 hover:-translate-y-2 group">
+<div class="flex justify-between items-start mb-12">
+<span class="text-[10px] font-bold tracking-[0.2em] text-primary uppercase">B2B &amp; SaaS</span>
+<span class="material-symbols-outlined text-primary/30 group-hover:text-primary transition-colors">hub</span>
+</div>
+<h3 class="text-2xl font-bold tracking-tight mb-8">Enterprise Fintech SaaS</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-12">Integrating paid and organic data streams to create a unified acquisition funnel and attribution model.</p>
+<div class="space-y-6">
+<div class="flex items-end gap-3">
+<span class="text-4xl font-extrabold tracking-tighter text-on-surface">+210%</span>
+<span class="text-[10px] uppercase font-bold text-on-surface-variant pb-1.5">Leads</span>
+</div>
+<div class="flex items-end gap-3">
+<span class="text-4xl font-extrabold tracking-tighter text-on-surface">4.2x</span>
+<span class="text-[10px] uppercase font-bold text-on-surface-variant pb-1.5">ROAS</span>
+</div>
+</div>
+<div class="mt-12 pt-8 border-t border-black/5">
+<a class="text-xs font-bold uppercase tracking-widest text-primary flex items-center gap-2 group-hover:gap-4 transition-all" href="#">
+                        View Audit Path <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Case Study 03 -->
+<div class="glass-card hairline-border p-12 rounded-3xl transition-transform duration-700 hover:-translate-y-2 group">
+<div class="flex justify-between items-start mb-12">
+<span class="text-[10px] font-bold tracking-[0.2em] text-primary uppercase">Legal Services</span>
+<span class="material-symbols-outlined text-primary/30 group-hover:text-primary transition-colors">gavel</span>
+</div>
+<h3 class="text-2xl font-bold tracking-tight mb-8">Multi-State Litigation</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-12">Dominating local search environments through citation structural integrity and hyper-local geo-targeting.</p>
+<div class="space-y-6">
+<div class="flex items-end gap-3">
+<span class="text-4xl font-extrabold tracking-tighter text-on-surface">+420%</span>
+<span class="text-[10px] uppercase font-bold text-on-surface-variant pb-1.5">Local Traffic</span>
+</div>
+<div class="flex items-end gap-3">
+<span class="text-4xl font-extrabold tracking-tighter text-on-surface">+310%</span>
+<span class="text-[10px] uppercase font-bold text-on-surface-variant pb-1.5">Forms</span>
+</div>
+</div>
+<div class="mt-12 pt-8 border-t border-black/5">
+<a class="text-xs font-bold uppercase tracking-widest text-primary flex items-center gap-2 group-hover:gap-4 transition-all" href="#">
+                        View Audit Path <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Detailed Comparison Section -->
+<section class="px-8 py-32 bg-surface-container-low">
+<div class="max-w-[1200px] mx-auto">
+<div class="mb-20 text-center">
+<h2 class="text-4xl font-extrabold tracking-tight mb-6">The Architectural Difference</h2>
+<p class="text-on-surface-variant max-w-xl mx-auto">Why high-growth firms move away from standard agencies and towards structural engineering.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-outline-variant/20 rounded-xl overflow-hidden shadow-2xl shadow-slate-200">
+<div class="bg-surface-container-lowest p-12">
+<h4 class="text-xs font-bold uppercase tracking-[0.2em] text-on-surface-variant mb-8">Standard Approach</h4>
+<ul class="space-y-6">
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-error mt-1">close</span>
+<div>
+<p class="font-bold text-sm">Keyword Stuffing</p>
+<p class="text-xs text-on-surface-variant">Prioritizing volume over intent and financial conversion.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-error mt-1">close</span>
+<div>
+<p class="font-bold text-sm">Surface-Level Audits</p>
+<p class="text-xs text-on-surface-variant">Using automated tools without manual code or log analysis.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-error mt-1">close</span>
+<div>
+<p class="font-bold text-sm">Isolated Channels</p>
+<p class="text-xs text-on-surface-variant">Treating SEO and Ads as separate, competing silos.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="bg-surface-container-lowest p-12 border-l border-outline-variant/10">
+<h4 class="text-xs font-bold uppercase tracking-[0.2em] text-primary mb-8">SEOROAS Architecture</h4>
+<ul class="space-y-6">
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+<div>
+<p class="font-bold text-sm">Intent Analysis</p>
+<p class="text-xs text-on-surface-variant">Mapping semantically relevant nodes to high-value conversion pathways.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+<div>
+<p class="font-bold text-sm">Engineering Rigor</p>
+<p class="text-xs text-on-surface-variant">Direct server-side optimization and structural data architecture.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+<div>
+<p class="font-bold text-sm">Omnichannel Synergy</p>
+<p class="text-xs text-on-surface-variant">Cross-pollinating organic insights with paid performance data.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Service Process -->
+<section class="px-8 py-40">
+<div class="max-w-[1440px] mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
+<div class="max-w-xl">
+<h2 class="text-4xl font-extrabold tracking-tight mb-6">The Deployment Framework</h2>
+<p class="text-on-surface-variant">Our methodology is linear, transparent, and built for scale. No guesswork, just engineering.</p>
+</div>
+<div class="text-6xl font-light text-surface-container-highest tracking-tighter hidden md:block">01—04</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="relative">
+<span class="text-xs font-bold text-primary mb-4 block">PHASE 01</span>
+<h4 class="text-lg font-bold mb-4">Discovery &amp; Deep Audit</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Full technical excavation of your existing infrastructure and competitive landscape.</p>
+</div>
+<div class="relative">
+<span class="text-xs font-bold text-primary mb-4 block">PHASE 02</span>
+<h4 class="text-lg font-bold mb-4">Architectural Strategy</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Defining the keyword taxonomy and technical roadmap for the next 12 months.</p>
+</div>
+<div class="relative">
+<span class="text-xs font-bold text-primary mb-4 block">PHASE 03</span>
+<h4 class="text-lg font-bold mb-4">System Implementation</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Executing code-level optimizations, content production, and ad deployments.</p>
+</div>
+<div class="relative">
+<span class="text-xs font-bold text-primary mb-4 block">PHASE 04</span>
+<h4 class="text-lg font-bold mb-4">Growth Calibration</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Continuous data-driven refinement based on real-world search behavior and ROI.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Success Metrics -->
+<section class="px-8 mb-40">
+<div class="max-w-[1440px] mx-auto bg-primary rounded-[2rem] p-16 md:p-24 text-on-primary flex flex-col md:flex-row gap-16 md:items-center">
+<div class="flex-1">
+<h2 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-6">Proven Reliability.</h2>
+<p class="text-on-primary/70 text-lg font-light">We measure our success by the delta we create in your balance sheet.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-12 text-center">
+<div>
+<p class="text-5xl font-extrabold tracking-tighter mb-2">+240%</p>
+<p class="text-[10px] uppercase tracking-[0.2em] font-bold opacity-70">Avg. Traffic Increase</p>
+</div>
+<div>
+<p class="text-5xl font-extrabold tracking-tighter mb-2">4.8x</p>
+<p class="text-[10px] uppercase tracking-[0.2em] font-bold opacity-70">ROAS Improvement</p>
+</div>
+<div>
+<p class="text-5xl font-extrabold tracking-tighter mb-2">+185%</p>
+<p class="text-[10px] uppercase tracking-[0.2em] font-bold opacity-70">Lead Growth</p>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="px-8 mb-40">
+<div class="max-w-[800px] mx-auto">
+<h2 class="text-4xl font-extrabold tracking-tight mb-16 text-center">Protocol Clarifications</h2>
+<div class="space-y-12">
+<div>
+<h4 class="text-lg font-bold mb-4">How does architectural SEO differ from traditional SEO?</h4>
+<p class="text-on-surface-variant leading-relaxed">Traditional SEO often focuses on "tricking" algorithms with keywords. Our architectural approach focuses on site structure, accessibility, and relevance. We build a technical foundation that remains robust regardless of algorithm updates.</p>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-4">Why is tracking implementation mandatory for your services?</h4>
+<p class="text-on-surface-variant leading-relaxed">Measurement is the compass of growth. Without precise tracking (Server-Side, GTM), we cannot determine which channels are actually driving revenue. We do not work in the dark.</p>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-4">Do you specialize in WordPress or Shopify?</h4>
+<p class="text-on-surface-variant leading-relaxed">Both. Each platform has unique structural limitations. Our WordPress service focuses on performance and core security, while our Shopify service optimizes Liquid code and app-induced bloat for maximum organic reach.</p>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-4">Can SEO and Google Ads work together?</h4>
+<p class="text-on-surface-variant leading-relaxed">Absolutely. We use paid search data to identify high-converting keywords quickly, which then informs our long-term organic content strategy. This creates a feedback loop of efficiency.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Block -->
+<section class="px-8 mb-24">
+<div class="max-w-[1000px] mx-auto p-12 md:p-20 bg-surface-container rounded-3xl relative overflow-hidden text-center">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2"></div>
+<h2 class="text-3xl md:text-4xl font-extrabold tracking-tight mb-6">Ready to Engineer Your Growth?</h2>
+<p class="text-on-surface-variant mb-12 max-w-md mx-auto">Request a free comprehensive audit of your digital infrastructure and discover the gaps in your current architecture.</p>
+<form class="max-w-2xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+<input class="bg-white border-none focus:ring-2 focus:ring-primary rounded-lg px-6 py-4 text-sm shadow-sm" placeholder="Professional Email" type="email"/>
+<input class="bg-white border-none focus:ring-2 focus:ring-primary rounded-lg px-6 py-4 text-sm shadow-sm" placeholder="Website URL" type="url"/>
+<button class="md:col-span-2 bg-primary text-on-primary font-bold py-4 rounded-lg hover:opacity-90 transition-opacity">Get Free Audit</button>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="w-full pt-24 pb-12 bg-slate-50 border-t border-slate-100">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-20 px-12 max-w-[1440px] mx-auto font-['Manrope'] text-sm leading-relaxed">
+<div class="col-span-1 md:col-span-1">
+<div class="text-lg font-bold tracking-tighter text-slate-900 mb-6">SEOROAS</div>
+<p class="text-slate-500 mb-8">Architectural Precision in Search. We engineer high-performance growth systems for market leaders.</p>
+</div>
+<div>
+<h5 class="font-bold text-slate-900 mb-6">Solutions</h5>
+<ul class="space-y-4">
+<li><a class="text-slate-500 hover:text-indigo-500 transition-colors" href="#">SEO Consulting</a></li>
+<li><a class="text-slate-500 hover:text-indigo-500 transition-colors" href="#">Technical SEO</a></li>
+<li><a class="text-slate-500 hover:text-indigo-500 transition-colors" href="#">Google Ads</a></li>
+<li><a class="text-slate-500 hover:text-indigo-500 transition-colors" href="#">Local SEO</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold text-slate-900 mb-6">Company</h5>
+<ul class="space-y-4">
+<li><a class="text-slate-500 hover:text-indigo-500 transition-colors" href="#">Methodology</a></li>
+<li><a class="text-slate-500 hover:text-indigo-500 transition-colors" href="#">Case Studies</a></li>
+<li><a class="text-slate-500 hover:text-indigo-500 transition-colors" href="#">Insights</a></li>
+<li><a class="text-slate-500 hover:text-indigo-500 transition-colors" href="#">Contact</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold text-slate-900 mb-6">Legal</h5>
+<ul class="space-y-4">
+<li><a class="text-slate-500 hover:text-indigo-500 transition-colors" href="#">Privacy</a></li>
+<li><a class="text-slate-500 hover:text-indigo-500 transition-colors" href="#">Terms</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-[1440px] mx-auto px-12 mt-20 pt-12 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-slate-400 text-xs">© 2026 SEOROAS. Architectural Precision in Search.</p>
+<div class="flex gap-8">
+<a class="text-slate-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined text-sm">language</span></a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined text-sm">share</span></a>
+</div>
+</div>
+</footer>
+</body></html>

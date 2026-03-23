@@ -63,7 +63,7 @@ export default function IcerikSeoPage() {
 
       <SubpageHero
         breadcrumb={[
-          { name: "SEO Hizmetleri", url: "/seo-fiyatlari" },
+          { name: "SEO", url: "/seo" },
           { name: "İçerik SEO", url: "/seo/icerik-seo" },
         ]}
         badge="Content Engine: Active"

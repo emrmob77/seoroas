@@ -103,7 +103,7 @@ export default function GoogleTagManagerPage() {
 
       <SubpageHero
         breadcrumb={[
-          { name: "Hizmetler", url: "#" },
+          { name: "Hizmetler", url: "/hizmetler" },
           {
             name: "Google Tag Manager",
             url: "/hizmetler/google-tag-manager",

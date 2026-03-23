@@ -63,7 +63,7 @@ export default function TeknikSeoPage() {
 
       <SubpageHero
         breadcrumb={[
-          { name: "SEO Hizmetleri", url: "/seo-fiyatlari" },
+          { name: "SEO", url: "/seo" },
           { name: "Teknik SEO", url: "/seo/teknik-seo" },
         ]}
         badge="System Status: Optimized"
