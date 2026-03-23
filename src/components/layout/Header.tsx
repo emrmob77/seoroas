@@ -170,7 +170,11 @@ export function Header({ navigation }: HeaderProps) {
   const linkIdle = "text-zinc-500 hover:text-zinc-900";
   const linkActiveClass = "text-zinc-900 font-semibold border-b-2 border-primary pb-1";
 
-  const colCount = megaMenuGroups.length <= 4 ? megaMenuGroups.length : 4;
+  const effectiveCols = megaMenuGroups.reduce(
+    (sum, g) => sum + (g.links.length > 6 ? 2 : 1),
+    0,
+  );
+  const colCount = Math.min(effectiveCols, 4);
   const gridCols = colCount === 2 ? "grid-cols-2" : colCount === 3 ? "grid-cols-3" : "grid-cols-4";
   const megaWidth = colCount <= 2 ? "w-[520px]" : colCount === 3 ? "w-[680px]" : "w-[880px]";
 

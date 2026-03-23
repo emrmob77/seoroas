@@ -80,12 +80,7 @@ export function Footer({ navigation }: FooterProps) {
   return (
     <footer className="bg-slate-50 w-full pt-32 pb-12">
       <div className="max-w-7xl mx-auto px-8 flex flex-col items-start space-y-24">
-        <div
-          className="grid grid-cols-2 gap-12 md:gap-8 w-full"
-          style={{
-            gridTemplateColumns: `repeat(${Math.min(footerColumns.length + 1, 6)}, minmax(0, 1fr))`,
-          }}
-        >
+        <div className="grid grid-cols-2 md:grid-cols-6 gap-12 md:gap-8 w-full">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <div className="text-lg font-black tracking-tighter text-slate-900 mb-8 uppercase">
