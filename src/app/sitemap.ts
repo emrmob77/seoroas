@@ -69,7 +69,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }
 
   const entries: MetadataRoute.Sitemap = staticPages
-    .filter((page) => !excludedPaths.has(page.path))
+    .filter((page) => !excludedPaths.has(page.path) && !redirectSources.has(page.path))
     .map((page) => ({
       url: `${SITE_URL}${page.path}`,
       lastModified: new Date(),
