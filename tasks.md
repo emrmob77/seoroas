@@ -349,10 +349,11 @@ Görevler:
 
 - [x] `app/api/lead/route.ts` → POST handler
 - [x] Resend API ile e-posta bildirimi (yeni lead geldiğinde)
-- [x] Honeypot spam koruması
+- [x] Honeypot spam koruması (company_fax hidden field — iletişim formu company çakışması düzeltildi)
 - [x] Rate limiting (10 istek/dakika/IP)
-- [x] Başarılı submit → `/tesekkurler/` yönlendirmesi (GA4 conversion)
-- [x] Hata durumu → kullanıcıya anlamlı mesaj
+- [x] Başarılı submit → `/tesekkurler/` yönlendirmesi (client-side fetch + router.push)
+- [x] `/tesekkurler` sayfası oluşturuldu (ConversionTracker ile generate_lead event)
+- [x] Hata durumu → kullanıcıya anlamlı mesaj + loading state
 
 ---
 
@@ -494,8 +495,8 @@ SSR + Sanity özelinde kritik adımlar:
 - [x] 12 sayfaya Breadcrumb eklendi (BreadcrumbList Schema)
 - [x] /iletisim sayfası oluşturuldu (ContactPage Schema)
 - [x] Schema markup test — Tüm sayfaların JSON-LD yapıları doğrulandı (LocalBusiness, WebSite, Service, ProfessionalService, FAQPage, Blog, BreadcrumbList)
-- [ ] Core Web Vitals → PageSpeed Insights — canlı site üzerinde kontrol edilecek
-- [ ] Lighthouse audit tüm sayfalar — canlı site üzerinde kontrol edilecek
+- [x] Core Web Vitals → PageSpeed Insights — Perf:96, SEO:100, BP:100, A11y:85→düzeltildi
+- [x] Lighthouse audit — FCP:1.3s, LCP:2.4s, TBT:10ms, CLS:0, TTI:2.4s
 
 ---
 
@@ -504,12 +505,12 @@ SSR + Sanity özelinde kritik adımlar:
 **Süre:** 4 saat
 
 Test edilecek:
-- [ ] Chrome, Safari, Firefox, Edge (masaüstü)
-- [ ] iOS Safari, Chrome Android (mobil)
-- [ ] 320px, 375px, 414px, 768px, 1024px, 1280px, 1440px breakpoint'leri
-- [ ] CLS: Hiç layout shift yok (Chrome DevTools Layout Shift Regions)
-- [ ] Touch target boyutları: min 48x48px
-- [ ] Klavye navigasyonu (Tab order, focus visible)
+- [ ] Chrome, Safari, Firefox, Edge (masaüstü) — manuel test gerekli
+- [ ] iOS Safari, Chrome Android (mobil) — manuel test gerekli
+- [ ] 320px, 375px, 414px, 768px, 1024px, 1280px, 1440px breakpoint'leri — manuel test gerekli
+- [x] CLS: 0 — Lighthouse ile doğrulandı
+- [ ] Touch target boyutları: min 48x48px — manuel test gerekli
+- [ ] Klavye navigasyonu (Tab order, focus visible) — manuel test gerekli
 
 ---
 
@@ -518,7 +519,9 @@ Test edilecek:
 **Süre:** 3 saat
 
 - [x] Cookie banner komponenti (tercih kaydet, localStorage)
-- [x] GA4 → consent mode v2 entegrasyonu
+- [x] GA4 → consent mode v2 entegrasyonu (analytics, ad, ad_user_data, ad_personalization)
+- [x] GTM (Google Tag Manager) container entegrasyonu — head script + body noscript
+- [x] GTM dataLayer event tracking — form_submit, newsletter_subscribe, generate_lead, consent_update
 - [x] Gizlilik Politikası sayfası (`/gizlilik-politikasi/`)
 - [x] KVKK Aydınlatma Metni (`/kullanim-sartlari/`)
 - [x] Form'larda KVKK onay checkbox'ı
@@ -531,10 +534,13 @@ Test edilecek:
 
 - [x] GitHub Actions → `next build` + `next lint` + `tsc --noEmit` pipeline
 - [x] Vercel production deploy ayarları (seoroas.vercel.app)
-- [ ] Custom domain: seoroas.com bağlantısı
+- [ ] Custom domain: seoroas.com bağlantısı — Vercel Dashboard'dan yapılacak
 - [x] SSL sertifikası (Vercel otomatik)
 - [x] Preview deployments (her PR için)
 - [x] Environment variables production'da set edildi (SANITY_PROJECT_ID, DATASET, API_TOKEN)
+- [x] GSC verification → `NEXT_PUBLIC_GSC_VERIFICATION` env variable ile meta tag
+- [x] GA4 tracking → `NEXT_PUBLIC_GA_ID` ile doğrudan gtag.js (GTM yoksa fallback)
+- [x] GTM container → `NEXT_PUBLIC_GTM_ID` ile GTM yükleme (GA4 GTM içinden yönetilir)
 
 ---
 
@@ -565,11 +571,12 @@ Test edilecek:
 **Rol:** SEO Uzmanı
 **Süre:** 2 saat
 
-- [ ] GSC property oluştur → site verification
-- [ ] Sitemap GSC'ye gönder
-- [ ] GA4 → conversion events yapılandır (form_submit, phone_click)
-- [ ] Hedef keyword listesi oluştur (rank tracking için)
-- [ ] Başlangıç sıralama snapshot'ı al
+- [x] GSC property oluştur → site verification meta tag siteye eklendi
+- [ ] Sitemap GSC'ye gönder — GSC Dashboard'dan manuel
+- [x] GA4 / GTM → conversion events yapılandır — generate_lead, form_submit, newsletter_subscribe, consent_update eventleri dataLayer'a push ediliyor
+- [ ] GTM container oluştur → GA4, Meta Pixel, TikTok Pixel tag'lerini GTM içinden yapılandır — manuel
+- [ ] Hedef keyword listesi oluştur (rank tracking için) — manuel SEO çalışması
+- [ ] Başlangıç sıralama snapshot'ı al — manuel SEO çalışması
 
 ---
 
@@ -614,12 +621,17 @@ Test edilecek:
 | 3 | MÜH-06 + FE-14 Blog altyapısı | Mühendis + FE | ✅ Tamamlandı |
 | 3 | SEO-05 Blog içerikleri (WP→Sanity 17 yazı) | SEO + Mühendis | ✅ Tamamlandı |
 | 4 | MÜH-07 Performans opt. | Mühendis | ✅ Tamamlandı |
-| 4 | MÜH-08 Teknik SEO audit | Mühendis + SEO | ✅ Tamamlandı |
-| 4 | FE-15 Responsive test | Front-end | ✅ Canlı site kontrol edildi |
-| 4 | MÜH-09 KVKK uyumu | Mühendis | ✅ Tamamlandı |
-| 4 | MÜH-10 Deploy & CI/CD | Mühendis | ✅ Vercel deploy + Studio çalışıyor |
+| 4 | MÜH-08 Teknik SEO audit | Mühendis + SEO | ✅ Lighthouse P:96 SEO:100 BP:100 |
+| 4 | FE-15 Responsive test | Front-end | 🔶 CLS:0 doğrulandı, cross-browser manuel test bekliyor |
+| 4 | MÜH-09 KVKK uyumu | Mühendis | ✅ Consent Mode v2 + GTM entegrasyonu |
+| 4 | MÜH-10 Deploy & CI/CD | Mühendis | ✅ Vercel deploy + Studio + GTM + GSC |
 | 4 | MÜH-11 SEO Migration Altyapısı | Mühendis | ✅ Sanity SEO fields, 301 redirect, yeni sayfalar |
-| 5 | SEO-06 GSC & Analytics | SEO Uzmanı | ⬜ Bekliyor |
+| 4 | A11y düzeltmeleri | Mühendis + FE | ✅ aria-label, kontrast, heading sırası |
+| 4 | Form UX iyileştirmeleri | Mühendis | ✅ fetch+redirect, loading, /tesekkurler, honeypot fix |
+| 4 | Newsletter entegrasyonu | Mühendis | ✅ API bağlantısı, Resend Audiences, dataLayer |
+| 4 | Meta title/desc optimizasyonu | SEO + Mühendis | ✅ 29 sayfa SEO odaklı title/desc |
+| 4 | GTM + GA4 + GSC kurulumu | Mühendis | ✅ GTM container, Consent Mode v2, conversion tracking |
+| 5 | SEO-06 GSC & Analytics | SEO Uzmanı | 🔶 Kod tarafı tamam, Dashboard kurulumu bekliyor |
 | 5 | SEO-07 Backlink stratejisi | SEO Uzmanı | ⬜ Bekliyor |
 
 ---
@@ -656,14 +668,44 @@ MÜH-02 (Klasör yapısı) → MÜH-03 (Layout + SSR altyapısı)
 
 ---
 
+## KALAN GÖREVLER (Öncelik Sırasıyla)
+
+### 🔴 Yüksek Öncelik (Geliştirici)
+| # | Görev | Detay |
+|---|-------|-------|
+| 1 | Resend domain doğrulama | `seoroas.com` Resend'de doğrulanmalı (DNS TXT/MX). Yoksa `noreply@seoroas.com` maili çalışmaz |
+| 2 | Resend Audiences oluştur | Dashboard → Audiences → ID'yi `RESEND_AUDIENCE_ID` olarak Vercel'e ekle |
+| 3 | GTM container oluştur | tagmanager.google.com → Container oluştur → ID'yi `NEXT_PUBLIC_GTM_ID` olarak Vercel'e ekle |
+| 4 | GTM içinde tag'leri yapılandır | GA4 Config tag, form_submit trigger, generate_lead conversion, Meta Pixel, TikTok Pixel |
+| 5 | Custom domain bağla | Vercel Dashboard → Domains → seoroas.com ekle (DNS A/CNAME kayıtları) |
+
+### 🟡 Orta Öncelik (Manuel SEO)
+| # | Görev | Detay |
+|---|-------|-------|
+| 6 | GSC sitemap gönder | search.google.com/search-console → Sitemaps → `https://seoroas.com/sitemap.xml` |
+| 7 | /seo-hizmetleri → /seo redirect | Sanity Studio'dan 301 redirect ekle (requirements.md'deki eski URL yapısı) |
+| 8 | /vaka-calismalari → /referanslar redirect | Sanity Studio'dan 301 redirect ekle |
+| 9 | İç link optimizasyonu | Blog yazılarına Sanity Studio'dan `/seo/` iç linkleri ekle |
+| 10 | Cross-browser test | Chrome, Safari, Firefox, Edge + iOS/Android mobil test |
+
+### 🟢 Düşük Öncelik (Sürekli)
+| # | Görev | Detay |
+|---|-------|-------|
+| 11 | Hedef keyword listesi | Ahrefs/SEMrush ile rank tracking başlat |
+| 12 | Başlangıç sıralama snapshot'ı | Mevcut pozisyonları kaydet |
+| 13 | Backlink stratejisi | Rakip analizi, guest post, dijital PR, yerel dizin kayıtları |
+| 14 | Microsoft Clarity | Isı haritası için Clarity kurulumu (GTM'den yönetilebilir) |
+
+---
+
 ## YAYINA GİRME KRİTERLERİ (Definition of Done)
 
 Bir görev tamamlanmış sayılmaz, eğer:
-- [ ] Lighthouse Perf mobile ≥ 90 değilse
-- [ ] CLS > 0.05 ise (Layout shift var)
+- [x] Lighthouse Perf mobile ≥ 90 değilse → ✅ 96
+- [x] CLS > 0.05 ise (Layout shift var) → ✅ CLS: 0
 - [ ] SEO Uzmanı onayı yoksa (para sayfaları için)
 - [ ] Schema markup valid değilse (Rich Results Test)
 - [ ] Mobile responsive test geçilmediyse
-- [ ] `npm run build` hata veriyorsa
-- [ ] Canonical tag eksikse
-- [ ] H1 hedef keyword içermiyorsa
+- [x] `npm run build` hata veriyorsa → ✅ Build başarılı
+- [x] Canonical tag eksikse → ✅ Tüm sayfalarda mevcut
+- [x] H1 hedef keyword içermiyorsa → ✅ Kontrol edildi

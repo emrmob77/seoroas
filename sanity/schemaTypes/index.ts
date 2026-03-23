@@ -1,4 +1,5 @@
 import { post } from "./post";
+import { page } from "./page";
 import { service } from "./service";
 import { caseStudy } from "./caseStudy";
 import { localPage } from "./localPage";
@@ -12,6 +13,7 @@ import { category } from "./category";
 export const schemaTypes = [
   seoFields,
   post,
+  page,
   service,
   caseStudy,
   localPage,

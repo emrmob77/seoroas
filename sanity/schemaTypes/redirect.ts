@@ -34,6 +34,9 @@ export const redirect = defineType({
         list: [
           { title: "301 — Kalıcı Yönlendirme", value: 301 },
           { title: "302 — Geçici Yönlendirme", value: 302 },
+          { title: "307 — Geçici Yönlendirme (Metod Korunur)", value: 307 },
+          { title: "308 — Kalıcı Yönlendirme (Metod Korunur)", value: 308 },
+          { title: "410 — Sayfa Kalıcı Olarak Silindi", value: 410 },
         ],
       },
       initialValue: 301,

@@ -7,6 +7,8 @@ export const siteSettings = defineType({
   groups: [
     { name: "general", title: "Genel", default: true },
     { name: "seo", title: "SEO & Doğrulama" },
+    { name: "robots", title: "robots.txt" },
+    { name: "sitemap", title: "Sitemap" },
     { name: "social", title: "Sosyal Medya" },
     { name: "analytics", title: "Analytics & Tracking" },
   ],
@@ -73,6 +75,51 @@ export const siteSettings = defineType({
       type: "string",
       description: "yandex-verification meta etiketinin content değeri",
       group: "seo",
+    }),
+
+    // robots.txt
+    defineField({
+      name: "robotsDisallow",
+      title: "Engellenecek Yollar",
+      type: "array",
+      description: "robots.txt'de engellenmesini istediğiniz URL yolları (ör: /admin/, /api/)",
+      of: [{ type: "string" }],
+      group: "robots",
+    }),
+    defineField({
+      name: "robotsCustomRules",
+      title: "Özel robots.txt Kuralları",
+      type: "text",
+      rows: 8,
+      description: "Varsa ek robots.txt kuralları (satır satır yazın). Boş bırakılırsa varsayılan kurallar kullanılır.",
+      group: "robots",
+    }),
+
+    // Sitemap
+    defineField({
+      name: "sitemapExclude",
+      title: "Sitemap'ten Hariç Tutulacak Yollar",
+      type: "array",
+      description: "Sitemap'e dahil edilmemesini istediğiniz URL yolları (ör: /tesekkurler)",
+      of: [{ type: "string" }],
+      group: "sitemap",
+    }),
+    defineField({
+      name: "sitemapChangeFrequency",
+      title: "Varsayılan Güncelleme Sıklığı",
+      type: "string",
+      options: {
+        list: [
+          { title: "Her zaman", value: "always" },
+          { title: "Saatlik", value: "hourly" },
+          { title: "Günlük", value: "daily" },
+          { title: "Haftalık", value: "weekly" },
+          { title: "Aylık", value: "monthly" },
+          { title: "Yıllık", value: "yearly" },
+        ],
+      },
+      initialValue: "weekly",
+      group: "sitemap",
     }),
 
     defineField({

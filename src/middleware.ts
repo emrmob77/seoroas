@@ -74,6 +74,10 @@ export async function middleware(request: NextRequest) {
   );
 
   if (match) {
+    if (match.statusCode === 410) {
+      return new NextResponse("Gone", { status: 410 });
+    }
+
     const destination = match.destination.startsWith("http")
       ? match.destination
       : `${request.nextUrl.origin}${match.destination}`;
