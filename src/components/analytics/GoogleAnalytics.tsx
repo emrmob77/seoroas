@@ -1,9 +1,14 @@
 import Script from "next/script";
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
+const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
 
+/**
+ * Standalone GA4 — only loads when GTM is NOT configured.
+ * When GTM is active, GA4 should be managed inside the GTM container.
+ */
 export function GoogleAnalytics() {
-  if (!GA_ID) return null;
+  if (GTM_ID || !GA_ID) return null;
 
   return (
     <>

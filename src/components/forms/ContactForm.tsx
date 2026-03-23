@@ -30,6 +30,9 @@ export function ContactForm() {
         return;
       }
 
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: "form_submit", form_name: "contact_form" });
+
       router.push("/tesekkurler");
     } catch {
       setError("Bağlantı hatası. Lütfen tekrar deneyin.");

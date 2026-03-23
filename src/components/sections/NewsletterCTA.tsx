@@ -27,6 +27,9 @@ export function NewsletterCTA() {
         return;
       }
 
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: "newsletter_subscribe", form_name: "homepage_newsletter" });
+
       setSuccess(true);
       setEmail("");
     } catch {

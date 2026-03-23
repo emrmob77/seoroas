@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { CookieBanner } from "@/components/layout/CookieBanner";
+import { GoogleTagManagerHead, GoogleTagManagerBody } from "@/components/analytics/GoogleTagManager";
 import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
 import { SchemaOrg } from "@/components/seo/SchemaOrg";
 import { localBusinessSchema, webSiteSchema } from "@/lib/schema";
@@ -61,9 +62,11 @@ export default function RootLayout({
   return (
     <html lang="tr" className={`${manrope.variable} h-full antialiased`}>
       <head>
+        <GoogleTagManagerHead />
         <SchemaOrg schema={[localBusinessSchema(), webSiteSchema()]} />
       </head>
       <body className="min-h-full flex flex-col font-sans bg-background text-on-surface">
+        <GoogleTagManagerBody />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

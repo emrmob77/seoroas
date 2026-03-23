@@ -30,6 +30,9 @@ export function CTAForm() {
         return;
       }
 
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: "form_submit", form_name: "cta_form" });
+
       router.push("/tesekkurler");
     } catch {
       setError("Bağlantı hatası. Lütfen tekrar deneyin.");

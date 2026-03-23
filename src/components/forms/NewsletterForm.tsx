@@ -31,6 +31,9 @@ export function NewsletterForm({ variant = "dark" }: Props) {
         setError(data.error || "Bir hata oluştu.");
         return;
       }
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: "newsletter_subscribe", form_name: "blog_newsletter" });
+
       setSuccess(true);
       setEmail("");
     } catch {

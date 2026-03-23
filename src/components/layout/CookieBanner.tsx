@@ -5,6 +5,35 @@ import Link from "next/link";
 
 type Consent = "accepted" | "rejected" | null;
 
+declare global {
+  interface Window {
+    dataLayer: Record<string, unknown>[];
+    gtag: (...args: unknown[]) => void;
+  }
+}
+
+function pushConsent(granted: boolean) {
+  if (typeof window === "undefined") return;
+
+  const state = granted ? "granted" : "denied";
+  const consentParams = {
+    analytics_storage: state,
+    ad_storage: state,
+    ad_user_data: state,
+    ad_personalization: state,
+  };
+
+  if (window.gtag) {
+    window.gtag("consent", "update", consentParams);
+  }
+
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: "consent_update",
+    ...consentParams,
+  });
+}
+
 export function CookieBanner() {
   const [consent, setConsent] = useState<Consent>(null);
   const [visible, setVisible] = useState(false);
@@ -16,28 +45,21 @@ export function CookieBanner() {
       return () => clearTimeout(timer);
     }
     setConsent(stored);
-    if (stored === "accepted") enableAnalytics();
+    if (stored === "accepted") pushConsent(true);
   }, []);
-
-  function enableAnalytics() {
-    if (typeof window !== "undefined" && "gtag" in window) {
-      (window as unknown as Record<string, Function>).gtag("consent", "update", {
-        analytics_storage: "granted",
-      });
-    }
-  }
 
   function handleAccept() {
     localStorage.setItem("cookie-consent", "accepted");
     setConsent("accepted");
     setVisible(false);
-    enableAnalytics();
+    pushConsent(true);
   }
 
   function handleReject() {
     localStorage.setItem("cookie-consent", "rejected");
     setConsent("rejected");
     setVisible(false);
+    pushConsent(false);
   }
 
   if (!visible || consent) return null;

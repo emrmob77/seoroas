@@ -29,6 +29,9 @@ export function ConsultationForm() {
         return;
       }
 
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: "form_submit", form_name: "consultation_form" });
+
       router.push("/tesekkurler");
     } catch {
       setError("Bağlantı hatası. Lütfen tekrar deneyin.");

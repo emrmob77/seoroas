@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import { generateSeoMetadata } from "@/lib/seo";
+import { ConversionTracker } from "@/components/analytics/ConversionTracker";
 
 export const metadata: Metadata = generateSeoMetadata({
   title: "Teşekkürler — Talebiniz Alındı",
@@ -14,6 +15,7 @@ export const metadata: Metadata = generateSeoMetadata({
 export default function TesekkurlerPage() {
   return (
     <main className="min-h-[70vh] flex items-center justify-center px-6 py-24">
+      <ConversionTracker event="generate_lead" params={{ currency: "TRY", value: 1 }} />
       <div className="max-w-lg mx-auto text-center">
         <div className="w-20 h-20 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-8">
           <CheckCircle2 className="h-10 w-10 text-green-500" strokeWidth={1.5} />
