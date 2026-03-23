@@ -10,8 +10,6 @@ import { SchemaOrg } from "@/components/seo/SchemaOrg";
 import { localBusinessSchema, webSiteSchema } from "@/lib/schema";
 import "./globals.css";
 
-export const dynamic = "force-dynamic";
-
 const manrope = Manrope({
   subsets: ["latin", "latin-ext"],
   display: "swap",
