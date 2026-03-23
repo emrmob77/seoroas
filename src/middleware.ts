@@ -49,6 +49,8 @@ function normalizePath(path: string): string {
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const host = request.headers.get("host") || "";
+  const origin = request.nextUrl.origin;
+  const search = request.nextUrl.search;
 
   if (
     pathname.startsWith("/studio") ||
@@ -59,48 +61,43 @@ export async function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // www → non-www (tek 301 ile)
+  const normalized = normalizePath(pathname);
+  const redirects = await getRedirects();
+  const protectedPaths = new Set(["/seo", "/hizmetler"]);
+
+  function findRedirect(path: string) {
+    return redirects.find(
+      (r) => normalizePath(r.source) === path && !protectedPaths.has(path)
+    );
+  }
+
+  // www → non-www (tek 301 ile, trailing slash + Sanity redirect dahil)
   if (host.startsWith("www.")) {
     const nonWww = host.replace(/^www\./, "");
-    const normalized = normalizePath(pathname);
-    const redirects = await getRedirects();
-    const existingPages = new Set(["/seo", "/hizmetler"]);
-    const match = redirects.find(
-      (r) => normalizePath(r.source) === normalized && !existingPages.has(normalized)
-    );
-    const finalPath = match ? match.destination : normalized;
+    const match = findRedirect(normalized);
+    const finalPath = match?.destination || normalized;
     const dest = finalPath.startsWith("http")
       ? finalPath
-      : `${request.nextUrl.protocol}//${nonWww}${finalPath}`;
+      : `${request.nextUrl.protocol}//${nonWww}${finalPath}${search}`;
     return NextResponse.redirect(dest, 301);
   }
 
-  const normalized = normalizePath(pathname);
-
-  // Trailing slash + Sanity redirect'i tek adımda çöz
-  const redirects = await getRedirects();
-  const existingPages = new Set(["/seo", "/hizmetler"]);
-  const match = redirects.find(
-    (r) => normalizePath(r.source) === normalized && !existingPages.has(normalized)
-  );
+  // Sanity redirect kontrolü
+  const match = findRedirect(normalized);
 
   if (match) {
     if (match.statusCode === 410) {
       return new NextResponse("Gone", { status: 410 });
     }
-
     const destination = match.destination.startsWith("http")
       ? match.destination
-      : `${request.nextUrl.origin}${match.destination}`;
-
+      : `${origin}${match.destination}`;
     return NextResponse.redirect(destination, match.statusCode || 301);
   }
 
-  // Sadece trailing slash kaldırma (Sanity redirect yoksa)
+  // Trailing slash kaldırma (string URL ile — NextURL.clone() loop'u önler)
   if (normalized !== pathname) {
-    const url = request.nextUrl.clone();
-    url.pathname = normalized;
-    return NextResponse.redirect(url, 301);
+    return NextResponse.redirect(`${origin}${normalized}${search}`, 301);
   }
 
   return NextResponse.next();
