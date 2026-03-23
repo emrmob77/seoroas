@@ -45,7 +45,7 @@ const redirects = [
 
   // Kategori arşivleri
   { source: "/e-ticaret", destination: "/blog", note: "WP migration: kategori arşivi" },
-  { source: "/seo", destination: "/blog", note: "WP migration: kategori arşivi" },
+  // /seo artık gerçek bir sayfa, redirect kaldırıldı
   { source: "/shopify", destination: "/blog", note: "WP migration: kategori arşivi" },
   { source: "/wordpress", destination: "/blog", note: "WP migration: kategori arşivi" },
 

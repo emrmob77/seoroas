@@ -67,8 +67,10 @@ export async function middleware(request: NextRequest) {
   }
 
   const redirects = await getRedirects();
+
+  const existingPages = new Set(["/seo", "/hizmetler"]);
   const match = redirects.find(
-    (r) => normalizePath(r.source) === normalized
+    (r) => normalizePath(r.source) === normalized && !existingPages.has(normalized)
   );
 
   if (match) {

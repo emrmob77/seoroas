@@ -64,7 +64,9 @@ function isActive(pathname: string, href: string) {
 
 function isSolutionsActive(pathname: string) {
   return (
+    pathname === "/seo" ||
     pathname.startsWith("/seo/") ||
+    pathname === "/hizmetler" ||
     pathname.startsWith("/hizmetler/") ||
     pathname.endsWith("-seo-ajansi")
   );
@@ -215,12 +217,20 @@ export function Header() {
                     </div>
                   </div>
 
-                  <Link
-                    href="/seo-fiyatlari"
-                    className="block text-center text-xs font-bold tracking-widest text-primary hover:opacity-70 mt-4 pt-3 border-t border-zinc-200/40 transition-opacity"
-                  >
-                    Tüm Fiyatları Gör →
-                  </Link>
+                  <div className="flex items-center justify-center gap-6 mt-4 pt-3 border-t border-zinc-200/40">
+                    <Link
+                      href="/seo"
+                      className="text-xs font-bold tracking-widest text-primary hover:opacity-70 transition-opacity"
+                    >
+                      Tüm SEO Hizmetleri →
+                    </Link>
+                    <Link
+                      href="/hizmetler"
+                      className="text-xs font-bold tracking-widest text-primary hover:opacity-70 transition-opacity"
+                    >
+                      Tüm Hizmetler →
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>

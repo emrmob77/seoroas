@@ -13,6 +13,8 @@ const staticPages = [
   { path: "/iletisim", changeFrequency: "yearly" as const, priority: 0.6 },
   { path: "/gizlilik-politikasi", changeFrequency: "yearly" as const, priority: 0.3 },
   { path: "/kullanim-sartlari", changeFrequency: "yearly" as const, priority: 0.3 },
+  { path: "/seo", changeFrequency: "monthly" as const, priority: 0.9 },
+  { path: "/hizmetler", changeFrequency: "monthly" as const, priority: 0.9 },
   { path: "/seo/on-page-seo", changeFrequency: "monthly" as const, priority: 0.8 },
   { path: "/seo/teknik-seo", changeFrequency: "monthly" as const, priority: 0.8 },
   { path: "/seo/link-building", changeFrequency: "monthly" as const, priority: 0.8 },
