@@ -1,18 +1,20 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { generateSeoMetadata } from "@/lib/seo";
+import { generateDynamicSeoMetadata } from "@/lib/seo";
 import { SchemaOrg } from "@/components/seo/SchemaOrg";
 import { SubpageHero } from "@/components/sections/SubpageHero";
 
 export const dynamic = "force-dynamic";
 
-export const metadata: Metadata = generateSeoMetadata({
-  title: "Teknik SEO Hizmeti — Site Hızı & Altyapı Optimizasyonu",
-  description:
-    "Core Web Vitals, crawl budget, site mimarisi, schema markup ve JS rendering optimizasyonu. Teknik altyapınızı arama motorlarına hazırlayın.",
-  path: "/seo/teknik-seo",
-});
+export async function generateMetadata(): Promise<Metadata> {
+  return generateDynamicSeoMetadata({
+    title: "Teknik SEO Hizmeti — Site Hızı & Altyapı Optimizasyonu",
+    description:
+      "Core Web Vitals, crawl budget, site mimarisi, schema markup ve JS rendering optimizasyonu. Teknik altyapınızı arama motorlarına hazırlayın.",
+    path: "/seo/teknik-seo",
+  });
+}
 
 const services = [
   { title: "Core Web Vitals", desc: "LCP, INP ve CLS optimizasyonu ile hem kullanıcı deneyimini hem algoritmik tercihi güçlendiriyoruz.", tags: ["LCP", "INP", "CLS"], large: true },

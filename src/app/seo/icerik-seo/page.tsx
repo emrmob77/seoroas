@@ -1,18 +1,20 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { generateSeoMetadata } from "@/lib/seo";
+import { generateDynamicSeoMetadata } from "@/lib/seo";
 import { SchemaOrg } from "@/components/seo/SchemaOrg";
 import { SubpageHero } from "@/components/sections/SubpageHero";
 
 export const dynamic = "force-dynamic";
 
-export const metadata: Metadata = generateSeoMetadata({
-  title: "İçerik SEO Hizmeti — Topic Cluster & İçerik Stratejisi",
-  description:
-    "Anahtar kelime araştırması, topic cluster, content gap analizi ve topikal otorite stratejisi ile organik trafiğinizi içerikle büyütün.",
-  path: "/seo/icerik-seo",
-});
+export async function generateMetadata(): Promise<Metadata> {
+  return generateDynamicSeoMetadata({
+    title: "İçerik SEO Hizmeti — Topic Cluster & İçerik Stratejisi",
+    description:
+      "Anahtar kelime araştırması, topic cluster, content gap analizi ve topikal otorite stratejisi ile organik trafiğinizi içerikle büyütün.",
+    path: "/seo/icerik-seo",
+  });
+}
 
 const services = [
   { title: "Keyword Araştırması", desc: "Arama hacmi, rekabet ve kullanıcı niyetini analiz ederek en yüksek ROI potansiyeline sahip anahtar kelimeleri belirliyoruz.", tags: ["Search Intent", "Volume", "KD"], large: true },

@@ -1,19 +1,21 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Code2, Layers, ShieldCheck, Users } from "lucide-react";
-import { generateSeoMetadata } from "@/lib/seo";
+import { generateDynamicSeoMetadata } from "@/lib/seo";
 import { serviceSchema } from "@/lib/schema";
 import { SchemaOrg } from "@/components/seo/SchemaOrg";
 import { SubpageHero } from "@/components/sections/SubpageHero";
 
 export const dynamic = "force-dynamic";
 
-export const metadata: Metadata = generateSeoMetadata({
-  title: "TikTok Pixel Kurulumu — TikTok Ads Takip & Ölçüm",
-  description:
-    "TikTok Pixel ve Events API kurulumu ile reklam performansınızı ölçün. Özel eventler, kitle segmentasyonu ve KVKK uyumlu server-side izleme.",
-  path: "/hizmetler/tiktok-pixel",
-});
+export async function generateMetadata(): Promise<Metadata> {
+  return generateDynamicSeoMetadata({
+    title: "TikTok Pixel Kurulumu — TikTok Ads Takip & Ölçüm",
+    description:
+      "TikTok Pixel ve Events API kurulumu ile reklam performansınızı ölçün. Özel eventler, kitle segmentasyonu ve KVKK uyumlu server-side izleme.",
+    path: "/hizmetler/tiktok-pixel",
+  });
+}
 
 const flowCards = [
   {

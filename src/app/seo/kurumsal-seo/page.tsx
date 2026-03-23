@@ -1,18 +1,20 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { generateSeoMetadata } from "@/lib/seo";
+import { generateDynamicSeoMetadata } from "@/lib/seo";
 import { SchemaOrg } from "@/components/seo/SchemaOrg";
 import { SubpageHero } from "@/components/sections/SubpageHero";
 
 export const dynamic = "force-dynamic";
 
-export const metadata: Metadata = generateSeoMetadata({
-  title: "Kurumsal SEO Hizmeti — Enterprise Ölçekte Optimizasyon",
-  description:
-    "Büyük ölçekli siteler için otomasyon, uluslararası SEO, teknik altyapı yönetimi ve C-level raporlama. Kurumsal organik büyüme stratejisi.",
-  path: "/seo/kurumsal-seo",
-});
+export async function generateMetadata(): Promise<Metadata> {
+  return generateDynamicSeoMetadata({
+    title: "Kurumsal SEO Hizmeti — Enterprise Ölçekte Optimizasyon",
+    description:
+      "Büyük ölçekli siteler için otomasyon, uluslararası SEO, teknik altyapı yönetimi ve C-level raporlama. Kurumsal organik büyüme stratejisi.",
+    path: "/seo/kurumsal-seo",
+  });
+}
 
 const services = [
   {

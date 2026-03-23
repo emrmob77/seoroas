@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { sanityFetch } from "@/sanity/client";
 
 const SITE_URL = "https://seoroas.com";
 const SITE_NAME = "SEOROAS";
@@ -13,20 +14,35 @@ interface SeoParams {
   canonicalUrl?: string;
 }
 
-/**
- * Sanity'den gelen seo object alanlarını standart parametrelere dönüştürür.
- * Sanity değeri varsa onu, yoksa fallback değerini kullanır.
- */
+interface SanitySeo {
+  seoTitle?: string;
+  seoDescription?: string;
+  noIndex?: boolean;
+  noFollow?: boolean;
+  canonicalUrl?: string;
+  ogImage?: { asset?: { url?: string } };
+}
+
+const PAGE_SEO_QUERY = `*[_type == "page" && path == $path][0]{
+  "seoTitle": seo.seoTitle,
+  "seoDescription": seo.seoDescription,
+  "noIndex": seo.noIndex,
+  "noFollow": seo.noFollow,
+  "canonicalUrl": seo.canonicalUrl,
+  "ogImage": seo.ogImage{ asset->{ url } }
+}`;
+
+async function fetchPageSeo(path: string): Promise<SanitySeo | null> {
+  try {
+    return await sanityFetch<SanitySeo | null>(PAGE_SEO_QUERY, { path });
+  } catch {
+    return null;
+  }
+}
+
 export function mergeSanitySeo(
   defaults: SeoParams,
-  sanitySeo?: {
-    seoTitle?: string;
-    seoDescription?: string;
-    noIndex?: boolean;
-    noFollow?: boolean;
-    canonicalUrl?: string;
-    ogImage?: { asset?: { url?: string } };
-  } | null
+  sanitySeo?: SanitySeo | null
 ): SeoParams {
   if (!sanitySeo) return defaults;
 
@@ -41,7 +57,14 @@ export function mergeSanitySeo(
   };
 }
 
-export function generateSeoMetadata({
+function cleanTitle(title: string): string {
+  return title
+    .replace(/\s*\|\s*SEOROAS\s*$/i, "")
+    .replace(/\s*—\s*SEOROAS\s*$/i, "")
+    .trim();
+}
+
+function buildMetadata({
   title,
   description,
   path,
@@ -51,37 +74,58 @@ export function generateSeoMetadata({
   canonicalUrl,
 }: SeoParams): Metadata {
   const url = canonicalUrl || `${SITE_URL}${path}`;
-  const cleanTitle = title.replace(/\s*\|\s*SEOROAS\s*$/i, "").replace(/\s*—\s*SEOROAS\s*$/i, "").trim();
-  const fullTitle = path === "/" ? cleanTitle : `${cleanTitle} | ${SITE_NAME}`;
+  const clean = cleanTitle(title);
+  const displayTitle = `${clean} | ${SITE_NAME}`;
 
-  const robotsDirectives: { index: boolean; follow: boolean } = {
-    index: !noIndex,
-    follow: !noFollow,
-  };
+  const titleValue: Metadata["title"] =
+    path === "/" ? { absolute: clean } : clean;
 
+  const robotsDirectives = { index: !noIndex, follow: !noFollow };
   const hasCustomRobots = noIndex || noFollow;
 
   return {
-    title: fullTitle,
+    title: titleValue,
     description,
     alternates: {
       canonical: url,
       languages: { tr: url, "x-default": url },
     },
     openGraph: {
-      title: fullTitle,
+      title: displayTitle,
       description,
       url,
       siteName: SITE_NAME,
       locale: "tr_TR",
       type: "website",
-      ...(ogImage && { images: [{ url: ogImage, width: 1200, height: 630 }] }),
+      ...(ogImage && {
+        images: [{ url: ogImage, width: 1200, height: 630 }],
+      }),
     },
     twitter: {
       card: "summary_large_image",
-      title: fullTitle,
+      title: displayTitle,
       description,
     },
     robots: hasCustomRobots ? robotsDirectives : undefined,
   };
+}
+
+/**
+ * Statik metadata — Sanity'den veri çekmez.
+ * Sadece Sanity entegrasyonu gerekmeyen sayfalar için (tesekkurler, gizlilik vb.)
+ */
+export function generateSeoMetadata(params: SeoParams): Metadata {
+  return buildMetadata(params);
+}
+
+/**
+ * Dinamik metadata — Sanity'den SEO override varsa onu kullanır.
+ * Tüm ana sayfalar bu fonksiyonu kullanmalı.
+ */
+export async function generateDynamicSeoMetadata(
+  defaults: SeoParams
+): Promise<Metadata> {
+  const sanitySeo = await fetchPageSeo(defaults.path);
+  const merged = mergeSanitySeo(defaults, sanitySeo);
+  return buildMetadata(merged);
 }

@@ -1,18 +1,20 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { generateSeoMetadata } from "@/lib/seo";
+import { generateDynamicSeoMetadata } from "@/lib/seo";
 import { SchemaOrg } from "@/components/seo/SchemaOrg";
 import { SubpageHero } from "@/components/sections/SubpageHero";
 
 export const dynamic = "force-dynamic";
 
-export const metadata: Metadata = generateSeoMetadata({
-  title: "Link Building Hizmeti — Backlink & Otorite Kazanımı",
-  description:
-    "Editöryel kalitede backlink edinimi, dijital PR, guest posting ve rakip analizi ile domain otoritenizi güçlendirin. DR 80+ kaynaklardan link.",
-  path: "/seo/link-building",
-});
+export async function generateMetadata(): Promise<Metadata> {
+  return generateDynamicSeoMetadata({
+    title: "Link Building Hizmeti — Backlink & Otorite Kazanımı",
+    description:
+      "Editöryel kalitede backlink edinimi, dijital PR, guest posting ve rakip analizi ile domain otoritenizi güçlendirin. DR 80+ kaynaklardan link.",
+    path: "/seo/link-building",
+  });
+}
 
 const services = [
   { title: "Guest Posting", desc: "Sektörünüzle ilgili yüksek otoriteli sitelerde kaliteli misafir yazıları yayımlayarak doğal ve güçlü backlinkler kazanıyoruz.", tags: ["DA 50+", "Dofollow", "Niche"], large: true },

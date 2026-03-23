@@ -1,18 +1,20 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { generateSeoMetadata } from "@/lib/seo";
+import { generateDynamicSeoMetadata } from "@/lib/seo";
 import { SchemaOrg } from "@/components/seo/SchemaOrg";
 import { SubpageHero } from "@/components/sections/SubpageHero";
 
 export const dynamic = "force-dynamic";
 
-export const metadata: Metadata = generateSeoMetadata({
-  title: "Antalya SEO Ajansı — Turizm & Hizmet Sektörü SEO",
-  description:
-    "Antalya'da turizm ve hizmet sektörü odaklı SEO hizmeti. Otelcilik, sağlık turizmi ve gayrimenkul için organik trafik ve rezervasyon artışı.",
-  path: "/antalya-seo-ajansi",
-});
+export async function generateMetadata(): Promise<Metadata> {
+  return generateDynamicSeoMetadata({
+    title: "Antalya SEO Ajansı — Turizm & Hizmet Sektörü SEO",
+    description:
+      "Antalya'da turizm ve hizmet sektörü odaklı SEO hizmeti. Otelcilik, sağlık turizmi ve gayrimenkul için organik trafik ve rezervasyon artışı.",
+    path: "/antalya-seo-ajansi",
+  });
+}
 
 const services = [
   {

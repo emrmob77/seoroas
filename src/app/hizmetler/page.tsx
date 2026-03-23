@@ -14,18 +14,20 @@ import {
   XCircle,
   Zap,
 } from "lucide-react";
-import { generateSeoMetadata } from "@/lib/seo";
+import { generateDynamicSeoMetadata } from "@/lib/seo";
 import { SchemaOrg } from "@/components/seo/SchemaOrg";
 import { SubpageHero } from "@/components/sections/SubpageHero";
 
 export const dynamic = "force-dynamic";
 
-export const metadata: Metadata = generateSeoMetadata({
-  title: "Dijital Pazarlama Hizmetleri — SEO & Analitik",
-  description:
-    "SEO danışmanlığı, teknik optimizasyon, performans pazarlama, lokal SEO ve takip altyapısı. Tek çatı altında dijital büyüme stratejileri.",
-  path: "/hizmetler",
-});
+export async function generateMetadata(): Promise<Metadata> {
+  return generateDynamicSeoMetadata({
+    title: "Dijital Pazarlama Hizmetleri — SEO & Analitik",
+    description:
+      "SEO danışmanlığı, teknik optimizasyon, performans pazarlama, lokal SEO ve takip altyapısı. Tek çatı altında dijital büyüme stratejileri.",
+    path: "/hizmetler",
+  });
+}
 
 const allServices = [
   {

@@ -1,16 +1,18 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CheckCircle2, ArrowRight } from "lucide-react";
-import { generateSeoMetadata } from "@/lib/seo";
+import { generateDynamicSeoMetadata } from "@/lib/seo";
 import { ConversionTracker } from "@/components/analytics/ConversionTracker";
 
-export const metadata: Metadata = generateSeoMetadata({
-  title: "Teşekkürler — Talebiniz Alındı",
-  description:
-    "SEO analiz talebiniz başarıyla alındı. En kısa sürede sizinle iletişime geçeceğiz.",
-  path: "/tesekkurler",
-  noIndex: true,
-});
+export async function generateMetadata(): Promise<Metadata> {
+  return generateDynamicSeoMetadata({
+    title: "Teşekkürler — Talebiniz Alındı",
+    description:
+      "SEO analiz talebiniz başarıyla alındı. En kısa sürede sizinle iletişime geçeceğiz.",
+    path: "/tesekkurler",
+    noIndex: true,
+  });
+}
 
 export default function TesekkurlerPage() {
   return (

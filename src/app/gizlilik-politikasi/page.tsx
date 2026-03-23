@@ -1,16 +1,18 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { generateSeoMetadata } from "@/lib/seo";
+import { generateDynamicSeoMetadata } from "@/lib/seo";
 import { Breadcrumb } from "@/components/layout/Breadcrumb";
 
 export const dynamic = "force-dynamic";
 
-export const metadata: Metadata = generateSeoMetadata({
-  title: "Gizlilik Politikası",
-  description:
-    "SEOROAS olarak kişisel verilerinizi nasıl topladığımızı, işlediğimizi ve koruduğumuzu açıklayan gizlilik politikamız.",
-  path: "/gizlilik-politikasi",
-});
+export async function generateMetadata(): Promise<Metadata> {
+  return generateDynamicSeoMetadata({
+    title: "Gizlilik Politikası",
+    description:
+      "SEOROAS olarak kişisel verilerinizi nasıl topladığımızı, işlediğimizi ve koruduğumuzu açıklayan gizlilik politikamız.",
+    path: "/gizlilik-politikasi",
+  });
+}
 
 export default function GizlilikPolitikasiPage() {
   return (

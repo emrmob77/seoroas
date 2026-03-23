@@ -1,18 +1,20 @@
 import type { Metadata } from "next";
 import { Mail, Phone, MapPin, Clock, ChevronDown } from "lucide-react";
-import { generateSeoMetadata } from "@/lib/seo";
+import { generateDynamicSeoMetadata } from "@/lib/seo";
 import { SchemaOrg } from "@/components/seo/SchemaOrg";
 import { SubpageHero } from "@/components/sections/SubpageHero";
 import { ContactForm } from "@/components/forms/ContactForm";
 
 export const dynamic = "force-dynamic";
 
-export const metadata: Metadata = generateSeoMetadata({
-  title: "İletişim — Ücretsiz SEO Analizi Alın",
-  description:
-    "SEO stratejinizi birlikte oluşturalım. Ücretsiz site analizi ve teklif için formumuzu doldurun veya doğrudan bize ulaşın.",
-  path: "/iletisim",
-});
+export async function generateMetadata(): Promise<Metadata> {
+  return generateDynamicSeoMetadata({
+    title: "İletişim — Ücretsiz SEO Analizi Alın",
+    description:
+      "SEO stratejinizi birlikte oluşturalım. Ücretsiz site analizi ve teklif için formumuzu doldurun veya doğrudan bize ulaşın.",
+    path: "/iletisim",
+  });
+}
 
 const contactCards = [
   {

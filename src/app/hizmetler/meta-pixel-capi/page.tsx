@@ -7,19 +7,21 @@ import {
   TrendingDown,
   TrendingUp,
 } from "lucide-react";
-import { generateSeoMetadata } from "@/lib/seo";
+import { generateDynamicSeoMetadata } from "@/lib/seo";
 import { serviceSchema } from "@/lib/schema";
 import { SchemaOrg } from "@/components/seo/SchemaOrg";
 import { SubpageHero } from "@/components/sections/SubpageHero";
 
 export const dynamic = "force-dynamic";
 
-export const metadata: Metadata = generateSeoMetadata({
-  title: "Meta Pixel & CAPI Kurulumu — Facebook Ads Takibi",
-  description:
-    "Meta Pixel ve Conversions API kurulumu ile reklam attribution doğruluğunu artırın. Domain doğrulama, event mimarisi ve server-side takip dahil.",
-  path: "/hizmetler/meta-pixel-capi",
-});
+export async function generateMetadata(): Promise<Metadata> {
+  return generateDynamicSeoMetadata({
+    title: "Meta Pixel & CAPI Kurulumu — Facebook Ads Takibi",
+    description:
+      "Meta Pixel ve Conversions API kurulumu ile reklam attribution doğruluğunu artırın. Domain doğrulama, event mimarisi ve server-side takip dahil.",
+    path: "/hizmetler/meta-pixel-capi",
+  });
+}
 
 const benefits = [
   {

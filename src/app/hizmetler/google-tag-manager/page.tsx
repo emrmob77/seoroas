@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { generateSeoMetadata } from "@/lib/seo";
+import { generateDynamicSeoMetadata } from "@/lib/seo";
 import { SchemaOrg } from "@/components/seo/SchemaOrg";
 import { SubpageHero } from "@/components/sections/SubpageHero";
 import {
@@ -21,11 +21,13 @@ export const dynamic = "force-dynamic";
 const description =
   "Google Tag Manager ile data layer, tetikleyici ve etiket mimarisini tek merkezden yönetin; GA4, reklam pikselleri ve özel olayları hassas ve ölçülebilir şekilde kurgulayın.";
 
-export const metadata: Metadata = generateSeoMetadata({
-  title: "Google Tag Manager Kurulumu — GTM Entegrasyonu",
-  description,
-  path: "/hizmetler/google-tag-manager",
-});
+export async function generateMetadata(): Promise<Metadata> {
+  return generateDynamicSeoMetadata({
+    title: "Google Tag Manager Kurulumu — GTM Entegrasyonu",
+    description,
+    path: "/hizmetler/google-tag-manager",
+  });
+}
 
 const faqItems = [
   {

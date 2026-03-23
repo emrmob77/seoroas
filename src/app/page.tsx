@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { generateSeoMetadata } from "@/lib/seo";
+import { generateDynamicSeoMetadata } from "@/lib/seo";
 import { Hero } from "@/components/sections/Hero";
 import { Services } from "@/components/sections/Services";
 import { Process } from "@/components/sections/Process";
@@ -11,12 +11,14 @@ import { CTAForm } from "@/components/sections/CTAForm";
 
 export const dynamic = "force-dynamic";
 
-export const metadata: Metadata = generateSeoMetadata({
-  title: "SEOROAS | SEO Ajansı — Organik Trafik & Gelir Büyümesi",
-  description:
-    "Veri odaklı SEO stratejileri ile organik trafiğinizi ve gelirinizi artırın. Teknik SEO, içerik optimizasyonu, link building ve e-ticaret SEO. Ücretsiz analiz alın.",
-  path: "/",
-});
+export async function generateMetadata(): Promise<Metadata> {
+  return generateDynamicSeoMetadata({
+    title: "SEOROAS | SEO Ajansı — Organik Trafik & Gelir Büyümesi",
+    description:
+      "Veri odaklı SEO stratejileri ile organik trafiğinizi ve gelirinizi artırın. Teknik SEO, içerik optimizasyonu, link building ve e-ticaret SEO. Ücretsiz analiz alın.",
+    path: "/",
+  });
+}
 
 export default function Home() {
   return (

@@ -12,18 +12,20 @@ import {
   Sparkles,
   Zap,
 } from "lucide-react";
-import { generateSeoMetadata } from "@/lib/seo";
+import { generateDynamicSeoMetadata } from "@/lib/seo";
 import { SchemaOrg } from "@/components/seo/SchemaOrg";
 import { SubpageHero } from "@/components/sections/SubpageHero";
 
 export const dynamic = "force-dynamic";
 
-export const metadata: Metadata = generateSeoMetadata({
-  title: "Shopify SEO Hizmeti — Liquid & Mağaza Optimizasyonu",
-  description:
-    "Shopify Liquid şablon optimizasyonu, uygulama temizliği, JSON-LD schema ve koleksiyon/ürün sayfası SEO ile organik satışlarınızı artırın.",
-  path: "/seo/shopify-seo",
-});
+export async function generateMetadata(): Promise<Metadata> {
+  return generateDynamicSeoMetadata({
+    title: "Shopify SEO Hizmeti — Liquid & Mağaza Optimizasyonu",
+    description:
+      "Shopify Liquid şablon optimizasyonu, uygulama temizliği, JSON-LD schema ve koleksiyon/ürün sayfası SEO ile organik satışlarınızı artırın.",
+    path: "/seo/shopify-seo",
+  });
+}
 
 const faqItems = [
   {

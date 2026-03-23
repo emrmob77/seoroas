@@ -1,18 +1,20 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { generateSeoMetadata } from "@/lib/seo";
+import { generateDynamicSeoMetadata } from "@/lib/seo";
 import { SchemaOrg } from "@/components/seo/SchemaOrg";
 import { SubpageHero } from "@/components/sections/SubpageHero";
 
 export const dynamic = "force-dynamic";
 
-export const metadata: Metadata = generateSeoMetadata({
-  title: "On-Page SEO Hizmeti — Sayfa İçi Optimizasyon",
-  description:
-    "Title tag, meta description, heading yapısı, iç linkleme ve içerik optimizasyonu ile her sayfanızın sıralama potansiyelini artırın.",
-  path: "/seo/on-page-seo",
-});
+export async function generateMetadata(): Promise<Metadata> {
+  return generateDynamicSeoMetadata({
+    title: "On-Page SEO Hizmeti — Sayfa İçi Optimizasyon",
+    description:
+      "Title tag, meta description, heading yapısı, iç linkleme ve içerik optimizasyonu ile her sayfanızın sıralama potansiyelini artırın.",
+    path: "/seo/on-page-seo",
+  });
+}
 
 const services = [
   { title: "Meta Etiketleri", desc: "Title, description ve Open Graph etiketlerini anahtar kelime odaklı optimize ederek tıklanma oranınızı artırıyoruz.", tags: ["Title", "Description", "OG"], large: true },

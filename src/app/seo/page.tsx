@@ -20,18 +20,20 @@ import {
   Target,
   ChevronDown,
 } from "lucide-react";
-import { generateSeoMetadata } from "@/lib/seo";
+import { generateDynamicSeoMetadata } from "@/lib/seo";
 import { SchemaOrg } from "@/components/seo/SchemaOrg";
 import { SubpageHero } from "@/components/sections/SubpageHero";
 
 export const dynamic = "force-dynamic";
 
-export const metadata: Metadata = generateSeoMetadata({
-  title: "SEO Hizmetleri — Teknik, İçerik & Link Building",
-  description:
-    "On-page, teknik SEO, link building, lokal, e-ticaret ve içerik SEO dahil 10 uzmanlık alanı. Veri odaklı strateji ile organik trafiğinizi artırın.",
-  path: "/seo",
-});
+export async function generateMetadata(): Promise<Metadata> {
+  return generateDynamicSeoMetadata({
+    title: "SEO Hizmetleri — Teknik, İçerik & Link Building",
+    description:
+      "On-page, teknik SEO, link building, lokal, e-ticaret ve içerik SEO dahil 10 uzmanlık alanı. Veri odaklı strateji ile organik trafiğinizi artırın.",
+    path: "/seo",
+  });
+}
 
 const seoServices = [
   {

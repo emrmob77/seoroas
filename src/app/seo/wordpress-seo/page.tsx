@@ -1,18 +1,20 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, ChevronDown, CircleCheck } from "lucide-react";
-import { generateSeoMetadata } from "@/lib/seo";
+import { generateDynamicSeoMetadata } from "@/lib/seo";
 import { SchemaOrg } from "@/components/seo/SchemaOrg";
 import { SubpageHero } from "@/components/sections/SubpageHero";
 
 export const dynamic = "force-dynamic";
 
-export const metadata: Metadata = generateSeoMetadata({
-  title: "WordPress SEO Hizmeti — WP Hız & Performans",
-  description:
-    "WordPress site hızı, güvenlik, veritabanı optimizasyonu, eklenti temizliği ve içerik mimarisi ile WP sitenizin SEO performansını artırın.",
-  path: "/seo/wordpress-seo",
-});
+export async function generateMetadata(): Promise<Metadata> {
+  return generateDynamicSeoMetadata({
+    title: "WordPress SEO Hizmeti — WP Hız & Performans",
+    description:
+      "WordPress site hızı, güvenlik, veritabanı optimizasyonu, eklenti temizliği ve içerik mimarisi ile WP sitenizin SEO performansını artırın.",
+    path: "/seo/wordpress-seo",
+  });
+}
 
 const speedFeatures = [
   "LCP, FID ve CLS optimizasyonu ile Core Web Vitals odaklı deneyim",

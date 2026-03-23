@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { generateSeoMetadata } from "@/lib/seo";
+import { generateDynamicSeoMetadata } from "@/lib/seo";
 import { SchemaOrg } from "@/components/seo/SchemaOrg";
 import { Breadcrumb } from "@/components/layout/Breadcrumb";
 import { getAllPosts } from "@/sanity/queries/posts";
@@ -12,12 +12,14 @@ import type { Post } from "@/types";
 
 export const dynamic = "force-dynamic";
 
-export const metadata: Metadata = generateSeoMetadata({
-  title: "SEO Blog — Güncel Rehberler & Stratejiler",
-  description:
-    "SEO trendleri, teknik rehberler ve kanıtlanmış organik büyüme stratejileri. Uzman içgörüleri ile dijital pazarlama bilginizi güncel tutun.",
-  path: "/blog",
-});
+export async function generateMetadata(): Promise<Metadata> {
+  return generateDynamicSeoMetadata({
+    title: "SEO Blog — Güncel Rehberler & Stratejiler",
+    description:
+      "SEO trendleri, teknik rehberler ve kanıtlanmış organik büyüme stratejileri. Uzman içgörüleri ile dijital pazarlama bilginizi güncel tutun.",
+    path: "/blog",
+  });
+}
 
 const categories = [
   "Tümü",

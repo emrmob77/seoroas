@@ -1,18 +1,20 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { generateSeoMetadata } from "@/lib/seo";
+import { generateDynamicSeoMetadata } from "@/lib/seo";
 import { SchemaOrg } from "@/components/seo/SchemaOrg";
 import { SubpageHero } from "@/components/sections/SubpageHero";
 
 export const dynamic = "force-dynamic";
 
-export const metadata: Metadata = generateSeoMetadata({
-  title: "İstanbul SEO Ajansı — Yerel & Kurumsal SEO",
-  description:
-    "İstanbul'da profesyonel SEO hizmeti. Yerel arama, teknik optimizasyon ve içerik stratejisi ile İstanbul pazarında organik büyüme sağlayın.",
-  path: "/istanbul-seo-ajansi",
-});
+export async function generateMetadata(): Promise<Metadata> {
+  return generateDynamicSeoMetadata({
+    title: "İstanbul SEO Ajansı — Yerel & Kurumsal SEO",
+    description:
+      "İstanbul'da profesyonel SEO hizmeti. Yerel arama, teknik optimizasyon ve içerik stratejisi ile İstanbul pazarında organik büyüme sağlayın.",
+    path: "/istanbul-seo-ajansi",
+  });
+}
 
 const services = [
   {

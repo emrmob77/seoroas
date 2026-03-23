@@ -1,18 +1,20 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { generateSeoMetadata } from "@/lib/seo";
+import { generateDynamicSeoMetadata } from "@/lib/seo";
 import { SchemaOrg } from "@/components/seo/SchemaOrg";
 import { SubpageHero } from "@/components/sections/SubpageHero";
 
 export const dynamic = "force-dynamic";
 
-export const metadata: Metadata = generateSeoMetadata({
-  title: "E-Ticaret SEO — Ürün & Kategori Optimizasyonu",
-  description:
-    "Ürün sayfası, kategori mimarisi, faceted navigation ve product schema ile e-ticaret sitenizin organik gelirini artırın.",
-  path: "/seo/e-ticaret-seo",
-});
+export async function generateMetadata(): Promise<Metadata> {
+  return generateDynamicSeoMetadata({
+    title: "E-Ticaret SEO — Ürün & Kategori Optimizasyonu",
+    description:
+      "Ürün sayfası, kategori mimarisi, faceted navigation ve product schema ile e-ticaret sitenizin organik gelirini artırın.",
+    path: "/seo/e-ticaret-seo",
+  });
+}
 
 const services = [
   { title: "Ürün Sayfası Optimizasyonu", desc: "Her ürün sayfasını benzersiz meta etiketleri, zengin içerik ve yapılandırılmış veri ile optimize ederek arama görünürlüğünü maksimize ediyoruz.", tags: ["Product Schema", "Rich Snippets", "CTR"], large: true },

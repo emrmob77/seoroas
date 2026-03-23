@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { generateSeoMetadata } from "@/lib/seo";
+import { generateDynamicSeoMetadata } from "@/lib/seo";
 import { SchemaOrg } from "@/components/seo/SchemaOrg";
 import { SubpageHero } from "@/components/sections/SubpageHero";
 import { ConsultationForm } from "@/components/forms/ConsultationForm";
@@ -19,12 +19,14 @@ import {
 
 export const dynamic = "force-dynamic";
 
-export const metadata: Metadata = generateSeoMetadata({
-  title: "SEO Danışmanlığı — Veriye Dayalı Özel Strateji",
-  description:
-    "Markanıza özel, veri mimarisi ve teknik hassasiyetle kurgulanan SEO danışmanlık hizmeti. Trafik değil, gelir odaklı strateji. Ücretsiz ön analiz.",
-  path: "/seo-danismanligi",
-});
+export async function generateMetadata(): Promise<Metadata> {
+  return generateDynamicSeoMetadata({
+    title: "SEO Danışmanlığı — Veriye Dayalı Özel Strateji",
+    description:
+      "Markanıza özel, veri mimarisi ve teknik hassasiyetle kurgulanan SEO danışmanlık hizmeti. Trafik değil, gelir odaklı strateji. Ücretsiz ön analiz.",
+    path: "/seo-danismanligi",
+  });
+}
 
 const whenToHire = [
   "Organik trafiğinizde ani veya sürekli düşüş varsa.",

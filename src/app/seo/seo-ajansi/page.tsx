@@ -1,18 +1,20 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { generateSeoMetadata } from "@/lib/seo";
+import { generateDynamicSeoMetadata } from "@/lib/seo";
 import { SchemaOrg } from "@/components/seo/SchemaOrg";
 import { SubpageHero } from "@/components/sections/SubpageHero";
 
 export const dynamic = "force-dynamic";
 
-export const metadata: Metadata = generateSeoMetadata({
-  title: "SEO Ajansı — Profesyonel & Sonuç Odaklı SEO",
-  description:
-    "Veri odaklı SEO stratejileri, şeffaf raporlama ve ölçülebilir sonuçlar. Organik trafiğinizi ve gelirlerinizi profesyonel SEO ajansı ile artırın.",
-  path: "/seo/seo-ajansi",
-});
+export async function generateMetadata(): Promise<Metadata> {
+  return generateDynamicSeoMetadata({
+    title: "SEO Ajansı — Profesyonel & Sonuç Odaklı SEO",
+    description:
+      "Veri odaklı SEO stratejileri, şeffaf raporlama ve ölçülebilir sonuçlar. Organik trafiğinizi ve gelirlerinizi profesyonel SEO ajansı ile artırın.",
+    path: "/seo/seo-ajansi",
+  });
+}
 
 const processSteps = [
   {

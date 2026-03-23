@@ -1,18 +1,20 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { generateSeoMetadata } from "@/lib/seo";
+import { generateDynamicSeoMetadata } from "@/lib/seo";
 import { SchemaOrg } from "@/components/seo/SchemaOrg";
 import { SubpageHero } from "@/components/sections/SubpageHero";
 
 export const dynamic = "force-dynamic";
 
-export const metadata: Metadata = generateSeoMetadata({
-  title: "Lokal SEO Hizmeti — Google Haritalar & Yerel Arama",
-  description:
-    "Google Business Profile, yerel dizin yönetimi, NAP tutarlılığı ve bölgesel içerik stratejisi ile yakın çevrenizdeki müşterilere ulaşın.",
-  path: "/seo/lokal-seo",
-});
+export async function generateMetadata(): Promise<Metadata> {
+  return generateDynamicSeoMetadata({
+    title: "Lokal SEO Hizmeti — Google Haritalar & Yerel Arama",
+    description:
+      "Google Business Profile, yerel dizin yönetimi, NAP tutarlılığı ve bölgesel içerik stratejisi ile yakın çevrenizdeki müşterilere ulaşın.",
+    path: "/seo/lokal-seo",
+  });
+}
 
 const services = [
   { title: "Google My Business", desc: "GMB profilinizi tam optimize ederek yerel arama sonuçlarında ve Google Maps'te üst sıralarda yer almanızı sağlıyoruz.", tags: ["GMB", "Maps", "Local Pack"], large: true },

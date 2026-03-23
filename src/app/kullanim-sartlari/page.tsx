@@ -1,16 +1,18 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { generateSeoMetadata } from "@/lib/seo";
+import { generateDynamicSeoMetadata } from "@/lib/seo";
 import { Breadcrumb } from "@/components/layout/Breadcrumb";
 
 export const dynamic = "force-dynamic";
 
-export const metadata: Metadata = generateSeoMetadata({
-  title: "KVKK Aydınlatma Metni",
-  description:
-    "SEOROAS tarafından 6698 sayılı KVKK kapsamında kişisel verilerinizin işlenmesine ilişkin aydınlatma metni.",
-  path: "/kullanim-sartlari",
-});
+export async function generateMetadata(): Promise<Metadata> {
+  return generateDynamicSeoMetadata({
+    title: "KVKK Aydınlatma Metni",
+    description:
+      "SEOROAS tarafından 6698 sayılı KVKK kapsamında kişisel verilerinizin işlenmesine ilişkin aydınlatma metni.",
+    path: "/kullanim-sartlari",
+  });
+}
 
 export default function KvkkAydinlatmaPage() {
   return (

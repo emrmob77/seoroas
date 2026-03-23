@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { generateSeoMetadata } from "@/lib/seo";
+import { generateDynamicSeoMetadata } from "@/lib/seo";
 import { SchemaOrg } from "@/components/seo/SchemaOrg";
 import { SubpageHero } from "@/components/sections/SubpageHero";
 import {
@@ -19,12 +19,14 @@ import {
 
 export const dynamic = "force-dynamic";
 
-export const metadata: Metadata = generateSeoMetadata({
-  title: "Hakkımızda — SEO Odaklı Büyüme Ekibi",
-  description:
-    "SEO'yu ölçülebilir yatırım getirisi (ROAS) odaklı büyüme motoruna dönüştüren ekip. Veriye dayalı stratejiler ve mühendislik disiplini.",
-  path: "/hakkimizda",
-});
+export async function generateMetadata(): Promise<Metadata> {
+  return generateDynamicSeoMetadata({
+    title: "Hakkımızda — SEO Odaklı Büyüme Ekibi",
+    description:
+      "SEO'yu ölçülebilir yatırım getirisi (ROAS) odaklı büyüme motoruna dönüştüren ekip. Veriye dayalı stratejiler ve mühendislik disiplini.",
+    path: "/hakkimizda",
+  });
+}
 
 const values = [
   {
