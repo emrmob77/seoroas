@@ -1,15 +1,38 @@
 "use client";
 
 import { useState } from "react";
+import { Loader2 } from "lucide-react";
 
 export function NewsletterSidebar() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!email) return;
-    setSubmitted(true);
+    setLoading(true);
+    setError("");
+
+    try {
+      const res = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+      const data = await res.json();
+
+      if (!res.ok) {
+        setError(data.error || "Bir hata oluştu.");
+        return;
+      }
+      setSubmitted(true);
+    } catch {
+      setError("Bağlantı hatası.");
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
@@ -36,11 +59,15 @@ export function NewsletterSidebar() {
               onChange={(e) => setEmail(e.target.value)}
               required
             />
+            {error && (
+              <p className="text-red-300 text-xs">{error}</p>
+            )}
             <button
               type="submit"
-              className="w-full bg-on-primary text-primary py-3 rounded-lg text-sm font-bold hover:opacity-90 transition-opacity"
+              disabled={loading}
+              className="w-full bg-on-primary text-primary py-3 rounded-lg text-sm font-bold hover:opacity-90 transition-opacity disabled:opacity-70 flex items-center justify-center gap-2"
             >
-              Abone Ol
+              {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : "Abone Ol"}
             </button>
           </form>
         )}

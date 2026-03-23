@@ -38,12 +38,12 @@ export async function POST(request: NextRequest) {
     body = Object.fromEntries(formData) as Record<string, string>;
   }
 
-  // Honeypot check — if "company" field (hidden) is filled, it's a bot
-  if (body.company) {
+  // Honeypot check — hidden field filled = bot
+  if (body.company_fax) {
     return NextResponse.json({ success: true });
   }
 
-  const { website, name, email, phone, message } = body;
+  const { website, name, email, phone, message, company, service, budget } = body;
 
   if (!website || !name || !email) {
     return NextResponse.json(
@@ -79,7 +79,10 @@ export async function POST(request: NextRequest) {
             <p><strong>Ad Soyad:</strong> ${name}</p>
             <p><strong>E-posta:</strong> ${email}</p>
             <p><strong>Website:</strong> ${website}</p>
+            ${company ? `<p><strong>Firma:</strong> ${company}</p>` : ""}
             ${phone ? `<p><strong>Telefon:</strong> ${phone}</p>` : ""}
+            ${service ? `<p><strong>Hizmet:</strong> ${service}</p>` : ""}
+            ${budget ? `<p><strong>Bütçe:</strong> ${budget}</p>` : ""}
             ${message ? `<p><strong>Mesaj:</strong> ${message}</p>` : ""}
           `,
         }),

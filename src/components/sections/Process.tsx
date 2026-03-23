@@ -48,9 +48,9 @@ export function Process() {
                 <div className="text-primary/10 text-8xl font-black absolute -top-8 -left-4 pointer-events-none select-none">
                   {step.number}
                 </div>
-                <h4 className="text-xl font-bold mb-4 relative text-on-background">
+                <h3 className="text-xl font-bold mb-4 relative text-on-background">
                   {step.title}
-                </h4>
+                </h3>
                 <p className="text-on-surface-variant text-sm leading-relaxed font-light">
                   {step.description}
                 </p>

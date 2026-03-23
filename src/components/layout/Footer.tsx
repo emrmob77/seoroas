@@ -43,7 +43,7 @@ const socialLinks = [
   { name: "LinkedIn", href: "https://linkedin.com/company/seoroas" },
 ];
 
-const linkClass = "text-xs tracking-widest uppercase text-slate-400 hover:text-primary transition-colors duration-300";
+const linkClass = "text-xs tracking-widest uppercase text-slate-500 hover:text-primary transition-colors duration-300";
 
 export function Footer() {
   return (
@@ -55,7 +55,7 @@ export function Footer() {
             <div className="text-lg font-black tracking-tighter text-slate-900 mb-8 uppercase">
               SEOROAS
             </div>
-            <p className="text-slate-400 text-xs leading-relaxed max-w-xs uppercase tracking-widest mb-6">
+            <p className="text-slate-500 text-xs leading-relaxed max-w-xs uppercase tracking-widest mb-6">
               Digital Architecture for the Performance Era.
             </p>
             {socialLinks.map((link) => (
@@ -73,9 +73,9 @@ export function Footer() {
 
           {/* Hizmetler */}
           <div>
-            <h5 className="font-bold text-[10px] uppercase tracking-widest text-slate-900 mb-6">
+            <div className="font-bold text-[10px] uppercase tracking-widest text-slate-900 mb-6" role="heading" aria-level={2}>
               Hizmetler
-            </h5>
+            </div>
             <ul className="space-y-4">
               {serviceLinks.map((link) => (
                 <li key={link.href}>
@@ -89,9 +89,9 @@ export function Footer() {
 
           {/* Takip & Analitik */}
           <div>
-            <h5 className="font-bold text-[10px] uppercase tracking-widest text-slate-900 mb-6">
+            <div className="font-bold text-[10px] uppercase tracking-widest text-slate-900 mb-6" role="heading" aria-level={2}>
               Takip & Analitik
-            </h5>
+            </div>
             <ul className="space-y-4">
               {trackingLinks.map((link) => (
                 <li key={link.href}>
@@ -105,9 +105,9 @@ export function Footer() {
 
           {/* Bölgeler */}
           <div>
-            <h5 className="font-bold text-[10px] uppercase tracking-widest text-slate-900 mb-6">
+            <div className="font-bold text-[10px] uppercase tracking-widest text-slate-900 mb-6" role="heading" aria-level={2}>
               Bölgeler
-            </h5>
+            </div>
             <ul className="space-y-4">
               {cityLinks.map((link) => (
                 <li key={link.href}>
@@ -121,9 +121,9 @@ export function Footer() {
 
           {/* Şirket */}
           <div>
-            <h5 className="font-bold text-[10px] uppercase tracking-widest text-slate-900 mb-6">
+            <div className="font-bold text-[10px] uppercase tracking-widest text-slate-900 mb-6" role="heading" aria-level={2}>
               Şirket
-            </h5>
+            </div>
             <ul className="space-y-4">
               {companyLinks.map((link) => (
                 <li key={link.href}>
@@ -137,9 +137,9 @@ export function Footer() {
 
           {/* İletişim */}
           <div className="md:text-right">
-            <h5 className="font-bold text-[10px] uppercase tracking-widest text-slate-900 mb-6">
+            <div className="font-bold text-[10px] uppercase tracking-widest text-slate-900 mb-6" role="heading" aria-level={2}>
               İletişim
-            </h5>
+            </div>
             <ul className="space-y-4">
               <li>
                 <a href="mailto:info@seoroas.com" className={linkClass}>
@@ -157,12 +157,12 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="w-full flex flex-col sm:flex-row justify-between items-center border-t border-slate-200/30 pt-12 gap-4">
-          <div className="text-xs tracking-widest uppercase text-slate-400">
+          <div className="text-xs tracking-widest uppercase text-slate-500">
             © {new Date().getFullYear()} SEOROAS. Tüm Hakları Saklıdır.
           </div>
           <div className="flex space-x-6">
             {["İstanbul", "Ankara", "İzmir", "Bursa", "Antalya"].map((city) => (
-              <span key={city} className="text-slate-300 text-xs tracking-widest uppercase">
+              <span key={city} className="text-slate-500 text-xs tracking-widest uppercase">
                 {city}
               </span>
             ))}

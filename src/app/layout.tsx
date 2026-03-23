@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { CookieBanner } from "@/components/layout/CookieBanner";
+import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
 import { SchemaOrg } from "@/components/seo/SchemaOrg";
 import { localBusinessSchema, webSiteSchema } from "@/lib/schema";
 import "./globals.css";
@@ -42,7 +43,7 @@ export const metadata: Metadata = {
     googleBot: { index: true, follow: true },
   },
   verification: {
-    google: "YOUR_GOOGLE_VERIFICATION_CODE",
+    google: process.env.NEXT_PUBLIC_GSC_VERIFICATION || "",
   },
 };
 
@@ -67,6 +68,7 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
         <Footer />
         <CookieBanner />
+        <GoogleAnalytics />
         <Analytics />
       </body>
     </html>

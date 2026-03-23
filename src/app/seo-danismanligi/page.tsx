@@ -3,6 +3,7 @@ import Link from "next/link";
 import { generateSeoMetadata } from "@/lib/seo";
 import { SchemaOrg } from "@/components/seo/SchemaOrg";
 import { SubpageHero } from "@/components/sections/SubpageHero";
+import { ConsultationForm } from "@/components/forms/ConsultationForm";
 import {
   BarChart3,
   KeyRound,
@@ -399,34 +400,7 @@ export default function SeoDanismanligiPage() {
                 </div>
               </div>
             </div>
-            <form className="space-y-3 md:space-y-4">
-              <input
-                className="w-full bg-white/10 border-none rounded-xl p-3.5 md:p-4 text-white placeholder-white/40 focus:ring-2 focus:ring-white/30 transition-all outline-none"
-                placeholder="Adınız Soyadınız"
-                type="text"
-              />
-              <input
-                className="w-full bg-white/10 border-none rounded-xl p-3.5 md:p-4 text-white placeholder-white/40 focus:ring-2 focus:ring-white/30 transition-all outline-none"
-                placeholder="E-posta Adresiniz"
-                type="email"
-              />
-              <input
-                className="w-full bg-white/10 border-none rounded-xl p-3.5 md:p-4 text-white placeholder-white/40 focus:ring-2 focus:ring-white/30 transition-all outline-none"
-                placeholder="Web Siteniz (Opsiyonel)"
-                type="url"
-              />
-              <textarea
-                className="w-full bg-white/10 border-none rounded-xl p-3.5 md:p-4 text-white placeholder-white/40 focus:ring-2 focus:ring-white/30 transition-all outline-none resize-none"
-                placeholder="Hedeflerinizden kısaca bahsedin"
-                rows={3}
-              />
-              <button
-                type="submit"
-                className="w-full bg-white text-primary font-bold py-3.5 md:py-4 rounded-xl hover:bg-opacity-90 transition-all"
-              >
-                Teklif Talebi Gönder
-              </button>
-            </form>
+            <ConsultationForm />
           </div>
         </div>
       </section>

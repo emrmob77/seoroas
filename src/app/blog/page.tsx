@@ -7,6 +7,7 @@ import { SchemaOrg } from "@/components/seo/SchemaOrg";
 import { Breadcrumb } from "@/components/layout/Breadcrumb";
 import { getAllPosts } from "@/sanity/queries/posts";
 import { urlFor } from "@/sanity/image";
+import { NewsletterForm } from "@/components/forms/NewsletterForm";
 import type { Post } from "@/types";
 
 export const dynamic = "force-dynamic";
@@ -221,22 +222,7 @@ export default async function BlogPage() {
               </p>
             </div>
             <div className="w-full max-w-sm">
-              <form className="flex flex-col gap-3">
-                <input
-                  className="w-full bg-zinc-800 border-none px-5 py-4 rounded-xl text-white placeholder:text-zinc-500 focus:ring-2 focus:ring-primary/30 transition-all outline-none"
-                  placeholder="E-posta adresiniz"
-                  type="email"
-                />
-                <button
-                  type="submit"
-                  className="w-full bg-primary text-on-primary font-bold py-4 rounded-xl hover:opacity-90 transition-opacity tracking-widest uppercase text-xs"
-                >
-                  Abone Ol
-                </button>
-                <p className="text-[10px] text-zinc-500 uppercase tracking-widest text-center">
-                  İstediğiniz zaman abonelikten çıkabilirsiniz.
-                </p>
-              </form>
+              <NewsletterForm variant="dark" />
             </div>
           </div>
         </section>

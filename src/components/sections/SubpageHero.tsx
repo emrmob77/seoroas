@@ -67,6 +67,7 @@ export function SubpageHero({
             ))}
             <Link
               href="/iletisim"
+              aria-label="Analiz başlat"
               className="w-full sm:w-auto bg-primary text-white p-4 rounded-full flex items-center justify-center hover:scale-105 transition-transform duration-300"
             >
               <ArrowRight className="h-5 w-5" />

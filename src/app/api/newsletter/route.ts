@@ -21,7 +21,26 @@ export async function POST(request: NextRequest) {
   }
 
   const resendKey = process.env.RESEND_API_KEY;
+  const audienceId = process.env.RESEND_AUDIENCE_ID;
+
   if (resendKey) {
+    // Add contact to Resend Audience (subscriber list)
+    if (audienceId) {
+      try {
+        await fetch(`https://api.resend.com/audiences/${audienceId}/contacts`, {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${resendKey}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email, unsubscribed: false }),
+        });
+      } catch {
+        console.error("Resend audience add failed");
+      }
+    }
+
+    // Send notification to admin
     try {
       await fetch("https://api.resend.com/emails", {
         method: "POST",
