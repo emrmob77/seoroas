@@ -1,48 +1,37 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { sanityFetch } from "@/sanity/client";
+import { urlFor } from "@/sanity/image";
 
-const posts = [
-  {
-    title: "SEO Danışmanı Nedir? Nasıl Seçilir?",
-    excerpt:
-      "Doğru SEO danışmanını seçmek işletmenizin online başarısı için kritik öneme sahiptir.",
-    slug: "seo-danismani-nedir",
-    readTime: "8 dk",
-    category: "Strateji",
-    featured: true,
-  },
-  {
-    title: "SEO Analizi Nasıl Yapılır?",
-    excerpt:
-      "Web sitenizin SEO performansını adım adım analiz edin.",
-    slug: "seo-analizi-nasil-yapilir",
-    readTime: "12 dk",
-    category: "Teknik",
-    featured: false,
-  },
-  {
-    title: "Kurumsal SEO Kılavuzu",
-    excerpt:
-      "Kurumsal ölçekte SEO stratejisi nasıl oluşturulur?",
-    slug: "kurumsal-seo-nedir",
-    readTime: "10 dk",
-    category: "Kurumsal",
-    featured: false,
-  },
-  {
-    title: "E-ticaret SEO Rehberi 2026",
-    excerpt:
-      "Ürün sayfalarından kategori optimizasyonuna eksiksiz rehber.",
-    slug: "e-ticaret-seo-rehberi",
-    readTime: "15 dk",
-    category: "E-ticaret",
-    featured: false,
-  },
-];
+interface BlogPost {
+  _id: string;
+  title: string;
+  slug: { current: string };
+  excerpt: string;
+  mainImage?: { asset: { _ref: string }; alt?: string };
+  publishedAt: string;
+  readingTime: number;
+  categoryTitle: string;
+}
 
-export function BlogGrid() {
-  const featured = posts.find((p) => p.featured)!;
-  const others = posts.filter((p) => !p.featured);
+const QUERY = `*[_type == "post"] | order(publishedAt desc)[0...4]{
+  _id, title, slug, excerpt, mainImage, publishedAt,
+  "readingTime": round(length(pt::text(body)) / 5 / 200),
+  "categoryTitle": categories[0]->title
+}`;
+
+export async function BlogGrid() {
+  const posts = await sanityFetch<BlogPost[]>(QUERY);
+
+  if (!posts || posts.length === 0) return null;
+
+  const featured = posts[0];
+  const others = posts.slice(1);
+
+  const featuredImage = featured.mainImage
+    ? urlFor(featured.mainImage).width(800).height(500).format("webp").url()
+    : "";
 
   return (
     <section className="py-32 px-8 bg-surface-container-low/50">
@@ -69,24 +58,33 @@ export function BlogGrid() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Featured */}
           <Link
-            href={`/blog/${featured.slug}`}
+            href={`/blog/${featured.slug.current}`}
             className="group bg-surface-container-lowest rounded-2xl border-[0.5px] border-outline-variant/10 overflow-hidden hover:shadow-2xl transition-all duration-700"
           >
-            <div className="aspect-[16/10] bg-gradient-to-br from-primary/10 via-primary/5 to-surface-container-low relative">
-              <div className="absolute bottom-6 left-6">
+            <div className="aspect-[16/10] bg-gradient-to-br from-primary/10 via-primary/5 to-surface-container-low relative overflow-hidden">
+              {featuredImage && (
+                <Image
+                  src={featuredImage}
+                  alt={featured.mainImage?.alt || featured.title}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              )}
+              <div className="absolute bottom-6 left-6 z-10">
                 <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-primary bg-white/80 backdrop-blur-sm px-3 py-1 rounded-full">
-                  {featured.category}
+                  {featured.categoryTitle || "Blog"}
                 </span>
               </div>
             </div>
             <div className="p-10">
               <span className="text-[10px] uppercase tracking-widest font-bold text-on-surface-variant">
-                {featured.readTime} okuma
+                {featured.readingTime || 5} dk okuma
               </span>
               <h3 className="text-2xl font-bold tight-tracking text-on-background mt-3 mb-4 group-hover:text-primary transition-colors duration-500">
                 {featured.title}
               </h3>
-              <p className="text-on-surface-variant font-light leading-relaxed text-sm">
+              <p className="text-on-surface-variant font-light leading-relaxed text-sm line-clamp-2">
                 {featured.excerpt}
               </p>
             </div>
@@ -96,23 +94,23 @@ export function BlogGrid() {
           <div className="flex flex-col gap-4">
             {others.map((post) => (
               <Link
-                key={post.slug}
-                href={`/blog/${post.slug}`}
+                key={post._id}
+                href={`/blog/${post.slug.current}`}
                 className="group bg-surface-container-lowest rounded-2xl border-[0.5px] border-outline-variant/10 p-8 hover:shadow-2xl transition-all duration-700 flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center gap-4 mb-4">
                     <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-primary">
-                      {post.category}
+                      {post.categoryTitle || "Blog"}
                     </span>
                     <span className="text-[10px] uppercase tracking-widest font-bold text-on-surface-variant">
-                      {post.readTime}
+                      {post.readingTime || 5} dk
                     </span>
                   </div>
                   <h3 className="text-lg font-bold text-on-background group-hover:text-primary transition-colors duration-500 mb-2">
                     {post.title}
                   </h3>
-                  <p className="text-on-surface-variant font-light text-sm leading-relaxed">
+                  <p className="text-on-surface-variant font-light text-sm leading-relaxed line-clamp-2">
                     {post.excerpt}
                   </p>
                 </div>
