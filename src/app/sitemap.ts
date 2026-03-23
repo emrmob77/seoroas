@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { sanityClient } from "@/sanity/client";
 
-export const revalidate = 60;
+export const revalidate = 10;
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://seoroas.com";
 
@@ -45,15 +45,24 @@ interface PageSeoEntry {
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   let excludedPaths = new Set<string>();
+  let redirectSources = new Set<string>();
 
   if (sanityClient) {
     try {
-      const seoEntries = await sanityClient.fetch<PageSeoEntry[]>(
-        `*[_type == "pageSeo" && (isPublished == false || noIndex == true)]{ pagePath, isPublished, noIndex }`,
-        {},
-        { next: { revalidate: 60 } }
-      );
+      const [seoEntries, redirects] = await Promise.all([
+        sanityClient.fetch<PageSeoEntry[]>(
+          `*[_type == "pageSeo" && (isPublished == false || noIndex == true)]{ pagePath, isPublished, noIndex }`,
+          {},
+          { next: { revalidate: 10 } }
+        ),
+        sanityClient.fetch<string[]>(
+          `*[_type == "redirect" && isActive == true].source`,
+          {},
+          { next: { revalidate: 10 } }
+        ),
+      ]);
       excludedPaths = new Set(seoEntries.map((e) => e.pagePath));
+      redirectSources = new Set(redirects);
     } catch {
       // Sanity unavailable
     }
@@ -73,12 +82,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       const posts = await sanityClient.fetch<{ slug: string; updatedAt: string }[]>(
         `*[_type == "post"] | order(publishedAt desc) { "slug": slug.current, "updatedAt": _updatedAt }`,
         {},
-        { next: { revalidate: 60 } }
+        { next: { revalidate: 10 } }
       );
 
       for (const post of posts) {
+        const blogPath = `/blog/${post.slug}`;
+        if (redirectSources.has(blogPath)) continue;
+
         entries.push({
-          url: `${SITE_URL}/blog/${post.slug}`,
+          url: `${SITE_URL}${blogPath}`,
           lastModified: new Date(post.updatedAt),
           changeFrequency: "weekly",
           priority: 0.7,

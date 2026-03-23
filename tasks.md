@@ -629,9 +629,18 @@ Test edilecek:
 | 4 | A11y düzeltmeleri | Mühendis + FE | ✅ aria-label, kontrast, heading sırası |
 | 4 | Form UX iyileştirmeleri | Mühendis | ✅ fetch+redirect, loading, /tesekkurler, honeypot fix |
 | 4 | Newsletter entegrasyonu | Mühendis | ✅ API bağlantısı, Resend Audiences, dataLayer |
-| 4 | Meta title/desc optimizasyonu | SEO + Mühendis | ✅ 29 sayfa SEO odaklı title/desc |
+| 4 | Meta title/desc optimizasyonu | SEO + Mühendis | ✅ 30 sayfa SEO odaklı title/desc + Sanity override |
 | 4 | GTM + GA4 + GSC kurulumu | Mühendis | ✅ GTM container, Consent Mode v2, conversion tracking |
-| 5 | SEO-06 GSC & Analytics | SEO Uzmanı | 🔶 Kod tarafı tamam, Dashboard kurulumu bekliyor |
+| 4+ | Favicon & Web Manifest | Mühendis | ✅ SVG icon + Apple touch icon + PWA manifest |
+| 4+ | i18n Türkçeleştirme | FE | ✅ Hero, CaseStudies, badge'ler Türkçeye çevrildi |
+| 4+ | Sanity Menü Yönetimi | Mühendis | ✅ navigation schema + Header/Footer dinamik |
+| 4+ | Sayfa SEO Toplu Yönetimi | Mühendis | ✅ pageSeo schema, 30 sayfa seed, sitemap + menü entegrasyonu |
+| 4+ | Çift SEOROAS title fix | Mühendis | ✅ buildMetadata template/absolute ayrımı |
+| 4+ | Dynamic SEO from Sanity | Mühendis | ✅ generateDynamicSeoMetadata, 30 sayfa async metadata |
+| 4+ | Redirect chain optimizasyonu | Mühendis | ✅ Tek 301: www + trailing slash + Sanity redirect |
+| 4+ | Blog slug yönlendirmeleri | Mühendis | ✅ 5 yanlış blog URL → doğru landing page |
+| 4+ | Taslak sayfa gizleme | Mühendis | ✅ isPublished=false → sitemap + menü + noindex |
+| 5 | SEO-06 GSC & Analytics | SEO Uzmanı | 🔶 Kod tamam, sitemap GSC'ye gönderilmeli |
 | 5 | SEO-07 Backlink stratejisi | SEO Uzmanı | ⬜ Bekliyor |
 
 ---
@@ -670,31 +679,47 @@ MÜH-02 (Klasör yapısı) → MÜH-03 (Layout + SSR altyapısı)
 
 ## KALAN GÖREVLER (Öncelik Sırasıyla)
 
-### 🔴 Yüksek Öncelik (Geliştirici)
-| # | Görev | Detay |
+### ✅ Tamamlanan Yüksek Öncelikler
+| # | Görev | Durum |
 |---|-------|-------|
-| 1 | Resend domain doğrulama | `seoroas.com` Resend'de doğrulanmalı (DNS TXT/MX). Yoksa `noreply@seoroas.com` maili çalışmaz |
-| 2 | Resend Audiences oluştur | Dashboard → Audiences → ID'yi `RESEND_AUDIENCE_ID` olarak Vercel'e ekle |
-| 3 | GTM container oluştur | tagmanager.google.com → Container oluştur → ID'yi `NEXT_PUBLIC_GTM_ID` olarak Vercel'e ekle |
-| 4 | GTM içinde tag'leri yapılandır | GA4 Config tag, form_submit trigger, generate_lead conversion, Meta Pixel, TikTok Pixel |
-| 5 | Custom domain bağla | Vercel Dashboard → Domains → seoroas.com ekle (DNS A/CNAME kayıtları) |
+| 1 | Resend domain doğrulama | ✅ DNS TXT/MX/SPF/DKIM kayıtları ekli |
+| 2 | Resend Audiences oluştur | ✅ Newsletter API bağlantısı aktif |
+| 3 | GTM container oluştur | ✅ GTM-5HKD5GG7 — Consent Mode v2 dahil |
+| 4 | GTM tag yapılandırması | ✅ GA4 Config, form_submit, generate_lead, newsletter_subscribe eventleri |
+| 5 | Custom domain bağla | ✅ seoroas.com + www.seoroas.com Vercel'e bağlı |
+| 6 | GSC verification | ✅ Meta tag eklendi, GSC doğrulandı |
+| 7 | Favicon & Web Manifest | ✅ SVG favicon + Apple touch icon + PWA manifest |
+| 8 | i18n — İngilizce metinler | ✅ Tüm UI metinleri Türkçeye çevrildi |
+| 9 | Çift SEOROAS title sorunu | ✅ buildMetadata düzeltildi, template/absolute ayrımı |
+| 10 | Sanity menü yönetimi | ✅ navigation schema + Header/Footer dinamik |
+| 11 | Sayfa SEO toplu yönetimi | ✅ pageSeo schema — 30 sayfa Sanity'ye seed edildi |
+| 12 | Taslak sayfa gizleme | ✅ isPublished=false → sitemap'ten çıkar + menüden gizlenir + noindex |
+| 13 | Redirect loop düzeltme | ✅ /blog/ sonsuz döngü — string URL ile çözüldü |
+| 14 | Redirect chain optimizasyonu | ✅ www + trailing slash + Sanity redirect tek 301'de |
+| 15 | Blog slug yönlendirmeleri | ✅ /blog/kurumsal-seo → /seo/kurumsal-seo vb. 5 redirect |
+| 16 | Vaka çalışmaları link düzeltme | ✅ /vaka-calismalari → /referanslar |
+| 17 | Sanity Studio düzenleme | ✅ WordPress-tarzı sidebar (Yazılar, Sayfalar, SEO Ayarları, Ayarlar) |
+| 18 | Dynamic SEO metadata | ✅ 30 sayfa generateDynamicSeoMetadata ile Sanity override desteği |
+| 19 | Blog dinamik yükleme | ✅ BlogGrid Sanity'den post çekiyor, resimler çalışıyor |
 
-### 🟡 Orta Öncelik (Manuel SEO)
+### 🟡 Kalan Orta Öncelikler (Manuel)
 | # | Görev | Detay |
 |---|-------|-------|
-| 6 | GSC sitemap gönder | search.google.com/search-console → Sitemaps → `https://seoroas.com/sitemap.xml` |
-| 7 | /seo-hizmetleri → /seo redirect | Sanity Studio'dan 301 redirect ekle (requirements.md'deki eski URL yapısı) |
-| 8 | /vaka-calismalari → /referanslar redirect | Sanity Studio'dan 301 redirect ekle |
-| 9 | İç link optimizasyonu | Blog yazılarına Sanity Studio'dan `/seo/` iç linkleri ekle |
-| 10 | Cross-browser test | Chrome, Safari, Firefox, Edge + iOS/Android mobil test |
+| 1 | GSC sitemap gönder | search.google.com/search-console → Sitemaps → `https://seoroas.com/sitemap.xml` |
+| 2 | İç link optimizasyonu | Blog yazılarına Sanity Studio'dan `/seo/` iç linkleri ekle |
+| 3 | Cross-browser test | Chrome, Safari, Firefox, Edge + iOS/Android mobil test |
+| 4 | Touch target & klavye testi | Min 48x48px, Tab order, focus visible |
+| 5 | Schema markup doğrulama | search.google.com/test/rich-results ile tüm sayfaları test et |
+| 6 | Cloudflare www kuralı | Eski www redirect rule'u sil (middleware hallediyorsa) |
 
 ### 🟢 Düşük Öncelik (Sürekli)
 | # | Görev | Detay |
 |---|-------|-------|
-| 11 | Hedef keyword listesi | Ahrefs/SEMrush ile rank tracking başlat |
-| 12 | Başlangıç sıralama snapshot'ı | Mevcut pozisyonları kaydet |
-| 13 | Backlink stratejisi | Rakip analizi, guest post, dijital PR, yerel dizin kayıtları |
-| 14 | Microsoft Clarity | Isı haritası için Clarity kurulumu (GTM'den yönetilebilir) |
+| 7 | Hedef keyword listesi | Ahrefs/SEMrush ile rank tracking başlat |
+| 8 | Başlangıç sıralama snapshot'ı | Mevcut pozisyonları kaydet |
+| 9 | Backlink stratejisi | Rakip analizi, guest post, dijital PR, yerel dizin kayıtları |
+| 10 | Microsoft Clarity | Isı haritası için Clarity kurulumu (GTM'den yönetilebilir) |
+| 11 | Meta Pixel & TikTok Pixel | GTM'den yapılandır (reklam başlayınca) |
 
 ---
 

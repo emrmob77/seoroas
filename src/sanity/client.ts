@@ -20,7 +20,7 @@ export async function sanityFetch<T>(query: string, params?: Record<string, unkn
   }
   try {
     return await sanityClient.fetch<T>(query, params ?? {}, {
-      next: { revalidate: 60 },
+      next: { revalidate: 10 },
     });
   } catch {
     console.warn("[Sanity] Fetch failed for query, returning empty result");
