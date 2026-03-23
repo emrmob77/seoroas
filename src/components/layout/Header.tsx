@@ -20,41 +20,84 @@ import {
   MonitorSmartphone,
   Building2,
   Briefcase,
+  Users,
+  Shield,
+  Zap,
+  Target,
+  TrendingUp,
+  Mail,
+  Phone,
+  Settings,
+  Star,
+  Heart,
+  Home,
+  Layers,
+  type LucideIcon,
 } from "lucide-react";
+import type {
+  NavigationData,
+  MegaMenuGroup,
+  NavLink,
+} from "@/sanity/queries/navigation";
 
-const seoServices = [
-  { name: "On-Page SEO", href: "/seo/on-page-seo", icon: Search },
-  { name: "Teknik SEO", href: "/seo/teknik-seo", icon: Code },
-  { name: "Link Building", href: "/seo/link-building", icon: LinkIcon },
-  { name: "Lokal SEO", href: "/seo/lokal-seo", icon: MapPin },
-  { name: "E-ticaret SEO", href: "/seo/e-ticaret-seo", icon: ShoppingCart },
-  { name: "İçerik SEO", href: "/seo/icerik-seo", icon: FileText },
-  { name: "WordPress SEO", href: "/seo/wordpress-seo", icon: Globe },
-  { name: "Shopify SEO", href: "/seo/shopify-seo", icon: Store },
-  { name: "Kurumsal SEO", href: "/seo/kurumsal-seo", icon: Building2 },
-  { name: "SEO Ajansı", href: "/seo/seo-ajansi", icon: Briefcase },
+const iconMap: Record<string, LucideIcon> = {
+  Search, Code, Link: LinkIcon, MapPin, ShoppingCart, FileText, Globe, Store,
+  Tag, BarChart3, MonitorSmartphone, Building2, Briefcase, Users, Shield, Zap,
+  Target, TrendingUp, Mail, Phone, Settings, Star, Heart, Home, Layers,
+};
+
+// ─── DEFAULTS (Sanity'de veri yoksa kullanılır) ───
+
+const defaultMegaMenuGroups: MegaMenuGroup[] = [
+  {
+    groupTitle: "SEO",
+    links: [
+      { title: "On-Page SEO", url: "/seo/on-page-seo", icon: "Search" },
+      { title: "Teknik SEO", url: "/seo/teknik-seo", icon: "Code" },
+      { title: "Link Building", url: "/seo/link-building", icon: "Link" },
+      { title: "Lokal SEO", url: "/seo/lokal-seo", icon: "MapPin" },
+      { title: "E-ticaret SEO", url: "/seo/e-ticaret-seo", icon: "ShoppingCart" },
+      { title: "İçerik SEO", url: "/seo/icerik-seo", icon: "FileText" },
+      { title: "WordPress SEO", url: "/seo/wordpress-seo", icon: "Globe" },
+      { title: "Shopify SEO", url: "/seo/shopify-seo", icon: "Store" },
+      { title: "Kurumsal SEO", url: "/seo/kurumsal-seo", icon: "Building2" },
+      { title: "SEO Ajansı", url: "/seo/seo-ajansi", icon: "Briefcase" },
+    ],
+  },
+  {
+    groupTitle: "Takip & Analitik",
+    links: [
+      { title: "Google Tag Manager", url: "/hizmetler/google-tag-manager", icon: "Tag" },
+      { title: "Meta Pixel & CAPI", url: "/hizmetler/meta-pixel-capi", icon: "BarChart3" },
+      { title: "TikTok Pixel", url: "/hizmetler/tiktok-pixel", icon: "MonitorSmartphone" },
+    ],
+  },
+  {
+    groupTitle: "Bölgeler",
+    links: [
+      { title: "İstanbul", url: "/istanbul-seo-ajansi", icon: "MapPin" },
+      { title: "Ankara", url: "/ankara-seo-ajansi", icon: "MapPin" },
+      { title: "İzmir", url: "/izmir-seo-ajansi", icon: "MapPin" },
+      { title: "Bursa", url: "/bursa-seo-ajansi", icon: "MapPin" },
+      { title: "Antalya", url: "/antalya-seo-ajansi", icon: "MapPin" },
+    ],
+  },
 ];
 
-const trackingServices = [
-  { name: "Google Tag Manager", href: "/hizmetler/google-tag-manager", icon: Tag },
-  { name: "Meta Pixel & CAPI", href: "/hizmetler/meta-pixel-capi", icon: BarChart3 },
-  { name: "TikTok Pixel", href: "/hizmetler/tiktok-pixel", icon: MonitorSmartphone },
+const defaultMainLinks: NavLink[] = [
+  { title: "Danışmanlık", url: "/seo-danismanligi" },
+  { title: "Referanslar", url: "/referanslar" },
+  { title: "Fiyatlar", url: "/seo-fiyatlari" },
+  { title: "Blog", url: "/blog" },
+  { title: "Hakkımızda", url: "/hakkimizda" },
 ];
 
-const cities = [
-  { name: "İstanbul", href: "/istanbul-seo-ajansi" },
-  { name: "Ankara", href: "/ankara-seo-ajansi" },
-  { name: "İzmir", href: "/izmir-seo-ajansi" },
-  { name: "Bursa", href: "/bursa-seo-ajansi" },
-  { name: "Antalya", href: "/antalya-seo-ajansi" },
-];
+const defaultCtaButton: NavLink = { title: "Analiz Başlat", url: "/iletisim" };
+const defaultMegaMenuTitle = "Çözümler";
 
-const navLinks = [
-  { name: "Danışmanlık", href: "/seo-danismanligi" },
-  { name: "Referanslar", href: "/referanslar" },
-  { name: "Fiyatlar", href: "/seo-fiyatlari" },
-  { name: "Blog", href: "/blog" },
-  { name: "Hakkımızda", href: "/hakkimizda" },
+const defaultMegaMenuBottomLinks: NavLink[] = [
+  { title: "Tüm SEO Hizmetleri →", url: "/seo" },
+  { title: "Tüm Hizmetler →", url: "/hizmetler" },
 ];
 
 function isActive(pathname: string, href: string) {
@@ -72,14 +115,30 @@ function isSolutionsActive(pathname: string) {
   );
 }
 
-export function Header() {
+function getIcon(name?: string) {
+  if (!name) return null;
+  return iconMap[name] || null;
+}
+
+interface HeaderProps {
+  navigation?: NavigationData | null;
+}
+
+export function Header({ navigation }: HeaderProps) {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
-  const [mobileCitiesOpen, setMobileCitiesOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const closeTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
+
+  const megaMenuTitle = navigation?.megaMenuTitle || defaultMegaMenuTitle;
+  const megaMenuGroups = navigation?.megaMenuGroups?.length ? navigation.megaMenuGroups : defaultMegaMenuGroups;
+  const mainLinks = navigation?.mainLinks?.length ? navigation.mainLinks : defaultMainLinks;
+  const ctaButton = navigation?.ctaButton?.title ? navigation.ctaButton : defaultCtaButton;
+  const megaMenuBottomLinks = navigation?.megaMenuBottomLinks?.length
+    ? navigation.megaMenuBottomLinks
+    : defaultMegaMenuBottomLinks;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
@@ -111,6 +170,10 @@ export function Header() {
   const linkIdle = "text-zinc-500 hover:text-zinc-900";
   const linkActiveClass = "text-zinc-900 font-semibold border-b-2 border-primary pb-1";
 
+  const colCount = megaMenuGroups.length <= 4 ? megaMenuGroups.length : 4;
+  const gridCols = colCount === 2 ? "grid-cols-2" : colCount === 3 ? "grid-cols-3" : "grid-cols-4";
+  const megaWidth = colCount <= 2 ? "w-[520px]" : colCount === 3 ? "w-[680px]" : "w-[880px]";
+
   return (
     <>
       <header className="fixed top-0 w-full z-50 pt-4 px-4">
@@ -127,24 +190,20 @@ export function Header() {
 
           {/* Desktop Nav */}
           <div className="hidden lg:flex items-center gap-6 xl:gap-8">
-            {/* Çözümler mega dropdown */}
-            <div
-              onMouseEnter={openDropdown}
-              onMouseLeave={closeDropdown}
-            >
+            {/* Mega dropdown */}
+            <div onMouseEnter={openDropdown} onMouseLeave={closeDropdown}>
               <button
                 className={`${linkBase} ${isSolutionsActive(pathname) ? linkActiveClass : linkIdle} flex items-center gap-1`}
                 onClick={() => setDropdownOpen((v) => !v)}
                 aria-expanded={dropdownOpen}
                 aria-haspopup="true"
               >
-                Çözümler
+                {megaMenuTitle}
                 <ChevronDown
                   className={`h-3.5 w-3.5 transition-transform duration-300 ${dropdownOpen ? "rotate-180" : ""}`}
                 />
               </button>
 
-              {/* Mega menu — positioned relative to <nav> via `relative` on nav */}
               <div
                 className={`absolute top-full left-1/2 -translate-x-1/2 mt-3 transition-all duration-200 ${
                   dropdownOpen
@@ -154,94 +213,100 @@ export function Header() {
                 onMouseEnter={openDropdown}
                 onMouseLeave={closeDropdown}
               >
-                <div className="bg-white/95 backdrop-blur-xl rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.12)] border border-zinc-200/30 p-5 w-[880px]">
-                  <div className="grid grid-cols-4 gap-5">
-                    {/* SEO col 1 */}
-                    <div>
-                      <div className="text-[10px] font-bold uppercase tracking-widest text-zinc-400 px-2 mb-2">SEO</div>
-                      {seoServices.slice(0, 5).map((s) => (
-                        <Link
-                          key={s.href}
-                          href={s.href}
-                          className="flex items-center gap-2.5 px-2 py-2 rounded-lg hover:bg-zinc-50 transition-colors"
-                        >
-                          <s.icon className="h-4 w-4 text-primary/70 shrink-0" />
-                          <span className="text-sm font-medium text-zinc-700">{s.name}</span>
-                        </Link>
-                      ))}
-                    </div>
-
-                    {/* SEO col 2 */}
-                    <div>
-                      <div className="text-[10px] font-bold uppercase tracking-widest text-zinc-400 px-2 mb-2">&nbsp;</div>
-                      {seoServices.slice(5).map((s) => (
-                        <Link
-                          key={s.href}
-                          href={s.href}
-                          className="flex items-center gap-2.5 px-2 py-2 rounded-lg hover:bg-zinc-50 transition-colors"
-                        >
-                          <s.icon className="h-4 w-4 text-primary/70 shrink-0" />
-                          <span className="text-sm font-medium text-zinc-700">{s.name}</span>
-                        </Link>
-                      ))}
-                    </div>
-
-                    {/* Takip & Analitik */}
-                    <div>
-                      <div className="text-[10px] font-bold uppercase tracking-widest text-zinc-400 px-2 mb-2">Takip & Analitik</div>
-                      {trackingServices.map((s) => (
-                        <Link
-                          key={s.href}
-                          href={s.href}
-                          className="flex items-center gap-2.5 px-2 py-2 rounded-lg hover:bg-zinc-50 transition-colors"
-                        >
-                          <s.icon className="h-4 w-4 text-primary/70 shrink-0" />
-                          <span className="text-sm font-medium text-zinc-700">{s.name}</span>
-                        </Link>
-                      ))}
-                    </div>
-
-                    {/* Bölgeler */}
-                    <div>
-                      <div className="text-[10px] font-bold uppercase tracking-widest text-zinc-400 px-2 mb-2">Bölgeler</div>
-                      {cities.map((c) => (
-                        <Link
-                          key={c.href}
-                          href={c.href}
-                          className="flex items-center gap-2 px-2 py-2 rounded-lg hover:bg-zinc-50 transition-colors"
-                        >
-                          <MapPin className="h-3.5 w-3.5 text-zinc-400 shrink-0" />
-                          <span className="text-sm font-medium text-zinc-700">{c.name}</span>
-                        </Link>
-                      ))}
-                    </div>
+                <div className={`bg-white/95 backdrop-blur-xl rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.12)] border border-zinc-200/30 p-5 ${megaWidth}`}>
+                  <div className={`grid ${gridCols} gap-5`}>
+                    {megaMenuGroups.map((group, gi) => {
+                      const isLargeGroup = group.links.length > 6;
+                      if (isLargeGroup) {
+                        const mid = Math.ceil(group.links.length / 2);
+                        const col1 = group.links.slice(0, mid);
+                        const col2 = group.links.slice(mid);
+                        return (
+                          <div key={gi} className="col-span-2 grid grid-cols-2 gap-5">
+                            <div>
+                              <div className="text-[10px] font-bold uppercase tracking-widest text-zinc-400 px-2 mb-2">
+                                {group.groupTitle}
+                              </div>
+                              {col1.map((link) => {
+                                const Icon = getIcon(link.icon);
+                                return (
+                                  <Link
+                                    key={link.url}
+                                    href={link.url}
+                                    className="flex items-center gap-2.5 px-2 py-2 rounded-lg hover:bg-zinc-50 transition-colors"
+                                  >
+                                    {Icon && <Icon className="h-4 w-4 text-primary/70 shrink-0" />}
+                                    <span className="text-sm font-medium text-zinc-700">{link.title}</span>
+                                  </Link>
+                                );
+                              })}
+                            </div>
+                            <div>
+                              <div className="text-[10px] font-bold uppercase tracking-widest text-zinc-400 px-2 mb-2">&nbsp;</div>
+                              {col2.map((link) => {
+                                const Icon = getIcon(link.icon);
+                                return (
+                                  <Link
+                                    key={link.url}
+                                    href={link.url}
+                                    className="flex items-center gap-2.5 px-2 py-2 rounded-lg hover:bg-zinc-50 transition-colors"
+                                  >
+                                    {Icon && <Icon className="h-4 w-4 text-primary/70 shrink-0" />}
+                                    <span className="text-sm font-medium text-zinc-700">{link.title}</span>
+                                  </Link>
+                                );
+                              })}
+                            </div>
+                          </div>
+                        );
+                      }
+                      return (
+                        <div key={gi}>
+                          <div className="text-[10px] font-bold uppercase tracking-widest text-zinc-400 px-2 mb-2">
+                            {group.groupTitle}
+                          </div>
+                          {group.links.map((link) => {
+                            const Icon = getIcon(link.icon);
+                            return (
+                              <Link
+                                key={link.url}
+                                href={link.url}
+                                className="flex items-center gap-2.5 px-2 py-2 rounded-lg hover:bg-zinc-50 transition-colors"
+                              >
+                                {Icon && <Icon className="h-4 w-4 text-primary/70 shrink-0" />}
+                                <span className="text-sm font-medium text-zinc-700">{link.title}</span>
+                              </Link>
+                            );
+                          })}
+                        </div>
+                      );
+                    })}
                   </div>
 
-                  <div className="flex items-center justify-center gap-6 mt-4 pt-3 border-t border-zinc-200/40">
-                    <Link
-                      href="/seo"
-                      className="text-xs font-bold tracking-widest text-primary hover:opacity-70 transition-opacity"
-                    >
-                      Tüm SEO Hizmetleri →
-                    </Link>
-                    <Link
-                      href="/hizmetler"
-                      className="text-xs font-bold tracking-widest text-primary hover:opacity-70 transition-opacity"
-                    >
-                      Tüm Hizmetler →
-                    </Link>
-                  </div>
+                  {megaMenuBottomLinks.length > 0 && (
+                    <div className="flex items-center justify-center gap-6 mt-4 pt-3 border-t border-zinc-200/40">
+                      {megaMenuBottomLinks.map((link) => (
+                        <Link
+                          key={link.url}
+                          href={link.url}
+                          className="text-xs font-bold tracking-widest text-primary hover:opacity-70 transition-opacity"
+                        >
+                          {link.title}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
 
-            {navLinks.map((link) => (
+            {mainLinks.map((link) => (
               <Link
-                key={link.href}
-                href={link.href}
-                className={`${linkBase} ${isActive(pathname, link.href) ? linkActiveClass : linkIdle}`}
+                key={link.url}
+                href={link.url}
+                className={`${linkBase} ${isActive(pathname, link.url) ? linkActiveClass : linkIdle}`}
               >
-                {link.name}
+                {link.title}
               </Link>
             ))}
           </div>
@@ -249,10 +314,10 @@ export function Header() {
           {/* CTA + Mobile Toggle */}
           <div className="flex items-center gap-3">
             <Link
-              href="/iletisim"
+              href={ctaButton.url}
               className="hidden lg:inline-flex bg-primary text-on-primary px-5 py-2 rounded-full text-sm font-semibold hover:opacity-90 active:scale-95 transition-all duration-200"
             >
-              Analiz Başlat
+              {ctaButton.title}
             </Link>
 
             <button
@@ -287,95 +352,62 @@ export function Header() {
           </div>
 
           <div className="flex-1 bg-white overflow-y-auto px-6 py-4 flex flex-col gap-0">
-            {/* Çözümler */}
+            {/* Mega menu mobile */}
             <button
               onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
               className="flex items-center justify-between py-4 text-sm font-semibold text-zinc-900 border-b border-zinc-100"
             >
-              Çözümler
+              {megaMenuTitle}
               <ChevronDown
                 className={`h-5 w-5 text-zinc-400 transition-transform ${mobileServicesOpen ? "rotate-180" : ""}`}
               />
             </button>
             {mobileServicesOpen && (
               <div className="pl-3 flex flex-col gap-0 py-2 border-b border-zinc-100">
-                <div className="text-[10px] font-bold uppercase tracking-widest text-zinc-400 py-2">
-                  SEO Hizmetleri
-                </div>
-                {seoServices.map((s) => (
-                  <Link
-                    key={s.href}
-                    href={s.href}
-                    onClick={() => setMobileOpen(false)}
-                    className="flex items-center gap-3 py-2.5 text-sm text-zinc-600 hover:text-primary transition-colors"
-                  >
-                    <s.icon className="h-4 w-4" />
-                    {s.name}
-                  </Link>
-                ))}
-                <div className="text-[10px] font-bold uppercase tracking-widest text-zinc-400 py-2 mt-2">
-                  Takip & Analitik
-                </div>
-                {trackingServices.map((s) => (
-                  <Link
-                    key={s.href}
-                    href={s.href}
-                    onClick={() => setMobileOpen(false)}
-                    className="flex items-center gap-3 py-2.5 text-sm text-zinc-600 hover:text-primary transition-colors"
-                  >
-                    <s.icon className="h-4 w-4" />
-                    {s.name}
-                  </Link>
+                {megaMenuGroups.map((group, gi) => (
+                  <div key={gi}>
+                    <div className="text-[10px] font-bold uppercase tracking-widest text-zinc-400 py-2 mt-2">
+                      {group.groupTitle}
+                    </div>
+                    {group.links.map((link) => {
+                      const Icon = getIcon(link.icon);
+                      return (
+                        <Link
+                          key={link.url}
+                          href={link.url}
+                          onClick={() => setMobileOpen(false)}
+                          className="flex items-center gap-3 py-2.5 text-sm text-zinc-600 hover:text-primary transition-colors"
+                        >
+                          {Icon && <Icon className="h-4 w-4" />}
+                          {link.title}
+                        </Link>
+                      );
+                    })}
+                  </div>
                 ))}
               </div>
             )}
 
-            {/* Bölgeler */}
-            <button
-              onClick={() => setMobileCitiesOpen(!mobileCitiesOpen)}
-              className="flex items-center justify-between py-4 text-sm font-semibold text-zinc-900 border-b border-zinc-100"
-            >
-              Bölgeler
-              <ChevronDown
-                className={`h-5 w-5 text-zinc-400 transition-transform ${mobileCitiesOpen ? "rotate-180" : ""}`}
-              />
-            </button>
-            {mobileCitiesOpen && (
-              <div className="pl-3 flex flex-col gap-0 py-2 border-b border-zinc-100">
-                {cities.map((c) => (
-                  <Link
-                    key={c.href}
-                    href={c.href}
-                    onClick={() => setMobileOpen(false)}
-                    className="flex items-center gap-3 py-2.5 text-sm text-zinc-600 hover:text-primary transition-colors"
-                  >
-                    <MapPin className="h-4 w-4" />
-                    {c.name} SEO Ajansı
-                  </Link>
-                ))}
-              </div>
-            )}
-
-            {/* Flat links */}
-            {navLinks.map((link) => (
+            {/* Main links */}
+            {mainLinks.map((link) => (
               <Link
-                key={link.href}
-                href={link.href}
+                key={link.url}
+                href={link.url}
                 onClick={() => setMobileOpen(false)}
                 className={`py-4 text-sm font-semibold border-b border-zinc-100 ${
-                  isActive(pathname, link.href) ? "text-primary" : "text-zinc-900"
+                  isActive(pathname, link.url) ? "text-primary" : "text-zinc-900"
                 }`}
               >
-                {link.name}
+                {link.title}
               </Link>
             ))}
 
             {/* İletişim */}
             <Link
-              href="/iletisim"
+              href={ctaButton.url}
               onClick={() => setMobileOpen(false)}
               className={`py-4 text-sm font-semibold border-b border-zinc-100 ${
-                isActive(pathname, "/iletisim") ? "text-primary" : "text-zinc-900"
+                isActive(pathname, ctaButton.url) ? "text-primary" : "text-zinc-900"
               }`}
             >
               İletişim
@@ -383,7 +415,7 @@ export function Header() {
 
             <div className="mt-auto pt-6">
               <Link
-                href="/iletisim"
+                href={ctaButton.url}
                 onClick={() => setMobileOpen(false)}
                 className="block w-full text-center bg-primary text-on-primary font-semibold text-sm py-4 rounded-full transition-opacity hover:opacity-90"
               >

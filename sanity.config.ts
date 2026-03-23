@@ -75,6 +75,19 @@ function deskStructure(S: StructureBuilder) {
 
       S.divider(),
 
+      // ─── MENÜ YÖNETİMİ ───
+      S.listItem()
+        .title('Menü Yönetimi')
+        .icon(() => '🧭')
+        .child(
+          S.document()
+            .schemaType('navigation')
+            .documentId('navigation')
+            .title('Menü Yönetimi')
+        ),
+
+      S.divider(),
+
       // ─── SEO AYARLARI ───
       S.listItem()
         .title('SEO Ayarları')

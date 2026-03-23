@@ -9,6 +9,7 @@ import { siteSettings } from "./siteSettings";
 import { seoFields } from "./seoFields";
 import { redirect } from "./redirect";
 import { category } from "./category";
+import { navigation } from "./navigation";
 
 export const schemaTypes = [
   seoFields,
@@ -22,4 +23,5 @@ export const schemaTypes = [
   category,
   redirect,
   siteSettings,
+  navigation,
 ];

@@ -8,6 +8,7 @@ import { GoogleTagManagerHead, GoogleTagManagerBody } from "@/components/analyti
 import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
 import { SchemaOrg } from "@/components/seo/SchemaOrg";
 import { localBusinessSchema, webSiteSchema } from "@/lib/schema";
+import { fetchNavigation } from "@/sanity/queries/navigation";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -52,11 +53,13 @@ export const viewport: Viewport = {
   themeColor: "#4d4ad5",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const navigation = await fetchNavigation();
+
   return (
     <html lang="tr" className={`${manrope.variable} h-full antialiased`}>
       <head>
@@ -65,9 +68,9 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col font-sans bg-background text-on-surface">
         <GoogleTagManagerBody />
-        <Header />
+        <Header navigation={navigation} />
         <main className="flex-1">{children}</main>
-        <Footer />
+        <Footer navigation={navigation} />
         <CookieBanner />
         <GoogleAnalytics />
         <Analytics />
