@@ -8,7 +8,7 @@ interface RedirectEntry {
 
 let cachedRedirects: RedirectEntry[] | null = null;
 let cacheTimestamp = 0;
-const CACHE_TTL = 5 * 60 * 1000; // 5 minutes
+const CACHE_TTL = 5 * 60 * 1000;
 
 async function getRedirects(): Promise<RedirectEntry[]> {
   const now = Date.now();
@@ -48,6 +48,7 @@ function normalizePath(path: string): string {
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
+  const host = request.headers.get("host") || "";
 
   if (
     pathname.startsWith("/studio") ||
@@ -58,16 +59,26 @@ export async function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  const normalized = normalizePath(pathname);
-
-  if (normalized !== pathname) {
-    const url = request.nextUrl.clone();
-    url.pathname = normalized;
-    return NextResponse.redirect(url, 301);
+  // www → non-www (tek 301 ile)
+  if (host.startsWith("www.")) {
+    const nonWww = host.replace(/^www\./, "");
+    const normalized = normalizePath(pathname);
+    const redirects = await getRedirects();
+    const existingPages = new Set(["/seo", "/hizmetler"]);
+    const match = redirects.find(
+      (r) => normalizePath(r.source) === normalized && !existingPages.has(normalized)
+    );
+    const finalPath = match ? match.destination : normalized;
+    const dest = finalPath.startsWith("http")
+      ? finalPath
+      : `${request.nextUrl.protocol}//${nonWww}${finalPath}`;
+    return NextResponse.redirect(dest, 301);
   }
 
-  const redirects = await getRedirects();
+  const normalized = normalizePath(pathname);
 
+  // Trailing slash + Sanity redirect'i tek adımda çöz
+  const redirects = await getRedirects();
   const existingPages = new Set(["/seo", "/hizmetler"]);
   const match = redirects.find(
     (r) => normalizePath(r.source) === normalized && !existingPages.has(normalized)
@@ -83,6 +94,13 @@ export async function middleware(request: NextRequest) {
       : `${request.nextUrl.origin}${match.destination}`;
 
     return NextResponse.redirect(destination, match.statusCode || 301);
+  }
+
+  // Sadece trailing slash kaldırma (Sanity redirect yoksa)
+  if (normalized !== pathname) {
+    const url = request.nextUrl.clone();
+    url.pathname = normalized;
+    return NextResponse.redirect(url, 301);
   }
 
   return NextResponse.next();

@@ -25,6 +25,7 @@ const securityHeaders = [
 const nextConfig: NextConfig = {
   reactCompiler: true,
   compress: true,
+  skipTrailingSlashRedirect: true,
   turbopack: {
     root: ".",
   },
