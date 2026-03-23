@@ -10,12 +10,21 @@ export function ContactForm() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
+  function normalizeUrl(raw: string): string {
+    const trimmed = raw.trim();
+    if (!trimmed) return trimmed;
+    if (/^https?:\/\//i.test(trimmed)) return trimmed;
+    return `https://${trimmed.replace(/^\/\//, "")}`;
+  }
+
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setLoading(true);
     setError("");
 
     const form = new FormData(e.currentTarget);
+    const website = form.get("website");
+    if (typeof website === "string") form.set("website", normalizeUrl(website));
 
     try {
       const res = await fetch("/api/lead", {
@@ -115,10 +124,10 @@ export function ContactForm() {
           <input
             id="website"
             name="website"
-            type="url"
+            type="text"
             required
             className="w-full bg-surface-container-lowest border border-outline-variant/20 px-5 py-3.5 rounded-xl text-on-surface placeholder:text-on-surface-variant/40 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none"
-            placeholder="https://www.ornek.com"
+            placeholder="ornek.com"
           />
         </div>
 

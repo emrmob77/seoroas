@@ -10,12 +10,21 @@ export function CTAForm() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
+  function normalizeUrl(raw: string): string {
+    const trimmed = raw.trim();
+    if (!trimmed) return trimmed;
+    if (/^https?:\/\//i.test(trimmed)) return trimmed;
+    return `https://${trimmed.replace(/^\/\//, "")}`;
+  }
+
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setLoading(true);
     setError("");
 
     const form = new FormData(e.currentTarget);
+    const website = form.get("website");
+    if (typeof website === "string") form.set("website", normalizeUrl(website));
 
     try {
       const res = await fetch("/api/lead", {
@@ -82,11 +91,11 @@ export function CTAForm() {
               className="w-full bg-surface-container-low border-b-primary border-t-0 border-l-0 border-r-0 border-b-[0.5px] focus:border-b-[1.5px] focus:ring-0 px-4 py-4 transition-all duration-300 outline-none"
             />
             <input
-              type="url"
+              type="text"
               name="website"
               value={formData.website}
               onChange={(e) => setFormData({ ...formData, website: e.target.value })}
-              placeholder="Web Sitesi URL"
+              placeholder="ornek.com"
               required
               className="w-full bg-surface-container-low border-b-primary border-t-0 border-l-0 border-r-0 border-b-[0.5px] focus:border-b-[1.5px] focus:ring-0 px-4 py-4 transition-all duration-300 outline-none"
             />

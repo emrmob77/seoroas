@@ -9,12 +9,21 @@ export function ConsultationForm() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
+  function normalizeUrl(raw: string): string {
+    const trimmed = raw.trim();
+    if (!trimmed) return trimmed;
+    if (/^https?:\/\//i.test(trimmed)) return trimmed;
+    return `https://${trimmed.replace(/^\/\//, "")}`;
+  }
+
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setLoading(true);
     setError("");
 
     const form = new FormData(e.currentTarget);
+    const website = form.get("website");
+    if (typeof website === "string") form.set("website", normalizeUrl(website));
 
     try {
       const res = await fetch("/api/lead", {
@@ -60,8 +69,8 @@ export function ConsultationForm() {
       <input
         name="website"
         className="w-full bg-white/10 border-none rounded-xl p-3.5 md:p-4 text-white placeholder-white/40 focus:ring-2 focus:ring-white/30 transition-all outline-none"
-        placeholder="Web Siteniz"
-        type="url"
+        placeholder="ornek.com"
+        type="text"
         required
       />
       <textarea
