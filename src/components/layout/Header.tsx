@@ -170,14 +170,6 @@ export function Header({ navigation }: HeaderProps) {
   const linkIdle = "text-zinc-500 hover:text-zinc-900";
   const linkActiveClass = "text-zinc-900 font-semibold border-b-2 border-primary pb-1";
 
-  const effectiveCols = megaMenuGroups.reduce(
-    (sum, g) => sum + (g.links.length > 6 ? 2 : 1),
-    0,
-  );
-  const colCount = Math.min(effectiveCols, 4);
-  const gridCols = colCount === 2 ? "grid-cols-2" : colCount === 3 ? "grid-cols-3" : "grid-cols-4";
-  const megaWidth = colCount <= 2 ? "w-[520px]" : colCount === 3 ? "w-[680px]" : "w-[880px]";
-
   return (
     <>
       <header className="fixed top-0 w-full z-50 pt-4 px-4">
@@ -217,8 +209,8 @@ export function Header({ navigation }: HeaderProps) {
                 onMouseEnter={openDropdown}
                 onMouseLeave={closeDropdown}
               >
-                <div className={`bg-white/95 backdrop-blur-xl rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.12)] border border-zinc-200/30 p-5 ${megaWidth}`}>
-                  <div className={`grid ${gridCols} gap-5`}>
+                <div className="bg-white/95 backdrop-blur-xl rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.12)] border border-zinc-200/30 p-5 w-[880px]">
+                  <div className="grid grid-cols-4 gap-5">
                     {megaMenuGroups.map((group, gi) => {
                       const isLargeGroup = group.links.length > 6;
                       if (isLargeGroup) {
