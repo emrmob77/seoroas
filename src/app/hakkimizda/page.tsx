@@ -90,7 +90,7 @@ export default function HakkimizdaPage() {
 
       <SubpageHero
         breadcrumb={[{ name: "Hakkımızda", url: "/hakkimizda" }]}
-        badge="Who We Are"
+        badge="Biz Kimiz"
         title={
           <>
             SEOROAS:{" "}

@@ -66,7 +66,7 @@ export default function ETicaretSeoPage() {
           { name: "SEO", url: "/seo" },
           { name: "E-Ticaret SEO", url: "/seo/e-ticaret-seo" },
         ]}
-        badge="Revenue Engine: Active"
+        badge="Gelir Motoru: Aktif"
         title={
           <>
             E-Ticaret{" "}

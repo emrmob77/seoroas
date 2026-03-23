@@ -66,7 +66,7 @@ export default function LokalSeoPage() {
           { name: "SEO", url: "/seo" },
           { name: "Lokal SEO", url: "/seo/lokal-seo" },
         ]}
-        badge="Local Radar: Active"
+        badge="Lokal Radar: Aktif"
         title={
           <>
             Lokal{" "}

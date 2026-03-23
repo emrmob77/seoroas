@@ -81,7 +81,7 @@ export default function IletisimPage() {
 
       <SubpageHero
         breadcrumb={[{ name: "İletişim", url: "/iletisim" }]}
-        badge="Contact Us"
+        badge="Bize Ulaşın"
         title={
           <>
             Bizimle{" "}

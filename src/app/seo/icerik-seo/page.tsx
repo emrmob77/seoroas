@@ -66,7 +66,7 @@ export default function IcerikSeoPage() {
           { name: "SEO", url: "/seo" },
           { name: "İçerik SEO", url: "/seo/icerik-seo" },
         ]}
-        badge="Content Engine: Active"
+        badge="İçerik Motoru: Aktif"
         title={
           <>
             İçerik{" "}

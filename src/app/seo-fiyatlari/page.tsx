@@ -158,7 +158,7 @@ export default function FiyatlarPage() {
 
       <SubpageHero
         breadcrumb={[{ name: "SEO Fiyatları", url: "/seo-fiyatlari" }]}
-        badge="Transparent Pricing"
+        badge="Şeffaf Fiyatlandırma"
         title={
           <>
             SEO Fiyatları{" "}

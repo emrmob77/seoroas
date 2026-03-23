@@ -2,9 +2,9 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 const stats = [
-  { value: "98%", label: "Client Retention" },
-  { value: "+420%", label: "Avg. Traffic Lift" },
-  { value: "14.2M", label: "Keywords Tracked" },
+  { value: "98%", label: "Müşteri Memnuniyeti" },
+  { value: "+420%", label: "Ort. Trafik Artışı" },
+  { value: "14.2M", label: "Takip Edilen Anahtar Kelime" },
 ];
 
 export function Hero() {
@@ -15,7 +15,7 @@ export function Hero() {
         <div className="inline-flex items-center space-x-2 bg-surface-container-low px-4 py-1.5 rounded-full mb-8">
           <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
           <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-on-surface-variant">
-            The 2026 Performance Standard
+            2026 Performans Standardı
           </span>
         </div>
 

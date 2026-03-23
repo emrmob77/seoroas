@@ -161,7 +161,7 @@ export default function SeoDanismanligiPage() {
         breadcrumb={[
           { name: "SEO Danışmanlığı", url: "/seo-danismanligi" },
         ]}
-        badge="Expert Consulting"
+        badge="Uzman Danışmanlık"
         title={
           <>
             Markanıza Özel

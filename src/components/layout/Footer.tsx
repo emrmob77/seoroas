@@ -58,7 +58,7 @@ const defaultFooterColumns: FooterColumn[] = [
   },
 ];
 
-const defaultTagline = "Digital Architecture for the Performance Era.";
+const defaultTagline = "Performans Odaklı Dijital Mimari.";
 const defaultCities = ["İstanbul", "Ankara", "İzmir", "Bursa", "Antalya"];
 
 const linkClass =

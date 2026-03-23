@@ -122,7 +122,7 @@ export default function ReferanslarPage() {
 
       <SubpageHero
         breadcrumb={[{ name: "Referanslar", url: "/referanslar" }]}
-        badge="Case Studies"
+        badge="Başarı Hikayeleri"
         title={
           <>
             Rakamlarla Anlattığımız{" "}

@@ -92,7 +92,7 @@ export default function KurumsalSeoPage() {
           { name: "SEO", url: "/seo" },
           { name: "Kurumsal SEO", url: "/seo/kurumsal-seo" },
         ]}
-        badge="Enterprise Scale SEO"
+        badge="Kurumsal Ölçek SEO"
         title={
           <>
             Kurumsal{" "}

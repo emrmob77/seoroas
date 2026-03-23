@@ -40,7 +40,7 @@ export async function BlogGrid() {
         <div className="flex flex-col md:flex-row items-baseline justify-between mb-20 gap-4">
           <div className="max-w-xl">
             <span className="text-primary font-bold text-[10px] uppercase tracking-[0.3em] mb-4 block">
-              Insights & Guides
+              İçgörüler & Rehberler
             </span>
             <h2 className="text-4xl md:text-5xl font-extrabold tight-tracking text-on-background">
               Bilgiyle Güçlenin.

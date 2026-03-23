@@ -66,7 +66,7 @@ export default function OnPageSeoPage() {
           { name: "SEO", url: "/seo" },
           { name: "On-Page SEO", url: "/seo/on-page-seo" },
         ]}
-        badge="Content Layer: Active"
+        badge="İçerik Katmanı: Aktif"
         title={
           <>
             On-Page{" "}

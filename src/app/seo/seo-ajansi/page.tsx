@@ -102,7 +102,7 @@ export default function SeoAjansiPage() {
           { name: "SEO", url: "/seo" },
           { name: "SEO Ajansı", url: "/seo/seo-ajansi" },
         ]}
-        badge="Trusted SEO Partner"
+        badge="Güvenilir SEO İş Ortağı"
         title={
           <>
             Türkiye'nin Lider{" "}

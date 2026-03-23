@@ -66,7 +66,7 @@ export default function LinkBuildingPage() {
           { name: "SEO", url: "/seo" },
           { name: "Link Building", url: "/seo/link-building" },
         ]}
-        badge="Authority Engine: Active"
+        badge="Otorite Motoru: Aktif"
         title={
           <>
             Link Building ile Domain{" "}

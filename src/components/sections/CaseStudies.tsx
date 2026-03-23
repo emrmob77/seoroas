@@ -3,7 +3,7 @@ import Link from "next/link";
 const cases = [
   {
     title: "Z Global",
-    category: "Fintech Growth",
+    category: "Fintech Büyümesi",
     image: "/images/case-1.jpg",
     testimonial:
       "SEOROAS, SEO'yu bir pazarlama kanalı olmaktan çıkarıp bir büyüme motoruna dönüştürdü. Veri vizyonları eşsiz.",
@@ -12,12 +12,12 @@ const cases = [
   },
   {
     title: "Luxo E-commerce",
-    category: "Retail Transformation",
+    category: "E-ticaret Dönüşümü",
     image: "/images/case-2.jpg",
     testimonial:
       "Mimarimizdeki hataları 48 saatte tespit ettiler. Trafiğimiz 6 ay içinde %280 oranında artış gösterdi.",
     author: "Selin Aktaş",
-    role: "Founder, Luxo",
+    role: "Kurucu, Luxo",
   },
 ];
 
@@ -28,13 +28,13 @@ export function CaseStudies() {
         {/* Header */}
         <div className="flex flex-col md:flex-row items-baseline justify-between mb-20 gap-4">
           <h2 className="text-4xl md:text-5xl font-extrabold tight-tracking text-on-background">
-            Purity in Results.
+            Sonuçlar Konuşsun.
           </h2>
           <Link
             href="/vaka-calismalari"
             className="text-primary text-xs font-bold uppercase tracking-widest border-b-[0.5px] border-primary pb-1 hover:opacity-70 transition-opacity"
           >
-            View All Cases
+            Tüm Referanslar
           </Link>
         </div>
 

@@ -66,7 +66,7 @@ export default function TeknikSeoPage() {
           { name: "SEO", url: "/seo" },
           { name: "Teknik SEO", url: "/seo/teknik-seo" },
         ]}
-        badge="System Status: Optimized"
+        badge="Sistem Durumu: Optimize"
         title={
           <>
             Teknik{" "}
