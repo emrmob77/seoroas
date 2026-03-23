@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { Mail, Phone, MapPin, Clock, ChevronDown } from "lucide-react";
 import { generateDynamicSeoMetadata } from "@/lib/seo";
+import { localBusinessSchema } from "@/lib/schema";
 import { SchemaOrg } from "@/components/seo/SchemaOrg";
 import { SubpageHero } from "@/components/sections/SubpageHero";
 import { ContactForm } from "@/components/forms/ContactForm";
+import { getSiteSettings } from "@/sanity/queries/settings";
 
 export const dynamic = "force-dynamic";
 
@@ -16,31 +18,6 @@ export async function generateMetadata(): Promise<Metadata> {
   });
 }
 
-const contactCards = [
-  {
-    icon: MapPin,
-    label: "Adres",
-    value: "Levent, Büyükdere Cd. No:126, 34394 Beşiktaş/İstanbul",
-  },
-  {
-    icon: Phone,
-    label: "Telefon",
-    value: "+90 5XX XXX XX XX",
-    href: "tel:+905000000000",
-  },
-  {
-    icon: Mail,
-    label: "E-Posta",
-    value: "info@seoroas.com",
-    href: "mailto:info@seoroas.com",
-  },
-  {
-    icon: Clock,
-    label: "Mesai Saatleri",
-    value: "Pzt - Cum: 09:00 - 18:00",
-  },
-];
-
 const faqItems = [
   {
     q: "Analiz süreci ne kadar sürer?",
@@ -52,34 +29,50 @@ const faqItems = [
   },
   {
     q: "Ofiste toplantı yapabilir miyiz?",
-    a: "Evet, İstanbul ofisimizde yüz yüze toplantı yapabilir veya online görüşme planlayabiliriz.",
+    a: "Evet, ofisimizde yüz yüze toplantı yapabilir veya online görüşme planlayabiliriz.",
   },
 ];
 
-export default function IletisimPage() {
+export default async function IletisimPage() {
+  const settings = await getSiteSettings();
+
+  const phone = settings?.phone || "";
+  const email = settings?.email || "info@seoroas.com";
+  const address = settings?.address || "";
+  const phoneClean = phone.replace(/[\s()-]/g, "");
+
+  const contactCards = [
+    ...(address
+      ? [{ icon: MapPin, label: "Adres", value: address.replace(/\n/g, ", "), href: undefined as string | undefined }]
+      : []),
+    ...(phone
+      ? [{ icon: Phone, label: "Telefon", value: phone, href: `tel:${phoneClean}` }]
+      : []),
+    {
+      icon: Mail,
+      label: "E-Posta",
+      value: email,
+      href: `mailto:${email}`,
+    },
+    {
+      icon: Clock,
+      label: "Mesai Saatleri",
+      value: "Pzt - Cum: 09:00 - 18:00",
+      href: undefined as string | undefined,
+    },
+  ];
+
+  const contactSchema = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    name: "SEOROAS İletişim",
+    url: "https://seoroas.com/iletisim",
+    mainEntity: localBusinessSchema(),
+  };
+
   return (
     <>
-      <SchemaOrg
-        schema={{
-          "@context": "https://schema.org",
-          "@type": "ContactPage",
-          name: "SEOROAS İletişim",
-          url: "https://seoroas.com/iletisim",
-          mainEntity: {
-            "@type": "LocalBusiness",
-            name: "SEOROAS",
-            email: "info@seoroas.com",
-            telephone: "+905000000000",
-            address: {
-              "@type": "PostalAddress",
-              streetAddress: "Levent, Büyükdere Cd. No:126",
-              addressLocality: "İstanbul",
-              postalCode: "34394",
-              addressCountry: "TR",
-            },
-          },
-        }}
-      />
+      <SchemaOrg schema={contactSchema} />
 
       <SubpageHero
         breadcrumb={[{ name: "İletişim", url: "/iletisim" }]}
@@ -96,10 +89,8 @@ export default function IletisimPage() {
       />
 
       <main>
-        {/* Contact Info Cards + Form */}
         <section className="max-w-7xl mx-auto px-6 md:px-8 mb-16 md:mb-24">
           <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 md:gap-16">
-            {/* Left: Contact Cards */}
             <div className="flex flex-col gap-4 md:gap-6">
               {contactCards.map((card) => (
                 <div
@@ -118,7 +109,7 @@ export default function IletisimPage() {
                       {card.value}
                     </a>
                   ) : (
-                    <p className="text-on-surface font-semibold text-sm">
+                    <p className="text-on-surface font-semibold text-sm whitespace-pre-line">
                       {card.value}
                     </p>
                   )}
@@ -126,12 +117,10 @@ export default function IletisimPage() {
               ))}
             </div>
 
-            {/* Right: Form */}
             <ContactForm />
           </div>
         </section>
 
-        {/* Map Section */}
         <section className="mb-16 md:mb-24">
           <div className="w-full h-64 md:h-96 bg-surface-container-high relative">
             <div className="absolute inset-0 flex items-center justify-center">
@@ -141,14 +130,13 @@ export default function IletisimPage() {
                 </div>
                 <h3 className="font-bold text-sm text-center mb-1">Genel Merkez</h3>
                 <p className="text-xs text-on-surface-variant text-center">
-                  İstanbul&apos;un kalbinde, verinin ve teknolojinin buluşma noktasındayız.
+                  Verinin ve teknolojinin buluşma noktasındayız.
                 </p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* FAQ */}
         <section className="max-w-3xl mx-auto px-6 md:px-8 mb-20 md:mb-32">
           <h2 className="text-3xl md:text-4xl font-bold tracking-[-0.04em] text-center mb-10 md:mb-16">
             Hızlı Sorular

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { generateDynamicSeoMetadata } from "@/lib/seo";
 import { Breadcrumb } from "@/components/layout/Breadcrumb";
+import { getSiteSettings } from "@/sanity/queries/settings";
 
 export const dynamic = "force-dynamic";
 
@@ -14,7 +15,12 @@ export async function generateMetadata(): Promise<Metadata> {
   });
 }
 
-export default function GizlilikPolitikasiPage() {
+export default async function GizlilikPolitikasiPage() {
+  const settings = await getSiteSettings();
+  const phone = settings?.phone || "";
+  const email = settings?.email || "info@seoroas.com";
+  const address = settings?.address?.replace(/\n/g, ", ") || "İstanbul, Türkiye";
+  const phoneClean = phone.replace(/[\s()-]/g, "");
   return (
     <main className="pt-24">
       <section className="max-w-7xl mx-auto px-8 mb-12">
@@ -209,24 +215,26 @@ export default function GizlilikPolitikasiPage() {
                   <li>
                     <span className="text-on-surface font-medium">E-posta:</span>{" "}
                     <a
-                      href="mailto:info@seoroas.com"
+                      href={`mailto:${email}`}
                       className="text-primary font-semibold hover:underline underline-offset-4"
                     >
-                      info@seoroas.com
+                      {email}
                     </a>
                   </li>
+                  {phone && (
                   <li>
                     <span className="text-on-surface font-medium">Telefon:</span>{" "}
                     <a
-                      href="tel:+902125550736"
+                      href={`tel:${phoneClean}`}
                       className="text-primary font-semibold hover:underline underline-offset-4"
                     >
-                      +90 (212) 555 0 SEO
+                      {phone}
                     </a>
                   </li>
+                  )}
                   <li>
                     <span className="text-on-surface font-medium">Adres:</span>{" "}
-                    İstanbul, Türkiye
+                    {address}
                   </li>
                   <li>
                     <Link
