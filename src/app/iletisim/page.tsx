@@ -8,9 +8,9 @@ import { SubpageHero } from "@/components/sections/SubpageHero";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = generateSeoMetadata({
-  title: "İletişim — SEO Danışmanlığı İçin Bize Ulaşın",
+  title: "İletişim — Ücretsiz SEO Analizi Alın",
   description:
-    "SEO stratejinizi birlikte oluşturalım. Ücretsiz SEO analizi ve teklif için formumuzu doldurun veya doğrudan bize ulaşın.",
+    "SEO stratejinizi birlikte oluşturalım. Ücretsiz site analizi ve teklif için formumuzu doldurun veya doğrudan bize ulaşın.",
   path: "/iletisim",
 });
 

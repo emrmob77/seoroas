@@ -8,9 +8,9 @@ import { SubpageHero } from "@/components/sections/SubpageHero";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = generateSeoMetadata({
-  title: "Teknik SEO Hizmeti — Altyapınızı Güçlendirin",
+  title: "Teknik SEO Hizmeti — Site Hızı & Altyapı Optimizasyonu",
   description:
-    "Core Web Vitals, site hızı, crawlability ve yapılandırılmış veri optimizasyonu ile teknik altyapınızı arama motorlarına hazırlıyoruz.",
+    "Core Web Vitals, crawl budget, site mimarisi, schema markup ve JS rendering optimizasyonu. Teknik altyapınızı arama motorlarına hazırlayın.",
   path: "/seo/teknik-seo",
 });
 

@@ -27,9 +27,9 @@ import { SubpageHero } from "@/components/sections/SubpageHero";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = generateSeoMetadata({
-  title: "SEO Hizmetleri — Organik Büyüme Mühendisliği",
+  title: "SEO Hizmetleri — Teknik, İçerik & Link Building",
   description:
-    "Teknik altyapıdan içerik stratejisine, link building'den e-ticaret SEO'ya kadar kapsamlı SEO hizmetleri. Veri odaklı yaklaşımla organik trafiğinizi ve gelirinizi artırıyoruz.",
+    "On-page, teknik SEO, link building, lokal, e-ticaret ve içerik SEO dahil 10 uzmanlık alanı. Veri odaklı strateji ile organik trafiğinizi artırın.",
   path: "/seo",
 });
 

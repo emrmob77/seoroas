@@ -8,9 +8,9 @@ import { Star } from "lucide-react";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = generateSeoMetadata({
-  title: "Referanslar & Vaka Analizleri — Başarı Hikayelerimiz",
+  title: "Referanslar — SEO Başarı Hikayeleri & Vaka Analizleri",
   description:
-    "Somut verilerle tescillenmiş büyüme grafikleri. E-ticaret, SaaS, sağlık ve gayrimenkul sektörlerinde SEO başarı hikayelerimizi inceleyin.",
+    "E-ticaret, SaaS, sağlık ve gayrimenkul sektörlerinde somut verilerle kanıtlanmış SEO başarı hikayelerini inceleyin.",
   path: "/referanslar",
 });
 

@@ -22,7 +22,7 @@ const description =
   "Google Tag Manager ile data layer, tetikleyici ve etiket mimarisini tek merkezden yönetin; GA4, reklam pikselleri ve özel olayları hassas ve ölçülebilir şekilde kurgulayın.";
 
 export const metadata: Metadata = generateSeoMetadata({
-  title: "Google Tag Manager Kurulumu — Hassas Takip Altyapısı",
+  title: "Google Tag Manager Kurulumu — GTM Entegrasyonu",
   description,
   path: "/hizmetler/google-tag-manager",
 });

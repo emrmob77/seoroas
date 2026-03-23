@@ -8,9 +8,9 @@ import { SubpageHero } from "@/components/sections/SubpageHero";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = generateSeoMetadata({
-  title: "Antalya SEO Ajansı",
+  title: "Antalya SEO Ajansı — Turizm & Hizmet Sektörü SEO",
   description:
-    "Antalya'nın turizm ve hizmet sektöründe dijital görünürlüğünüzü artırıyoruz. Otelcilik, sağlık turizmi ve gayrimenkul odaklı SEO hizmeti.",
+    "Antalya'da turizm ve hizmet sektörü odaklı SEO hizmeti. Otelcilik, sağlık turizmi ve gayrimenkul için organik trafik ve rezervasyon artışı.",
   path: "/antalya-seo-ajansi",
 });
 

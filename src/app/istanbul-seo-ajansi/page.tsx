@@ -8,9 +8,9 @@ import { SubpageHero } from "@/components/sections/SubpageHero";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = generateSeoMetadata({
-  title: "İstanbul SEO Ajansı",
+  title: "İstanbul SEO Ajansı — Yerel & Kurumsal SEO",
   description:
-    "İstanbul'un en rekabetçi dijital pazarında markanızı öne çıkarıyoruz. Yerel SEO, teknik optimizasyon ve içerik stratejisi ile organik trafiğinizi artırıyoruz.",
+    "İstanbul'da profesyonel SEO hizmeti. Yerel arama, teknik optimizasyon ve içerik stratejisi ile İstanbul pazarında organik büyüme sağlayın.",
   path: "/istanbul-seo-ajansi",
 });
 

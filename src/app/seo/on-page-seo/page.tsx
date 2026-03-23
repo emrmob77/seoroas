@@ -8,9 +8,9 @@ import { SubpageHero } from "@/components/sections/SubpageHero";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = generateSeoMetadata({
-  title: "On-Page SEO Hizmeti — İçerik Optimizasyonu",
+  title: "On-Page SEO Hizmeti — Sayfa İçi Optimizasyon",
   description:
-    "Meta etiketleri, başlık yapısı, iç linkleme ve içerik optimizasyonu ile sayfalarınızı arama motorları için mükemmelleştiriyoruz.",
+    "Title tag, meta description, heading yapısı, iç linkleme ve içerik optimizasyonu ile her sayfanızın sıralama potansiyelini artırın.",
   path: "/seo/on-page-seo",
 });
 

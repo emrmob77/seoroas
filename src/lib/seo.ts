@@ -51,7 +51,8 @@ export function generateSeoMetadata({
   canonicalUrl,
 }: SeoParams): Metadata {
   const url = canonicalUrl || `${SITE_URL}${path}`;
-  const fullTitle = path === "/" ? title : `${title} | ${SITE_NAME}`;
+  const cleanTitle = title.replace(/\s*\|\s*SEOROAS\s*$/i, "").replace(/\s*—\s*SEOROAS\s*$/i, "").trim();
+  const fullTitle = path === "/" ? cleanTitle : `${cleanTitle} | ${SITE_NAME}`;
 
   const robotsDirectives: { index: boolean; follow: boolean } = {
     index: !noIndex,

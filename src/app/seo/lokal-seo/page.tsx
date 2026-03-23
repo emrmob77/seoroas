@@ -8,9 +8,9 @@ import { SubpageHero } from "@/components/sections/SubpageHero";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = generateSeoMetadata({
-  title: "Lokal SEO Hizmeti — Yerel Aramalarda Zirve",
+  title: "Lokal SEO Hizmeti — Google Haritalar & Yerel Arama",
   description:
-    "Google My Business, yerel dizin kayıtları, NAP tutarlılığı ve Google Maps optimizasyonu ile bölgenizde görünür olun.",
+    "Google Business Profile, yerel dizin yönetimi, NAP tutarlılığı ve bölgesel içerik stratejisi ile yakın çevrenizdeki müşterilere ulaşın.",
   path: "/seo/lokal-seo",
 });
 

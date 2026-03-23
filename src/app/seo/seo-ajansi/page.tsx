@@ -8,9 +8,9 @@ import { SubpageHero } from "@/components/sections/SubpageHero";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = generateSeoMetadata({
-  title: "SEO Ajansı — Profesyonel SEO Hizmetleri | SEOROAS",
+  title: "SEO Ajansı — Profesyonel & Sonuç Odaklı SEO",
   description:
-    "Türkiye'nin lider SEO ajansı SEOROAS ile organik trafiğinizi ve gelirlerinizi artırın. Veri odaklı SEO stratejileri, şeffaf raporlama ve ölçülebilir sonuçlar.",
+    "Veri odaklı SEO stratejileri, şeffaf raporlama ve ölçülebilir sonuçlar. Organik trafiğinizi ve gelirlerinizi profesyonel SEO ajansı ile artırın.",
   path: "/seo/seo-ajansi",
 });
 

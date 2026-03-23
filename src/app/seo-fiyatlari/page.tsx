@@ -8,9 +8,9 @@ import { SubpageHero } from "@/components/sections/SubpageHero";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = generateSeoMetadata({
-  title: "SEO Fiyatları 2026 | Türkiye Güncel Paketler",
+  title: "SEO Fiyatları 2026 — Güncel Paketler & Karşılaştırma",
   description:
-    "2026 güncel SEO fiyatları ve paket karşılaştırması. Başlangıç, Profesyonel ve Kurumsal paketlerle organik büyüme. Ücretsiz SEO analizi alın.",
+    "2026 güncel SEO fiyatları. Başlangıç, Profesyonel ve Kurumsal paket karşılaştırması ile bütçenize uygun organik büyüme planını seçin.",
   path: "/seo-fiyatlari",
 });
 

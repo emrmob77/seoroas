@@ -8,9 +8,9 @@ import { SubpageHero } from "@/components/sections/SubpageHero";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = generateSeoMetadata({
-  title: "E-Ticaret SEO Hizmeti — Organik Satış Artışı",
+  title: "E-Ticaret SEO — Ürün & Kategori Optimizasyonu",
   description:
-    "Ürün sayfası optimizasyonu, kategori SEO, schema markup ve dönüşüm optimizasyonu ile e-ticaret sitenizin organik satışlarını artırıyoruz.",
+    "Ürün sayfası, kategori mimarisi, faceted navigation ve product schema ile e-ticaret sitenizin organik gelirini artırın.",
   path: "/seo/e-ticaret-seo",
 });
 

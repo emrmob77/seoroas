@@ -8,9 +8,9 @@ import { SubpageHero } from "@/components/sections/SubpageHero";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = generateSeoMetadata({
-  title: "Kurumsal SEO Hizmeti — Enterprise SEO Stratejileri",
+  title: "Kurumsal SEO Hizmeti — Enterprise Ölçekte Optimizasyon",
   description:
-    "Büyük ölçekli web siteleri için enterprise SEO çözümleri. Teknik altyapı, içerik stratejisi, uluslararası SEO ve kurumsal raporlama ile organik büyüme.",
+    "Büyük ölçekli siteler için otomasyon, uluslararası SEO, teknik altyapı yönetimi ve C-level raporlama. Kurumsal organik büyüme stratejisi.",
   path: "/seo/kurumsal-seo",
 });
 

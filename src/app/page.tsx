@@ -12,9 +12,9 @@ import { CTAForm } from "@/components/sections/CTAForm";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = generateSeoMetadata({
-  title: "SEOROAS | Advanced SEO Performance — 10X Organik Trafik Büyümesi",
+  title: "SEOROAS | SEO Ajansı — Organik Trafik & Gelir Büyümesi",
   description:
-    "Veriye dayalı stratejiler ve mimari SEO optimizasyonu ile markanızın dijital varlığını yeniden inşa ediyoruz. Ücretsiz SEO analizi başlatın.",
+    "Veri odaklı SEO stratejileri ile organik trafiğinizi ve gelirinizi artırın. Teknik SEO, içerik optimizasyonu, link building ve e-ticaret SEO. Ücretsiz analiz alın.",
   path: "/",
 });
 

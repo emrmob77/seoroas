@@ -20,9 +20,9 @@ import {
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = generateSeoMetadata({
-  title: "Hakkımızda — SEOROAS Organik Büyüme Ajansı",
+  title: "Hakkımızda — SEO Odaklı Büyüme Ekibi",
   description:
-    "Arama motoru optimizasyonunu ölçülebilir bir yatırım getirisi (ROAS) odaklı büyüme motoruna dönüştürüyoruz. Veriye dayalı stratejiler ve mühendislik disiplini.",
+    "SEO'yu ölçülebilir yatırım getirisi (ROAS) odaklı büyüme motoruna dönüştüren ekip. Veriye dayalı stratejiler ve mühendislik disiplini.",
   path: "/hakkimizda",
 });
 

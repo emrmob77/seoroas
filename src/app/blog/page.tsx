@@ -12,9 +12,9 @@ import type { Post } from "@/types";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = generateSeoMetadata({
-  title: "SEO Blog — Rehberler, Stratejiler ve Güncel İçgörüler",
+  title: "SEO Blog — Güncel Rehberler & Stratejiler",
   description:
-    "SEO dünyasındaki son gelişmeler, uzman rehberleri ve kanıtlanmış stratejiler. Organik büyüme için bilgiyle donanın.",
+    "SEO trendleri, teknik rehberler ve kanıtlanmış organik büyüme stratejileri. Uzman içgörüleri ile dijital pazarlama bilginizi güncel tutun.",
   path: "/blog",
 });
 

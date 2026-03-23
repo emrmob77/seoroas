@@ -8,9 +8,9 @@ import { SubpageHero } from "@/components/sections/SubpageHero";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = generateSeoMetadata({
-  title: "İçerik SEO Hizmeti — Stratejik İçerik Üretimi",
+  title: "İçerik SEO Hizmeti — Topic Cluster & İçerik Stratejisi",
   description:
-    "Keyword araştırması, içerik takvimi, topic cluster ve content gap analizi ile organik trafiğinizi stratejik içerik üretimiyle büyütüyoruz.",
+    "Anahtar kelime araştırması, topic cluster, content gap analizi ve topikal otorite stratejisi ile organik trafiğinizi içerikle büyütün.",
   path: "/seo/icerik-seo",
 });
 

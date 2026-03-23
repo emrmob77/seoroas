@@ -9,9 +9,9 @@ import { SubpageHero } from "@/components/sections/SubpageHero";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = generateSeoMetadata({
-  title: "TikTok Pixel Kurulumu — Reklam Takip Altyapısı",
+  title: "TikTok Pixel Kurulumu — TikTok Ads Takip & Ölçüm",
   description:
-    "TikTok Pixel ve sunucu tarafı API ile viral içerikten satışa veri köprüsü kurun. Özel event’ler, kitle segmentleri ve KVKK/GDPR uyumlu izleme.",
+    "TikTok Pixel ve Events API kurulumu ile reklam performansınızı ölçün. Özel eventler, kitle segmentasyonu ve KVKK uyumlu server-side izleme.",
   path: "/hizmetler/tiktok-pixel",
 });
 

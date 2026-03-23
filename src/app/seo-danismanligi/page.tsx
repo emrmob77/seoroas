@@ -19,9 +19,9 @@ import {
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = generateSeoMetadata({
-  title: "SEO Danışmanlığı Hizmeti — Markanıza Özel Strateji",
+  title: "SEO Danışmanlığı — Veriye Dayalı Özel Strateji",
   description:
-    "Veri mimarisi ve teknik hassasiyetle kurgulanan, sadece trafik değil, sürdürülebilir ROAS odaklı SEO danışmanlık hizmeti. Ücretsiz ön analiz alın.",
+    "Markanıza özel, veri mimarisi ve teknik hassasiyetle kurgulanan SEO danışmanlık hizmeti. Trafik değil, gelir odaklı strateji. Ücretsiz ön analiz.",
   path: "/seo-danismanligi",
 });
 

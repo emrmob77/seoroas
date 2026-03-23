@@ -8,9 +8,9 @@ import { SubpageHero } from "@/components/sections/SubpageHero";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = generateSeoMetadata({
-  title: "İzmir SEO Ajansı",
+  title: "İzmir SEO Ajansı — Ege'nin Dijital Büyüme Ortağı",
   description:
-    "İzmir'in dinamik ticaret ekosisteminde markanızı dijital arama sonuçlarında öne çıkarıyoruz. Ege bölgesinin lider SEO ajansı.",
+    "İzmir'de profesyonel SEO hizmeti. E-ticaret, turizm ve ihracat sektörlerinde uzmanlaşmış organik büyüme stratejileri.",
   path: "/izmir-seo-ajansi",
 });
 

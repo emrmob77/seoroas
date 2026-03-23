@@ -19,9 +19,9 @@ import { SubpageHero } from "@/components/sections/SubpageHero";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = generateSeoMetadata({
-  title: "Shopify SEO Hizmeti — Mağazanızı Optimize Edin",
+  title: "Shopify SEO Hizmeti — Liquid & Mağaza Optimizasyonu",
   description:
-    "Shopify mağazanız için teknik SEO, Liquid optimizasyonu, uygulama temizliği, JSON-LD ve koleksiyon/ürün sayfası optimizasyonu ile Google görünürlüğünüzü artırıyoruz.",
+    "Shopify Liquid şablon optimizasyonu, uygulama temizliği, JSON-LD schema ve koleksiyon/ürün sayfası SEO ile organik satışlarınızı artırın.",
   path: "/seo/shopify-seo",
 });
 

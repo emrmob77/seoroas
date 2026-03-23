@@ -8,9 +8,9 @@ import { SubpageHero } from "@/components/sections/SubpageHero";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = generateSeoMetadata({
-  title: "Link Building Hizmeti — Otorite İnşası",
+  title: "Link Building Hizmeti — Backlink & Otorite Kazanımı",
   description:
-    "Guest posting, dijital PR, broken link building ve rakip backlink analizi ile domain otoritenizi sürdürülebilir şekilde yükseltiyoruz.",
+    "Editöryel kalitede backlink edinimi, dijital PR, guest posting ve rakip analizi ile domain otoritenizi güçlendirin. DR 80+ kaynaklardan link.",
   path: "/seo/link-building",
 });
 

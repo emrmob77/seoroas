@@ -15,9 +15,9 @@ import { SubpageHero } from "@/components/sections/SubpageHero";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = generateSeoMetadata({
-  title: "Meta Pixel & CAPI Kurulumu — Reklam Performans Optimizasyonu",
+  title: "Meta Pixel & CAPI Kurulumu — Facebook Ads Takibi",
   description:
-    "Meta Pixel ve Conversions API (CAPI) kurulumu ile attribution, dönüşüm eşleştirmesi ve retargeting doğruluğunu artırın. Domain doğrulama ve event mimarisi dahil uçtan uca kurulum.",
+    "Meta Pixel ve Conversions API kurulumu ile reklam attribution doğruluğunu artırın. Domain doğrulama, event mimarisi ve server-side takip dahil.",
   path: "/hizmetler/meta-pixel-capi",
 });
 

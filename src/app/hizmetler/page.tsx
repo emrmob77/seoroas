@@ -21,9 +21,9 @@ import { SubpageHero } from "@/components/sections/SubpageHero";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = generateSeoMetadata({
-  title: "Tüm Hizmetlerimiz — Dijital Büyüme Mimarisi",
+  title: "Dijital Pazarlama Hizmetleri — SEO & Analitik",
   description:
-    "SEO danışmanlığı, teknik SEO, performans pazarlama, lokal SEO, platform optimizasyonu ve takip altyapısı — hepsi tek çatı altında. SEOROAS ile dijital dominasyonunuzu inşa edin.",
+    "SEO danışmanlığı, teknik optimizasyon, performans pazarlama, lokal SEO ve takip altyapısı. Tek çatı altında dijital büyüme stratejileri.",
   path: "/hizmetler",
 });
 

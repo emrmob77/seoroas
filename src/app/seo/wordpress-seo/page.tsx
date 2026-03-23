@@ -8,9 +8,9 @@ import { SubpageHero } from "@/components/sections/SubpageHero";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = generateSeoMetadata({
-  title: "WordPress SEO Hizmeti — WP Sitenizi Optimize Edin",
+  title: "WordPress SEO Hizmeti — WP Hız & Performans",
   description:
-    "WordPress sitenizde eklenti ayarlarının ötesine geçin: hız, teknik sertleştirme, içerik kümesi mimarisi ve sorgu optimizasyonu ile tam kapasite SEO.",
+    "WordPress site hızı, güvenlik, veritabanı optimizasyonu, eklenti temizliği ve içerik mimarisi ile WP sitenizin SEO performansını artırın.",
   path: "/seo/wordpress-seo",
 });
 
