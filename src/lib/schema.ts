@@ -1,16 +1,39 @@
 const SITE_URL = "https://seoroas.com";
 const SITE_NAME = "SEOROAS";
 
+export interface SiteContactInfo {
+  phone?: string;
+  email?: string;
+  address?: string;
+}
+
+let _contactCache: SiteContactInfo = {};
+
+export function setSiteContactInfo(info: SiteContactInfo) {
+  _contactCache = info;
+}
+
 export function localBusinessSchema(overrides?: Record<string, unknown>) {
+  const phone = _contactCache.phone || undefined;
+  const email = _contactCache.email || undefined;
+  const address = _contactCache.address || undefined;
+
+  const addressLines = address?.split("\n").map((l) => l.trim()).filter(Boolean);
+  const streetAddress = addressLines?.[0];
+  const locality = addressLines?.[1];
+
   return {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     name: SITE_NAME,
     url: SITE_URL,
-    telephone: "+90-XXX-XXX-XXXX",
+    ...(phone && { telephone: phone }),
+    ...(email && { email }),
     address: {
       "@type": "PostalAddress",
       addressCountry: "TR",
+      ...(streetAddress && { streetAddress }),
+      ...(locality && { addressLocality: locality }),
     },
     areaServed: "TR",
     ...overrides,

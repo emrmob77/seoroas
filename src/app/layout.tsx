@@ -7,8 +7,9 @@ import { CookieBanner } from "@/components/layout/CookieBanner";
 import { GoogleTagManagerHead, GoogleTagManagerBody } from "@/components/analytics/GoogleTagManager";
 import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
 import { SchemaOrg } from "@/components/seo/SchemaOrg";
-import { localBusinessSchema, webSiteSchema } from "@/lib/schema";
+import { localBusinessSchema, webSiteSchema, setSiteContactInfo } from "@/lib/schema";
 import { fetchNavigation } from "@/sanity/queries/navigation";
+import { sanityFetch } from "@/sanity/client";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -58,7 +59,16 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const navigation = await fetchNavigation();
+  const [navigation, siteSettings] = await Promise.all([
+    fetchNavigation(),
+    sanityFetch<{ phone?: string; email?: string; address?: string } | null>(
+      `*[_type == "siteSettings"][0]{ phone, email, address }`
+    ),
+  ]);
+
+  if (siteSettings) {
+    setSiteContactInfo(siteSettings);
+  }
 
   return (
     <html lang="tr" className={`${manrope.variable} h-full antialiased`}>
