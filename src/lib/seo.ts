@@ -23,18 +23,32 @@ interface SanitySeo {
   ogImage?: { asset?: { url?: string } };
 }
 
-const PAGE_SEO_QUERY = `*[_type == "page" && path == $path][0]{
-  "seoTitle": seo.seoTitle,
-  "seoDescription": seo.seoDescription,
-  "noIndex": seo.noIndex,
-  "noFollow": seo.noFollow,
-  "canonicalUrl": seo.canonicalUrl,
-  "ogImage": seo.ogImage{ asset->{ url } }
+const PAGE_SEO_QUERY = `*[_type == "pageSeo" && pagePath == $path][0]{
+  seoTitle,
+  seoDescription,
+  noIndex,
+  noFollow,
+  canonicalUrl,
+  isPublished,
+  "ogImage": ogImage{ asset->{ url } }
 }`;
+
+interface PageSeoResult extends SanitySeo {
+  isPublished?: boolean;
+}
 
 async function fetchPageSeo(path: string): Promise<SanitySeo | null> {
   try {
-    return await sanityFetch<SanitySeo | null>(PAGE_SEO_QUERY, { path });
+    const result = await sanityFetch<PageSeoResult | null>(PAGE_SEO_QUERY, {
+      path,
+    });
+    if (!result) return null;
+
+    if (result.isPublished === false) {
+      result.noIndex = true;
+    }
+
+    return result;
   } catch {
     return null;
   }

@@ -35,13 +35,34 @@ const staticPages = [
   { path: "/antalya-seo-ajansi", changeFrequency: "monthly" as const, priority: 0.8 },
 ];
 
+interface PageSeoEntry {
+  pagePath: string;
+  isPublished: boolean;
+  noIndex: boolean;
+}
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const entries: MetadataRoute.Sitemap = staticPages.map((page) => ({
-    url: `${SITE_URL}${page.path}`,
-    lastModified: new Date(),
-    changeFrequency: page.changeFrequency,
-    priority: page.priority,
-  }));
+  let excludedPaths = new Set<string>();
+
+  if (sanityClient) {
+    try {
+      const seoEntries = await sanityClient.fetch<PageSeoEntry[]>(
+        `*[_type == "pageSeo" && (isPublished == false || noIndex == true)]{ pagePath, isPublished, noIndex }`
+      );
+      excludedPaths = new Set(seoEntries.map((e) => e.pagePath));
+    } catch {
+      // Sanity unavailable
+    }
+  }
+
+  const entries: MetadataRoute.Sitemap = staticPages
+    .filter((page) => !excludedPaths.has(page.path))
+    .map((page) => ({
+      url: `${SITE_URL}${page.path}`,
+      lastModified: new Date(),
+      changeFrequency: page.changeFrequency,
+      priority: page.priority,
+    }));
 
   if (sanityClient) {
     try {
@@ -58,7 +79,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         });
       }
     } catch {
-      // Sanity unavailable, skip blog posts in sitemap
+      // Sanity unavailable
     }
   }
 

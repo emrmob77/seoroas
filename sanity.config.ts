@@ -97,6 +97,15 @@ function deskStructure(S: StructureBuilder) {
             .title('SEO Ayarları')
             .items([
               S.listItem()
+                .title('Sayfa Meta & SEO')
+                .schemaType('pageSeo')
+                .child(
+                  S.documentTypeList('pageSeo')
+                    .title('Sayfa Meta & SEO Yönetimi')
+                    .defaultOrdering([{ field: 'pagePath', direction: 'asc' }])
+                ),
+              S.divider(),
+              S.listItem()
                 .title('Yönlendirmeler (301/302/410)')
                 .schemaType('redirect')
                 .child(

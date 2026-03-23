@@ -10,11 +10,13 @@ import { seoFields } from "./seoFields";
 import { redirect } from "./redirect";
 import { category } from "./category";
 import { navigation } from "./navigation";
+import { pageSeo } from "./pageSeo";
 
 export const schemaTypes = [
   seoFields,
   post,
   page,
+  pageSeo,
   service,
   caseStudy,
   localPage,
