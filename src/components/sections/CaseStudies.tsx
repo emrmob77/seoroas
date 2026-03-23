@@ -31,7 +31,7 @@ export function CaseStudies() {
             Sonuçlar Konuşsun.
           </h2>
           <Link
-            href="/vaka-calismalari"
+            href="/referanslar"
             className="text-primary text-xs font-bold uppercase tracking-widest border-b-[0.5px] border-primary pb-1 hover:opacity-70 transition-opacity"
           >
             Tüm Referanslar
