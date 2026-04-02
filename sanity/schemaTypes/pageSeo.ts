@@ -65,6 +65,33 @@ export const pageSeo = defineType({
       options: { hotspot: true },
     }),
     defineField({
+      name: "priority",
+      title: "Sitemap Önceliği",
+      type: "number",
+      description:
+        "0.0 – 1.0 arası. Ana sayfa 1.0, önemli sayfalar 0.8-0.9, düşük öncelikli sayfalar 0.3-0.5. Varsayılan 0.7.",
+      initialValue: 0.7,
+      validation: (r) => r.min(0).max(1),
+    }),
+    defineField({
+      name: "changeFrequency",
+      title: "Değişim Sıklığı",
+      type: "string",
+      description: "Arama motorlarına bu sayfanın ne sıklıkla değiştiğini bildirir.",
+      initialValue: "monthly",
+      options: {
+        list: [
+          { title: "Her zaman", value: "always" },
+          { title: "Saatlik", value: "hourly" },
+          { title: "Günlük", value: "daily" },
+          { title: "Haftalık", value: "weekly" },
+          { title: "Aylık", value: "monthly" },
+          { title: "Yıllık", value: "yearly" },
+          { title: "Asla", value: "never" },
+        ],
+      },
+    }),
+    defineField({
       name: "noIndex",
       title: "noIndex",
       type: "boolean",
