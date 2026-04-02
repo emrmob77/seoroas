@@ -38,6 +38,8 @@ export const metadata: Metadata = {
     locale: "tr_TR",
     siteName: "SEOROAS",
   },
+  authors: [{ name: "SEOROAS", url: "https://seoroas.com" }],
+  publisher: "SEOROAS",
   robots: {
     index: true,
     follow: true,

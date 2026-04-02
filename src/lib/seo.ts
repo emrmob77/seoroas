@@ -46,6 +46,7 @@ async function fetchPageSeo(path: string): Promise<SanitySeo | null> {
 
     if (result.isPublished === false) {
       result.noIndex = true;
+      result.noFollow = true;
     }
 
     return result;
@@ -94,9 +95,6 @@ function buildMetadata({
   const titleValue: Metadata["title"] =
     path === "/" ? { absolute: clean } : clean;
 
-  const robotsDirectives = { index: !noIndex, follow: !noFollow };
-  const hasCustomRobots = noIndex || noFollow;
-
   return {
     title: titleValue,
     description,
@@ -120,7 +118,11 @@ function buildMetadata({
       title: displayTitle,
       description,
     },
-    robots: hasCustomRobots ? robotsDirectives : undefined,
+    robots: {
+      index: !noIndex,
+      follow: !noFollow,
+      googleBot: { index: !noIndex, follow: !noFollow },
+    },
   };
 }
 
