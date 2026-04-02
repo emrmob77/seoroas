@@ -27,6 +27,15 @@ export const caseStudy = defineType({
       title: "Görsel",
       type: "image",
       options: { hotspot: true },
+      fields: [
+        defineField({
+          name: "alt",
+          title: "Alt Metin",
+          type: "string",
+          description: "Görsel açıklaması (SEO ve erişilebilirlik için zorunlu)",
+          validation: (r) => r.required().warning("Alt metin SEO için önemlidir"),
+        }),
+      ],
     }),
     defineField({
       name: "beforeAfter",

@@ -27,7 +27,22 @@ export const localPage = defineType({
       name: "body",
       title: "İçerik",
       type: "array",
-      of: [{ type: "block" }, { type: "image", options: { hotspot: true } }],
+      of: [
+        { type: "block" },
+        {
+          type: "image",
+          options: { hotspot: true },
+          fields: [
+            defineField({
+              name: "alt",
+              title: "Alt Metin",
+              type: "string",
+              description: "Görsel açıklaması (SEO ve erişilebilirlik için zorunlu)",
+              validation: (r) => r.required().warning("Alt metin SEO için önemlidir"),
+            }),
+          ],
+        },
+      ],
     }),
     defineField({
       name: "faqs",

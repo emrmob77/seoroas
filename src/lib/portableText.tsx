@@ -146,6 +146,30 @@ export const portableTextComponents: PortableTextComponents = {
     ),
   },
   types: {
+    image: ({ value }) => {
+      if (!value?.asset?._ref) return null;
+      const ref = value.asset._ref as string;
+      const [, id, dimensions, format] = ref.split("-");
+      const [w, h] = (dimensions || "").split("x");
+      const src = `https://cdn.sanity.io/images/${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}/${process.env.NEXT_PUBLIC_SANITY_DATASET}/${id}-${dimensions}.${format}`;
+      return (
+        <figure className="my-8">
+          <img
+            src={src}
+            alt={value.alt || ""}
+            width={Number(w) || undefined}
+            height={Number(h) || undefined}
+            loading="lazy"
+            className="rounded-2xl w-full h-auto"
+          />
+          {value.alt && (
+            <figcaption className="text-center text-sm text-on-surface-variant mt-3">
+              {value.alt}
+            </figcaption>
+          )}
+        </figure>
+      );
+    },
     ctaBox: ({ value }) => (
       <div className="my-10 bg-primary rounded-2xl p-10 text-center space-y-4">
         <h4 className="text-2xl font-bold text-on-primary">

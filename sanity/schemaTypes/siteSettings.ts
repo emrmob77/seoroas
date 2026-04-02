@@ -53,6 +53,14 @@ export const siteSettings = defineType({
       type: "image",
       description: "Sosyal paylaşımlarda kullanılacak varsayılan görsel (1200x630px)",
       options: { hotspot: true },
+      fields: [
+        defineField({
+          name: "alt",
+          title: "Alt Metin",
+          type: "string",
+          description: "OG görseli açıklaması",
+        }),
+      ],
       group: "seo",
     }),
     defineField({
