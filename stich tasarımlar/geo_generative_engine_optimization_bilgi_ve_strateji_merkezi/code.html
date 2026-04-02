@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GEO.Architect | Generative Engine Optimization by SEOROAS</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary": "#5f5f61",
+              "surface-dim": "#d3dbe2",
+              "on-tertiary": "#fff7f3",
+              "on-primary": "#faf6ff",
+              "surface-variant": "#dde3e9",
+              "background": "#f9f9fb",
+              "on-secondary-fixed": "#3f3f41",
+              "inverse-on-surface": "#9c9d9f",
+              "on-secondary": "#fbf8fa",
+              "on-tertiary-container": "#4b2b00",
+              "primary-dim": "#403cc8",
+              "error-dim": "#4f0116",
+              "inverse-primary": "#8382ff",
+              "on-surface-variant": "#596065",
+              "on-primary-container": "#403bc7",
+              "on-background": "#2d3338",
+              "on-secondary-container": "#525154",
+              "surface-bright": "#f9f9fb",
+              "secondary-fixed-dim": "#d6d3d6",
+              "tertiary-fixed": "#fd9d06",
+              "surface-container-lowest": "#ffffff",
+              "error-container": "#ff8b9a",
+              "on-tertiary-fixed-variant": "#573300",
+              "on-tertiary-fixed": "#2b1600",
+              "surface-container-high": "#e4e9ee",
+              "tertiary": "#895300",
+              "surface-container-low": "#f2f4f6",
+              "primary-container": "#e2dfff",
+              "tertiary-container": "#fd9d06",
+              "inverse-surface": "#0c0e10",
+              "secondary-dim": "#535355",
+              "primary-fixed": "#e2dfff",
+              "on-primary-fixed": "#2b22b5",
+              "on-primary-fixed-variant": "#4a47d2",
+              "tertiary-fixed-dim": "#eb9100",
+              "secondary-fixed": "#e4e2e4",
+              "surface-container-highest": "#dde3e9",
+              "primary-fixed-dim": "#d2d0ff",
+              "on-error": "#fff7f7",
+              "on-secondary-fixed-variant": "#5c5b5d",
+              "outline-variant": "#acb3b8",
+              "on-error-container": "#782232",
+              "outline": "#757c81",
+              "on-surface": "#2d3338",
+              "tertiary-dim": "#784800",
+              "surface-container": "#ebeef2",
+              "surface-tint": "#4d4ad5",
+              "surface": "#f9f9fb",
+              "primary": "#4d4ad5",
+              "secondary-container": "#e4e2e4",
+              "error": "#9e3f4e"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .backdrop-blur-32 { backdrop-filter: blur(32px); }
+      .tracking-tight-custom { letter-spacing: -0.04em; }
+      .ghost-border { border: 0.5px solid rgba(172, 179, 184, 0.2); }
+      .architectural-shadow { box-shadow: 0 40px 80px -20px rgba(45, 51, 56, 0.06); }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-background antialiased selection:bg-primary/20">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 rounded-full mt-4 max-w-5xl mx-auto left-0 right-0 border border-slate-200/20 dark:border-slate-800/20 bg-white/70 dark:bg-slate-950/70 backdrop-blur-32 shadow-[0_20px_40px_rgba(0,0,0,0.04)] flex justify-between items-center px-8 py-3">
+<div class="text-2xl font-black tracking-tighter text-slate-900 dark:text-slate-50">GEO.Architect</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-manrope tracking-tight text-sm font-medium uppercase text-indigo-600 dark:text-indigo-400 border-b-2 border-indigo-600 pb-1" href="#">Methodology</a>
+<a class="font-manrope tracking-tight text-sm font-medium uppercase text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors" href="#">AI Engines</a>
+<a class="font-manrope tracking-tight text-sm font-medium uppercase text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors" href="#">Case Studies</a>
+<a class="font-manrope tracking-tight text-sm font-medium uppercase text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors" href="#">ROI</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="font-manrope tracking-tight text-sm font-medium uppercase text-slate-500 hover:text-slate-900 transition-colors">Login</button>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-manrope tracking-tight text-sm font-medium uppercase hover:opacity-80 transition-opacity">Consultation</button>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="pt-52 pb-32 px-6 flex flex-col items-center text-center">
+<div class="max-w-4xl space-y-8">
+<span class="text-primary font-label text-sm tracking-[0.2em] uppercase font-bold">The Future of Visibility</span>
+<h1 class="text-6xl md:text-8xl font-headline font-extrabold tracking-tight-custom leading-[0.9] text-on-surface">
+                    The GEO Authority: <br/>Dominating the Generative Search Era.
+                </h1>
+<p class="text-xl md:text-2xl text-on-surface-variant font-light max-w-2xl mx-auto leading-relaxed">
+                    We bridge the gap between static content and AI synthesis, ensuring your brand is the primary source of truth for Large Language Models.
+                </p>
+<div class="pt-8">
+<button class="bg-primary text-on-primary px-10 py-5 rounded-full text-lg font-bold shadow-xl hover:scale-95 transition-transform">
+                        Secure AI Visibility
+                    </button>
+</div>
+</div>
+<div class="mt-24 w-full max-w-6xl aspect-[21/9] rounded-xl overflow-hidden ghost-border relative">
+<img class="w-full h-full object-cover grayscale opacity-40" data-alt="Abstract visualization of a neural network with glowing connections and clean white architectural space backdrop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSLQWbGTkEQXsAMuD0gpPLJC3eSEFOSg1uWu1xPwLjf-C8kooEKyRPPhuhXcYmspo5QXEWvMfzl68Epjse7au44WvvQ6u2avfeMMqAkwyKlrJOOjam0_ooytHIFxrti8ttAwqB_wURr9TeaiglVPaJTecS3CnAa4AfU5DUVeJcIhGnRwm4SMH6F7HF9vPulFdypK5-HmEyo1CRRzAVRpiPHWnj6cjI_V2QnwnBDft7Pp2LvlYXYo0j8dyFjpCTEhCmP4QIlKnvp-k"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="bg-white/40 backdrop-blur-xl p-12 rounded-full ghost-border">
+<span class="material-symbols-outlined text-6xl text-primary" data-weight="fill">hub</span>
+</div>
+</div>
+</div>
+</section>
+<!-- What is GEO? -->
+<section class="py-32 bg-surface-container-low px-6">
+<div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-24 items-center">
+<div class="space-y-12">
+<h2 class="text-4xl md:text-5xl font-headline font-bold tracking-tight-custom">What is GEO? <br/><span class="text-on-surface-variant font-light">The Paradigm Shift.</span></h2>
+<div class="space-y-6 text-lg text-on-surface-variant leading-relaxed">
+<p>Generative Engine Optimization (GEO) is the technical discipline of optimizing brand data for ingestion and synthesis by Large Language Models like GPT-4, Gemini, and Claude.</p>
+<p>Unlike traditional SEO, which focuses on link equity and keywords, GEO focuses on <strong>Information Density</strong> and <strong>Knowledge Graph Association</strong>. AI engines don't just "rank" links—they synthesize answers and cite authoritative sources.</p>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div class="p-6 bg-surface-container-lowest rounded-xl ghost-border">
+<span class="text-3xl font-bold text-primary block mb-2">92%</span>
+<span class="text-xs font-label uppercase tracking-widest text-on-surface-variant">SGE Preference</span>
+</div>
+<div class="p-6 bg-surface-container-lowest rounded-xl ghost-border">
+<span class="text-3xl font-bold text-primary block mb-2">3.4x</span>
+<span class="text-xs font-label uppercase tracking-widest text-on-surface-variant">Citation Rate</span>
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="aspect-square bg-white rounded-3xl architectural-shadow p-12 flex flex-col justify-center">
+<div class="space-y-4 border-l-2 border-primary pl-8">
+<p class="text-xs font-bold text-primary uppercase tracking-widest">Query Processing</p>
+<p class="text-2xl font-headline font-medium italic">"Tell me the best enterprise GEO strategy for 2026..."</p>
+</div>
+<div class="mt-12 space-y-4">
+<div class="h-4 w-3/4 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary w-1/3"></div>
+</div>
+<div class="h-4 w-1/2 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary w-2/3"></div>
+</div>
+<p class="text-sm font-label text-on-surface-variant mt-4">AI Ingestion Layer: <span class="text-on-surface font-bold">Synthesizing seoroas.ai...</span></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Methodology (How to do GEO?) -->
+<section class="py-48 px-6">
+<div class="max-w-5xl mx-auto text-center mb-24">
+<h2 class="text-5xl font-headline font-bold tracking-tight-custom mb-6">The Methodology.</h2>
+<p class="text-xl text-on-surface-variant">Our 4-step engineering process for the AI-First era.</p>
+</div>
+<div class="max-w-7xl mx-auto space-y-32">
+<!-- Step 1 -->
+<div class="flex flex-col md:flex-row gap-16 items-center">
+<div class="md:w-1/2">
+<span class="text-8xl font-black text-primary/10 select-none">01</span>
+<h3 class="text-3xl font-bold font-headline mt-[-2rem] mb-6">Entity Mapping</h3>
+<p class="text-on-surface-variant leading-relaxed">We define your brand's core identity within the global knowledge graph. By establishing clear semantic relationships between your products, experts, and industry concepts, we make it impossible for LLMs to misinterpret your value proposition.</p>
+</div>
+<div class="md:w-1/2 ghost-border rounded-2xl p-8 bg-surface-container-lowest">
+<img class="rounded-lg mb-6 h-64 w-full object-cover" data-alt="Cybersecurity digital data hub with interconnected nodes in a minimalist clean setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAl_9MNeLQhUo740BMPgqDipnTQhrBdQlTkoIoQu3uwr0r7VB5k1y-ROceJYeP2XDcqfcqb1WZWGKaSUO2ms6ZN1LzCr-3q46R7Lhebd6N4d-uINJG4uWOQxibshidFW8zKv267wN_WT1vLX3_DqMFc9wu3AI4wg29vqroWlwlwEakqRjw1LXrkNS7cqjZ96YFlCt8CpIYmI2AwqMkkq2yRFlOLg-5iesB1rTsVAZ12Vy5Kb0l5iErLHaaRcWJqqRPP7ADn7rTWi7M"/>
+<div class="flex justify-between text-xs font-label uppercase text-on-surface-variant">
+<span>Knowledge Graph Node</span>
+<span>Status: Verified</span>
+</div>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col md:flex-row-reverse gap-16 items-center">
+<div class="md:w-1/2">
+<span class="text-8xl font-black text-primary/10 select-none">02</span>
+<h3 class="text-3xl font-bold font-headline mt-[-2rem] mb-6">Source Integrity</h3>
+<p class="text-on-surface-variant leading-relaxed">Implementing advanced JSON-LD and micro-schemas designed specifically for non-linear AI crawling. We ensure your raw data is structured for perfect machine readability, reducing hallucinations and increasing confidence scores.</p>
+</div>
+<div class="md:w-1/2 ghost-border rounded-2xl p-8 bg-surface-container-lowest">
+<img class="rounded-lg mb-6 h-64 w-full object-cover" data-alt="Highly detailed server room with clean white lights and geometric cable management" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaccq-DWkJe7IzqL1ICwYhAuvkpTtUhQ8ho0QJzPsYjxiIxYqoSNXT0265lZ0xzgmxZB_N8oIq5-Stir4FZKTB_F55LkjmvlBmqxBwSVLPbAIn-DIbsArZ8G03EcaQdrce2c39QdbfGv-IwKJ2k6_0skRT6r4QojmHyFJ_2xqz1FE1aWxpvExSVVAz-t69T374uWBOhlkUpOe1it6Eb9HiNJorQk-3vqXtAkkw4d77eqyXvaeM8JWcfoamrnse0UdgLcNUOISu7Eo"/>
+<div class="flex justify-between text-xs font-label uppercase text-on-surface-variant">
+<span>Schema Validation</span>
+<span>Compliance: 100%</span>
+</div>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col md:flex-row gap-16 items-center">
+<div class="md:w-1/2">
+<span class="text-8xl font-black text-primary/10 select-none">03</span>
+<h3 class="text-3xl font-bold font-headline mt-[-2rem] mb-6">Conversational Tuning</h3>
+<p class="text-on-surface-variant leading-relaxed">Optimizing content for the way humans actually talk to AI. We target the long-tail semantic intent that fuels conversational search, moving beyond "keywords" to "knowledge responses."</p>
+</div>
+<div class="md:w-1/2 ghost-border rounded-2xl p-8 bg-surface-container-lowest">
+<img class="rounded-lg mb-6 h-64 w-full object-cover" data-alt="Close up of a modern sleek computer monitor showing abstract waveform data in a bright room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfWxKbSZ1VaGnR4_UxGWmnIVWhe_fh5GgWC40rPkWpJSrzEMcVCPW7s6c89HvpSOq0tXcMA824oivlP2hlF4wugLGFHmC3b_aSZD-pbOLvpkchSvZJsOqAG8pqSXn31IgswZ7wT9b9-DLkVdQx7rYiFSXWuCXBDf36FI5pCRqZkHafIli8Nr40p1V7OPaOeqBESlgn-9ILtlg1aNHlJDr5l0lXz0AZsgfSF_LyNUVyvLvM9nC18L4GgxrOjKbzZXA9wzs4N3nRgkI"/>
+<div class="flex justify-between text-xs font-label uppercase text-on-surface-variant">
+<span>Semantic Resonance</span>
+<span>Score: Optimal</span>
+</div>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="flex flex-col md:flex-row-reverse gap-16 items-center">
+<div class="md:w-1/2">
+<span class="text-8xl font-black text-primary/10 select-none">04</span>
+<h3 class="text-3xl font-bold font-headline mt-[-2rem] mb-6">Citation Engineering</h3>
+<p class="text-on-surface-variant leading-relaxed">Applying strategic maneuvers to increase the mathematical probability of your brand being sourced as a citation. We monitor citation rates across major LLMs and adjust architectural signals in real-time.</p>
+</div>
+<div class="md:w-1/2 ghost-border rounded-2xl p-8 bg-surface-container-lowest">
+<img class="rounded-lg mb-6 h-64 w-full object-cover" data-alt="Satellite view of Earth at night with blue connectivity lines illustrating global information network" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWLuuS_g_B5Svmp319k7QDBjMwnPBFzPar9wYLq9SamV1JWPlNFUd0rV1YCVZlPNVCQFi2Loh_qgmEA0WdS6l56Ukvnr0_fP74beHWm5DB47nmVvC7a5l3KXT6Ppg-0ypgpfN-tzWNoSIHU3sbA9Kf0myzqVw1Je41u32YM9q3H24M2AKZCBqo0EcnwSDxf40oWrhQ7qjkNyEW_XS6BP2IhG6eOPiB41kc9JPHZAHUGCbXNXYIqUz1_8LzlyJnfUvmNPrlVKjmx-Q"/>
+<div class="flex justify-between text-xs font-label uppercase text-on-surface-variant">
+<span>Authority Injection</span>
+<span>Network: Global</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- LLM Comparison Grid -->
+<section class="py-32 bg-on-background text-surface px-6">
+<div class="max-w-7xl mx-auto">
+<div class="mb-24 text-center">
+<h2 class="text-5xl font-headline font-bold mb-6">Engine Specific Optimization.</h2>
+<p class="text-surface-variant max-w-2xl mx-auto">Different LLMs have different ingestion patterns. We optimize for the unique architecture of each engine.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<!-- ChatGPT -->
+<div class="p-12 border border-surface-variant/20 rounded-2xl space-y-8 hover:bg-white/5 transition-colors">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-4xl text-primary">psychology</span>
+<h4 class="text-2xl font-bold">OpenAI / ChatGPT</h4>
+</div>
+<ul class="space-y-4 text-surface-variant font-light">
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary text-sm mt-1">check</span>Focus on long-form authority signals</li>
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary text-sm mt-1">check</span>Plugin &amp; API integration tuning</li>
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary text-sm mt-1">check</span>Semantic consistency across threads</li>
+</ul>
+</div>
+<!-- Gemini -->
+<div class="p-12 border border-surface-variant/20 rounded-2xl space-y-8 hover:bg-white/5 transition-colors">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-4xl text-primary">google_plus_reshare</span>
+<h4 class="text-2xl font-bold">Google / Gemini</h4>
+</div>
+<ul class="space-y-4 text-surface-variant font-light">
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary text-sm mt-1">check</span>SGE (Search Generative Exp) integration</li>
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary text-sm mt-1">check</span>Verified Merchant &amp; Merchant Center sync</li>
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary text-sm mt-1">check</span>E-E-A-T signals for LLM Trust</li>
+</ul>
+</div>
+<!-- Perplexity -->
+<div class="p-12 border border-surface-variant/20 rounded-2xl space-y-8 hover:bg-white/5 transition-colors">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-4xl text-primary">search_insights</span>
+<h4 class="text-2xl font-bold">Perplexity AI</h4>
+</div>
+<ul class="space-y-4 text-surface-variant font-light">
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary text-sm mt-1">check</span>Citation mapping for real-time search</li>
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary text-sm mt-1">check</span>Structured data for source cards</li>
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary text-sm mt-1">check</span>Fact-checking verification loops</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Why SEOROAS? -->
+<section class="py-48 px-6">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row gap-24">
+<div class="md:w-1/3 space-y-8">
+<h2 class="text-5xl font-headline font-bold tracking-tight-custom">The GEO <br/>Architect.</h2>
+<p class="text-on-surface-variant leading-relaxed">SEOROAS is not a marketing agency; we are a precision engineering firm specializing in information visibility.</p>
+<div class="space-y-4 pt-8">
+<div class="flex items-center gap-4 group cursor-default">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-white">analytics</span>
+</div>
+<div>
+<h5 class="font-bold">Citation Rate</h5>
+<p class="text-xs text-on-surface-variant uppercase tracking-widest">Real-time LLM tracking</p>
+</div>
+</div>
+<div class="flex items-center gap-4 group cursor-default">
+<div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-white">sentiment_satisfied</span>
+</div>
+<div>
+<h5 class="font-bold">Sentiment Score</h5>
+<p class="text-xs text-on-surface-variant uppercase tracking-widest">AI Brand Perception Monitoring</p>
+</div>
+</div>
+</div>
+</div>
+<div class="md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-px bg-outline-variant/20 rounded-3xl overflow-hidden border border-outline-variant/20">
+<div class="bg-surface p-12 space-y-4">
+<span class="text-primary material-symbols-outlined">architecture</span>
+<h4 class="text-xl font-bold">Architectural Precision</h4>
+<p class="text-on-surface-variant text-sm">Every line of code is written to be ingested by the world's most advanced reasoning engines.</p>
+</div>
+<div class="bg-surface p-12 space-y-4">
+<span class="text-primary material-symbols-outlined">database</span>
+<h4 class="text-xl font-bold">Knowledge Injection</h4>
+<p class="text-on-surface-variant text-sm">Proprietary technology that maps your proprietary data directly into public knowledge graphs.</p>
+</div>
+<div class="bg-surface p-12 space-y-4">
+<span class="text-primary material-symbols-outlined">radar</span>
+<h4 class="text-xl font-bold">Visibility Metrics</h4>
+<p class="text-on-surface-variant text-sm">Go beyond clicks. Measure how many generative responses mention your brand and in what context.</p>
+</div>
+<div class="bg-surface p-12 space-y-4">
+<span class="text-primary material-symbols-outlined">bolt</span>
+<h4 class="text-xl font-bold">Generative Speed</h4>
+<p class="text-on-surface-variant text-sm">We adapt your content strategy to the speed of LLM training cycles and search index updates.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Detailed FAQ -->
+<section class="py-32 bg-surface-container-low px-6">
+<div class="max-w-4xl mx-auto space-y-12">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-headline font-bold">Technical Insights.</h2>
+</div>
+<div class="space-y-6">
+<div class="bg-surface-container-lowest p-8 rounded-2xl ghost-border">
+<h4 class="text-lg font-bold mb-4">How does GEO differ from traditional SEO?</h4>
+<p class="text-on-surface-variant">Traditional SEO optimizes for a list of blue links based on keywords. GEO optimizes for the generative process itself. This requires a focus on semantic completeness, entity clarity, and establishing verifiable "facts" that LLMs can trust and reproduce.</p>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-2xl ghost-border">
+<h4 class="text-lg font-bold mb-4">Will SGE replace organic traffic?</h4>
+<p class="text-on-surface-variant">It won't replace it, but it will transform it. Users are looking for answers, not links. If your brand provides the answer and is cited as the authority, you win the highest intent traffic possible. We focus on capturing the citation slot.</p>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-2xl ghost-border">
+<h4 class="text-lg font-bold mb-4">What is a 'Knowledge Graph Injection'?</h4>
+<p class="text-on-surface-variant">This is our proprietary process of ensuring your brand's unique data points are connected to established nodes in the global knowledge graph (like Wikidata, schema.org, and industry-specific databases) used by AI training sets.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full pt-24 pb-12 bg-slate-50 dark:bg-slate-900">
+<div class="max-w-7xl mx-auto px-12 grid grid-cols-2 md:grid-cols-4 gap-12">
+<div class="col-span-2 md:col-span-1 space-y-4">
+<div class="text-lg font-bold tracking-tighter text-slate-900 dark:text-slate-50">GEO Architect</div>
+<p class="font-manrope text-xs tracking-wide leading-relaxed text-slate-500">Precision Generative Optimization for the AI-First era.</p>
+</div>
+<div class="space-y-4">
+<h5 class="font-bold text-xs uppercase tracking-[0.2em] text-slate-900 dark:text-white">Resources</h5>
+<ul class="space-y-2">
+<li><a class="font-manrope text-xs text-slate-500 hover:text-indigo-600 dark:hover:text-indigo-400 underline-offset-4 hover:underline transition-all" href="#">What is GEO?</a></li>
+<li><a class="font-manrope text-xs text-slate-500 hover:text-indigo-600 dark:hover:text-indigo-400 underline-offset-4 hover:underline transition-all" href="#">How to GEO</a></li>
+<li><a class="font-manrope text-xs text-slate-500 hover:text-indigo-600 dark:hover:text-indigo-400 underline-offset-4 hover:underline transition-all" href="#">Whitepaper</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h5 class="font-bold text-xs uppercase tracking-[0.2em] text-slate-900 dark:text-white">Platform</h5>
+<ul class="space-y-2">
+<li><a class="font-manrope text-xs text-slate-500 hover:text-indigo-600 dark:hover:text-indigo-400 underline-offset-4 hover:underline transition-all" href="#">API Docs</a></li>
+<li><a class="font-manrope text-xs text-slate-500 hover:text-indigo-600 dark:hover:text-indigo-400 underline-offset-4 hover:underline transition-all" href="#">Privacy</a></li>
+<li><a class="font-manrope text-xs text-slate-500 hover:text-indigo-600 dark:hover:text-indigo-400 underline-offset-4 hover:underline transition-all" href="#">Contact</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h5 class="font-bold text-xs uppercase tracking-[0.2em] text-slate-900 dark:text-white">Newsletter</h5>
+<div class="flex">
+<input class="w-full bg-white dark:bg-slate-800 ghost-border rounded-l-full px-4 py-2 text-xs" placeholder="Email" type="email"/>
+<button class="bg-primary text-white rounded-r-full px-4 py-2 text-xs">Join</button>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-12 mt-24 pt-8 border-t border-slate-200/20">
+<p class="font-manrope text-xs tracking-wide leading-relaxed text-slate-500">© 2026 GEO Architect. Precision Generative Optimization.</p>
+</div>
+</footer>
+</body></html>

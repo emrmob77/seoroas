@@ -38,6 +38,13 @@ const allServices = [
     href: "/seo",
   },
   {
+    icon: Zap,
+    title: "GEO (Generative Engine Optimization)",
+    desc: "Markanızı ChatGPT, Gemini, Claude ve Perplexity'nin birincil kaynağı haline getirin. AI motorlarında görünürlük ve atıf optimizasyonu.",
+    tags: ["Entity Mapping", "Knowledge Graph", "AI Atıf Mühendisliği"],
+    href: "/geo",
+  },
+  {
     icon: Code,
     title: "Teknik SEO Mühendisliği",
     desc: "Site performansı için donanım düzeyinde mühendislik. Crawl sürtünmesini elimine edip Core Web Vitals'ı sunucu seviyesinde optimize ediyoruz.",
@@ -45,11 +52,11 @@ const allServices = [
     href: "/seo/teknik-seo",
   },
   {
-    icon: BarChart3,
-    title: "Google Ads & Performans",
-    desc: "Hassas hedefli edinim. Arama, görüntülü reklam ve remarketing'i dengeleyerek marka bütünlüğünden ödün vermeden ROAS'ı maksimize ediyoruz.",
-    tags: ["Semantik Hedefleme", "Remarketing", "ROAS Optimizasyonu"],
-    href: "/iletisim",
+    icon: MonitorSmartphone,
+    title: "Takip & Analitik",
+    desc: "Ölçüm altyapısı. GTM kurulumundan Server-Side takibe kadar her atıfın hassas ve eyleme dönüştürülebilir olmasını sağlıyoruz.",
+    tags: ["Server-Side GTM", "Event Schema", "Cross-Domain"],
+    href: "/hizmetler/google-tag-manager",
   },
   {
     icon: MapPin,
@@ -61,16 +68,16 @@ const allServices = [
   {
     icon: Globe,
     title: "Platform Uzmanlığı",
-    desc: "WordPress ve Shopify için uzmanlaşmış çerçeveler. Liquid şablonları ve eklenti konfigürasyonlarını optimize ediyoruz.",
-    tags: ["WordPress Güçlendirme", "Shopify Optimizasyonu", "Plugin Çakışma"],
+    desc: "WordPress ve Shopify ekosistemlerine özel SEO çerçeveleri. Tema yapısı, eklenti uyumu ve Liquid şablonlarını performans odaklı optimize ediyoruz.",
+    tags: ["WordPress SEO", "Shopify Optimizasyonu", "Tema & Eklenti Uyumu"],
     href: "/seo/wordpress-seo",
   },
   {
-    icon: MonitorSmartphone,
-    title: "Takip & Analitik",
-    desc: "Ölçüm altyapısı. GTM kurulumundan Server-Side takibe kadar her atıfın hassas ve eyleme dönüştürülebilir olmasını sağlıyoruz.",
-    tags: ["Server-Side GTM", "Event Schema", "Cross-Domain"],
-    href: "/hizmetler/google-tag-manager",
+    icon: BarChart3,
+    title: "Google Ads & Performans",
+    desc: "Hassas hedefli edinim. Arama, görüntülü reklam ve remarketing'i dengeleyerek marka bütünlüğünden ödün vermeden ROAS'ı maksimize ediyoruz.",
+    tags: ["Semantik Hedefleme", "Remarketing", "ROAS Optimizasyonu"],
+    href: "/iletisim",
   },
 ];
 

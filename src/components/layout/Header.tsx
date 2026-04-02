@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import {
@@ -73,6 +73,12 @@ const defaultMegaMenuGroups: MegaMenuGroup[] = [
     ],
   },
   {
+    groupTitle: "AI",
+    links: [
+      { title: "GEO (Generative Engine Optimization)", url: "/geo", icon: "Zap" },
+    ],
+  },
+  {
     groupTitle: "Bölgeler",
     links: [
       { title: "İstanbul", url: "/istanbul-seo-ajansi", icon: "MapPin" },
@@ -109,6 +115,8 @@ function isSolutionsActive(pathname: string) {
   return (
     pathname === "/seo" ||
     pathname.startsWith("/seo/") ||
+    pathname === "/geo" ||
+    pathname.startsWith("/geo/") ||
     pathname === "/hizmetler" ||
     pathname.startsWith("/hizmetler/") ||
     pathname.endsWith("-seo-ajansi")
@@ -130,23 +138,30 @@ export function Header({ navigation }: HeaderProps) {
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const closeTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
 
-  const hidden = new Set(navigation?.hiddenPaths ?? []);
-  const isVisible = (url: string) => !hidden.has(url);
-
   const megaMenuTitle = navigation?.megaMenuTitle || defaultMegaMenuTitle;
-  const rawMegaMenuGroups = navigation?.megaMenuGroups?.length ? navigation.megaMenuGroups : defaultMegaMenuGroups;
-  const megaMenuGroups = rawMegaMenuGroups
-    .map((g) => ({ ...g, links: g.links.filter((l) => isVisible(l.url)) }))
-    .filter((g) => g.links.length > 0);
-  const mainLinks = (navigation?.mainLinks?.length ? navigation.mainLinks : defaultMainLinks).filter((l) => isVisible(l.url));
   const ctaButton = navigation?.ctaButton?.title ? navigation.ctaButton : defaultCtaButton;
-  const megaMenuBottomLinks = (navigation?.megaMenuBottomLinks?.length
-    ? navigation.megaMenuBottomLinks
-    : defaultMegaMenuBottomLinks).filter((l) => isVisible(l.url));
+
+  const { megaMenuGroups, mainLinks, megaMenuBottomLinks } = useMemo(() => {
+    const hidden = new Set(navigation?.hiddenPaths ?? []);
+    const isVisible = (url: string) => !hidden.has(url);
+
+    const rawMegaMenuGroups = navigation?.megaMenuGroups?.length ? navigation.megaMenuGroups : defaultMegaMenuGroups;
+    const groups = rawMegaMenuGroups
+      .map((g) => ({ ...g, links: g.links.filter((l) => isVisible(l.url)) }))
+      .filter((g) => g.links.length > 0);
+    const links = (navigation?.mainLinks?.length ? navigation.mainLinks : defaultMainLinks).filter((l) => isVisible(l.url));
+    const bottomLinks = (navigation?.megaMenuBottomLinks?.length
+      ? navigation.megaMenuBottomLinks
+      : defaultMegaMenuBottomLinks).filter((l) => isVisible(l.url));
+
+    return { megaMenuGroups: groups, mainLinks: links, megaMenuBottomLinks: bottomLinks };
+  }, [navigation]);
 
   useEffect(() => {
+    setMounted(true);
     const onScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -174,7 +189,7 @@ export function Header({ navigation }: HeaderProps) {
 
   const linkBase = "tracking-tight text-sm font-medium transition-colors duration-300";
   const linkIdle = "text-zinc-500 hover:text-zinc-900";
-  const linkActiveClass = "text-zinc-900 font-semibold border-b-2 border-primary pb-1";
+  const linkActiveClass = mounted ? "text-zinc-900 font-semibold border-b-2 border-primary pb-1" : linkIdle;
 
   return (
     <>

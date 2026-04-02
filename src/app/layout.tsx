@@ -73,10 +73,10 @@ export default async function RootLayout({
   return (
     <html lang="tr" className={`${manrope.variable} h-full antialiased`}>
       <head>
-        <GoogleTagManagerHead />
         <SchemaOrg schema={[localBusinessSchema(), webSiteSchema()]} />
       </head>
       <body className="min-h-full flex flex-col font-sans bg-background text-on-surface">
+        <GoogleTagManagerHead />
         <GoogleTagManagerBody />
         <Header navigation={navigation} />
         <main className="flex-1">{children}</main>
