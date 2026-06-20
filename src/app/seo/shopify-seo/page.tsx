@@ -2,27 +2,32 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import {
   ArrowRight,
+  BookOpen,
+  CheckCircle2,
   ChevronDown,
   Copy,
   FileJson,
   Gauge,
+  Globe,
   Layers,
   Link2,
+  Rocket,
   ShieldCheck,
   Sparkles,
   Zap,
 } from "lucide-react";
 import { generateDynamicSeoMetadata } from "@/lib/seo";
 import { SchemaOrg } from "@/components/seo/SchemaOrg";
+import { serviceSchema, faqSchema } from "@/lib/schema";
 import { SubpageHero } from "@/components/sections/SubpageHero";
 
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
   return generateDynamicSeoMetadata({
-    title: "Shopify SEO Hizmeti — Liquid & Mağaza Optimizasyonu",
+    title: "Shopify SEO Hizmeti & Ajansı — Liquid ve Mağaza Optimizasyonu",
     description:
-      "Shopify Liquid şablon optimizasyonu, uygulama temizliği, JSON-LD schema ve koleksiyon/ürün sayfası SEO ile organik satışlarınızı artırın.",
+      "Shopify SEO ajansı olarak Liquid tema optimizasyonu, uygulama temizliği, JSON-LD schema ve koleksiyon/ürün sayfası SEO ile organik satışlarınızı artırıyoruz. Ücretsiz Shopify SEO analizi.",
     path: "/seo/shopify-seo",
   });
 }
@@ -30,7 +35,31 @@ export async function generateMetadata(): Promise<Metadata> {
 const faqItems = [
   {
     q: "Shopify SEO nedir?",
-    a: "Shopify SEO, mağazanızın tema, uygulama ve içerik katmanlarında arama motorlarının anlayacağı net sinyaller üretmenizi sağlar. Ürün ve koleksiyon sayfalarında doğru başlık hiyerarşisi, canonical yönetimi, yapılandırılmış veri ve site hızı ile organik trafik ve dönüşümü birlikte büyütür.",
+    a: "Shopify SEO, Shopify altyapısında kurulu bir e-ticaret mağazasının tema, uygulama ve içerik katmanlarında arama motorlarının anlayacağı net sinyaller üretmesini sağlayan optimizasyon çalışmalarının bütünüdür. Ürün ve koleksiyon sayfalarında doğru başlık hiyerarşisi, canonical yönetimi, yapılandırılmış veri ve site hızı ile organik trafiği ve dönüşümü birlikte büyütür.",
+  },
+  {
+    q: "Shopify'da SEO yapılabilir mi?",
+    a: "Evet. Shopify yapısı gereği bazı URL ve şablon davranışlarını kısıtlasa da; tema (Liquid) düzenlemeleri, meta alanları, blog modülü, yapılandırılmış veri ve uygulama yönetimi ile güçlü bir teknik SEO uygulanabilir. Önemli olan platformun sınırlarını bilerek doğru müdahaleleri yapmaktır.",
+  },
+  {
+    q: "Shopify SEO nasıl yapılır?",
+    a: "Süreç teknik temelle başlar: markalı alan adı, Search Console kurulumu, site hızı ve sitemap. Ardından anahtar kelime araştırması, başlık ve meta optimizasyonu, benzersiz ürün/koleksiyon metinleri, görsel alt metinleri, temiz URL ve canonical yönetimi gelir. Son olarak içerik (blog) ve link building ile otorite büyütülür.",
+  },
+  {
+    q: "Shopify SEO hizmeti / ajansı ne iş yapar?",
+    a: "Bir Shopify SEO ajansı; mağazanızın teknik denetimini yapar, Liquid tema ve uygulama katmanını optimize eder, ürün ve koleksiyon sayfalarını arama niyetine göre düzenler, yapılandırılmış veri ekler ve içerik + link stratejisiyle organik görünürlüğü artırır. SEOROAS olarak bu süreci ölçülebilir trafik ve dönüşüm hedefleriyle yönetiyoruz.",
+  },
+  {
+    q: "Shopify SEO fiyatları ne kadar?",
+    a: "Fiyat; mağazanızın büyüklüğüne, ürün sayısına, rekabet düzeyine ve hedeflerinize göre değişir. Tek seferlik teknik denetimden aylık sürekli optimizasyona kadar farklı paketler sunuyoruz. Güncel paket ve fiyatlar için SEO fiyatları sayfamızı inceleyebilir veya ücretsiz analiz talep edebilirsiniz.",
+  },
+  {
+    q: "Shopify SEO sonuçları ne kadar sürede görülür?",
+    a: "İlk iyileşmeler (teknik düzeltmeler ve hız kazanımları) genellikle ilk haftalarda fark edilir. Organik trafikteki belirgin artış 2-3 ay içinde başlar, sürdürülebilir ve bileşik büyüme ise çoğunlukla 6-12 ayda oturur. Rekabetin yoğun olduğu sektörlerde bu süre uzayabilir.",
+  },
+  {
+    q: "Shopify mağazam Google'da neden çıkmıyor?",
+    a: "En sık nedenler: mağazanın arama motorlarına kapalı (şifreli/gizli) olması, indekslenmeyi engelleyen robots/noindex ayarları, yinelenen içerik, zayıf veya kopya ürün açıklamaları, çok düşük site hızı ve hiç backlink olmamasıdır. Teknik denetimle bu engelleri tespit edip sırayla gideriyoruz.",
   },
   {
     q: "Shopify'da yinelenen içerik sorunu nasıl çözülür?",
@@ -42,11 +71,74 @@ const faqItems = [
   },
 ];
 
+const howToSteps = [
+  {
+    title: "Teknik Temel",
+    desc: "Markalı alan adı, Search Console & Bing Webmaster kurulumu, dinamik XML sitemap ve site hızı (Core Web Vitals) ile sağlam bir zemin kurarız.",
+  },
+  {
+    title: "On-Page Optimizasyon",
+    desc: "Anahtar kelime araştırması, başlık hiyerarşisi, benzersiz meta ve ürün açıklamaları, görsel alt metinleri ve temiz URL yapısı ile sayfaları arama niyetine hizalarız.",
+  },
+  {
+    title: "Yapılandırılmış Veri",
+    desc: "Product, Offer, BreadcrumbList ve FAQ JSON-LD ile zengin sonuç potansiyelini açar, tıklanma oranını yükseltiriz.",
+  },
+  {
+    title: "İçerik & Otorite",
+    desc: "Blog içeriği, iç linkleme ve kaliteli backlink çalışmasıyla mağazanızın konu otoritesini ve organik trafiğini büyütürüz.",
+  },
+];
+
 const checklistItems = [
-  "Liquid Kod Optimizasyonu",
-  "Dinamik XML Sitemap",
-  "Görsel Sıkıştırma & WebP",
-  "Internal Link Mimarisi",
+  {
+    title: "Markalı Alan Adı & Yapılandırma",
+    desc: "myshopify.com yerine markalı domain, www/non-www tekilleştirme ve doğru yönlendirmeler.",
+  },
+  {
+    title: "Search Console & Bing Webmaster",
+    desc: "Mülk doğrulama, sitemap gönderimi ve indeksleme/kapsam sorunlarının sürekli izlenmesi.",
+  },
+  {
+    title: "Dinamik XML Sitemap & Robots",
+    desc: "Gelir getiren sayfalara tarama bütçesi; gereksiz parametre ve şablon yollarının kapatılması.",
+  },
+  {
+    title: "Site Hızı & Core Web Vitals",
+    desc: "Liquid sadeleştirme, kritik CSS, görsel WebP sıkıştırma ve script yükünün azaltılması.",
+  },
+  {
+    title: "Başlık Hiyerarşisi (H1–H6)",
+    desc: "Her şablonda tek ve net H1, mantıklı alt başlıklarla bot ve kullanıcı için okunabilir yapı.",
+  },
+  {
+    title: "Meta Title & Description",
+    desc: "Şablon değişkenleriyle benzersiz, anahtar kelime ve CTR odaklı başlık/açıklamalar.",
+  },
+  {
+    title: "Benzersiz Ürün & Koleksiyon Metni",
+    desc: "Üretici açıklamalarının kopyalanmasından kaçınma; özgün, arama niyetine uygun içerik.",
+  },
+  {
+    title: "Görsel Optimizasyonu & Alt Metin",
+    desc: "Sıkıştırma, doğru boyutlandırma ve açıklayıcı alt metinlerle görsel aramada görünürlük.",
+  },
+  {
+    title: "Temiz URL & Canonical",
+    desc: "Filtre, etiket ve varyant kaynaklı yinelenen URL'lerin canonical ile kontrol altına alınması.",
+  },
+  {
+    title: "Yapılandırılmış Veri (JSON-LD)",
+    desc: "Product, Offer, Breadcrumb ve FAQ şemalarıyla zengin snippet uygunluğu.",
+  },
+  {
+    title: "İç Linkleme & Blog Silosu",
+    desc: "Koleksiyon → ürün → blog akışıyla otorite dağıtımı ve konu kümeleri.",
+  },
+  {
+    title: "Shopify Markets & Hreflang",
+    desc: "Çok dilli/çok bölgeli satışta doğru hreflang ve bölgesel hedefleme yapılandırması.",
+  },
 ];
 
 const optimizationSteps = [
@@ -60,7 +152,30 @@ const optimizationSteps = [
   },
   {
     title: "Breadcrumb & UX",
-    desc: "İç bağlantı, breadcrumb ve net CTA akışı ile ürünten sepete giden yolu kısaltıyor, oturum içi kaybolmayı azaltıyoruz.",
+    desc: "İç bağlantı, breadcrumb ve net CTA akışı ile üründen sepete giden yolu kısaltıyor, oturum içi kaybolmayı azaltıyoruz.",
+  },
+];
+
+const relatedServices = [
+  {
+    href: "/seo/teknik-seo",
+    title: "Teknik SEO",
+    desc: "Tarama, indeksleme ve site hızı odaklı teknik altyapı denetimi.",
+  },
+  {
+    href: "/seo/e-ticaret-seo",
+    title: "E-Ticaret SEO",
+    desc: "Ürün ve kategori mimarisiyle organik gelir büyütme.",
+  },
+  {
+    href: "/seo/link-building",
+    title: "Link Building",
+    desc: "Kaliteli ve güvenli backlink'lerle alan otoritesi.",
+  },
+  {
+    href: "/seo/icerik-seo",
+    title: "İçerik SEO",
+    desc: "Arama niyetine uygun blog ve koleksiyon içerikleri.",
   },
 ];
 
@@ -69,23 +184,12 @@ export default function ShopifySeoPage() {
     <>
       <SchemaOrg
         schema={[
-          {
-            "@context": "https://schema.org",
-            "@type": "Service",
-            name: "Shopify SEO Hizmeti",
-            provider: { "@type": "LocalBusiness", name: "SEOROAS" },
-            description:
-              "Shopify mağazaları için teknik SEO, Liquid optimizasyonu, uygulama temizliği, JSON-LD ve koleksiyon/ürün sayfası optimizasyonu.",
-          },
-          {
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            mainEntity: faqItems.map((item) => ({
-              "@type": "Question",
-              name: item.q,
-              acceptedAnswer: { "@type": "Answer", text: item.a },
-            })),
-          },
+          serviceSchema(
+            "Shopify SEO Hizmeti",
+            "Shopify mağazaları için teknik SEO, Liquid optimizasyonu, uygulama temizliği, JSON-LD ve koleksiyon/ürün sayfası optimizasyonu sunan profesyonel Shopify SEO ajansı hizmeti.",
+            "/seo/shopify-seo"
+          ),
+          faqSchema(faqItems.map((item) => ({ question: item.q, answer: item.a }))),
         ]}
       />
 
@@ -97,14 +201,18 @@ export default function ShopifySeoPage() {
         badge="Shopify · Commerce SEO"
         title={
           <>
-            Shopify Mağazanızı Google&apos;da{" "}
+            Shopify SEO ile Mağazanızı Google&apos;da{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-dim">
               Zirveye
             </span>{" "}
             Taşıyoruz
           </>
         }
-        subtitle="Tema ve uygulama katmanında hız, teknik SEO ve dönüşüm odaklı içerik sinyalleriyle mağazanızı hem kullanıcılar hem arama motorları için optimize ediyoruz."
+        subtitle="Shopify SEO ajansı olarak tema ve uygulama katmanında hız, teknik SEO ve dönüşüm odaklı içerik sinyalleriyle mağazanızı hem kullanıcılar hem arama motorları için optimize ediyoruz."
+        stats={[
+          { value: "96/100", label: "Hedef PageSpeed" },
+          { value: "0.8s", label: "Hedef LCP" },
+        ]}
       >
         <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4">
           <Link
@@ -118,10 +226,194 @@ export default function ShopifySeoPage() {
             href="/seo-fiyatlari"
             className="inline-flex items-center justify-center gap-2 border-2 border-primary text-primary px-8 py-4 rounded-full font-bold text-base hover:bg-primary/5 transition-colors"
           >
-            Tüm çözümler
+            Shopify SEO fiyatları
           </Link>
         </div>
       </SubpageHero>
+
+      {/* What is Shopify SEO — educational */}
+      <section className="py-16 md:py-24 px-5 md:px-8 border-t border-outline-variant/10">
+        <div className="max-w-3xl mx-auto">
+          <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-primary/10 mb-6">
+            <BookOpen className="h-6 w-6 text-primary" />
+          </div>
+          <span className="text-primary font-bold tracking-widest text-xs uppercase">Temeller</span>
+          <h2 className="mt-3 text-3xl md:text-4xl font-black tracking-tighter text-on-background">
+            Shopify SEO Nedir?
+          </h2>
+          <div className="mt-6 space-y-5 text-on-surface-variant font-light leading-relaxed">
+            <p>
+              <strong className="font-semibold text-on-background">Shopify SEO</strong>, Shopify altyapısında
+              kurulu bir e-ticaret mağazasının arama motorlarında daha görünür olması için tema (Liquid),
+              uygulama ve içerik katmanlarında yapılan optimizasyon çalışmalarının bütünüdür. Amaç; ürün ve
+              koleksiyon sayfalarınızı doğru anahtar kelimelerle, hızlı ve teknik olarak temiz biçimde
+              sunarak ücretli reklama bağımlılığı azaltıp sürdürülebilir organik satış üretmektir.
+            </p>
+            <p>
+              <strong className="font-semibold text-on-background">Shopify&apos;da SEO yapılabilir mi?</strong>{" "}
+              Evet. Platform bazı URL ve şablon davranışlarını kısıtlasa da; meta alanları, blog modülü,
+              yapılandırılmış veri ve Liquid düzenlemeleriyle güçlü bir teknik SEO mümkündür. Önemli olan
+              Shopify&apos;ın sınırlarını bilerek doğru müdahaleleri yapmaktır — bizim{" "}
+              <Link href="/seo/teknik-seo" className="text-primary font-medium hover:underline">
+                teknik SEO
+              </Link>{" "}
+              yaklaşımımız tam da bunun üzerine kuruludur.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* How to do Shopify SEO */}
+      <section className="py-16 md:py-24 px-5 md:px-8 bg-surface-container-low/40">
+        <div className="max-w-7xl mx-auto">
+          <div className="max-w-3xl mb-12 md:mb-16">
+            <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-primary/10 mb-6">
+              <Rocket className="h-6 w-6 text-primary" />
+            </div>
+            <span className="text-primary font-bold tracking-widest text-xs uppercase">Yöntem</span>
+            <h2 className="mt-3 text-3xl md:text-4xl font-black tracking-tighter text-on-background">
+              Shopify SEO Nasıl Yapılır? 4 Temel Adım
+            </h2>
+            <p className="mt-4 text-on-surface-variant font-light leading-relaxed">
+              Mağazanızı sıfırdan üst sıralara taşıyan, önceliklendirilmiş ve ölçülebilir bir yol haritası.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {howToSteps.map((step, index) => (
+              <div
+                key={step.title}
+                className="bg-surface-container-lowest border border-outline-variant/10 p-8 rounded-[2rem] hover:shadow-xl transition-shadow"
+              >
+                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/15 text-primary text-sm font-black mb-5">
+                  {index + 1}
+                </span>
+                <h3 className="text-lg font-bold text-on-background mb-2">{step.title}</h3>
+                <p className="text-on-surface-variant text-sm font-light leading-relaxed">{step.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Topical authority — core components */}
+      <section className="py-16 md:py-24 px-5 md:px-8 border-t border-outline-variant/10">
+        <div className="max-w-7xl mx-auto">
+          <div className="max-w-3xl mb-12 md:mb-16">
+            <span className="text-primary font-bold tracking-widest text-xs uppercase">Kapsamlı Yaklaşım</span>
+            <h2 className="mt-3 text-3xl md:text-4xl font-black tracking-tighter text-on-background">
+              Shopify SEO&apos;nun 6 Temel Bileşeni
+            </h2>
+            <p className="mt-4 text-on-surface-variant font-light leading-relaxed">
+              Sürdürülebilir organik büyüme; teknik, içerik ve otorite katmanlarının birlikte çalışmasıyla
+              mümkündür. Shopify mağazanızda bu altı bileşeni uçtan uca yönetiyoruz.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-x-12 gap-y-10">
+            <div className="space-y-3">
+              <div className="flex items-center gap-3">
+                <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary/15 text-primary text-sm font-black">1</span>
+                <h3 className="text-xl font-bold text-on-background">Anahtar Kelime Araştırması</h3>
+              </div>
+              <p className="text-on-surface-variant font-light leading-relaxed text-sm">
+                Ürün, koleksiyon ve bilgi amaçlı aramaları arama niyetine göre ayırır; satın alma niyeti yüksek
+                kelimeleri koleksiyon ve ürün şablonlarına, bilgi amaçlı kelimeleri bloga eşleriz. Doğru
+                kelime-URL eşlemesi Shopify SEO&apos;nun temelidir. Süreci{" "}
+                <Link href="/blog/seo-nasil-yapilir" className="text-primary font-medium hover:underline">
+                  SEO nasıl yapılır
+                </Link>{" "}
+                rehberimizde anlatıyoruz.
+              </p>
+            </div>
+            <div className="space-y-3">
+              <div className="flex items-center gap-3">
+                <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary/15 text-primary text-sm font-black">2</span>
+                <h3 className="text-xl font-bold text-on-background">On-Page Optimizasyon</h3>
+              </div>
+              <p className="text-on-surface-variant font-light leading-relaxed text-sm">
+                Benzersiz meta başlık ve açıklamalar, üreticiden kopyalanmayan özgün ürün/koleksiyon metinleri,
+                açıklayıcı görsel alt metinleri ve temiz URL yapısı ile her sayfayı hedef kelimesine hizalarız.
+                Temeller için{" "}
+                <Link href="/blog/seo-nedir" className="text-primary font-medium hover:underline">
+                  SEO nedir
+                </Link>{" "}
+                yazımıza göz atabilirsiniz.
+              </p>
+            </div>
+            <div className="space-y-3">
+              <div className="flex items-center gap-3">
+                <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary/15 text-primary text-sm font-black">3</span>
+                <h3 className="text-xl font-bold text-on-background">Teknik SEO &amp; Site Hızı</h3>
+              </div>
+              <p className="text-on-surface-variant font-light leading-relaxed text-sm">
+                Core Web Vitals, tarama bütçesi, canonical ve indeksleme yönetimi mağazanın sağlık temelidir.
+                Detaylar için{" "}
+                <Link href="/seo/teknik-seo" className="text-primary font-medium hover:underline">
+                  teknik SEO
+                </Link>{" "}
+                hizmetimize, kurulum doğrulaması için{" "}
+                <Link href="/blog/search-console-nedir" className="text-primary font-medium hover:underline">
+                  Search Console
+                </Link>{" "}
+                rehberine bakın.
+              </p>
+            </div>
+            <div className="space-y-3">
+              <div className="flex items-center gap-3">
+                <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary/15 text-primary text-sm font-black">4</span>
+                <h3 className="text-xl font-bold text-on-background">İçerik Pazarlaması &amp; Blog</h3>
+              </div>
+              <p className="text-on-surface-variant font-light leading-relaxed text-sm">
+                Shopify blog modülüyle &quot;nedir&quot;, &quot;nasıl&quot; ve &quot;en iyi&quot; türü bilgi
+                amaçlı aramaları yakalar, ziyaretçiyi satın alma hunisine taşırız. Konu kümeleri otoriteyi
+                büyütür —{" "}
+                <Link href="/blog/icerik-pazarlamasi-nedir" className="text-primary font-medium hover:underline">
+                  içerik pazarlaması nedir
+                </Link>{" "}
+                yazımızda detaylandırdık.
+              </p>
+            </div>
+            <div className="space-y-3">
+              <div className="flex items-center gap-3">
+                <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary/15 text-primary text-sm font-black">5</span>
+                <h3 className="text-xl font-bold text-on-background">Link Building (Off-Page)</h3>
+              </div>
+              <p className="text-on-surface-variant font-light leading-relaxed text-sm">
+                Kaliteli ve doğal backlink&apos;ler mağazanızın alan otoritesini yükseltir. Konuk yazılar,
+                bağlantı değeri taşıyan içerikler ve dijital PR ile güvenli bir link profili kurarız.{" "}
+                <Link href="/seo/link-building" className="text-primary font-medium hover:underline">
+                  Link building
+                </Link>{" "}
+                hizmetimizi ve{" "}
+                <Link
+                  href="/blog/backlink-nedir-seo-icin-onemi-ve-nasil-yapilir"
+                  className="text-primary font-medium hover:underline"
+                >
+                  backlink nedir
+                </Link>{" "}
+                yazımızı inceleyin.
+              </p>
+            </div>
+            <div className="space-y-3">
+              <div className="flex items-center gap-3">
+                <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary/15 text-primary text-sm font-black">6</span>
+                <h3 className="text-xl font-bold text-on-background">Ölçümleme &amp; Analitik</h3>
+              </div>
+              <p className="text-on-surface-variant font-light leading-relaxed text-sm">
+                GA4 ve Search Console kurulumu, e-ticaret olay takibi ve ROAS ölçümü ile her kararı veriyle
+                alırız. Optimizasyonun etkisini gelir bazında raporlarız —{" "}
+                <Link href="/blog/google-analytics-4-kurulum-rehberi" className="text-primary font-medium hover:underline">
+                  GA4 kurulumu
+                </Link>{" "}
+                ve{" "}
+                <Link href="/blog/roas-nedir" className="text-primary font-medium hover:underline">
+                  ROAS nedir
+                </Link>{" "}
+                yazılarımıza bakabilirsiniz.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Speed */}
       <section className="py-16 md:py-24 px-5 md:px-8 border-t border-outline-variant/10">
@@ -130,7 +422,7 @@ export default function ShopifySeoPage() {
             <div className="space-y-8">
               <span className="text-primary font-bold tracking-widest text-xs uppercase">Performans</span>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tighter text-on-background leading-tight">
-                Gereksiz Uygulama Temizliği ve Işık Hızında Yükleme
+                Shopify Hız Optimizasyonu: Gereksiz Uygulama Temizliği ve Işık Hızında Yükleme
               </h2>
               <p className="text-on-surface-variant font-light leading-relaxed max-w-lg">
                 Script yükünü azaltıp Liquid ve ön yüz varlıklarını sadeleştirerek Core Web Vitals odaklı bir
@@ -175,7 +467,7 @@ export default function ShopifySeoPage() {
           <div className="max-w-3xl mb-12 md:mb-16">
             <span className="text-primary font-bold tracking-widest text-xs uppercase">Mimari</span>
             <h2 className="mt-3 text-3xl md:text-4xl font-black tracking-tighter text-on-background">
-              Shopify&apos;a Özel Zorluklar &amp; Mimari Çözümlerimiz
+              Shopify&apos;a Özel SEO Zorlukları &amp; Mimari Çözümlerimiz
             </h2>
             <p className="mt-4 text-on-surface-variant font-light leading-relaxed">
               Platforma özgü URL ve şablon davranışlarını kontrol altına alarak indeks kalitesini ve sıralama
@@ -224,20 +516,24 @@ export default function ShopifySeoPage() {
           <div className="max-w-2xl mb-12">
             <h2 className="text-3xl md:text-4xl font-black tracking-tight">Teknik Shopify SEO Kontrol Listesi</h2>
             <p className="mt-4 text-white/60 font-light leading-relaxed">
-              Mağazanızın teknik omurgasını sırayla güçlendiren dört kritik başlık.
+              Mağazanızın teknik omurgasını sırayla güçlendiren 12 kritik başlık.
             </p>
           </div>
-          <ol className="grid sm:grid-cols-2 gap-6 md:gap-8 list-none">
+          <ol className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 list-none">
             {checklistItems.map((item, i) => (
               <li
-                key={item}
-                className="flex gap-5 p-6 md:p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm"
+                key={item.title}
+                className="flex gap-4 p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm"
               >
-                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary text-on-primary text-xl font-black">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary text-on-primary text-base font-black">
                   {i + 1}
                 </span>
                 <div>
-                  <p className="font-bold text-lg leading-snug">{item}</p>
+                  <p className="font-bold text-base leading-snug mb-1.5 flex items-center gap-2">
+                    <CheckCircle2 className="h-4 w-4 text-primary shrink-0" />
+                    {item.title}
+                  </p>
+                  <p className="text-sm text-white/55 font-light leading-relaxed">{item.desc}</p>
                 </div>
               </li>
             ))}
@@ -285,6 +581,48 @@ export default function ShopifySeoPage() {
         </div>
       </section>
 
+      {/* Shopify Markets / global */}
+      <section className="py-16 md:py-24 px-5 md:px-8 bg-surface-container-low/40">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div className="space-y-6">
+              <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-primary/10">
+                <Globe className="h-6 w-6 text-primary" />
+              </div>
+              <span className="text-primary font-bold tracking-widest text-xs uppercase">Global Satış</span>
+              <h2 className="text-3xl md:text-4xl font-black tracking-tighter text-on-background leading-tight">
+                Shopify Markets ile Uluslararası SEO
+              </h2>
+              <p className="text-on-surface-variant font-light leading-relaxed max-w-lg">
+                Birden fazla ülke ve dilde satış yapan mağazalarda doğru hreflang yapılandırması, bölgesel
+                fiyat/para birimi sinyalleri ve yerelleştirilmiş içerikle her pazarda görünür olmanızı sağlarız.
+                Yurt dışına açılan Shopify mağazaları için global organik trafik en büyük büyüme kaldıracıdır.
+              </p>
+              <Link
+                href="/iletisim"
+                className="inline-flex items-center gap-2 text-primary font-bold hover:gap-3 transition-all"
+              >
+                Global SEO için görüşelim
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+            <div className="bg-surface-container-lowest border border-outline-variant/10 rounded-[2rem] p-8 md:p-10 space-y-4">
+              {[
+                "Hreflang & dil/bölge hedefleme",
+                "Yerelleştirilmiş başlık, meta ve içerik",
+                "Bölgesel para birimi ve fiyat sinyalleri",
+                "Pazar bazlı anahtar kelime araştırması",
+              ].map((row) => (
+                <div key={row} className="flex items-center gap-3 text-on-surface-variant font-light">
+                  <CheckCircle2 className="h-5 w-5 text-primary shrink-0" />
+                  {row}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* App cleanup */}
       <section className="py-16 md:py-24 px-5 md:px-8">
         <div className="max-w-3xl mx-auto">
@@ -308,9 +646,11 @@ export default function ShopifySeoPage() {
         <div className="max-w-3xl mx-auto">
           <div className="mb-10 md:mb-14 text-center">
             <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-on-background mb-3">
-              Shopify SEO SSS
+              Shopify SEO Hakkında Sık Sorulan Sorular
             </h2>
-            <p className="text-on-surface-variant font-light">Mağaza sahiplerinin en sık sorduğu üç soru.</p>
+            <p className="text-on-surface-variant font-light">
+              Mağaza sahiplerinin Shopify SEO hizmeti hakkında en çok sorduğu sorular.
+            </p>
           </div>
           <div className="space-y-4">
             {faqItems.map((item) => (
@@ -324,6 +664,44 @@ export default function ShopifySeoPage() {
                 </summary>
                 <p className="mt-4 text-on-surface-variant leading-relaxed font-light text-sm">{item.a}</p>
               </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Related services — internal links */}
+      <section className="py-16 md:py-24 px-5 md:px-8 bg-surface-container-low/40">
+        <div className="max-w-7xl mx-auto">
+          <div className="max-w-2xl mb-10 md:mb-12">
+            <span className="text-primary font-bold tracking-widest text-xs uppercase">İlgili Hizmetler</span>
+            <h2 className="mt-3 text-3xl md:text-4xl font-black tracking-tighter text-on-background">
+              Shopify Büyümenizi Tamamlayan Çözümler
+            </h2>
+            <p className="mt-4 text-on-surface-variant font-light leading-relaxed">
+              Gerçek sonuçları görmek için{" "}
+              <Link href="/vaka-calismalari" className="text-primary font-medium hover:underline">
+                vaka çalışmalarımızı
+              </Link>{" "}
+              inceleyebilir, güncel rehberler için{" "}
+              <Link href="/blog" className="text-primary font-medium hover:underline">
+                blogumuzu
+              </Link>{" "}
+              takip edebilirsiniz.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {relatedServices.map((s) => (
+              <Link
+                key={s.href}
+                href={s.href}
+                className="group bg-surface-container-lowest border border-outline-variant/10 p-8 rounded-[2rem] hover:shadow-xl transition-all"
+              >
+                <h3 className="text-lg font-bold text-on-background mb-2 flex items-center justify-between">
+                  {s.title}
+                  <ArrowRight className="h-4 w-4 text-primary opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
+                </h3>
+                <p className="text-on-surface-variant text-sm font-light leading-relaxed">{s.desc}</p>
+              </Link>
             ))}
           </div>
         </div>
@@ -343,7 +721,7 @@ export default function ShopifySeoPage() {
               href="/iletisim"
               className="inline-flex items-center gap-2 bg-white text-primary px-10 py-5 rounded-full font-bold text-lg hover:scale-[1.02] transition-transform shadow-2xl"
             >
-              İletişime geçin
+              Ücretsiz Shopify SEO Analizi
               <ArrowRight className="h-5 w-5" />
             </Link>
           </div>
