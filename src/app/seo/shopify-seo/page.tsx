@@ -198,12 +198,12 @@ const shopifyGuides = [
 ];
 
 const references = [
-  { name: "Novosuit", domain: "novosuit.com", url: "https://novosuit.com" },
-  { name: "Edscarf", domain: "edscarf.com", url: "https://edscarf.com" },
-  { name: "Kidzee", domain: "kidzee.com.tr", url: "https://kidzee.com.tr" },
-  { name: "Sade Organik", domain: "sadeorganik.com.tr", url: "https://sadeorganik.com.tr" },
-  { name: "Take a Shot", domain: "takeashot.com", url: "https://takeashot.com" },
-  { name: "Tante Roza", domain: "tanteroza.com.tr", url: "https://tanteroza.com.tr" },
+  { name: "Novosuit", url: "https://novosuit.com", logo: "https://cdn.sanity.io/images/67vl8x07/production/e6d63d4ed9b44af5e65c60fc1c66f5de63eb3b7c-500x186.png" },
+  { name: "Edscarf", url: "https://edscarf.com", logo: "https://cdn.sanity.io/images/67vl8x07/production/f48b8534d6d2580d81c4a3b74ea5d7e2d4d3981f-500x216.png" },
+  { name: "Kidzee", url: "https://kidzee.com.tr", logo: "https://cdn.sanity.io/images/67vl8x07/production/0bfefc5c2e5aaffc49eec5f758e85318eec456ea-450x128.png" },
+  { name: "Sade Organik", url: "https://sadeorganik.com.tr", logo: "https://cdn.sanity.io/images/67vl8x07/production/edbeac9de5c4296f6bb0221cc95717977ce88cfa-437x211.png" },
+  { name: "Take a Shot", url: "https://takeashot.com.tr", logo: "https://cdn.sanity.io/images/67vl8x07/production/05e1d0c1a0b1616e79fdf03cc2f73dfa0e422f6b-500x91.png" },
+  { name: "Tante Roza", url: "https://tanteroza.com.tr", logo: "https://cdn.sanity.io/images/67vl8x07/production/0d0a78e9140fac31f80f6e5f3b906be7c5805cc2-500x147.jpg" },
 ];
 
 export default function ShopifySeoPage() {
@@ -267,14 +267,21 @@ export default function ShopifySeoPage() {
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
             {references.map((r) => (
               <a
-                key={r.domain}
+                key={r.url}
                 href={r.url}
                 target="_blank"
                 rel="nofollow noopener noreferrer"
-                className="flex flex-col items-center justify-center text-center gap-1 bg-surface-container-lowest border border-outline-variant/10 rounded-2xl px-4 py-5 hover:shadow-lg transition-all"
+                title={r.name}
+                aria-label={r.name}
+                className="flex items-center justify-center bg-surface-container-lowest border border-outline-variant/10 rounded-2xl px-5 h-24 hover:shadow-lg transition-all"
               >
-                <span className="font-bold text-on-background leading-tight">{r.name}</span>
-                <span className="text-xs text-on-surface-variant">{r.domain}</span>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={r.logo}
+                  alt={`${r.name} Shopify mağazası logosu`}
+                  loading="lazy"
+                  className="max-h-12 w-auto max-w-full object-contain"
+                />
               </a>
             ))}
           </div>
