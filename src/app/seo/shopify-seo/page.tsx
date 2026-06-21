@@ -197,6 +197,15 @@ const shopifyGuides = [
   { href: "/blog/shopify-hiz-optimizasyonu", t: "Shopify Hız Optimizasyonu" },
 ];
 
+const references = [
+  { name: "Novosuit", domain: "novosuit.com", url: "https://novosuit.com" },
+  { name: "Edscarf", domain: "edscarf.com", url: "https://edscarf.com" },
+  { name: "Kidzee", domain: "kidzee.com.tr", url: "https://kidzee.com.tr" },
+  { name: "Sade Organik", domain: "sadeorganik.com.tr", url: "https://sadeorganik.com.tr" },
+  { name: "Take a Shot", domain: "takeashot.com", url: "https://takeashot.com" },
+  { name: "Tante Roza", domain: "tanteroza.com.tr", url: "https://tanteroza.com.tr" },
+];
+
 export default function ShopifySeoPage() {
   return (
     <>
@@ -248,6 +257,29 @@ export default function ShopifySeoPage() {
           </Link>
         </div>
       </SubpageHero>
+
+      {/* References — Shopify stores */}
+      <section className="py-12 md:py-16 px-5 md:px-8 border-t border-outline-variant/10">
+        <div className="max-w-7xl mx-auto">
+          <p className="text-center text-on-surface-variant font-bold tracking-widest text-xs uppercase mb-8">
+            Birlikte Çalıştığımız Shopify Mağazaları
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+            {references.map((r) => (
+              <a
+                key={r.domain}
+                href={r.url}
+                target="_blank"
+                rel="nofollow noopener noreferrer"
+                className="flex flex-col items-center justify-center text-center gap-1 bg-surface-container-lowest border border-outline-variant/10 rounded-2xl px-4 py-5 hover:shadow-lg transition-all"
+              >
+                <span className="font-bold text-on-background leading-tight">{r.name}</span>
+                <span className="text-xs text-on-surface-variant">{r.domain}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* What is Shopify SEO — educational */}
       <section className="py-16 md:py-24 px-5 md:px-8 border-t border-outline-variant/10">
