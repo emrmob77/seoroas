@@ -204,6 +204,12 @@ const references = [
   { name: "Sade Organik", url: "https://sadeorganik.com.tr", logo: "https://cdn.sanity.io/images/67vl8x07/production/edbeac9de5c4296f6bb0221cc95717977ce88cfa-437x211.png" },
   { name: "Take a Shot", url: "https://takeashot.com.tr", logo: "https://cdn.sanity.io/images/67vl8x07/production/05e1d0c1a0b1616e79fdf03cc2f73dfa0e422f6b-500x91.png" },
   { name: "Tante Roza", url: "https://tanteroza.com.tr", logo: "https://cdn.sanity.io/images/67vl8x07/production/0d0a78e9140fac31f80f6e5f3b906be7c5805cc2-500x147.jpg" },
+  { name: "Low Lights Studios", url: "https://lowlightsstudios.com", logo: "https://cdn.sanity.io/images/67vl8x07/production/31c1e6d675c6f4228e9710a9254fe6027f2e8c54-600x112.png" },
+  { name: "PEQUS", url: "https://pequsclo.com", logo: "https://cdn.sanity.io/images/67vl8x07/production/98d24c27d67d910a22ea374a6d199ddb907408b1-600x240.png" },
+  { name: "Holistik Markt", url: "https://www.holistikmarkt.de", logo: "https://cdn.sanity.io/images/67vl8x07/production/83460017912cfee803116dda5903664f8e59bc49-532x220.jpg" },
+  { name: "Danger", url: "https://danger.com.tr", logo: "https://cdn.sanity.io/images/67vl8x07/production/2a32595b9acb0e37a767666c3e49021485bfe863-600x171.png" },
+  { name: "Spektra Diamond", url: "https://spektradiamond.com", logo: null },
+  { name: "Heka Store", url: "https://hekastore.com", logo: "https://cdn.sanity.io/images/67vl8x07/production/c6d51100bfb978651109bbf14681fa73ae16f48c-600x179.png" },
 ];
 
 export default function ShopifySeoPage() {
@@ -275,13 +281,19 @@ export default function ShopifySeoPage() {
                 aria-label={r.name}
                 className="flex items-center justify-center bg-surface-container-lowest border border-outline-variant/10 rounded-2xl px-5 h-24 hover:shadow-lg transition-all"
               >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={r.logo}
-                  alt={`${r.name} Shopify mağazası logosu`}
-                  loading="lazy"
-                  className="max-h-12 w-auto max-w-full object-contain"
-                />
+                {r.logo ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={r.logo}
+                    alt={`${r.name} Shopify mağazası logosu`}
+                    loading="lazy"
+                    className="max-h-12 w-auto max-w-full object-contain"
+                  />
+                ) : (
+                  <span className="font-extrabold tracking-tight text-on-background text-center leading-tight">
+                    {r.name}
+                  </span>
+                )}
               </a>
             ))}
           </div>
