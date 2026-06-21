@@ -104,7 +104,7 @@ const testimonials = [
   },
 ];
 
-const clients: { name: string; url: string; logo: string | null }[] = [
+const clients: { name: string; url: string; logo: string | null; dark?: boolean }[] = [
   { name: "Saat ve Saat", url: "https://www.saatvesaat.com", logo: "https://cdn.sanity.io/images/67vl8x07/production/5e8a0f00d048cf7f5b14207911263abc2e729152-300x70.png" },
   { name: "Lizay Pırlanta", url: "https://www.lizaypirlanta.com", logo: "https://cdn.sanity.io/images/67vl8x07/production/605fe1bc09c1be3d70b40b3b64b5f5d14be4b563-125x40.svg" },
   { name: "Lescon", url: "https://www.lescon.com.tr", logo: "https://cdn.sanity.io/images/67vl8x07/production/4382a4287dc6d22ae69ce5fd1c389bb9857ee843-180x19.svg" },
@@ -120,19 +120,19 @@ const clients: { name: string; url: string; logo: string | null }[] = [
   { name: "Güven Sanat", url: "https://www.guvensanat.com", logo: "https://cdn.sanity.io/images/67vl8x07/production/b940257aac03dbfbf48e1bdfd437ca3b7d8b5bb6-285x149.png" },
   { name: "Drd", url: "https://www.drd.com.tr", logo: "https://cdn.sanity.io/images/67vl8x07/production/6b13767d171494cc0815399aa024b9ef9810f123-317x69.svg" },
   { name: "İntegral Menkul", url: "https://integralyatirim.com.tr", logo: "https://cdn.sanity.io/images/67vl8x07/production/3862108844ead5e24d617067f37b393d8bfe0434-1997x570.webp" },
+  { name: "Sneaksup", url: "https://www.sneaksup.com", logo: "https://cdn.sanity.io/images/67vl8x07/production/f92ecf877d19c47cc93d29790bb2b503a4254e10-262x40.svg" },
+  { name: "Teknotel", url: "https://teknotel.com.tr", logo: "https://cdn.sanity.io/images/67vl8x07/production/c115ce9be3603834561bbd7a0826587b3f7381f1-400x158.png" },
+  { name: "SecretCv", url: "https://www.secretcv.com", logo: "https://cdn.sanity.io/images/67vl8x07/production/72fe617306fe5aa6258667b2bae530caa02da72b-3190x1080.svg", dark: true },
+  { name: "forex.com.tr", url: "https://www.forex.com.tr", logo: "https://cdn.sanity.io/images/67vl8x07/production/bf46a8d6e1cc0314a40aa46621bc8568b3e9e7b8-182x62.png", dark: true },
+  { name: "Donanımhaber", url: "https://www.donanimhaber.com", logo: "https://cdn.sanity.io/images/67vl8x07/production/3fe1e0744ba11dd0a642ff7d355a166c607aa8ee-122x80.png", dark: true },
   { name: "Konyalı Saat", url: "https://www.konyalisaat.com.tr", logo: null },
   { name: "Kosovalı Saat", url: "https://www.kosovalisaat.com", logo: null },
-  { name: "Sneaksup", url: "https://www.sneaksup.com", logo: null },
   { name: "Tamer Tanca", url: "https://www.tamertanca.com", logo: null },
   { name: "Kumtel", url: "https://www.kumtel.com", logo: null },
-  { name: "SecretCv", url: "https://www.secretcv.com", logo: null },
   { name: "İntegral Forex", url: "https://www.integralforex.com.tr", logo: null },
-  { name: "forex.com.tr", url: "https://www.forex.com.tr", logo: null },
   { name: "Uyumsoft", url: "https://www.uyumsoft.com", logo: null },
   { name: "Yıldız Mobilya", url: "https://yildiz-mobilya.com", logo: null },
   { name: "Hekim Holding", url: "https://www.hekimholding.com.tr", logo: null },
-  { name: "Teknotel", url: "https://www.teknotel.com", logo: null },
-  { name: "Donanımhaber", url: "https://www.donanimhaber.com", logo: null },
 ];
 
 export default function ReferanslarPage() {
@@ -205,7 +205,11 @@ export default function ReferanslarPage() {
                 rel="nofollow noopener noreferrer"
                 title={c.name}
                 aria-label={c.name}
-                className="flex items-center justify-center bg-surface-container-lowest border border-outline-variant/10 rounded-2xl px-6 h-24 hover:shadow-lg transition-all"
+                className={`flex items-center justify-center border rounded-2xl px-6 h-24 hover:shadow-lg transition-all ${
+                  c.dark
+                    ? "bg-zinc-900 border-white/10"
+                    : "bg-surface-container-lowest border-outline-variant/10"
+                }`}
               >
                 {c.logo ? (
                   // eslint-disable-next-line @next/next/no-img-element
