@@ -104,6 +104,37 @@ const testimonials = [
   },
 ];
 
+const clients: { name: string; url: string; logo: string | null }[] = [
+  { name: "Saat ve Saat", url: "https://www.saatvesaat.com", logo: "https://cdn.sanity.io/images/67vl8x07/production/5e8a0f00d048cf7f5b14207911263abc2e729152-300x70.png" },
+  { name: "Lizay Pırlanta", url: "https://www.lizaypirlanta.com", logo: "https://cdn.sanity.io/images/67vl8x07/production/605fe1bc09c1be3d70b40b3b64b5f5d14be4b563-125x40.svg" },
+  { name: "Lescon", url: "https://www.lescon.com.tr", logo: "https://cdn.sanity.io/images/67vl8x07/production/4382a4287dc6d22ae69ce5fd1c389bb9857ee843-180x19.svg" },
+  { name: "Dagi", url: "https://www.dagi.com.tr", logo: "https://cdn.sanity.io/images/67vl8x07/production/051214d837784e57a32651f9cc73aa520a56c942-685x166.svg" },
+  { name: "Roman", url: "https://www.roman.com.tr", logo: "https://cdn.sanity.io/images/67vl8x07/production/f34ab39583e11515ea2b8d02780f59162c8b26a9-130x24.webp" },
+  { name: "Gizia", url: "https://www.gizia.com", logo: "https://cdn.sanity.io/images/67vl8x07/production/f2439c3747c1668833d9517f9ce43ae2fdbdf4e3-174x50.png" },
+  { name: "Teksan", url: "https://www.teksan.com", logo: "https://cdn.sanity.io/images/67vl8x07/production/401bc87b1ff7af9ff2e72d1d4fc37c531e635fc6-180x39.png" },
+  { name: "Tergan", url: "https://www.tergan.com.tr", logo: "https://cdn.sanity.io/images/67vl8x07/production/289f5caefa08fac8292707aa77ed378f9ad2bec6-298x36.svg" },
+  { name: "Kozmela", url: "https://www.kozmela.com", logo: "https://cdn.sanity.io/images/67vl8x07/production/776227dda3a5d134b9199ac3f47cb1a4eb3a2729-524x116.svg" },
+  { name: "Ogstore", url: "https://www.ogstore.com.tr", logo: "https://cdn.sanity.io/images/67vl8x07/production/77558b94b396179aafd1b3ee5ed42a527fabc76c-145x171.png" },
+  { name: "Malitur", url: "https://malitur.com", logo: "https://cdn.sanity.io/images/67vl8x07/production/b4878827ca45b412cc9a14ca1f9c748a5bbc68ae-723x111.png" },
+  { name: "İmza", url: "https://www.imza.com.tr", logo: "https://cdn.sanity.io/images/67vl8x07/production/1dc89e3b66bc202826f8286b329a89263354059f-270x80.png" },
+  { name: "Güven Sanat", url: "https://www.guvensanat.com", logo: "https://cdn.sanity.io/images/67vl8x07/production/b940257aac03dbfbf48e1bdfd437ca3b7d8b5bb6-285x149.png" },
+  { name: "Drd", url: "https://www.drd.com.tr", logo: "https://cdn.sanity.io/images/67vl8x07/production/6b13767d171494cc0815399aa024b9ef9810f123-317x69.svg" },
+  { name: "İntegral Menkul", url: "https://integralyatirim.com.tr", logo: "https://cdn.sanity.io/images/67vl8x07/production/3862108844ead5e24d617067f37b393d8bfe0434-1997x570.webp" },
+  { name: "Konyalı Saat", url: "https://www.konyalisaat.com.tr", logo: null },
+  { name: "Kosovalı Saat", url: "https://www.kosovalisaat.com", logo: null },
+  { name: "Sneaksup", url: "https://www.sneaksup.com", logo: null },
+  { name: "Tamer Tanca", url: "https://www.tamertanca.com", logo: null },
+  { name: "Kumtel", url: "https://www.kumtel.com", logo: null },
+  { name: "SecretCv", url: "https://www.secretcv.com", logo: null },
+  { name: "İntegral Forex", url: "https://www.integralforex.com.tr", logo: null },
+  { name: "forex.com.tr", url: "https://www.forex.com.tr", logo: null },
+  { name: "Uyumsoft", url: "https://www.uyumsoft.com", logo: null },
+  { name: "Yıldız Mobilya", url: "https://yildiz-mobilya.com", logo: null },
+  { name: "Hekim Holding", url: "https://www.hekimholding.com.tr", logo: null },
+  { name: "Teknotel", url: "https://www.teknotel.com", logo: null },
+  { name: "Donanımhaber", url: "https://www.donanimhaber.com", logo: null },
+];
+
 export default function ReferanslarPage() {
   return (
     <>
@@ -149,6 +180,47 @@ export default function ReferanslarPage() {
                   {s.label}
                 </div>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Clients / Müşterilerimiz */}
+      <section className="px-6 md:px-8 mb-16 md:mb-32">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-10 md:mb-14">
+            <h2 className="text-3xl md:text-4xl font-black tracking-tighter text-on-background">
+              Birlikte Çalıştığımız Markalar
+            </h2>
+            <p className="mt-3 text-on-surface-variant font-light">
+              SEO ve dijital büyüme süreçlerinde iş birliği yaptığımız markalardan bazıları.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+            {clients.map((c) => (
+              <a
+                key={c.url}
+                href={c.url}
+                target="_blank"
+                rel="nofollow noopener noreferrer"
+                title={c.name}
+                aria-label={c.name}
+                className="flex items-center justify-center bg-surface-container-lowest border border-outline-variant/10 rounded-2xl px-6 h-24 hover:shadow-lg transition-all"
+              >
+                {c.logo ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={c.logo}
+                    alt={`${c.name} logosu`}
+                    loading="lazy"
+                    className="max-h-10 w-auto max-w-full object-contain"
+                  />
+                ) : (
+                  <span className="font-bold text-on-background text-center leading-tight">
+                    {c.name}
+                  </span>
+                )}
+              </a>
             ))}
           </div>
         </div>
