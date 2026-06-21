@@ -179,6 +179,24 @@ const relatedServices = [
   },
 ];
 
+const deliverables = [
+  { t: "Teknik SEO & Site Hızı", d: "Core Web Vitals, canonical, robots.txt, sitemap ve Liquid/uygulama optimizasyonu." },
+  { t: "Anahtar Kelime & On-Page", d: "Koleksiyon/ürün eşlemesi, başlık-meta, benzersiz açıklamalar ve görsel alt metni." },
+  { t: "Yapılandırılmış Veri", d: "Product, Offer, BreadcrumbList ve FAQ JSON-LD ile zengin sonuç uygunluğu." },
+  { t: "İçerik & Blog", d: "Arama niyetine uygun blog içerikleri ve konu kümeleriyle huni üstü trafik." },
+  { t: "Link Building", d: "Güvenli ve doğal backlink'lerle alan otoritesini büyütme." },
+  { t: "Raporlama & Analitik", d: "GA4 ve Search Console kurulumu, gelir/ROAS bazlı aylık raporlama." },
+];
+
+const shopifyGuides = [
+  { href: "/blog/shopify-seo-rehberi", t: "Shopify SEO Rehberi (2026)" },
+  { href: "/blog/shopify-seo-nedir", t: "Shopify SEO Nedir?" },
+  { href: "/blog/shopify-seo-checklist", t: "Shopify SEO Checklist" },
+  { href: "/blog/shopify-seo-ayarlari", t: "Shopify SEO Ayarları" },
+  { href: "/blog/shopify-seo-uygulamalari", t: "En İyi Shopify SEO Uygulamaları" },
+  { href: "/blog/shopify-hiz-optimizasyonu", t: "Shopify Hız Optimizasyonu" },
+];
+
 export default function ShopifySeoPage() {
   return (
     <>
@@ -669,8 +687,75 @@ export default function ShopifySeoPage() {
         </div>
       </section>
 
-      {/* Related services — internal links */}
+      {/* Deliverables — what's included */}
+      <section className="py-16 md:py-24 px-5 md:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="max-w-2xl mb-10 md:mb-12">
+            <span className="text-primary font-bold tracking-widest text-xs uppercase">Kapsam</span>
+            <h2 className="mt-3 text-3xl md:text-4xl font-black tracking-tighter text-on-background">
+              Shopify SEO Hizmetimize Neler Dahil?
+            </h2>
+            <p className="mt-4 text-on-surface-variant font-light leading-relaxed">
+              Teknikten içeriğe, mağazanızın organik büyümesi için gereken her katmanı tek çatı altında yönetiyoruz.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {deliverables.map((d) => (
+              <div
+                key={d.t}
+                className="bg-surface-container-lowest border border-outline-variant/10 p-7 rounded-[2rem]"
+              >
+                <div className="flex items-center gap-3 mb-3">
+                  <CheckCircle2 className="h-5 w-5 text-primary shrink-0" />
+                  <h3 className="text-lg font-bold text-on-background">{d.t}</h3>
+                </div>
+                <p className="text-on-surface-variant text-sm font-light leading-relaxed">{d.d}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-8 text-on-surface-variant font-light leading-relaxed max-w-2xl">
+            Gerçek sonuçlar için{" "}
+            <Link href="/vaka-calismalari" className="text-primary font-medium hover:underline">
+              vaka çalışmalarımızı
+            </Link>{" "}
+            ve{" "}
+            <Link href="/referanslar" className="text-primary font-medium hover:underline">
+              referanslarımızı
+            </Link>{" "}
+            inceleyebilirsiniz.
+          </p>
+        </div>
+      </section>
+
+      {/* Shopify SEO guides — internal links to blog cluster */}
       <section className="py-16 md:py-24 px-5 md:px-8 bg-surface-container-low/40">
+        <div className="max-w-7xl mx-auto">
+          <div className="max-w-2xl mb-10 md:mb-12">
+            <span className="text-primary font-bold tracking-widest text-xs uppercase">Shopify SEO Rehberleri</span>
+            <h2 className="mt-3 text-3xl md:text-4xl font-black tracking-tighter text-on-background">
+              Shopify SEO Hakkında Bilmeniz Gerekenler
+            </h2>
+            <p className="mt-4 text-on-surface-variant font-light leading-relaxed">
+              Konuyu derinlemesine ele aldığımız rehberlerimizle Shopify SEO sürecinin her adımını öğrenin.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {shopifyGuides.map((g) => (
+              <Link
+                key={g.href}
+                href={g.href}
+                className="group flex items-center justify-between gap-4 bg-surface-container-lowest border border-outline-variant/10 px-6 py-5 rounded-2xl hover:shadow-lg transition-all"
+              >
+                <span className="font-bold text-on-background">{g.t}</span>
+                <ArrowRight className="h-4 w-4 text-primary shrink-0 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Related services — internal links */}
+      <section className="py-16 md:py-24 px-5 md:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-2xl mb-10 md:mb-12">
             <span className="text-primary font-bold tracking-widest text-xs uppercase">İlgili Hizmetler</span>
@@ -678,15 +763,7 @@ export default function ShopifySeoPage() {
               Shopify Büyümenizi Tamamlayan Çözümler
             </h2>
             <p className="mt-4 text-on-surface-variant font-light leading-relaxed">
-              Gerçek sonuçları görmek için{" "}
-              <Link href="/vaka-calismalari" className="text-primary font-medium hover:underline">
-                vaka çalışmalarımızı
-              </Link>{" "}
-              inceleyebilir, güncel rehberler için{" "}
-              <Link href="/blog" className="text-primary font-medium hover:underline">
-                blogumuzu
-              </Link>{" "}
-              takip edebilirsiniz.
+              Shopify mağazanızın büyümesini destekleyen ilgili SEO hizmetlerimiz.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">

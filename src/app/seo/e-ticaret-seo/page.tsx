@@ -98,7 +98,15 @@ export default function ETicaretSeoPage() {
               </h2>
             </div>
             <p className="text-on-surface-variant max-w-sm font-light">
-              Online mağazanızın her katmanını optimize eden kapsamlı e-ticaret SEO çözümleri.
+              Online mağazanızın her katmanını optimize eden kapsamlı e-ticaret SEO çözümleri.{" "}
+              <Link href="/seo/shopify-seo" className="text-primary font-medium hover:underline">
+                Shopify
+              </Link>{" "}
+              veya{" "}
+              <Link href="/seo/wordpress-seo" className="text-primary font-medium hover:underline">
+                WordPress
+              </Link>{" "}
+              gibi platforma özel çözümler de sunuyoruz.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
