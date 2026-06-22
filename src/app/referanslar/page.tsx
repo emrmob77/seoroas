@@ -145,7 +145,7 @@ const clients: { name: string; url: string; logo: string | null; invert?: boolea
   { name: "Holistik Markt", url: "https://www.holistikmarkt.de", logo: "https://cdn.sanity.io/images/67vl8x07/production/83460017912cfee803116dda5903664f8e59bc49-532x220.jpg" },
   { name: "Danger", url: "https://danger.com.tr", logo: "https://cdn.sanity.io/images/67vl8x07/production/2a32595b9acb0e37a767666c3e49021485bfe863-600x171.png" },
   { name: "Heka Store", url: "https://hekastore.com", logo: "https://cdn.sanity.io/images/67vl8x07/production/c6d51100bfb978651109bbf14681fa73ae16f48c-600x179.png" },
-  { name: "Spektra Diamond", url: "https://spektradiamond.com", logo: null },
+  { name: "Hobi24", url: "https://www.hobi24.com", logo: "https://cdn.sanity.io/images/67vl8x07/production/2cf4c98f417d30d5d22e412dbfa79bbad0b0ef13-202x60.png" },
 ];
 
 export default function ReferanslarPage() {
