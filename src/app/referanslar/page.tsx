@@ -130,7 +130,7 @@ const clients: { name: string; url: string; logo: string | null; dark?: boolean 
   { name: "Tamer Tanca", url: "https://www.tamertanca.com.tr", logo: "https://cdn.sanity.io/images/67vl8x07/production/08a19b659288b0ad1f2137a2b7da4ee621b94a90-200x70.svg" },
   { name: "Kumtel", url: "https://www.kumtel.com", logo: "https://cdn.sanity.io/images/67vl8x07/production/e7dd70ab983c3806e57fdb1be5d901cda55c9730-300x45.png" },
   { name: "İntegral Forex", url: "https://www.integralforex.com.tr", logo: null },
-  { name: "Uyumsoft", url: "https://www.uyumsoft.com", logo: null },
+  { name: "Uyumsoft", url: "https://www.uyumsoft.com", logo: "https://cdn.sanity.io/images/67vl8x07/production/977a2fd9bbf9da9e4ec0c5f14cc8bf6ae5d8e733-153x35.svg" },
   { name: "Yıldız Mobilya", url: "https://yildiz-mobilya.com", logo: null },
   { name: "Hekim Holding", url: "https://www.hekimholding.com.tr", logo: "https://cdn.sanity.io/images/67vl8x07/production/717e95a30ca50a96f2ac691ec5759cf9600b7927-200x105.jpg" },
   // Shopify mağaza referansları
