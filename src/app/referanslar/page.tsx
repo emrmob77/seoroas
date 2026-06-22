@@ -218,7 +218,7 @@ export default function ReferanslarPage() {
                 rel="nofollow noopener noreferrer"
                 title={c.name}
                 aria-label={c.name}
-                className="flex items-center justify-center bg-surface-container-lowest border border-outline-variant/10 rounded-2xl px-6 h-24 hover:shadow-lg transition-all"
+                className="group flex items-center justify-center bg-surface-container-lowest border border-outline-variant/10 rounded-2xl px-6 h-24 hover:shadow-lg transition-all"
               >
                 {c.logo ? (
                   // eslint-disable-next-line @next/next/no-img-element
@@ -226,7 +226,7 @@ export default function ReferanslarPage() {
                     src={c.logo}
                     alt={`${c.name} logosu`}
                     loading="lazy"
-                    className={`max-h-10 w-auto max-w-full object-contain ${c.invert ? "invert" : ""}`}
+                    className={`max-h-10 w-auto max-w-full object-contain grayscale opacity-70 transition-all duration-300 group-hover:grayscale-0 group-hover:opacity-100 ${c.invert ? "invert" : ""}`}
                   />
                 ) : (
                   <span className="font-bold text-on-background text-center leading-tight">
