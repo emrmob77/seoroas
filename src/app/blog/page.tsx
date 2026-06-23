@@ -120,33 +120,22 @@ export default async function BlogPage({
 
       <main className="pt-24">
         {/* Hero */}
-        <section className="max-w-7xl mx-auto px-5 md:px-8 pt-2 pb-8 md:pb-12">
+        <section className="max-w-7xl mx-auto px-5 md:px-8 pt-1 pb-5 md:pb-7">
           <Breadcrumb items={[{ name: "Blog", url: "/blog" }]} />
-          <div className="mt-8 md:mt-10 flex flex-col gap-5 max-w-3xl">
-            <span className="inline-flex items-center gap-2 self-start bg-primary/10 text-primary text-[11px] font-bold uppercase tracking-[0.18em] px-4 py-1.5 rounded-full">
-              <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-              İçgörüler &amp; Blog
-            </span>
-            <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-on-surface tracking-[-0.04em] leading-[0.95]">
+          <div className="mt-4 md:mt-5 flex flex-col gap-3 max-w-3xl">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-on-surface tracking-[-0.03em] leading-[1.05]">
               SEO Blog: Güncel Bilgi,{" "}
               <span className="text-primary italic">Uzman İçerik.</span>
             </h1>
-            <p className="text-base md:text-lg text-on-surface-variant font-light max-w-2xl leading-relaxed">
+            <p className="text-sm md:text-base text-on-surface-variant font-light max-w-2xl leading-relaxed">
               SEO trendleri, teknik rehberler ve kanıtlanmış organik büyüme
-              stratejileri — uzman içgörüleriyle dijital pazarlama bilginizi
-              güncel tutun.
-            </p>
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-on-surface-variant/60">
-              {posts.length} yazı
-              {active !== "Tümü" && (
-                <span className="text-primary"> · {active} ({filtered.length})</span>
-              )}
+              stratejileriyle dijital pazarlama bilginizi güncel tutun.
             </p>
           </div>
         </section>
 
         {/* Category Filter */}
-        <section className="max-w-7xl mx-auto px-5 md:px-8 mb-12 md:mb-20">
+        <section className="max-w-7xl mx-auto px-5 md:px-8 mb-10 md:mb-14">
           <div className="flex items-center gap-2.5 overflow-x-auto pb-3 border-b border-outline-variant/10 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             {categories.map((cat) => {
               const isActive = cat === active;
