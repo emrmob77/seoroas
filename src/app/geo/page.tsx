@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Bot, BrainCircuit, ShieldCheck, Target, Sparkles, Activity, Database } from "lucide-react";
+import { ArrowRight, BrainCircuit, ShieldCheck, Target, Sparkles, Activity, Database } from "lucide-react";
 import { generateDynamicSeoMetadata } from "@/lib/seo";
 import { SchemaOrg } from "@/components/seo/SchemaOrg";
 import { SubpageHero } from "@/components/sections/SubpageHero";
@@ -67,6 +67,7 @@ const engines = [
     name: "ChatGPT",
     provider: "OpenAI",
     color: "bg-slate-900",
+    logo: "https://cdn.sanity.io/images/67vl8x07/production/9086f2dbb15b83206cffb509c43fbe6e59b3d8ec-24x24.svg",
     features: [
       "Uzun form otorite sinyalleri",
       "Plugin & API entegrasyon ayarı",
@@ -77,6 +78,7 @@ const engines = [
     name: "Gemini",
     provider: "Google",
     color: "bg-[#4285F4]",
+    logo: "https://cdn.sanity.io/images/67vl8x07/production/b9b010e3b4539ad250fa4f6a897c794d1c72b205-24x24.svg",
     features: [
       "Google Knowledge Graph bağlantısı",
       "SGE (Search Generative Experience) uyumu",
@@ -87,6 +89,7 @@ const engines = [
     name: "Claude",
     provider: "Anthropic",
     color: "bg-[#D97757]",
+    logo: "https://cdn.sanity.io/images/67vl8x07/production/1acd5e333cd4f2c6d8f92c7ee93f07d4c600c50d-24x24.svg",
     features: [
       "Uzun bağlam penceresi optimizasyonu",
       "Etik marka sentez uyumu",
@@ -97,6 +100,7 @@ const engines = [
     name: "Perplexity",
     provider: "Perplexity AI",
     color: "bg-[#20B2AA]",
+    logo: "https://cdn.sanity.io/images/67vl8x07/production/feb7181ea337e37c32fac2758fdbc406816002fc-24x24.svg",
     features: [
       "Gerçek zamanlı web indeksleme hızı",
       "Kaynak kartları için yapılandırılmış veri",
@@ -364,7 +368,8 @@ export default function GeoPage() {
                 className="bg-white/5 border border-white/10 p-8 rounded-3xl backdrop-blur-xl hover:bg-white/10 transition-colors duration-500"
               >
                 <div className={`w-12 h-12 mb-6 flex items-center justify-center rounded-xl ${engine.color} text-white`}>
-                  <Bot className="w-5 h-5" />
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={engine.logo} alt={`${engine.name} logosu`} className="w-6 h-6" />
                 </div>
                 <h3 className="text-xl font-bold mb-1">{engine.name}</h3>
                 <span className="text-[10px] font-medium text-white/40 block uppercase tracking-widest mb-6">{engine.provider}</span>
