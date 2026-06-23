@@ -2,22 +2,22 @@ import Link from "next/link";
 
 const cases = [
   {
-    title: "Z Global",
-    category: "Fintech Büyümesi",
+    title: "Güven Sanat",
+    category: "E-Ticaret SEO",
     image: "/images/case-1.jpg",
     testimonial:
-      "SEOROAS, SEO'yu bir pazarlama kanalı olmaktan çıkarıp bir büyüme motoruna dönüştürdü. Veri vizyonları eşsiz.",
-    author: "Caner Yılmaz",
-    role: "CMO, Z Global",
+      "On-page ve off-page SEO çalışmalarıyla organik trafiği %400 artırdık; hedeflenen 100 anahtar kelimenin 96'sı Google ilk sayfasına taşındı.",
+    author: "Güven Sanat",
+    role: "Hobi & Sanat Malzemeleri",
   },
   {
-    title: "Luxo E-commerce",
-    category: "E-ticaret Dönüşümü",
+    title: "Lizay Pırlanta",
+    category: "E-Ticaret · Kuyumculuk",
     image: "/images/case-2.jpg",
     testimonial:
-      "Mimarimizdeki hataları 48 saatte tespit ettiler. Trafiğimiz 6 ay içinde %280 oranında artış gösterdi.",
-    author: "Selin Aktaş",
-    role: "Kurucu, Luxo",
+      "Teknik ve içerik SEO ile organik trafik %124 arttı; çalışılan 100 anahtar kelimenin 95'i Google ilk sayfasında konumlandı.",
+    author: "Lizay Pırlanta",
+    role: "Pırlanta & Kuyumculuk",
   },
 ];
 
