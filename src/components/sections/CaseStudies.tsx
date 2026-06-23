@@ -4,7 +4,7 @@ const cases = [
   {
     title: "Güven Sanat",
     category: "E-Ticaret SEO",
-    image: "/images/case-1.jpg",
+    image: "https://cdn.sanity.io/images/67vl8x07/production/7b9c6295a57bf08c5476a0bbfe10281ffc83f40c-640x800.jpg",
     testimonial:
       "On-page ve off-page SEO çalışmalarıyla organik trafiği %400 artırdık; hedeflenen 100 anahtar kelimenin 96'sı Google ilk sayfasına taşındı.",
     author: "Güven Sanat",
@@ -13,7 +13,7 @@ const cases = [
   {
     title: "Lizay Pırlanta",
     category: "E-Ticaret · Kuyumculuk",
-    image: "/images/case-2.jpg",
+    image: "https://cdn.sanity.io/images/67vl8x07/production/5acdebd6020b4d8da8d355be41f547a27dd53250-640x800.jpg",
     testimonial:
       "Teknik ve içerik SEO ile organik trafik %124 arttı; çalışılan 100 anahtar kelimenin 95'i Google ilk sayfasında konumlandı.",
     author: "Lizay Pırlanta",
@@ -44,7 +44,12 @@ export function CaseStudies() {
             <div key={c.title} className={`space-y-12 ${i === 1 ? "md:mt-32" : ""}`}>
               {/* Image Card */}
               <div className="aspect-[4/5] bg-surface-variant rounded-3xl overflow-hidden relative group">
-                <div className="w-full h-full bg-gradient-to-br from-primary/20 to-surface-variant group-hover:scale-105 transition-transform duration-1000" />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={c.image}
+                  alt={`${c.title} SEO vaka çalışması`}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent flex flex-col justify-end p-12 text-white">
                   <span className="text-[10px] uppercase tracking-[0.2em] font-bold mb-2">
                     {c.category}
