@@ -21,8 +21,7 @@ export async function generateMetadata(): Promise<Metadata> {
   });
 }
 
-const categories = [
-  "Tümü",
+const CATEGORY_ORDER = [
   "Teknik SEO",
   "İçerik SEO",
   "E-Ticaret SEO",
@@ -30,8 +29,20 @@ const categories = [
   "SEO Araçları",
   "Yerel SEO",
   "AI & SEO",
+  "Genel SEO",
 ];
 
+function deriveCategory(post: Post): string {
+  const t = `${post.title} ${post.slug?.current ?? ""}`.toLocaleLowerCase("tr");
+  if (/(shopify|e-?ticaret|ürün|mağaza|magaza|koleksiyon)/.test(t)) return "E-Ticaret SEO";
+  if (/(backlink|link\s?build|link)/.test(t)) return "Link Building";
+  if (/(analytics|analitik|search console|tag manager|roas|araç|favicon|pixel)/.test(t)) return "SEO Araçları";
+  if (/(yapay zeka|geo|chatgpt|gemini|\bai\b)/.test(t)) return "AI & SEO";
+  if (/(işletme|yerel|harita|business|google benim)/.test(t)) return "Yerel SEO";
+  if (/(teknik|hız|sitemap|şema|schema|core web|robots|canonical)/.test(t)) return "Teknik SEO";
+  if (/(içerik|pazarlama|blog)/.test(t)) return "İçerik SEO";
+  return "Genel SEO";
+}
 
 function formatDate(date: string) {
   return new Date(date).toLocaleDateString("tr-TR", {
@@ -65,10 +76,15 @@ function PostImage({ post, aspect = "square", priority = false }: { post: Post; 
   );
 }
 
-export default async function BlogPage() {
-  const posts = await getAllPosts();
+export default async function BlogPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ k?: string }>;
+}) {
+  const sp = await searchParams;
+  const rawPosts = await getAllPosts();
 
-  if (!Array.isArray(posts) || posts.length === 0) {
+  if (!Array.isArray(rawPosts) || rawPosts.length === 0) {
     return (
       <main className="pt-24 pb-40">
         <section className="max-w-7xl mx-auto px-8 text-center">
@@ -79,9 +95,15 @@ export default async function BlogPage() {
     );
   }
 
-  const featured = posts[0];
-  const secondary = posts[1];
-  const grid = posts.slice(2);
+  const posts = rawPosts.map((p) => ({ ...p, category: deriveCategory(p) }));
+  const present = new Set(posts.map((p) => p.category));
+  const categories = ["Tümü", ...CATEGORY_ORDER.filter((c) => present.has(c))];
+  const active = sp?.k && categories.includes(sp.k) ? sp.k : "Tümü";
+  const filtered = active === "Tümü" ? posts : posts.filter((p) => p.category === active);
+
+  const featured = filtered[0];
+  const secondary = filtered[1];
+  const grid = filtered.slice(2);
 
   return (
     <>
@@ -98,30 +120,52 @@ export default async function BlogPage() {
 
       <main className="pt-24">
         {/* Hero */}
-        <section className="max-w-7xl mx-auto px-5 md:px-8 mb-10 md:mb-16">
-          <Breadcrumb items={[{ name: "Insights & Blog", url: "/blog" }]} />
-          <h1 className="text-4xl sm:text-5xl md:text-8xl font-extrabold text-on-surface tracking-[-0.04em] leading-[0.95] max-w-4xl">
-            SEO Blog: Güncel Bilgi,
-            <br />
-            <span className="text-primary italic">Uzman İçerik.</span>
-          </h1>
+        <section className="max-w-7xl mx-auto px-5 md:px-8 pt-2 pb-8 md:pb-12">
+          <Breadcrumb items={[{ name: "Blog", url: "/blog" }]} />
+          <div className="mt-8 md:mt-10 flex flex-col gap-5 max-w-3xl">
+            <span className="inline-flex items-center gap-2 self-start bg-primary/10 text-primary text-[11px] font-bold uppercase tracking-[0.18em] px-4 py-1.5 rounded-full">
+              <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+              İçgörüler &amp; Blog
+            </span>
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-on-surface tracking-[-0.04em] leading-[0.95]">
+              SEO Blog: Güncel Bilgi,{" "}
+              <span className="text-primary italic">Uzman İçerik.</span>
+            </h1>
+            <p className="text-base md:text-lg text-on-surface-variant font-light max-w-2xl leading-relaxed">
+              SEO trendleri, teknik rehberler ve kanıtlanmış organik büyüme
+              stratejileri — uzman içgörüleriyle dijital pazarlama bilginizi
+              güncel tutun.
+            </p>
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-on-surface-variant/60">
+              {posts.length} yazı
+              {active !== "Tümü" && (
+                <span className="text-primary"> · {active} ({filtered.length})</span>
+              )}
+            </p>
+          </div>
         </section>
 
         {/* Category Filter */}
-        <section className="max-w-7xl mx-auto px-5 md:px-8 mb-10 md:mb-16 overflow-x-auto">
-          <div className="flex items-center gap-3 min-w-max pb-4">
-            {categories.map((cat, i) => (
-              <button
-                key={cat}
-                className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all whitespace-nowrap ${
-                  i === 0
-                    ? "bg-primary text-on-primary shadow-md shadow-primary/20"
-                    : "bg-surface-container-low text-on-surface-variant hover:bg-surface-container"
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
+        <section className="max-w-7xl mx-auto px-5 md:px-8 mb-12 md:mb-20">
+          <div className="flex items-center gap-2.5 overflow-x-auto pb-3 border-b border-outline-variant/10 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            {categories.map((cat) => {
+              const isActive = cat === active;
+              const href = cat === "Tümü" ? "/blog" : `/blog?k=${encodeURIComponent(cat)}`;
+              return (
+                <Link
+                  key={cat}
+                  href={href}
+                  scroll={false}
+                  className={`px-5 py-2 rounded-full text-sm font-semibold transition-all whitespace-nowrap border ${
+                    isActive
+                      ? "bg-primary text-on-primary border-primary shadow-md shadow-primary/20"
+                      : "bg-transparent text-on-surface-variant border-outline-variant/20 hover:border-primary/40 hover:text-primary"
+                  }`}
+                >
+                  {cat}
+                </Link>
+              );
+            })}
           </div>
         </section>
 
@@ -142,7 +186,7 @@ export default async function BlogPage() {
                   </div>
                 </Link>
                 <div className="flex items-center gap-3 text-[10px] font-bold text-on-surface-variant uppercase tracking-[0.2em] mb-3">
-                  <span>SEO</span>
+                  <span className="text-primary">{featured.category}</span>
                   <span className="w-1 h-1 bg-outline-variant rounded-full" />
                   <span>{formatDate(featured.publishedAt)}</span>
                 </div>
@@ -169,7 +213,7 @@ export default async function BlogPage() {
                     <PostImage post={secondary} aspect="square" />
                   </Link>
                   <div className="flex items-center gap-3 text-[10px] font-bold text-on-surface-variant uppercase tracking-[0.2em] mb-3">
-                    <span>SEO</span>
+                    <span className="text-primary">{secondary.category}</span>
                     <span className="w-1 h-1 bg-outline-variant rounded-full" />
                     <span>{formatDate(secondary.publishedAt)}</span>
                   </div>
@@ -194,7 +238,7 @@ export default async function BlogPage() {
                   <PostImage post={post} aspect="square" />
                 </Link>
                 <div className="flex items-center gap-3 text-[10px] font-bold text-on-surface-variant uppercase tracking-[0.2em] mb-3">
-                  <span>SEO</span>
+                  <span className="text-primary">{post.category}</span>
                   <span className="w-1 h-1 bg-outline-variant rounded-full" />
                   <span>{formatDate(post.publishedAt)}</span>
                 </div>
