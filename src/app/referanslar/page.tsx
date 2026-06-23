@@ -27,6 +27,7 @@ const caseStudies = [
   {
     category: "E-Ticaret SEO",
     title: "Güven Sanat'ta %400 Organik Büyüme",
+    image: "https://cdn.sanity.io/images/67vl8x07/production/7b9c6295a57bf08c5476a0bbfe10281ffc83f40c-640x800.jpg",
     desc: "Hobi ve sanat malzemeleri e-ticaretinde teknik ve içerik SEO ile organik trafiği dört katına çıkardık.",
     metrics: [
       { label: "Organik Trafik", value: "+400%" },
@@ -37,6 +38,7 @@ const caseStudies = [
   {
     category: "E-Ticaret SEO",
     title: "Hobi24'te %300 Trafik Artışı",
+    image: "https://cdn.sanity.io/images/67vl8x07/production/3b9a210433ff0820f2c381416ffa8769beb9f5ae-800x600.jpg",
     desc: "100 hedef anahtar kelimenin 99'unu Google ilk sayfasına taşıyarak organik trafiği üçe katladık.",
     metrics: [
       { label: "Organik Trafik", value: "+300%" },
@@ -47,6 +49,7 @@ const caseStudies = [
   {
     category: "Moda · SEO",
     title: "Dagi'de %260 Organik Trafik",
+    image: "https://cdn.sanity.io/images/67vl8x07/production/56c4fee1369b0c90255b0cdf7b5790bb76cd14cd-800x600.jpg",
     desc: "Moda markası Dagi'nin organik arama görünürlüğünü kapsamlı SEO çalışmalarıyla %260 büyüttük.",
     metrics: [
       { label: "Organik Trafik", value: "+260%" },
@@ -57,51 +60,12 @@ const caseStudies = [
   {
     category: "Kuyumculuk · SEO",
     title: "Lizay Pırlanta'da %124 Büyüme",
+    image: "https://cdn.sanity.io/images/67vl8x07/production/5acdebd6020b4d8da8d355be41f547a27dd53250-640x800.jpg",
     desc: "Kuyumculuk e-ticaretinde 95 anahtar kelimede ilk sayfa sıralaması ve %124 organik trafik artışı.",
     metrics: [
       { label: "Organik Trafik", value: "+124%" },
       { label: "İlk Sayfa", value: "95 kelime" },
       { label: "Hedef Kelime", value: "100" },
-    ],
-  },
-  {
-    category: "Sosyal Medya",
-    title: "Schesir'de Etkileşim 6 Katına",
-    desc: "Instagram'da içerik ve topluluk stratejisiyle etkileşimi %600, takipçiyi %500 büyüttük.",
-    metrics: [
-      { label: "Etkileşim", value: "+600%" },
-      { label: "Görüntülenme", value: "+8M" },
-      { label: "Takipçi", value: "+500%" },
-    ],
-  },
-  {
-    category: "Sosyal Medya",
-    title: "Rosebox'ta 23M+ Görüntülenme",
-    desc: "Facebook'ta viral içerik kurgusuyla 23 milyondan fazla görüntülenme ve %400 etkileşim artışı.",
-    metrics: [
-      { label: "Görüntülenme", value: "+23M" },
-      { label: "Etkileşim", value: "+400%" },
-      { label: "Takipçi", value: "+80%" },
-    ],
-  },
-  {
-    category: "Sosyal Medya",
-    title: "Take a Shot'ta %300 Takipçi",
-    desc: "Instagram'da takipçi tabanını %300, görüntülenmeyi 4 milyonun üzerine taşıdık.",
-    metrics: [
-      { label: "Takipçi", value: "+300%" },
-      { label: "Görüntülenme", value: "+4M" },
-      { label: "Etkileşim", value: "+100%" },
-    ],
-  },
-  {
-    category: "Sosyal Medya",
-    title: "Aklab Group'ta Marka Bilinirliği",
-    desc: "Instagram'da %270 takipçi ve 3 milyon+ görüntülenme ile marka bilinirliğini güçlendirdik.",
-    metrics: [
-      { label: "Takipçi", value: "+270%" },
-      { label: "Görüntülenme", value: "+3M" },
-      { label: "Etkileşim", value: "+150%" },
     ],
   },
 ];
@@ -267,7 +231,14 @@ export default function ReferanslarPage() {
               className="group bg-surface-container-lowest rounded-xl p-2 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.04)] transition-all duration-500 hover:-translate-y-2"
             >
               <div className="aspect-[4/3] rounded-lg overflow-hidden mb-4 md:mb-6 relative bg-surface-container-high">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent" />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={cs.image}
+                  alt={cs.title}
+                  loading="lazy"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
                 <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider text-primary">
                   {cs.category}
                 </div>
