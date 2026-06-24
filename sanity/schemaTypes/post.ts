@@ -62,6 +62,67 @@ export const post = defineType({
         },
       ],
     }),
+
+    // Enhanced fields for better blog content (based on Reddit/X research for Shopify topics)
+    defineField({
+      name: "keyPainPoints",
+      title: "Ana Sorun Noktaları (Reddit & X'ten gerçek şikayetler)",
+      type: "array",
+      of: [{ type: "string" }],
+      description: "Kullanıcıların en çok şikayet ettiği noktalar. Her biri ayrı madde.",
+    }),
+    defineField({
+      name: "appAudit",
+      title: "App Audit / Uygulama Tavsiyeleri",
+      type: "array",
+      of: [
+        {
+          type: "object",
+          fields: [
+            defineField({ name: "appName", title: "Uygulama Adı", type: "string" }),
+            defineField({ name: "impact", title: "Etkisi (hız, SEO vs)", type: "string" }),
+            defineField({ name: "recommendation", title: "Tavsiye (kaldır / kullan / alternatif)", type: "string" }),
+          ],
+        },
+      ],
+      description: "Reddit ve X'te en sık bahsedilen uygulamalar ve etkileri.",
+    }),
+    defineField({
+      name: "themeAdvice",
+      title: "Tema Tavsiyeleri ve Bloat Uyarısı",
+      type: "array",
+      of: [{ type: "string" }],
+      description: "Dawn önerisi, premium tema sorunları, kullanılmayan özellik kapatma ipuçları.",
+    }),
+    defineField({
+      name: "commonMistakes",
+      title: "Yaygın Hatalar ve Uyarılar",
+      type: "array",
+      of: [{ type: "string" }],
+      description: "Speed optimization scam servisleri, lab vs gerçek metrik farkı gibi uyarılar.",
+    }),
+    defineField({
+      name: "realResults",
+      title: "Gerçek Sonuçlar / Örnekler",
+      type: "array",
+      of: [
+        {
+          type: "object",
+          fields: [
+            defineField({ name: "example", title: "Örnek / Vaka (anonim)", type: "string" }),
+            defineField({ name: "before", title: "Önceki Durum", type: "string" }),
+            defineField({ name: "after", title: "Sonraki Durum", type: "string" }),
+          ],
+        },
+      ],
+    }),
+    defineField({
+      name: "measurementNote",
+      title: "Ölçüm Notu (Lab vs Gerçek Veri)",
+      type: "text",
+      rows: 3,
+      description: "PageSpeed vs Shopify rapor vs CrUX ayrımı için kısa açıklama.",
+    }),
     defineField({
       name: "author",
       title: "Yazar",

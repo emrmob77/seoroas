@@ -27,9 +27,9 @@ export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
   return generateDynamicSeoMetadata({
-    title: "Shopify Danışmanlık & Ajansı — Kurulum, SEO, Google Ads, Analytics",
+    title: "Shopify Danışmanlık & Ajansı — Uçtan Uca Destek",
     description:
-      "Shopify danışmanlık hizmeti: mağaza kurulumu, tema ve yazılımsal geliştirme, SEO, Google Ads, GA4 & veri kurulumu ve sürekli optimizasyon tek çatı altında. Uçtan uca Shopify ajansı desteği için ücretsiz görüşme.",
+      "Shopify danışmanlık ve ajans hizmeti: mağaza kurulumu, SEO, Google Ads, GA4 ve yazılımsal geliştirme tek çatı altında. Ücretsiz keşif görüşmesi alın.",
     path: "/seo/shopify-danismanligi",
   });
 }

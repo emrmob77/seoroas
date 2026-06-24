@@ -22,6 +22,12 @@ const detailFields = `
   mainImage,
   author,
   body,
+  keyPainPoints,
+  appAudit,
+  themeAdvice,
+  commonMistakes,
+  realResults,
+  measurementNote,
   "readingTime": round(length(pt::text(body)) / 5 / 200)
 `;
 

@@ -21,6 +21,21 @@ export interface Post {
   mainImage: SanityImage;
   author?: string;
   readingTime?: number;
+  // Enhanced fields for revised blog content (Reddit/X research based)
+  keyPainPoints?: string[];
+  appAudit?: Array<{
+    appName?: string;
+    impact?: string;
+    recommendation?: string;
+  }>;
+  themeAdvice?: string[];
+  commonMistakes?: string[];
+  realResults?: Array<{
+    example?: string;
+    before?: string;
+    after?: string;
+  }>;
+  measurementNote?: string;
 }
 
 export interface Service {

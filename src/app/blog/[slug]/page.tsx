@@ -141,6 +141,72 @@ export default async function BlogPostPage({ params }: PageProps) {
                 />
               </div>
 
+              {/* Enhanced structured sections for revised blog content (Reddit + X research) */}
+              {post.keyPainPoints && post.keyPainPoints.length > 0 && (
+                <div className="mt-16 rounded-2xl border border-outline-variant/30 bg-surface-container-low p-8">
+                  <h3 className="text-sm font-black uppercase tracking-[0.2em] text-primary mb-4">Reddit & X'ten Gerçek Sorunlar</h3>
+                  <ul className="space-y-2 text-on-surface-variant">
+                    {post.keyPainPoints.map((point, i) => (
+                      <li key={i} className="flex gap-2">• {point}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {post.appAudit && post.appAudit.length > 0 && (
+                <div className="mt-12">
+                  <h3 className="text-xl font-bold mb-4 tracking-tight">App Audit – Hangi Uygulamalar Sorun Yaratıyor?</h3>
+                  <div className="space-y-4">
+                    {post.appAudit.map((item, i) => (
+                      <div key={i} className="border border-outline-variant/20 rounded-xl p-6 bg-surface-container-lowest/60">
+                        <div className="font-semibold text-primary mb-1">{item.appName}</div>
+                        <p className="text-sm mb-1"><strong>Etkisi:</strong> {item.impact}</p>
+                        <p className="text-sm"><strong>Tavsiye:</strong> {item.recommendation}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {post.themeAdvice && post.themeAdvice.length > 0 && (
+                <div className="mt-12 rounded-2xl bg-surface-container p-8 border border-outline-variant/20">
+                  <h3 className="text-xl font-bold mb-4 tracking-tight">Tema Tavsiyeleri & Bloat Uyarısı</h3>
+                  <ul className="space-y-2 text-on-surface-variant">
+                    {post.themeAdvice.map((advice, i) => <li key={i}>• {advice}</li>)}
+                  </ul>
+                </div>
+              )}
+
+              {post.commonMistakes && post.commonMistakes.length > 0 && (
+                <div className="mt-12">
+                  <h3 className="text-xl font-bold mb-4 tracking-tight text-red-600">Yaygın Hatalar ve Uyarılar</h3>
+                  <ul className="space-y-2 text-on-surface-variant">
+                    {post.commonMistakes.map((mistake, i) => <li key={i}>⚠️ {mistake}</li>)}
+                  </ul>
+                </div>
+              )}
+
+              {post.realResults && post.realResults.length > 0 && (
+                <div className="mt-12">
+                  <h3 className="text-xl font-bold mb-4 tracking-tight">Gerçek Sonuçlar</h3>
+                  <div className="grid gap-4">
+                    {post.realResults.map((res, i) => (
+                      <div key={i} className="bg-surface-container-low rounded-xl p-6 border border-outline-variant/20">
+                        {res.example && <p className="font-medium mb-2">{res.example}</p>}
+                        {res.before && <p className="text-sm text-red-600">Önce: {res.before}</p>}
+                        {res.after && <p className="text-sm text-green-600">Sonra: {res.after}</p>}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {post.measurementNote && (
+                <div className="mt-12 p-6 bg-surface-container-low/80 rounded-xl text-sm text-on-surface-variant border border-outline-variant/20">
+                  <strong>Ölçüm Notu:</strong> {post.measurementNote}
+                </div>
+              )}
+
               {/* Share */}
               <div className="mt-16 pt-12 border-t border-outline-variant/20">
                 <ShareButtons
