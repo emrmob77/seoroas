@@ -141,10 +141,10 @@ export default async function BlogPostPage({ params }: PageProps) {
                 />
               </div>
 
-              {/* Enhanced structured sections for revised blog content (Reddit + X research) */}
+              {/* Enhanced structured sections for revised blog content */}
               {post.keyPainPoints && post.keyPainPoints.length > 0 && (
                 <div className="mt-16 rounded-2xl border border-outline-variant/30 bg-surface-container-low p-8">
-                  <h3 className="text-sm font-black uppercase tracking-[0.2em] text-primary mb-4">Reddit & X'ten Gerçek Sorunlar</h3>
+                  <h3 className="text-sm font-black uppercase tracking-[0.2em] text-primary mb-4">En Sık Karşılaşılan Sorunlar</h3>
                   <ul className="space-y-2 text-on-surface-variant">
                     {post.keyPainPoints.map((point, i) => (
                       <li key={i} className="flex gap-2">• {point}</li>
