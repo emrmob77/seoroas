@@ -173,9 +173,9 @@ const relatedServices = [
     desc: "Kaliteli ve güvenli backlink'lerle alan otoritesi.",
   },
   {
-    href: "/seo/icerik-seo",
-    title: "İçerik SEO",
-    desc: "Arama niyetine uygun blog ve koleksiyon içerikleri.",
+    href: "/seo/shopify-danismanligi",
+    title: "Shopify Danışmanlık",
+    desc: "Kurulum, reklam, analitik ve geliştirme dahil uçtan uca Shopify desteği.",
   },
 ];
 

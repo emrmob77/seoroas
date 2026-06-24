@@ -92,6 +92,7 @@ const defaultMegaMenuGroups: MegaMenuGroup[] = [
 
 const defaultMainLinks: NavLink[] = [
   { title: "Danışmanlık", url: "/seo-danismanligi" },
+  { title: "Shopify Danışmanlık", url: "/seo/shopify-danismanligi" },
   { title: "Referanslar", url: "/referanslar" },
   { title: "Fiyatlar", url: "/seo-fiyatlari" },
   { title: "Blog", url: "/blog" },
