@@ -162,6 +162,8 @@ export function Header({ navigation }: HeaderProps) {
   }, [navigation]);
 
   useEffect(() => {
+    // Mount tespiti — SSR/CSR aktif-link uyumu için kasıtlı, tek seferlik.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
     const onScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener("scroll", onScroll, { passive: true });

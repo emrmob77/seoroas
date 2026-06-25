@@ -44,6 +44,8 @@ export function CookieBanner() {
       const timer = setTimeout(() => setVisible(true), 1500);
       return () => clearTimeout(timer);
     }
+    // localStorage yalnızca client'ta okunur; mount sonrası state'e yazılır (kasıtlı).
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setConsent(stored);
     if (stored === "accepted") pushConsent(true);
   }, []);

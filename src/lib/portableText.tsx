@@ -1,4 +1,5 @@
 import type { PortableTextComponents, PortableTextBlock } from "@portabletext/react";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
@@ -151,17 +152,25 @@ export const portableTextComponents: PortableTextComponents = {
       const ref = value.asset._ref as string;
       const [, id, dimensions, format] = ref.split("-");
       const [w, h] = (dimensions || "").split("x");
+      const width = Number(w) || 0;
+      const height = Number(h) || 0;
       const src = `https://cdn.sanity.io/images/${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}/${process.env.NEXT_PUBLIC_SANITY_DATASET}/${id}-${dimensions}.${format}`;
       return (
         <figure className="my-8">
-          <img
-            src={src}
-            alt={value.alt || ""}
-            width={Number(w) || undefined}
-            height={Number(h) || undefined}
-            loading="lazy"
-            className="rounded-2xl w-full h-auto"
-          />
+          {width && height ? (
+            <Image
+              src={src}
+              alt={value.alt || ""}
+              width={width}
+              height={height}
+              sizes="(max-width: 768px) 100vw, 768px"
+              className="rounded-2xl w-full h-auto"
+            />
+          ) : (
+            // Boyut bilgisi yoksa next/image kullanılamaz; güvenli fallback.
+            // eslint-disable-next-line @next/next/no-img-element
+            <img src={src} alt={value.alt || ""} loading="lazy" className="rounded-2xl w-full h-auto" />
+          )}
           {value.alt && (
             <figcaption className="text-center text-sm text-on-surface-variant mt-3">
               {value.alt}
