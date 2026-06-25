@@ -145,9 +145,9 @@ export default async function BlogPostPage({ params }: PageProps) {
               {post.keyPainPoints && post.keyPainPoints.length > 0 && (
                 <div className="mt-16 rounded-2xl border border-outline-variant/30 bg-surface-container-low p-8">
                   <h3 className="text-sm font-black uppercase tracking-[0.2em] text-primary mb-4">En Sık Karşılaşılan Sorunlar</h3>
-                  <ul className="space-y-2 text-on-surface-variant">
+                  <ul className="space-y-2 text-on-surface-variant list-disc pl-5">
                     {post.keyPainPoints.map((point, i) => (
-                      <li key={i} className="flex gap-2">• {point}</li>
+                      <li key={i}>{point}</li>
                     ))}
                   </ul>
                 </div>
@@ -170,18 +170,18 @@ export default async function BlogPostPage({ params }: PageProps) {
 
               {post.themeAdvice && post.themeAdvice.length > 0 && (
                 <div className="mt-12 rounded-2xl bg-surface-container p-8 border border-outline-variant/20">
-                  <h3 className="text-xl font-bold mb-4 tracking-tight">Tema Tavsiyeleri & Bloat Uyarısı</h3>
-                  <ul className="space-y-2 text-on-surface-variant">
-                    {post.themeAdvice.map((advice, i) => <li key={i}>• {advice}</li>)}
+                  <h3 className="text-xl font-bold mb-4 tracking-tight">Tema Tavsiyeleri</h3>
+                  <ul className="space-y-2 text-on-surface-variant list-disc pl-5">
+                    {post.themeAdvice.map((advice, i) => <li key={i}>{advice}</li>)}
                   </ul>
                 </div>
               )}
 
               {post.commonMistakes && post.commonMistakes.length > 0 && (
                 <div className="mt-12">
-                  <h3 className="text-xl font-bold mb-4 tracking-tight text-red-600">Yaygın Hatalar ve Uyarılar</h3>
-                  <ul className="space-y-2 text-on-surface-variant">
-                    {post.commonMistakes.map((mistake, i) => <li key={i}>⚠️ {mistake}</li>)}
+                  <h3 className="text-xl font-bold mb-4 tracking-tight">Yaygın Hatalar</h3>
+                  <ul className="space-y-2 text-on-surface-variant list-disc pl-5">
+                    {post.commonMistakes.map((mistake, i) => <li key={i}>{mistake}</li>)}
                   </ul>
                 </div>
               )}
@@ -189,15 +189,13 @@ export default async function BlogPostPage({ params }: PageProps) {
               {post.realResults && post.realResults.length > 0 && (
                 <div className="mt-12">
                   <h3 className="text-xl font-bold mb-4 tracking-tight">Gerçek Sonuçlar</h3>
-                  <div className="grid gap-4">
+                  <ul className="space-y-3 text-on-surface-variant list-disc pl-5">
                     {post.realResults.map((res, i) => (
-                      <div key={i} className="bg-surface-container-low rounded-xl p-6 border border-outline-variant/20">
-                        {res.example && <p className="font-medium mb-2">{res.example}</p>}
-                        {res.before && <p className="text-sm text-red-600">Önce: {res.before}</p>}
-                        {res.after && <p className="text-sm text-green-600">Sonra: {res.after}</p>}
-                      </div>
+                      <li key={i}>
+                        {res.example && <span className="font-medium">{res.example}:</span>} {res.before} → {res.after}
+                      </li>
                     ))}
-                  </div>
+                  </ul>
                 </div>
               )}
 

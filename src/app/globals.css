@@ -69,6 +69,19 @@ html {
   outline-offset: 2px;
 }
 
+/* Mobil: agir backdrop-blur'lari hafiflet.
+   Buyuk blur'lar (ozellikle fixed/sticky ogelerde) mobil tarayicilarda
+   scroll sirasinda repaint hatasina (icerik gec/bos gelme) ve jank'e yol acar.
+   Cam gorunumu korunur, repaint maliyeti dramatik dusurulur. */
+@media (max-width: 1023px) {
+  .backdrop-blur-xl,
+  .backdrop-blur-2xl,
+  .backdrop-blur-3xl {
+    -webkit-backdrop-filter: blur(8px) !important;
+    backdrop-filter: blur(8px) !important;
+  }
+}
+
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *,

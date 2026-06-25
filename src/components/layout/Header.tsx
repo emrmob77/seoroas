@@ -196,7 +196,7 @@ export function Header({ navigation }: HeaderProps) {
     <>
       <header className="fixed top-0 w-full z-50 pt-4 px-4">
         <nav
-          className={`relative mx-auto max-w-6xl rounded-full border border-zinc-200/20 bg-white/70 backdrop-blur-3xl flex justify-between items-center px-6 lg:px-8 py-3 transition-shadow duration-300 ${
+          className={`relative mx-auto max-w-6xl rounded-full border border-zinc-200/20 bg-white/95 backdrop-blur-none lg:bg-white/70 lg:backdrop-blur-3xl flex justify-between items-center px-6 lg:px-8 py-3 transition-shadow duration-300 ${
             scrolled
               ? "shadow-[0_8px_32px_0_rgba(0,0,0,0.08)]"
               : "shadow-[0_8px_32px_0_rgba(0,0,0,0.04)]"
