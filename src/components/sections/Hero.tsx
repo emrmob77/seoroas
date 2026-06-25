@@ -21,18 +21,17 @@ export function Hero() {
 
         {/* H1 */}
         <h1 className="text-4xl sm:text-5xl md:text-[5.5rem] font-extrabold leading-[1.05] tight-tracking text-on-background max-w-5xl mb-12">
-          Reklamsız da, <br />
+          10X Organik <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-dim">
-            her ay yeni müşteri
+            Trafik Büyümesi
           </span>
         </h1>
 
         {/* Subtitle */}
         <p className="text-lg md:text-xl text-on-surface-variant max-w-2xl font-light leading-relaxed mb-16">
-          Google&apos;da ilk sayfada yoksan, müşterilerin seni değil rakibini
-          buluyor. Biz teknik SEO ve içerikle markanı kalıcı sıralamalara
-          taşıyoruz; reklam bütçen olmadan da her ay düzenli müşteri gelir.
-          Müşterilerimizde ortalama %420 organik trafik artışı.
+          Veriye dayalı stratejiler ve mimari SEO optimizasyonu ile markanızın
+          dijital varlığını yeniden inşa ediyoruz. Görünürlük bir seçenek değil,
+          bir standarttır.
         </p>
 
         {/* Stat Strip — Glassmorphic Card */}
