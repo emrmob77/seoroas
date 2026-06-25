@@ -26,70 +26,70 @@ const pages = [
   {
     pagePath: "/seo/on-page-seo",
     pageLabel: "On-Page SEO",
-    seoTitle: "On-page SEO ile her sayfanızı zirveye taşıyoruz",
+    seoTitle: "On-Page SEO: Sayfalarınızı Aramada Öne Çıkarın",
     seoDescription:
       "Title tag, meta description, heading yapısı, iç linkleme ve içerik optimizasyonu ile her sayfanızın sıralama potansiyelini artırın.",
   },
   {
     pagePath: "/seo/teknik-seo",
     pageLabel: "Teknik SEO",
-    seoTitle: "Teknik SEO ile sitenizi hızlı ve sağlam kuruyoruz",
+    seoTitle: "Teknik SEO: Sitenizi Hızlı ve Taranabilir Yapın",
     seoDescription:
       "Core Web Vitals, crawl budget, site mimarisi, schema markup ve JS rendering optimizasyonu. Teknik altyapınızı arama motorlarına hazırlayın.",
   },
   {
     pagePath: "/seo/link-building",
     pageLabel: "Link Building",
-    seoTitle: "Link building ile alan otoritenizi büyütüyoruz",
+    seoTitle: "Link Building: Alan Otoritenizi Linklerle Büyütün",
     seoDescription:
       "Editöryel kalitede backlink edinimi, dijital PR, guest posting ve rakip analizi ile domain otoritenizi güçlendirin. DR 80+ kaynaklardan link.",
   },
   {
     pagePath: "/seo/lokal-seo",
     pageLabel: "Lokal SEO",
-    seoTitle: "Lokal SEO ile yakın çevredeki müşterilere ulaşın",
+    seoTitle: "Lokal SEO: Yakın Çevredeki Müşterilere Ulaşın",
     seoDescription:
       "Google Business Profile, yerel dizin yönetimi, NAP tutarlılığı ve bölgesel içerik stratejisi ile yakın çevrenizdeki müşterilere ulaşın.",
   },
   {
     pagePath: "/seo/e-ticaret-seo",
     pageLabel: "E-Ticaret SEO",
-    seoTitle: "E-ticaret SEO ile ürünlerinizi öne çıkarıyoruz",
+    seoTitle: "E-Ticaret SEO: Ürünlerinizi Aramada Öne Çıkarın",
     seoDescription:
       "Ürün sayfası, kategori mimarisi, faceted navigation ve product schema ile e-ticaret sitenizin organik gelirini artırın.",
   },
   {
     pagePath: "/seo/icerik-seo",
     pageLabel: "İçerik SEO",
-    seoTitle: "İçerik SEO ile içerikten organik trafik üretiyoruz",
+    seoTitle: "İçerik SEO: Konu Otoritenizi İçerikle Büyütün",
     seoDescription:
       "Anahtar kelime araştırması, topic cluster, content gap analizi ve topikal otorite stratejisi ile organik trafiğinizi içerikle büyütün.",
   },
   {
     pagePath: "/seo/wordpress-seo",
     pageLabel: "WordPress SEO",
-    seoTitle: "WordPress SEO ile sitenizi hızlandırıp büyütüyoruz",
+    seoTitle: "WordPress SEO: Sitenizi Hızlandırın ve Büyütün",
     seoDescription:
       "WordPress site hızı, güvenlik, veritabanı optimizasyonu, eklenti temizliği ve içerik mimarisi ile WP sitenizin SEO performansını artırın.",
   },
   {
     pagePath: "/seo/shopify-seo",
     pageLabel: "Shopify SEO",
-    seoTitle: "Shopify SEO ile mağazanızı Google’da büyütüyoruz",
+    seoTitle: "Shopify SEO: Mağaza Trafiğinizi ve Satışı Büyütün",
     seoDescription:
       "Shopify Liquid şablon optimizasyonu, uygulama temizliği, JSON-LD schema ve koleksiyon/ürün sayfası SEO ile organik satışlarınızı artırın.",
   },
   {
     pagePath: "/seo/seo-ajansi",
     pageLabel: "SEO Ajansı",
-    seoTitle: "SEO ajansı olarak gelirinizi veriyle büyütüyoruz",
+    seoTitle: "SEO Ajansı: Gelirinizi Veriyle ve Şeffaf Büyütün",
     seoDescription:
       "Veri odaklı SEO stratejileri, şeffaf raporlama ve ölçülebilir sonuçlar. Organik trafiğinizi ve gelirlerinizi profesyonel SEO ajansı ile artırın.",
   },
   {
     pagePath: "/seo/kurumsal-seo",
     pageLabel: "Kurumsal SEO",
-    seoTitle: "Kurumsal SEO ile büyük siteleri ölçeklendiriyoruz",
+    seoTitle: "Kurumsal SEO: Büyük Ölçekte Organik Büyüme Kurun",
     seoDescription:
       "Büyük ölçekli siteler için otomasyon, uluslararası SEO, teknik altyapı yönetimi ve C-level raporlama. Kurumsal organik büyüme stratejisi.",
   },
@@ -103,21 +103,21 @@ const pages = [
   {
     pagePath: "/hizmetler/google-tag-manager",
     pageLabel: "Google Tag Manager",
-    seoTitle: "Google Tag Manager ile ölçümü tek yerden yönetin",
+    seoTitle: "Google Tag Manager: Ölçümü Tek Yerden Yönetin",
     seoDescription:
       "Google Tag Manager kurulumu, GA4 entegrasyonu, Consent Mode v2 uyumlu veri katmanı ve olay takibi. Profesyonel GTM altyapısı.",
   },
   {
     pagePath: "/hizmetler/meta-pixel-capi",
     pageLabel: "Meta Pixel & CAPI",
-    seoTitle: "Meta Pixel ve CAPI ile dönüşüm ölçümünü kuruyoruz",
+    seoTitle: "Meta Pixel ve CAPI: Reklam Dönüşüm Ölçümünü Kurun",
     seoDescription:
       "Meta Pixel ve Conversions API kurulumu ile reklam attribution doğruluğunu artırın. Domain doğrulama, event mimarisi ve server-side takip dahil.",
   },
   {
     pagePath: "/hizmetler/tiktok-pixel",
     pageLabel: "TikTok Pixel",
-    seoTitle: "TikTok Pixel ile reklam dönüşümlerinizi ölçüyoruz",
+    seoTitle: "TikTok Pixel: Reklam Dönüşümlerinizi Doğru Ölçün",
     seoDescription:
       "TikTok Pixel ve Events API kurulumu ile reklam performansınızı ölçün. Özel eventler, kitle segmentasyonu ve KVKK uyumlu server-side izleme.",
   },
@@ -180,35 +180,35 @@ const pages = [
   {
     pagePath: "/istanbul-seo-ajansi",
     pageLabel: "İstanbul SEO Ajansı",
-    seoTitle: "İstanbul’da işletmenizi SEO ile zirveye taşıyoruz",
+    seoTitle: "İstanbul SEO Ajansı: Yerel Pazarda Zirveye Çıkın",
     seoDescription:
       "İstanbul'da profesyonel SEO hizmeti. Yerel arama, teknik optimizasyon ve içerik stratejisi ile İstanbul pazarında organik büyüme sağlayın.",
   },
   {
     pagePath: "/ankara-seo-ajansi",
     pageLabel: "Ankara SEO Ajansı",
-    seoTitle: "Ankara’da markanızı SEO ile Google’da büyütüyoruz",
+    seoTitle: "Ankara SEO Ajansı: Markanızı Google'da Büyütün",
     seoDescription:
       "Ankara'da kurumsal ve kamu sektörüne yönelik SEO hizmeti. Teknik altyapı, içerik stratejisi ve yerel SEO ile dijital görünürlüğünüzü artırın.",
   },
   {
     pagePath: "/izmir-seo-ajansi",
     pageLabel: "İzmir SEO Ajansı",
-    seoTitle: "İzmir’de işletmenizi SEO ile Ege’de büyütüyoruz",
+    seoTitle: "İzmir SEO Ajansı: İşletmenizi Ege'de Öne Çıkarın",
     seoDescription:
       "İzmir'de profesyonel SEO hizmeti. E-ticaret, turizm ve ihracat sektörlerinde uzmanlaşmış organik büyüme stratejileri.",
   },
   {
     pagePath: "/bursa-seo-ajansi",
     pageLabel: "Bursa SEO Ajansı",
-    seoTitle: "Bursa’da sanayi ve ticareti SEO ile büyütüyoruz",
+    seoTitle: "Bursa SEO Ajansı: Sanayi ve Ticarette Öne Çıkın",
     seoDescription:
       "Bursa'da sanayi ve ticaret odaklı SEO hizmeti. Otomotiv, tekstil ve gıda sektörlerinde dijital görünürlük ve organik trafik artışı.",
   },
   {
     pagePath: "/antalya-seo-ajansi",
     pageLabel: "Antalya SEO Ajansı",
-    seoTitle: "Antalya’da turizm markalarını SEO ile büyütüyoruz",
+    seoTitle: "Antalya SEO Ajansı: Turizm Markanızı Öne Çıkarın",
     seoDescription:
       "Antalya'da turizm ve hizmet sektörü odaklı SEO hizmeti. Otelcilik, sağlık turizmi ve gayrimenkul için organik trafik ve rezervasyon artışı.",
   },
