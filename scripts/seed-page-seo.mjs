@@ -14,7 +14,7 @@ const pages = [
     pageLabel: "Ana Sayfa",
     seoTitle: "SEOROAS | SEO Ajansı — Organik Trafik & Gelir Büyümesi",
     seoDescription:
-      "Veri odaklı SEO stratejileri ile organik trafiğinizi ve gelirinizi artırın. Teknik SEO, içerik optimizasyonu, link building ve e-ticaret SEO. Ücretsiz analiz alın.",
+      "Veri odaklı SEO stratejileriyle organik trafiğinizi ve gelirinizi büyütün. Teknik SEO, içerik, link building ve e-ticaret SEO. Ücretsiz analiz alın.",
   },
   {
     pagePath: "/seo",
@@ -33,7 +33,7 @@ const pages = [
   {
     pagePath: "/seo/teknik-seo",
     pageLabel: "Teknik SEO",
-    seoTitle: "Teknik SEO Hizmeti — Site Hızı & Altyapı Optimizasyonu",
+    seoTitle: "Teknik SEO Hizmeti — Site Hızı & Altyapı",
     seoDescription:
       "Core Web Vitals, crawl budget, site mimarisi, schema markup ve JS rendering optimizasyonu. Teknik altyapınızı arama motorlarına hazırlayın.",
   },
@@ -61,7 +61,7 @@ const pages = [
   {
     pagePath: "/seo/icerik-seo",
     pageLabel: "İçerik SEO",
-    seoTitle: "İçerik SEO Hizmeti — Topic Cluster & İçerik Stratejisi",
+    seoTitle: "İçerik SEO Hizmeti — Topic Cluster Stratejisi",
     seoDescription:
       "Anahtar kelime araştırması, topic cluster, content gap analizi ve topikal otorite stratejisi ile organik trafiğinizi içerikle büyütün.",
   },
@@ -89,7 +89,7 @@ const pages = [
   {
     pagePath: "/seo/kurumsal-seo",
     pageLabel: "Kurumsal SEO",
-    seoTitle: "Kurumsal SEO Hizmeti — Enterprise Ölçekte Optimizasyon",
+    seoTitle: "Kurumsal SEO — Enterprise Ölçekte Optimizasyon",
     seoDescription:
       "Büyük ölçekli siteler için otomasyon, uluslararası SEO, teknik altyapı yönetimi ve C-level raporlama. Kurumsal organik büyüme stratejisi.",
   },
@@ -152,7 +152,7 @@ const pages = [
   {
     pagePath: "/referanslar",
     pageLabel: "Referanslar",
-    seoTitle: "Referanslar — SEO Başarı Hikayeleri & Vaka Analizleri",
+    seoTitle: "Referanslar — SEO Başarı Hikayeleri",
     seoDescription:
       "E-ticaret, SaaS, sağlık ve gayrimenkul sektörlerinde somut verilerle kanıtlanmış SEO başarı hikayelerini inceleyin.",
   },

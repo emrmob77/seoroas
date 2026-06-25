@@ -765,7 +765,7 @@ export default function ShopifySeoPage() {
           </div>
           <p className="mt-8 text-on-surface-variant font-light leading-relaxed max-w-2xl">
             Gerçek sonuçlar için{" "}
-            <Link href="/vaka-calismalari" className="text-primary font-medium hover:underline">
+            <Link href="/referanslar" className="text-primary font-medium hover:underline">
               vaka çalışmalarımızı
             </Link>{" "}
             ve{" "}
