@@ -8,26 +8,27 @@ const client = createClient({
   useCdn: false,
 });
 
+// Stil: "Anahtar Kelime: Aksiyon" — Başlık Düzeni (Title Case), ~55-60 karakter render.
 const titles = {
-  "/seo/on-page-seo": "On-page SEO ile her sayfanızı zirveye taşıyoruz",
-  "/seo/teknik-seo": "Teknik SEO ile sitenizi hızlı ve sağlam kuruyoruz",
-  "/seo/link-building": "Link building ile alan otoritenizi büyütüyoruz",
-  "/seo/lokal-seo": "Lokal SEO ile yakın çevredeki müşterilere ulaşın",
-  "/seo/e-ticaret-seo": "E-ticaret SEO ile ürünlerinizi öne çıkarıyoruz",
-  "/seo/icerik-seo": "İçerik SEO ile içerikten organik trafik üretiyoruz",
-  "/seo/wordpress-seo": "WordPress SEO ile sitenizi hızlandırıp büyütüyoruz",
-  "/seo/shopify-seo": "Shopify SEO ile mağazanızı Google’da büyütüyoruz",
-  "/seo/kurumsal-seo": "Kurumsal SEO ile büyük siteleri ölçeklendiriyoruz",
-  "/seo/seo-ajansi": "SEO ajansı olarak gelirinizi veriyle büyütüyoruz",
-  "/hizmetler/google-tag-manager": "Google Tag Manager ile ölçümü tek yerden yönetin",
-  "/hizmetler/meta-pixel-capi": "Meta Pixel ve CAPI ile dönüşüm ölçümünü kuruyoruz",
-  "/hizmetler/tiktok-pixel": "TikTok Pixel ile reklam dönüşümlerinizi ölçüyoruz",
-  "/geo": "GEO ile markanızı yapay zeka aramalarına taşıyoruz",
-  "/istanbul-seo-ajansi": "İstanbul’da işletmenizi SEO ile zirveye taşıyoruz",
-  "/ankara-seo-ajansi": "Ankara’da markanızı SEO ile Google’da büyütüyoruz",
-  "/izmir-seo-ajansi": "İzmir’de işletmenizi SEO ile Ege’de büyütüyoruz",
-  "/bursa-seo-ajansi": "Bursa’da sanayi ve ticareti SEO ile büyütüyoruz",
-  "/antalya-seo-ajansi": "Antalya’da turizm markalarını SEO ile büyütüyoruz",
+  "/seo/on-page-seo": "On-Page SEO: Sayfalarınızı Aramada Öne Çıkarın",
+  "/seo/teknik-seo": "Teknik SEO: Sitenizi Hızlı ve Taranabilir Yapın",
+  "/seo/link-building": "Link Building: Alan Otoritenizi Linklerle Büyütün",
+  "/seo/lokal-seo": "Lokal SEO: Yakın Çevredeki Müşterilere Ulaşın",
+  "/seo/e-ticaret-seo": "E-Ticaret SEO: Ürünlerinizi Aramada Öne Çıkarın",
+  "/seo/icerik-seo": "İçerik SEO: Konu Otoritenizi İçerikle Büyütün",
+  "/seo/wordpress-seo": "WordPress SEO: Sitenizi Hızlandırın ve Büyütün",
+  "/seo/shopify-seo": "Shopify SEO: Mağaza Trafiğinizi ve Satışı Büyütün",
+  "/seo/kurumsal-seo": "Kurumsal SEO: Büyük Ölçekte Organik Büyüme Kurun",
+  "/seo/seo-ajansi": "SEO Ajansı: Gelirinizi Veriyle ve Şeffaf Büyütün",
+  "/hizmetler/google-tag-manager": "Google Tag Manager: Ölçümü Tek Yerden Yönetin",
+  "/hizmetler/meta-pixel-capi": "Meta Pixel ve CAPI: Reklam Dönüşüm Ölçümünü Kurun",
+  "/hizmetler/tiktok-pixel": "TikTok Pixel: Reklam Dönüşümlerinizi Doğru Ölçün",
+  "/geo": "GEO: Markanızı Yapay Zekâ Aramalarında Gösterin",
+  "/istanbul-seo-ajansi": "İstanbul SEO Ajansı: Yerel Pazarda Zirveye Çıkın",
+  "/ankara-seo-ajansi": "Ankara SEO Ajansı: Markanızı Google'da Büyütün",
+  "/izmir-seo-ajansi": "İzmir SEO Ajansı: İşletmenizi Ege'de Öne Çıkarın",
+  "/bursa-seo-ajansi": "Bursa SEO Ajansı: Sanayi ve Ticarette Öne Çıkın",
+  "/antalya-seo-ajansi": "Antalya SEO Ajansı: Turizm Markanızı Öne Çıkarın",
 };
 
 const docs = await client.fetch(
@@ -36,8 +37,8 @@ const docs = await client.fetch(
 );
 const idByPath = new Map(docs.map((d) => [d.pagePath, d._id]));
 
-let ok = 0,
-  missing = [];
+let ok = 0;
+const missing = [];
 for (const [path, title] of Object.entries(titles)) {
   const id = idByPath.get(path);
   if (!id) {
@@ -45,8 +46,8 @@ for (const [path, title] of Object.entries(titles)) {
     continue;
   }
   await client.patch(id).set({ seoTitle: title }).commit();
-  console.log(`✅ ${path}  →  ${title}`);
+  console.log(`✅ [${[...title].length + 10}] ${path}  →  ${title}`);
   ok++;
 }
 console.log(`\n${ok}/${Object.keys(titles).length} güncellendi.`);
-if (missing.length) console.log("⚠️ pageSeo bulunamadı:", missing.join(", "));
+if (missing.length) console.log("⚠️ bulunamadı:", missing.join(", "));
