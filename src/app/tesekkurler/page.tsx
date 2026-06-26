@@ -16,7 +16,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default function TesekkurlerPage() {
   return (
-    <main className="min-h-[70vh] flex items-center justify-center px-6 py-24">
+    <main className="min-h-[480px] flex items-center justify-center px-6 py-24">
       <ConversionTracker event="generate_lead" params={{ currency: "TRY", value: 1 }} />
       <div className="max-w-lg mx-auto text-center">
         <div className="w-20 h-20 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-8">

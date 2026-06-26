@@ -25,7 +25,7 @@ export function SubpageHero({
   children,
 }: SubpageHeroProps) {
   return (
-    <section className="relative min-h-[60vh] md:min-h-[75vh] pt-24 md:pt-36 pb-16 md:pb-24 px-5 md:px-8 overflow-hidden flex items-center">
+    <section className="relative min-h-[520px] md:min-h-[600px] pt-24 md:pt-36 pb-16 md:pb-24 px-5 md:px-8 overflow-hidden flex items-center">
       <div className="max-w-7xl mx-auto flex flex-col items-center text-center w-full">
         <Breadcrumb items={breadcrumb} />
 
