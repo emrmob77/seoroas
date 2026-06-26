@@ -17,12 +17,12 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 const services = [
-  { title: "Ürün Sayfası Optimizasyonu", desc: "Her ürün sayfasını benzersiz meta etiketleri, zengin içerik ve yapılandırılmış veri ile optimize ederek arama görünürlüğünü maksimize ediyoruz.", tags: ["Product Schema", "Rich Snippets", "CTR"], large: true },
-  { title: "Kategori SEO", desc: "Kategori sayfalarınızı anahtar kelime odaklı yapılandırarak hem kullanıcı deneyimini hem de arama sıralamalarını iyileştiriyoruz.", tags: [] },
-  { title: "Teknik Altyapı", desc: "Faceted navigation, pagination, canonical tag ve crawl budget yönetimi ile e-ticaret sitenizin teknik SEO altyapısını güçlendiriyoruz.", tags: [] },
-  { title: "Schema Markup (Product)", desc: "Product, Offer, Review ve Breadcrumb schema'ları ile zengin arama sonuçları elde ederek tıklanma oranınızı artırıyoruz.", tags: [] },
-  { title: "Blog & İçerik", desc: "Ürünlerinizle ilgili bilgilendirici blog içerikleri üreterek organik trafik çekiyor ve satın alma hunisine yönlendiriyoruz.", tags: [] },
-  { title: "Dönüşüm Optimizasyonu", desc: "Organik trafiği satışa dönüştürmek için CTA, ürün açıklamaları ve sayfa deneyimini sürekli iyileştiriyoruz.", tags: [], wide: true },
+  { title: "Ürün Sayfası Optimizasyonu", desc: "Tedarikçiden kopyalanan açıklamalar hem Google'ı hem alıcıyı sıkar. Her ürün sayfasını; alıcının gerçek sorusuna cevap veren özgün metin, kullanım görselleri, yukarıda yorumlar ve Product schema ile yeniden kuruyoruz. Büyük katalogda en yüksek cirolu ürünlerden başlıyoruz.", tags: ["Product Schema", "Özgün İçerik", "CTR"], large: true },
+  { title: "Kategori SEO", desc: "Kategori sayfaları çoğu zaman ürün sayfasından daha çok aranır ve iyi kurgulanırsa daha çok dönüştürür. Anahtar kelime odaklı yapı, özgün kategori metni ve CollectionPage yapılandırılmış verisiyle bu sayfaları satış motoruna çeviriyoruz.", tags: [] },
+  { title: "Teknik Altyapı", desc: "Filtreler kullanıcı için harika; ama yanlış yönetilirse Google'a milyonlarca düşük kaliteli URL sunarsın — 50 filtre, 1 milyondan fazla kombinasyon demek. Faceted URL'lerin çoğunu noindex'ler, canonical ve crawl bütçesini gerçek kategorilere yönlendiririz.", tags: [] },
+  { title: "Schema Markup (Product)", desc: "Product, Offer, Review ve Breadcrumb şemalarıyla arama sonucunda fiyat, stok ve yıldız puanı görünür hale gelir. Bu zengin sonuçlar tıklanma oranını %20-30 artırabilir ve seni rakiplerden görsel olarak ayırır.", tags: [] },
+  { title: "Blog & İçerik", desc: "Blog doğrudan \"al\" demez; önce öğretir. Karşılaştırma, beden/kullanım rehberi ve satın alma öncesi soruları cevaplayan içerikle alıcıyı farkındalıktan doğru ürün sayfasına taşırız.", tags: [] },
+  { title: "Dönüşüm Optimizasyonu", desc: "Belirsiz aralık yerine \"2-3 iş günü içinde kargoda\", net bir aksiyon mesajı ve 2 saniyenin altında açılan sayfa — aynı trafikten daha çok satış demektir. Hız ve sayfa deneyimini sürekli iyileştiriyoruz.", tags: [], wide: true },
 ];
 
 const dashboardMetrics = [
@@ -34,9 +34,10 @@ const dashboardMetrics = [
 const faqItems = [
   { q: "E-ticaret SEO nedir?", a: "E-ticaret SEO, online mağazanızın ürün ve kategori sayfalarını arama motorlarında üst sıralara taşımak için uygulanan optimizasyon stratejilerinin bütünüdür. Organik arama trafiğini artırarak reklam maliyetlerinizi düşürür ve sürdürülebilir satış büyümesi sağlar." },
   { q: "Ürün sayfaları nasıl optimize edilir?", a: "Her ürün sayfasında benzersiz title ve description etiketleri, SEO uyumlu ürün açıklamaları, optimize edilmiş görseller, Product schema markup ve kullanıcı yorumları olmalıdır. Duplicate content'i önlemek için canonical tag kullanımı da kritik öneme sahiptir." },
-  { q: "E-ticaret sitelerinde teknik SEO neden zor?", a: "E-ticaret siteleri genellikle binlerce ürün sayfası, filtreleme parametreleri, sayfalama ve dinamik URL yapıları içerir. Bu karmaşıklık crawl budget sorunlarına, duplicate content'e ve indeksleme problemlerine yol açabilir. Profesyonel teknik SEO yönetimi bu zorlukları aşmanızı sağlar." },
+  { q: "E-ticaret sitelerinde teknik SEO neden zor?", a: "En büyük tuzak faceted (filtreli) navigasyondur: 50 filtre, 1 milyondan fazla URL kombinasyonu üretebilir. Yanlış yönetilirse indekslenen sayfa sayısı patlar — gerçek vakalarda 1.600 sayfadan 24.000'e fırlayan siteler var — crawl bütçesi tükenir ve duplicate içerik oluşur. Doğru noindex, canonical ve sitemap stratejisiyle bu karmaşayı kontrol altına alıyoruz." },
   { q: "Product schema markup ne işe yarar?", a: "Product schema markup, arama sonuçlarında fiyat, stok durumu, puan ve yorum sayısı gibi bilgilerin zengin snippet olarak gösterilmesini sağlar. Bu zengin sonuçlar tıklanma oranınızı %20-30 artırabilir ve rakiplerinizden görsel olarak ayrışmanızı sağlar." },
-  { q: "E-ticaret SEO sonuçları ne kadar sürede görülür?", a: "İlk organik trafik artışları genellikle 2-3 ay içinde görülmeye başlar. Tam kapsamlı sonuçlar ve sürdürülebilir gelir artışı 6-12 ay arasında gerçekleşir. Rekabetçi sektörlerde bu süre daha uzun olabilir ancak ROI genellikle çok yüksektir." },
+  { q: "E-ticaret SEO sonuçları ne kadar sürede görülür?", a: "İlk organik trafik artışları genellikle 2-3 ayda başlar; sürdürülebilir gelir büyümesi ve bileşik etki 6-12 ayda oturur. Ama hızlı kazanımlar da mümkün: tek bir başlık ya da SSS düzenlemesi haftalar içinde tıklamayı artırabilir. Tam katalog çalışması aylar sürdüğü için en yüksek cirolu ürünlerden başlarız." },
+  { q: "Binlerce ürünüm var, optimizasyona nereden başlamalı?", a: "Her şeyi aynı anda elle güncellemeye çalışmak en sık yapılan hatadır. En yüksek cirolu 100-200 üründen başlar, kazanan bir şablon kurar, sonra bu sistemi tüm kataloğa yayarız. Aylık bir bakım düzeniyle (son güncelleme tarihi, görsel ve dönüşüm notu) kalite düşmeden ölçeklenir." },
   { q: "E-ticaret SEO hizmeti ve danışmanlığı neleri kapsar?", a: "E-ticaret SEO hizmetimiz; teknik denetim, ürün ve kategori sayfası optimizasyonu, Product/Offer schema, site hızı, içerik ve link çalışmasını kapsar. İhtiyacınıza göre tek seferlik denetimden aylık sürekli danışmanlığa kadar farklı paketler sunuyoruz. Eticaret altyapınız (Shopify, WooCommerce, Ticimax vb.) ne olursa olsun çalışıyoruz." },
 ];
 
