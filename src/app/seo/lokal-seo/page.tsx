@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, MapPin } from "lucide-react";
 import { generateDynamicSeoMetadata } from "@/lib/seo";
 import { SchemaOrg } from "@/components/seo/SchemaOrg";
 import { SubpageHero } from "@/components/sections/SubpageHero";
@@ -17,26 +17,28 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 const services = [
-  { title: "Google My Business", desc: "GMB profilinizi tam optimize ederek yerel arama sonuçlarında ve Google Maps'te üst sıralarda yer almanızı sağlıyoruz.", tags: ["GMB", "Maps", "Local Pack"], large: true },
-  { title: "Yerel Dizin Kayıtları", desc: "Sektörel ve bölgesel dizinlere tutarlı ve doğru bilgilerle kayıt yaparak yerel otoritenizi güçlendiriyoruz.", tags: [] },
-  { title: "NAP Tutarlılığı", desc: "İsim, Adres ve Telefon bilgilerinizi tüm çevrimiçi platformlarda tutarlı hale getirerek güven sinyalleri oluşturuyoruz.", tags: [] },
-  { title: "Yerel İçerik Stratejisi", desc: "Bölgenize ve hizmet alanınıza özel içerikler üreterek yerel arama sorgularında görünürlüğünüzü artırıyoruz.", tags: [] },
-  { title: "Google Maps Optimizasyonu", desc: "Konum bazlı aramalarda harita paketinde üst sıralarda yer almanız için kapsamlı Maps optimizasyonu uyguluyoruz.", tags: [] },
-  { title: "Review Yönetimi", desc: "Müşteri yorumlarını aktif yöneterek puanınızı artırıyor, olumsuz geri bildirimleri profesyonelce ele alıyoruz.", tags: [], wide: true },
+  { title: "Google Business Profile", desc: "Sıralamada en hızlı etki yaratan alan burası. Profili eksiksiz doldurmak yetmez; her hafta yeni fotoğraf, konum içeren güncelleme ve Q&A ile aktif tutmak gerekir. Pasif (dormant) profiller geriler, aktif ve zengin olanlar hem haritada hem Google'ın AI özetlerinde öne çıkar.", tags: ["GBP", "Maps", "Yerel Paket"], large: true },
+  { title: "Yerel Dizin Kayıtları", desc: "Kalite niceliği yener: 50 sağlam yerel atıf (Yelp, sektörel dizinler, ticaret odası), 200 junk kayıttan daha güçlüdür. Müşterilerin gerçekten kullandığı dizinlere, tutarlı NAP ile kayıt yaparız.", tags: [] },
+  { title: "NAP Tutarlılığı", desc: "İsim, adres ve telefon her platformda birebir aynı olmalı — format dahil. Eski sahipten kalan adres ya da tutarsız bilgiler Google'ın güvenini ve harita sıralamanı düşürür; hepsini tek doğru bilgiye hizalarız.", tags: [] },
+  { title: "Konum Sayfaları & Yerel İçerik", desc: "Hedeflediğin her şehir için ayrı bir konum sayfası şart. Başlık, URL ve metada 'hizmet + şehir' kullanır, GBP kategorinle sayfayı eşleştiririz — 'nasıl yapılır' değil, doğrudan satın alma niyetli aramalar.", tags: [] },
+  { title: "Google Maps Optimizasyonu", desc: "Harita sıralamasında üç şey belirleyici: yakınlık, kategori/sayfa uyumu ve itibar (yorum + aktivite). Bazı sektörlerde harita paketi organikten bile kritiktir; sinyalleri buna göre kurarız.", tags: [] },
+  { title: "Review (Yorum) Yönetimi", desc: "Artık toplam yorum sayısı değil, tazelik (velocity) kazandırıyor: 90 günlük boşluk 'uyku' sinyali sayılıyor. Rakibin haftada 3-5 yorum alıyorsa sen de almalısın. Her müşteriden yorum ister, olumsuzlara 24 saatte profesyonelce cevap veririz.", tags: [], wide: true },
 ];
 
 const dashboardMetrics = [
-  { label: "Local Pack Rankings", value: "12", unit: "", status: "Top 3" },
-  { label: "GMB Views", value: "+280", unit: "%", status: "Surging" },
-  { label: "Local Traffic", value: "+340", unit: "%", status: "Explosive" },
+  { label: "Yerel Pakette", value: "12", unit: "", status: "İlk 3" },
+  { label: "GBP Görüntülenme", value: "+280", unit: "%", status: "Yükseliyor" },
+  { label: "Yerel Trafik", value: "+340", unit: "%", status: "Patlama" },
 ];
 
 const faqItems = [
   { q: "Lokal SEO nedir?", a: "Lokal SEO, işletmenizin belirli bir coğrafi bölgedeki arama sonuçlarında görünürlüğünü artırmaya odaklanan optimizasyon çalışmalarıdır. 'Yakınımdaki' aramalarında ve Google Maps'te üst sıralarda yer almanızı sağlar." },
-  { q: "Google My Business profili neden bu kadar önemli?", a: "Google My Business, yerel arama sonuçlarında ve Google Maps'te işletmenizin görünmesini sağlayan temel araçtır. Optimize edilmiş bir GMB profili, yerel 3'lü paket (Local Pack) sonuçlarında yer almanızı ve potansiyel müşterilere ulaşmanızı sağlar." },
-  { q: "NAP tutarlılığı ne anlama gelir?", a: "NAP (Name, Address, Phone) tutarlılığı, işletme adınızın, adresinizin ve telefon numaranızın tüm çevrimiçi platformlarda birebir aynı olmasıdır. Google bu tutarlılığı güvenilirlik sinyali olarak değerlendirir ve yerel sıralamalarda önemli bir faktördür." },
-  { q: "Müşteri yorumları sıralamayı etkiler mi?", a: "Evet, Google müşteri yorumlarının hem sayısını hem de kalitesini yerel sıralama faktörü olarak kullanır. Düzenli ve yüksek puanlı yorumlar almak yerel arama görünürlüğünüzü doğrudan artırır. Ayrıca yorumlara verilen yanıtlar da etkili bir faktördür." },
-  { q: "Lokal SEO sonuçları ne kadar sürede görülür?", a: "GMB optimizasyonu ve yerel dizin kayıtları genellikle 2-4 hafta içinde etkisini göstermeye başlar. Rekabetçi bölgelerde tam sonuçlar 3-6 ay sürebilir. Sürekli review yönetimi ve içerik üretimi ile sonuçlar kalıcı hale gelir." },
+  { q: "Google Business Profile (GMB) neden bu kadar önemli?", a: "Yerel aramada ve haritada görünmenizi sağlayan temel araçtır; sıralamada en hızlı etki yaratan alandır. Profili eksiksiz doldurmak yetmez, her hafta fotoğraf ve konum içeren güncellemelerle aktif tutmak gerekir. Pasif profiller geriler; aktif ve zengin profiller hem haritada hem Google'ın AI özetlerinde öne çıkar." },
+  { q: "Müşteri yorumları sıralamayı etkiler mi?", a: "Evet — ve artık toplam sayıdan çok tazelik (velocity) belirleyici. 2026'da 90 günlük yorum boşluğu 'uyku' sinyali sayılıyor. Rakiplerinizden daha çok ve daha düzenli yorum almak, her yoruma 24 saat içinde cevap vermek yerel sıralamayı doğrudan etkiler. Ani sahte yorum spike'larından ise kaçınmak gerekir; spam filtresini tetikler." },
+  { q: "NAP tutarlılığı ne anlama gelir?", a: "NAP (Name, Address, Phone); işletme adınızın, adresinizin ve telefonunuzun tüm platformlarda birebir aynı olmasıdır — format dahil. Google bunu güven sinyali olarak okur. Eski sahipten kalan adres ya da tutarsız bilgiler hem harita sıralamasını hem AI özetlerindeki görünürlüğü düşürür." },
+  { q: "Google işletme profilim neden askıya alınabilir?", a: "En sık nedenler: çok hızlı veya çok fazla değişiklik, yanıltıcı bilgi (sahte adres/isim), ani yorum spike'ları ve kural dışı kategori/içerik. Profili kararlı tutmak, gerçek bilgi kullanmak ve değişiklikleri ölçülü yapmak askıdan korur. Askıya alınmışsa doğru belgelerle itiraz sürecini biz yönetiriz." },
+  { q: "Birden çok şehirde hizmet veriyorum, ne yapmalıyım?", a: "Her hedef şehir için ayrı bir konum sayfası açmak en etkili yöntemdir. Sayfa başlığı ve URL'inde 'hizmet + şehir' kullanır, GBP'nizi ilgili sayfaya linkler ve adresinizi footer'a koyarız. Böylece her bölgede ayrı ayrı görünür olursunuz." },
+  { q: "Lokal SEO sonuçları ne kadar sürede görülür?", a: "GBP optimizasyonu, dizin kayıtları ve NAP düzeltmeleri genellikle 2-4 hafta içinde erken etkisini gösterir. Review velocity, içerik ve linklerle gerçek Local Pack hakimiyeti 3-6 ayda oturur; rekabetçi bölgelerde daha uzun sürer. Sürekli aktivite şarttır — duran profiller geriler." },
 ];
 
 export default function LokalSeoPage() {
@@ -78,7 +80,7 @@ export default function LokalSeoPage() {
             ile Bölgenizde Görünür Olun.
           </>
         }
-        subtitle="Yerel aramalarda ve Google Maps'te üst sıralarda yer alarak bölgenizdeki potansiyel müşterilere ulaşın."
+        subtitle="Biri telefonuna 'yakınımdaki [işiniz]' yazdığında çıkan ilk 3 işletmeden biri siz misiniz, yoksa rakipleriniz mi? Google Business Profile, yorumlar ve konum sayfalarıyla sizi yerel aramada ve haritada öne çıkarıyoruz."
         stats={[
           { value: "12", label: "Local Pack Rankings" },
           { value: "+280%", label: "GMB Views" },
@@ -91,14 +93,26 @@ export default function LokalSeoPage() {
           <div className="flex flex-col md:flex-row justify-between items-end mb-10 md:mb-20 gap-8">
             <div className="space-y-4">
               <span className="text-primary font-bold tracking-widest text-xs uppercase">
-                Local Dominance
+                Yerel Hakimiyet
               </span>
               <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-on-background">
                 Yerel Spektrum.
               </h2>
             </div>
             <p className="text-on-surface-variant max-w-sm font-light">
-              Bölgenizde rakipsiz görünürlük için kapsamlı yerel SEO çözümleri.
+              Google Business Profile&apos;dan konum sayfalarına kadar uçtan uca yerel SEO. Profili sıfırdan kurmak için{" "}
+              <Link href="/blog/google-benim-isletmem-rehberi" className="text-primary font-medium hover:underline">
+                Google Benim İşletmem rehberimize
+              </Link>
+              , şehre özel çalışma için{" "}
+              <Link href="/istanbul-seo-ajansi" className="text-primary font-medium hover:underline">
+                İstanbul
+              </Link>{" "}
+              ve{" "}
+              <Link href="/ankara-seo-ajansi" className="text-primary font-medium hover:underline">
+                Ankara
+              </Link>{" "}
+              sayfalarımıza bakabilirsiniz.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
@@ -109,7 +123,23 @@ export default function LokalSeoPage() {
                   s.large ? "md:col-span-2 md:row-span-2" : ""
                 } ${s.wide ? "md:col-span-2 flex items-center gap-8" : ""}`}
               >
-                {s.large && <div className="pt-32" />}
+                {s.large && (
+                  <div className="mb-8 rounded-2xl bg-surface-container-low border border-outline-variant/10 p-5 max-w-sm">
+                    <div className="flex items-center gap-1.5 mb-2">
+                      <MapPin className="h-4 w-4 text-primary" aria-hidden />
+                      <span className="text-[10px] font-bold uppercase tracking-wide text-primary">
+                        Yerel Paket · İlk 3
+                      </span>
+                    </div>
+                    <div className="text-base font-bold text-on-background leading-snug mb-1">
+                      İşletmeniz
+                    </div>
+                    <div className="flex items-center gap-1.5 text-[11px] text-on-surface-variant">
+                      <span className="text-amber-500 tracking-tight">★★★★★</span>
+                      <span>4,9 (327 yorum) · 450 m · Açık</span>
+                    </div>
+                  </div>
+                )}
                 <div>
                   <h3 className={`${s.large ? "text-2xl" : "text-lg"} font-bold mb-3 text-on-background`}>
                     {s.title}
