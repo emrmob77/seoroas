@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, ChevronDown, CircleCheck } from "lucide-react";
+import { ArrowRight, ChevronDown, CircleCheck, Network } from "lucide-react";
 import { generateDynamicSeoMetadata } from "@/lib/seo";
 import { SchemaOrg } from "@/components/seo/SchemaOrg";
 import { SubpageHero } from "@/components/sections/SubpageHero";
@@ -208,7 +208,37 @@ export default function WordPressSeoPage() {
                   item.large ? "md:col-span-2 md:row-span-2 flex flex-col justify-end min-h-[280px] md:min-h-[420px]" : "md:col-span-2"
                 }`}
               >
-                {item.large && <div className="flex-1 md:min-h-[4rem]" />}
+                {item.large && (
+                  <div className="flex-1 relative min-h-[150px] md:min-h-[200px] mb-7 rounded-[1.5rem] bg-gradient-to-br from-primary/5 to-transparent border border-outline-variant/10 overflow-hidden">
+                    <div
+                      className="absolute inset-0 opacity-40"
+                      style={{
+                        backgroundImage:
+                          "radial-gradient(var(--color-outline-variant) 1px, transparent 1px)",
+                        backgroundSize: "16px 16px",
+                      }}
+                      aria-hidden
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary-dim shadow-lg shadow-primary/20">
+                        <Network className="h-8 w-8 text-on-primary" aria-hidden />
+                      </div>
+                    </div>
+                    {[
+                      { t: "Teknik", c: "top-4 left-4" },
+                      { t: "İçerik", c: "top-5 right-5" },
+                      { t: "Hız", c: "bottom-5 left-6" },
+                      { t: "Link", c: "bottom-4 right-4" },
+                    ].map((p) => (
+                      <span
+                        key={p.t}
+                        className={`absolute ${p.c} px-3 py-1 rounded-full bg-surface-container-lowest border border-outline-variant/10 text-[10px] font-bold uppercase tracking-wide text-on-surface-variant shadow-sm`}
+                      >
+                        {p.t}
+                      </span>
+                    ))}
+                  </div>
+                )}
                 <div>
                   <h3 className={`${item.large ? "text-2xl md:text-3xl" : "text-xl"} font-bold mb-3 text-on-background tracking-[-0.04em]`}>
                     {item.title}
