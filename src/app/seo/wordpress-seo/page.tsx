@@ -17,7 +17,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 const speedFeatures = [
-  "LCP, FID ve CLS optimizasyonu ile Core Web Vitals odaklı deneyim",
+  "LCP, INP ve CLS optimizasyonu ile Core Web Vitals odaklı hızlı deneyim",
   "Object Cache ve Redis ile veritabanı yükünü düşürme",
   "Görsel optimizasyonu ve WebP / modern format dağıtımı",
   "Critical CSS ve gecikmeli JS ile render yolunu kısaltma",
@@ -25,35 +25,50 @@ const speedFeatures = [
 
 const pillarItems = [
   {
-    title: "Semantic Authority Engine",
-    desc: "Konu kümelerini varlık düzeyinde modelleyerek E-E-A-T sinyallerini güçlendiriyor, arama niyetleriyle hizalı anlamsal otorite inşa ediyoruz.",
-    tags: ["Topic Map", "Entity SEO"],
+    title: "Konu Otoritesi Mimarisi",
+    desc: "Sayfalarınızı tek tek değil, birbirini destekleyen konu kümeleri halinde kuruyoruz. Google sitenizi o konuda uzman olarak görür; tek bir kelime yerine yüzlerce ilgili aramada öne çıkarsınız.",
+    tags: ["Konu Kümesi", "E-E-A-T"],
     large: true,
   },
   {
-    title: "Internal Linking Architecture",
-    desc: "Hub–spoke yapısı, bağlamsal çapa metinleri ve crawl derinliği dengesiyle PageRank akışını kontrollü şekilde yönetiyoruz.",
-    tags: ["Link Equity"],
+    title: "İç Linkleme Mimarisi",
+    desc: "Doğru iç bağlantılarla güçlü sayfaların değerini önemli sayfalara aktarıyor; hem kullanıcıyı hem Google'ı sitenizde doğru yöne yönlendiriyoruz.",
+    tags: ["Link Değeri"],
   },
   {
-    title: "Dynamic Content Mapping",
-    desc: "Şablonlar, özel alanlar ve veri tabanlı içerik akışlarını tek bir haritada birleştirerek ölçeklenebilir üretim sağlıyoruz.",
-    tags: ["ACF", "CPT"],
+    title: "Şablonla Ölçeklenebilir İçerik",
+    desc: "Özel alanlar ve şablonlarla yüzlerce ürün veya yazı sayfasını tutarlı, hızlı ve SEO uyumlu üretiyoruz; içerik büyüdükçe kalite düşmüyor.",
+    tags: ["Şablon", "Özel Alan"],
   },
 ];
 
 const technicalColumns = [
   {
-    title: "Yoast & RankMath Calibration",
-    desc: "Şema çıktıları, indeks kuralları, canonical ve breadcrumb mantığını tema ve eklenti yığınınıza göre ince ayarlıyoruz; çakışan kuralları tek doğruluk kaynağına indiriyoruz.",
+    title: "Yoast / Rank Math Doğru Ayarı",
+    desc: "Eklentiyi kurmak yetmez; yanlış ayarlanmış şema, canonical ve indeks kuralları sıralamayı düşürür. Tema ve eklenti yığınınıza göre tek tek kalibre ediyor, çakışmaları temizliyoruz.",
   },
   {
-    title: "Technical Hardening",
-    desc: "Güvenlik başlıkları, gereksiz endpoint ve REST yüzeylerinin sertleştirilmesi, önbellek katmanları ve CDN entegrasyonu ile hem bot hem kullanıcı için stabil altyapı.",
+    title: "Güvenlik ve Altyapı Sağlamlaştırma",
+    desc: "Güvenlik başlıkları, gereksiz erişim noktalarının kapatılması, önbellek katmanları ve CDN ile siteniz hem botlar hem kullanıcılar için stabil ve hızlı kalır.",
   },
   {
-    title: "Query Optimization",
-    desc: "N+1 sorgular, yavaş admin ve ön yüz sorguları, geçici tablolar ve meta sorgu yükünü azaltarak TTFB ve sunucu maliyetini düşürüyoruz.",
+    title: "Veritabanı ve Sorgu Optimizasyonu",
+    desc: "Yavaş sorgular ve şişmiş veritabanı, sayfanın açılış süresini (TTFB) uzatır. Bunları sadeleştirip sunucu yükünü ve maliyetini düşürüyoruz.",
+  },
+];
+
+const pluginItems = [
+  {
+    title: "Yoast SEO",
+    desc: "En yaygın eklenti. Meta, site haritası, breadcrumb ve okunabilirlik analizinde güçlü; yeni başlayan için en net arayüzü sunar.",
+  },
+  {
+    title: "Rank Math",
+    desc: "Tek ekranda daha çok ayar ve gelişmiş şema seçenekleri. Çoklu anahtar kelime ve detaylı kontrol isteyenler için pratik.",
+  },
+  {
+    title: "All in One SEO",
+    desc: "Kurumsal ve WooCommerce siteleri için olgun bir alternatif; sade kurulum ve güçlü e-ticaret şeması sağlar.",
   },
 ];
 
@@ -69,6 +84,10 @@ const faqItems = [
   {
     q: "Teknik WordPress SEO kapsamına neler girer?",
     a: "Robots ve indeks kuralları, XML site haritası hiyerarşisi, yapılandırılmış veri, yönlendirme ve canonical zincirleri, hreflang (çok dilli), önbellek ve veritabanı performansı, güvenlik sertleştirmesi ve tema/eklenti kaynaklı çakışmaların giderilmesi teknik WP SEO’nun parçasıdır.",
+  },
+  {
+    q: "WordPress için hangi SEO eklentisi gerekir?",
+    a: "Çoğu site için Yoast SEO, Rank Math veya All in One SEO'dan biri yeterlidir; üçü de meta, şema ve site haritası temellerini karşılar. Önemli olan eklenti seçmek değil, onu doğru ayarlamak ve birden fazla SEO eklentisini aynı anda kullanıp çakışma yaratmamaktır. Eklenti bir araçtır; sıralamayı strateji ve doğru kurulum kazandırır.",
   },
 ];
 
@@ -113,7 +132,7 @@ export default function WordPressSeoPage() {
             Tam Kapasite Kullanın
           </>
         }
-        subtitle="Standart eklenti ayarlarının ötesine geçin: tema ve eklenti yığınınızı teknik olarak hizalıyor, hız ve içerik mimarisini birlikte optimize ederek organik büyümeyi sürdürülebilir kılıyoruz."
+        subtitle="Yoast'ı kurmak SEO yapmak değildir. WordPress'in yavaş teması, şişen eklentileri ve dağınık ayarları sıralamanızı sessizce düşürür; biz bunları tek tek düzeltip sitenizi hem Google hem kullanıcı için hızlı ve net hale getiriyoruz."
       />
 
       {/* Hız optimizasyonu */}
@@ -248,6 +267,54 @@ export default function WordPressSeoPage() {
         </div>
       </section>
 
+      {/* WordPress SEO Eklentileri */}
+      <section className="py-16 md:py-32 px-6 md:px-8 bg-surface-container-low/40 border-y border-outline-variant/10">
+        <div className="max-w-7xl mx-auto">
+          <div className="max-w-2xl mb-10 md:mb-16 space-y-4">
+            <span className="text-primary font-bold tracking-widest text-xs uppercase">
+              Eklentiler
+            </span>
+            <h2 className="text-3xl md:text-5xl font-black tracking-[-0.04em] text-on-background">
+              WordPress SEO Eklentileri: Hangisi, Neden?
+            </h2>
+            <p className="text-on-surface-variant font-light leading-relaxed">
+              Eklenti bir araçtır, strateji değil. Üçü de meta, şema ve site haritası temellerini
+              karşılar; asıl fark doğru kurulum ve sitenize uygun seçimdedir.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6 md:gap-8">
+            {pluginItems.map((p) => (
+              <div
+                key={p.title}
+                className="bg-surface-container-lowest border border-outline-variant/10 rounded-3xl p-8 md:p-10 soft-shadow"
+              >
+                <h3 className="text-lg md:text-xl font-bold text-on-background mb-4 tracking-[-0.04em]">
+                  {p.title}
+                </h3>
+                <p className="text-sm text-on-surface-variant font-light leading-relaxed">
+                  {p.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-8 text-on-surface-variant font-light leading-relaxed max-w-2xl">
+            Hangi eklentiyi seçerseniz seçin, sıralamayı kazandıran şey{" "}
+            <Link href="/seo/teknik-seo" className="text-primary font-medium hover:underline">
+              teknik SEO
+            </Link>{" "}
+            temeli ve{" "}
+            <Link href="/seo/icerik-seo" className="text-primary font-medium hover:underline">
+              içerik SEO
+            </Link>{" "}
+            stratejisidir. Temel kavramlar için{" "}
+            <Link href="/blog/seo-nedir" className="text-primary font-medium hover:underline">
+              SEO nedir
+            </Link>{" "}
+            yazımıza bakabilirsiniz.
+          </p>
+        </div>
+      </section>
+
       {/* SSS */}
       <section className="py-16 md:py-32 px-6 md:px-8">
         <div className="max-w-3xl mx-auto">
@@ -302,7 +369,7 @@ export default function WordPressSeoPage() {
               href="/iletisim"
               className="inline-flex items-center gap-2 bg-surface-container-lowest text-primary px-10 py-5 rounded-full font-bold text-lg hover:bg-on-primary hover:scale-[1.02] transition-all shadow-2xl shadow-black/10"
             >
-              İletişime Geçin
+              Ücretsiz WordPress SEO Analizi Al
               <ArrowRight className="h-5 w-5" />
             </Link>
           </div>
