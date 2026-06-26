@@ -26,9 +26,9 @@ const services = [
 ];
 
 const dashboardMetrics = [
-  { label: "Organic Revenue", value: "+314", unit: "%", status: "Scaling" },
-  { label: "Transactions", value: "+184", unit: "%", status: "Growing" },
-  { label: "ROAS", value: "8.4", unit: "x", status: "Profitable" },
+  { label: "Organik Gelir", value: "+314", unit: "%", status: "Büyüyor" },
+  { label: "Satış Sayısı", value: "+184", unit: "%", status: "Artıyor" },
+  { label: "ROAS", value: "8.4", unit: "x", status: "Kârlı" },
 ];
 
 const faqItems = [
@@ -37,6 +37,7 @@ const faqItems = [
   { q: "E-ticaret sitelerinde teknik SEO neden zor?", a: "E-ticaret siteleri genellikle binlerce ürün sayfası, filtreleme parametreleri, sayfalama ve dinamik URL yapıları içerir. Bu karmaşıklık crawl budget sorunlarına, duplicate content'e ve indeksleme problemlerine yol açabilir. Profesyonel teknik SEO yönetimi bu zorlukları aşmanızı sağlar." },
   { q: "Product schema markup ne işe yarar?", a: "Product schema markup, arama sonuçlarında fiyat, stok durumu, puan ve yorum sayısı gibi bilgilerin zengin snippet olarak gösterilmesini sağlar. Bu zengin sonuçlar tıklanma oranınızı %20-30 artırabilir ve rakiplerinizden görsel olarak ayrışmanızı sağlar." },
   { q: "E-ticaret SEO sonuçları ne kadar sürede görülür?", a: "İlk organik trafik artışları genellikle 2-3 ay içinde görülmeye başlar. Tam kapsamlı sonuçlar ve sürdürülebilir gelir artışı 6-12 ay arasında gerçekleşir. Rekabetçi sektörlerde bu süre daha uzun olabilir ancak ROI genellikle çok yüksektir." },
+  { q: "E-ticaret SEO hizmeti ve danışmanlığı neleri kapsar?", a: "E-ticaret SEO hizmetimiz; teknik denetim, ürün ve kategori sayfası optimizasyonu, Product/Offer schema, site hızı, içerik ve link çalışmasını kapsar. İhtiyacınıza göre tek seferlik denetimden aylık sürekli danışmanlığa kadar farklı paketler sunuyoruz. Eticaret altyapınız (Shopify, WooCommerce, Ticimax vb.) ne olursa olsun çalışıyoruz." },
 ];
 
 export default function ETicaretSeoPage() {
@@ -78,7 +79,7 @@ export default function ETicaretSeoPage() {
             ile Organik Satışlarınızı Artırın.
           </>
         }
-        subtitle="Ürün ve kategori sayfalarınızı optimize ederek organik arama trafiğini sürdürülebilir satışa dönüştürüyoruz."
+        subtitle="Reklamı kapattığın an satışlar duruyorsa sorun ürününde değil, görünürlükte. E-ticaret SEO ile ürün ve kategori sayfalarınızı arama motorlarına açıyor, reklamsız da dönen organik satış kuruyoruz."
         stats={[
           { value: "+314%", label: "Organic Revenue" },
           { value: "8.4x", label: "ROAS" },
@@ -91,7 +92,7 @@ export default function ETicaretSeoPage() {
           <div className="flex flex-col md:flex-row justify-between items-end mb-10 md:mb-20 gap-8">
             <div className="space-y-4">
               <span className="text-primary font-bold tracking-widest text-xs uppercase">
-                Commerce Optimization
+                E-Ticaret Optimizasyonu
               </span>
               <h2 className="text-4xl md:text-5xl font-black tracking-tighter text-on-background">
                 E-Ticaret Spektrumu.
@@ -117,7 +118,23 @@ export default function ETicaretSeoPage() {
                   s.large ? "md:col-span-2 md:row-span-2" : ""
                 } ${s.wide ? "md:col-span-2 flex items-center gap-8" : ""}`}
               >
-                {s.large && <div className="pt-32" />}
+                {s.large && (
+                  <div className="mb-8 rounded-2xl bg-surface-container-low border border-outline-variant/10 p-5 max-w-sm">
+                    <div className="text-[11px] text-primary font-medium mb-1">
+                      magazaniz.com › urun › deri-cuzdan
+                    </div>
+                    <div className="text-base font-bold text-on-background leading-snug mb-1.5">
+                      Premium El Yapımı Deri Cüzdan
+                    </div>
+                    <div className="flex items-center gap-1.5 text-[11px] text-on-surface-variant">
+                      <span className="text-amber-500 tracking-tight">★★★★★</span>
+                      <span>4,8 (213) · ₺1.299 · Stokta</span>
+                    </div>
+                    <span className="inline-block mt-3 text-[9px] font-bold uppercase tracking-wide text-primary bg-primary/10 px-2 py-0.5 rounded-full">
+                      Zengin Sonuç · Product Schema
+                    </span>
+                  </div>
+                )}
                 <div>
                   <h3 className={`${s.large ? "text-2xl" : "text-lg"} font-bold mb-3 text-on-background`}>
                     {s.title}
@@ -154,7 +171,11 @@ export default function ETicaretSeoPage() {
                 Ölçülebilir Mükemmellik.
               </h2>
               <p className="text-white/60 font-light">
-                Organik gelir artışını ve dönüşüm performansını gerçek zamanlı verilerle izliyoruz.
+                Organik gelir artışını, dönüşümü ve{" "}
+                <Link href="/blog/roas-nedir" className="text-white underline decoration-white/30 hover:decoration-white">
+                  ROAS
+                </Link>
+                &apos;ı gerçek zamanlı verilerle izliyoruz.
               </p>
             </div>
             <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-3 gap-6">
