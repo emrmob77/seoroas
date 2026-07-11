@@ -1,7 +1,9 @@
 import type { MetadataRoute } from "next";
 import { sanityClient } from "@/sanity/client";
 
-export const revalidate = 10;
+// Vercel'de metadata route'un build-time statik çıktı olarak donup kalmaması için
+// her istekte üretilir; Sanity fetch'leri kendi içinde 10 sn'lik data cache kullanır.
+export const dynamic = "force-dynamic";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://seoroas.com";
 
