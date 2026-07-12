@@ -54,7 +54,7 @@ Faydayı 3 seviye derine indir, duygusal/finansal sonuca ulaş; **en alttan yuka
 Merak bırak ama açık etme: "Asıl fark şurada başlıyor." Sayfa başına **en fazla 2-4 tane**.
 
 ### 6. Ritim
-Kısa vurucu cümleleri uzun, nefes alan cümlelerle değiştir. **Aynı uzunlukta ardışık paragraflar = AI sinyali.** Tek kelimelik vurgular kullan. ("İşe yarıyor.")
+Kısa vurucu cümleleri uzun, nefes alan cümlelerle değiştir. **Aynı uzunlukta ardışık paragraflar = AI sinyali.** Tek kelimelik vurgu kullanabilirsin ("İşe yarıyor.") ama nadir ve bilinçli: metin başına en fazla 1-2 tane. Bunun dışında **her cümlenin yüklemi olmak zorunda** — "9 ayar: görünürlük, sitemap, adım adım." gibi fiilsiz liste-cümleler yasak; ya fiille bitir ya iki cümleye böl.
 
 ### 7. Müşteri Yorumları
 Format: **önceki durum + yapılan + somut sonuç + süre + duygu**.
@@ -67,9 +67,22 @@ Format: **önceki durum + yapılan + somut sonuç + süre + duygu**.
 
 **Klişe açılışlar:** "Günümüzün hızla gelişen dünyasında", "X denince akla ilk gelen", "Bilindiği üzere", "Hepimizin bildiği gibi".
 **Şişik kelimeler:** "oyunun kurallarını değiştiren", "çözüm ortağı", "yenilikçi ve dinamik", "kaliteli hizmet anlayışı", "müşteri memnuniyeti odaklı", "deneyimleyin" (gereksiz).
-**İngilizce kalıp çevirileri:** "kaldıraç (leverage)", "deep dive / derinlemesine dalış", "Hadi başlayalım / dalalım", "Sonuç olarak" (gereksiz özet).
-**Biçim:** aşırı uzun tire (—) kullanımı; her paragrafı aynı uzunlukta yapma; gereksiz sıfat yığını ("güçlü, etkili, profesyonel, kapsamlı").
+**İngilizce kalıp çevirileri (yasak → doğrusu):** "kaldıraç (leverage)" → somut etkiyi yaz; "deep dive / derinlemesine dalış"; "Hadi başlayalım / dalalım"; "Sonuç olarak" (gereksiz özet); "üst satış (upsell)" → premium'a yükseltme uyarısı; "emin olun (make sure)" → "...malı" / "...sın" kipi; "tohum kelime (seed keyword)" → temel kelime; "kova (bucket)" → grup; "kur-unut (set and forget)" → kurup unutmak; "taban/kıyas çizgisi (baseline)" → kıyas noktası; "para kelimeleri (money keywords)" → satın alma niyetli kelimeler; "büyüklük sırası (order of magnitude)" → kaba gösterge. Bu liste büyür: kullanıcının yakaladığı her yeni kalıbı buraya ekle.
+**Biçim:** uzun tire (—) metin başına **en fazla 3**, excerpt/manşette **0** — tire yerine iki nokta, virgül, "çünkü/yani/ama" ya da cümle bölme kullan; her paragrafı aynı uzunlukta yapma; gereksiz sıfat yığını ("güçlü, etkili, profesyonel, kapsamlı").
 **Kural:** Bir cümle hem klişe hem somut veri taşımıyorsa → sil ya da yeniden yaz.
+
+---
+
+## Dil Doğruluğu Geçişi (ZORUNLU — MOD A ve B'de, teslimden önce)
+
+İngilizce kaynaklardan (Reddit, Ahrefs, resmi dokümanlar) araştırıp Türkçe yazarken cümleler kaynak dilin yapısıyla kurulur; bu geçiş onu yakalar. Metni yazdıktan sonra ayrı bir turda, cümle cümle:
+
+1. **Yüklem kontrolü:** Her cümlenin çekimli fiili var mı? (Bilinçli tek kelimelik vurgu istisna.)
+2. **Özne-yüklem uyumu:** Özellikle istatistik cümleleri — "site aramaların %40'ında tıklanır" ❌ → "sonuca her 100 kişiden 40'ı tıklıyor" ✅. Özne kim, eylemi gerçekten o mu yapıyor?
+3. **Çeviri kokusu:** Cümleyi İngilizce'ye geri çevir; birebir aynı yapıya dönüyorsa Türkçe kurulmamış demektir, yeniden kur.
+4. **Tire sayımı:** Metindeki "—" sayısını say; 3'ten fazlaysa azalt.
+
+**Excerpt/manşet kuralı:** Excerpt sitede "Öne Çıkanlar" kutusunda bağımsız görünür. Teaser değil, **tam cümleli bağımsız özettir**: en az iki tam cümle, her ikisinin de yüklemi var, uzun tire yok, yazıyı görmeden okunduğunda kendi başına anlamlı.
 
 ---
 
@@ -82,6 +95,9 @@ Bir metni teslim etmeden önce:
 - [ ] Fayda "ee, sonra?" zinciriyle finansal/duygusal sonuca bağlandı mı?
 - [ ] Paragraf uzunlukları değişiyor mu? (ritim)
 - [ ] AVOID listesinden hiçbir kelime/kalıp yok mu?
+- [ ] **Dil Doğruluğu Geçişi yapıldı mı?** (yüklem + özne-yüklem uyumu + çeviri kokusu, cümle cümle)
+- [ ] Uzun tire sayısı: metinde ≤3, excerpt'te 0 mı?
+- [ ] Excerpt: en az iki TAM cümle, bağımsız okunabilir mi?
 - [ ] CTA net bir aksiyon mu? ("Ücretsiz analiz al" > "İletişime geç")
 - [ ] Sesli okundu mu, insan gibi mi geliyor?
 - [ ] SEO anahtar kelimesi doğal biçimde korundu mu? (meta title kuralı: `Anahtar Kelime: Title Case Aksiyon`, 55-60 karakter)
