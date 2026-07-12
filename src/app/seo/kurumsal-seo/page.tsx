@@ -52,15 +52,15 @@ const services = [
 ];
 
 const dashboardMetrics = [
-  { label: "Organic Sessions", value: "+287", unit: "%", status: "Enterprise Scale" },
-  { label: "Revenue Impact", value: "4.2", unit: "M₺", status: "Measured ROI" },
-  { label: "Pages Optimized", value: "12K", unit: "+", status: "Full Coverage" },
+  { label: "Organic Sessions", value: "+287", unit: "%", status: "Örnek" },
+  { label: "Revenue Impact", value: "4.2", unit: "M₺", status: "Örnek" },
+  { label: "Pages Optimized", value: "12K", unit: "+", status: "Örnek" },
 ];
 
 const faqItems = [
   { q: "Kurumsal SEO nedir?", a: "Kurumsal SEO, büyük ölçekli web sitelerinin (genellikle 10.000+ sayfa) arama motorlarında performansını artırmak için uygulanan stratejik ve teknik optimizasyon süreçleridir. Standart SEO'dan farklı olarak, karmaşık site mimarisi, çoklu ekip koordinasyonu ve enterprise-level raporlama gerektirir." },
   { q: "Kurumsal SEO standart SEO'dan nasıl farklıdır?", a: "Kurumsal SEO; ölçek (binlerce sayfa), karmaşıklık (birden fazla subdomain, dil ve bölge), organizasyonel zorluklar (çoklu ekip koordinasyonu) ve raporlama gereksinimleri (C-level) açısından standart SEO'dan ayrılır. Teknik çözümler daha sofistike, strateji daha uzun vadeli olmalıdır." },
-  { q: "Hangi ölçekteki şirketler kurumsal SEO'ya ihtiyaç duyar?", a: "Genellikle 500+ ürün/sayfa içeren e-ticaret siteleri, çoklu lokasyona sahip markalar, birden fazla dilde hizmet veren şirketler ve yüksek organik trafik hedefleyen kurumlar kurumsal SEO hizmetine ihtiyaç duyar." },
+  { q: "Hangi ölçekteki şirketler kurumsal SEO'ya ihtiyaç duyar?", a: "Sayfa sayısı tek başına belirleyici değil. Asıl kriterler: binlerce URL'lik yapı, SEO kararlarının birden fazla ekipten geçmesi (geliştirme, ürün, pazarlama, hukuk), çoklu dil/pazar yönetimi ve hatalı bir release'in ciddi gelir veya marka riski yaratması. Bu koşullardan iki-üçü aynı anda varsa standart SEO süreci yetmez; kurumsal yönetişim gerekir." },
   { q: "Kurumsal SEO projeleri ne kadar sürer?", a: "Kurumsal SEO sürekli bir süreçtir. İlk audit ve strateji oluşturma 4-6 hafta, ilk anlamlı sonuçlar 3-6 ay ve tam optimizasyon 12-18 ay sürer. Sürdürülebilir sonuçlar için devam eden bir çalışma planlanmalıdır." },
   { q: "Kurumsal SEO maliyeti nedir?", a: "Kurumsal SEO, site büyüklüğüne, sektöre ve hedeflere göre özelleştirilmiş bir fiyatlandırma ile sunulur. Standart paketlerden farklı olarak, özel kaynak ataması ve genişletilmiş hizmet kapsamı nedeniyle daha yüksek bütçe gerektirir. Detaylı bilgi için bizimle iletişime geçin." },
 ];
@@ -106,8 +106,8 @@ export default function KurumsalSeoPage() {
         }
         subtitle="Büyük ölçekli web sitelerinin karmaşık yapılarını optimize ederek enterprise-level organik büyüme sağlıyoruz."
         stats={[
-          { value: "+287%", label: "Organic Sessions" },
-          { value: "12K+", label: "Optimized Pages" },
+          { value: "4-6 hafta", label: "İlk Audit + Strateji" },
+          { value: "C-level", label: "Raporlama Standardı" },
         ]}
       />
 
@@ -172,7 +172,11 @@ export default function KurumsalSeoPage() {
                 Enterprise Performans.
               </h2>
               <p className="text-white/60 font-light">
-                Kurumsal projelerde elde ettiğimiz ölçülebilir sonuçlar.
+                Kurumsal projelerde başarıyı oturum sayısıyla değil, marka dışı organik trafik,
+                indeks kalitesi ve organik gelir katkısıyla ölçüyoruz.
+              </p>
+              <p className="text-white/40 font-light text-xs">
+                Aşağıdaki panel temsili örnektir; müşteri sonucu değildir.
               </p>
             </div>
             <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-3 gap-6">

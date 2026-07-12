@@ -21,7 +21,7 @@ const flowCards = [
   {
     title: "Pixel Kurulumu",
     description:
-      "Universal tag dağıtımı, GTM veya doğrudan site entegrasyonu; gerektiğinde sunucu tarafı API ile tamamlayıcı ölçüm.",
+      "Universal tag dağıtımı, GTM veya doğrudan site entegrasyonu; gerektiğinde Events API ile sunucu tarafı gönderim — event ID eşleşmesi ve Test Events doğrulaması dahil.",
     icon: Code2,
   },
   {
@@ -45,10 +45,26 @@ const flowCards = [
 ];
 
 const stats = [
-  { value: "3.4x", label: "ROAS", hint: "Örnek performans senaryosu" },
-  { value: "100%", label: "Signal Match", hint: "Kimlik eşleştirme odağı" },
-  { value: "24h", label: "Kurulum", hint: "Tipik teknik devreye alma" },
-  { value: "0%", label: "Data Leakage", hint: "Hedeflenen sızıntı toleransı" },
+  {
+    value: "3.4x",
+    label: "ROAS",
+    hint: "Örnek performans senaryosu — sonuç kampanya, bütçe ve sektöre göre değişir",
+  },
+  {
+    value: "Event ID",
+    label: "Deduplikasyon",
+    hint: "Pixel ve Events API çift kayıtları tekilleştirilir; Test Events ile doğrulanır",
+  },
+  {
+    value: "1-5 gün",
+    label: "Devreye Alma",
+    hint: "Basit kurulum ilk gün yayında; tam event mimarisi kapsama göre",
+  },
+  {
+    value: "Backend",
+    label: "Mutabakat",
+    hint: "TikTok'un raporladığı dönüşümler gerçek sipariş verisiyle karşılaştırılır",
+  },
 ];
 
 export default function TikTokPixelPage() {
@@ -151,11 +167,12 @@ export default function TikTokPixelPage() {
                 <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
                 <div>
                   <p className="font-semibold text-on-background">
-                    Viral Potansiyel Takibi
+                    İçerikten Dönüşüme İzleme
                   </p>
                   <p className="text-sm text-on-surface-variant font-light mt-1">
-                    İçerik patlamalarını satış hunisiyle bağlayan event ve
-                    segmentlerle büyümeyi ölçülebilir kılıyoruz.
+                    Pixel viral potansiyeli ölçmez; video izlenme, etkileşim ve
+                    satın alma adımlarını aynı hunide ilişkilendirir. Hangi
+                    içeriğin gerçekten satış getirdiğini böyle görürsünüz.
                   </p>
                 </div>
               </li>

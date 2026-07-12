@@ -32,7 +32,7 @@ export async function generateMetadata(): Promise<Metadata> {
 const faqItems = [
   {
     q: "GTM siteyi yavaşlatır mı?",
-    a: "Doğru kurulduğunda GTM, tek bir asenkron konteyner yükü ile çalışır; ağır senkron script yığınlarının aksine sayfa performansını korumanıza yardımcı olur. Etiketleri tekilleştirme, yükleme önceliği ve lazy tetikleme ile Core Web Vitals dostu bir yapı kuruyoruz.",
+    a: "Dürüst cevap: konteynerin kendisi hafiftir ama içine koyduğunuz her tag bir performans maliyeti taşır. GTM tek başına siteyi hızlandırmaz; kazanım, doğru yönetişimden gelir. Script tekrarlarını tekilleştiriyor, tag başına yükleme önceliği tanımlıyor ve tetiklemeyi gerçekten gereken sayfalarla sınırlıyoruz. Böylece konteyner büyüse bile Core Web Vitals etkisi kontrol altında kalır.",
   },
   {
     q: "Kurulum ne kadar sürer?",
@@ -54,7 +54,7 @@ const protocolSteps = [
   {
     num: "02",
     title: "Data Layer Mühendisliği",
-    desc: "E-ticaret, lead formları ve içerik etkileşimleri için tutarlı, dokümante edilmiş data layer şeması; geliştirici ekibinizle uyumlu isimlendirme ve tip güvenliği.",
+    desc: "E-ticaret, lead formları ve içerik etkileşimleri için tutarlı, dokümante edilmiş data layer şeması; geliştirici ekibinizle uyumlu isimlendirme, tip güvenliği ve data layer'a kişisel veri (PII) sızmasını önleyen kontroller.",
     icon: Layers,
   },
   {
@@ -66,7 +66,7 @@ const protocolSteps = [
   {
     num: "04",
     title: "Trigger Mantığı",
-    desc: "Sayfa, tıklama, scroll, form ve SPA gezinmesi için koşullu tetikleyiciler; consent mode ve kullanıcı onayı senaryolarına uyumlu filtreler.",
+    desc: "Sayfa, tıklama, scroll, form ve SPA gezinmesi için koşullu tetikleyiciler; Consent Mode v2 ve KVKK/GDPR onay senaryolarına göre tag'lerin ne zaman ateşleneceğini belirleyen filtreler.",
     icon: GitBranch,
   },
   {
@@ -167,10 +167,11 @@ export default function GoogleTagManagerPage() {
             </div>
             <div className="rounded-2xl bg-primary text-on-primary p-8 md:p-10 shadow-lg shadow-primary/20">
               <Zap className="h-8 w-8 mb-5 opacity-95" strokeWidth={1.5} />
-              <h3 className="text-xl font-bold mb-3">Hızlı Sayfa Yükleme</h3>
+              <h3 className="text-xl font-bold mb-3">Kontrollü Script Yükü</h3>
               <p className="text-on-primary/85 text-sm md:text-base leading-relaxed">
-                Asenkron yükleme ve gereksiz tekrarları keserek script
-                maliyetini düşürün; vitals dostu bir etiket sırası kurun.
+                Her tag bir performans maliyeti taşır. Tekrarları keser,
+                yükleme önceliği ve tetikleme koşullarıyla toplam script
+                bütçesini kontrol altında tutarız.
               </p>
             </div>
             <div className="rounded-2xl bg-surface-container-lowest border border-outline-variant/10 p-8 md:p-10">

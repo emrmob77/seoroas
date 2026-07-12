@@ -11,7 +11,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return generateDynamicSeoMetadata({
     title: "GEO Nedir? Generative Engine Optimization Hizmeti",
     description:
-      "GEO ile markanızı ChatGPT, Gemini ve Perplexity'de 1. kaynak yapın. Entity mapping, knowledge graph ve AI atıf mühendisliği hizmeti.",
+      "GEO ile markanızın ChatGPT, Gemini ve Perplexity yanıtlarında kaynak gösterilme olasılığını artırın. Entity mapping, yapılandırılmış veri ve aylık AI görünürlük ölçümü.",
     path: "/geo",
   });
 }
@@ -26,7 +26,7 @@ const comparison = {
     { icon: "click", title: "CTR Odaklı", desc: "Hedef tıklamayı kazanmaktır. Trafik başarı metriğidir, genellikle parçalı kullanıcı yolculuklarına yol açar." },
   ],
   generative: [
-    { icon: "brain", title: "Anla & Üret", desc: "LLM'ler geniş veri kümelerini sentezleyerek doğrudan yanıtlar üretir. Markanız bilgi grafiğine işlenmelidir." },
+    { icon: "brain", title: "Anla & Üret", desc: "LLM'ler geniş veri kümelerini sentezleyerek doğrudan yanıtlar üretir. Markanız bilgi grafiğinde ne kadar net tanımlıysa, yanıtlarda o kadar doğru temsil edilir." },
     { icon: "shield", title: "Kaynak Bütünlüğü", desc: "Atıfı kazanmak. Başarı, üretilen yanıtta \"Otoriter Kaynak\" olmakla ölçülür." },
   ],
 };
@@ -36,14 +36,14 @@ const methodology = [
     num: "01",
     title: "Entity Mapping",
     subtitle: "Varlık Haritalama",
-    desc: "Markanızın çekirdek kimliğini global bilgi grafiğinde tanımlıyoruz. Ürünleriniz, uzmanlarınız ve sektör kavramları arasında net semantik ilişkiler kurarak LLM'lerin değer önerinizi yanlış yorumlamasını imkansız kılıyoruz.",
+    desc: "Markanızın çekirdek kimliğini global bilgi grafiğinde tanımlıyoruz. Ürünleriniz, uzmanlarınız ve sektör kavramları arasında net semantik ilişkiler kurarak LLM'lerin değer önerinizi yanlış yorumlama olasılığını en aza indiriyoruz.",
     tags: ["Knowledge Graph", "Semantic Relations"],
   },
   {
     num: "02",
     title: "Source Integrity",
     subtitle: "Kaynak Bütünlüğü",
-    desc: "Doğrusal olmayan AI taraması için özel geliştirilmiş JSON-LD ve mikro-şemalar uyguluyoruz. Ham verilerinizin makine okunabilirliğini artırarak halüsinasyonları azaltıyor, güven puanını yükseltiyoruz.",
+    desc: "Schema.org standardında JSON-LD yapılandırılmış verileri eksiksiz uyguluyoruz. Verinizin makine okunabilirliği arttıkça AI'ın markanız hakkında yanlış bilgi üretme olasılığı düşer; biz de bunu düzenli testlerle takip ediyoruz.",
     tags: ["JSON-LD", "Schema Validation"],
   },
   {
@@ -57,8 +57,8 @@ const methodology = [
     num: "04",
     title: "Citation Engineering",
     subtitle: "Atıf Mühendisliği",
-    desc: "Markanızın kaynak olarak gösterilme olasılığını artırmak için stratejik manevralar uyguluyoruz. Büyük LLM'ler genelinde atıf oranlarını izleyip mimari sinyalleri gerçek zamanlı ayarlıyoruz.",
-    tags: ["Real-time", "Monitoring"],
+    desc: "Markanızın kaynak olarak gösterilme olasılığını artırmaya odaklanıyoruz: sabit bir sorgu setiyle ChatGPT, Gemini, Claude ve Perplexity'de atıf oranınızı her ay ölçüyor, düşüş görülen yerde içerik ve kaynak sinyallerini güncelliyoruz.",
+    tags: ["Sorgu Seti", "Monitoring"],
   },
 ];
 
@@ -70,7 +70,7 @@ const engines = [
     logo: "https://cdn.sanity.io/images/67vl8x07/production/9086f2dbb15b83206cffb509c43fbe6e59b3d8ec-24x24.svg",
     features: [
       "Uzun form otorite sinyalleri",
-      "Plugin & API entegrasyon ayarı",
+      "Alıntılanabilir içerik formatı",
       "Semantik tutarlılık optimizasyonu",
     ],
   },
@@ -80,9 +80,9 @@ const engines = [
     color: "bg-[#4285F4]",
     logo: "https://cdn.sanity.io/images/67vl8x07/production/b9b010e3b4539ad250fa4f6a897c794d1c72b205-24x24.svg",
     features: [
-      "Google Knowledge Graph bağlantısı",
-      "SGE (Search Generative Experience) uyumu",
-      "E-E-A-T puan optimizasyonu",
+      "Varlık (entity) tutarlılığı denetimi",
+      "AI Overviews uyumlu içerik yapısı",
+      "E-E-A-T sinyallerini güçlendirme",
     ],
   },
   {
@@ -116,27 +116,28 @@ const bentoItems = [
   { title: "Dağıtım & Kaynak İnşası", desc: "Yapay zeka motorları Reddit, YouTube, yardım merkezi ve bağımsız siteleri sık alıntılar. Otantik katkı ve gerçek otoriteyle bu kanallarda görünür oluyoruz — spam değil, değer.", tags: [], wide: true },
 ];
 
+// Temsili panel verisi — müşteri sonucu değil, raporlama formatının örneğidir
 const dashboardMetrics = [
   { label: "Atıf Oranı", value: "84", unit: "%", status: "Yüksek" },
-  { label: "LLM Duygu Puanı", value: "0.92", unit: "", status: "Optimal" },
-  { label: "Marka Güncelliği", value: "2.4", unit: "ms", status: "Hızlı" },
+  { label: "Ses Payı (SOV)", value: "46", unit: "%", status: "Rakip Üstü" },
+  { label: "Doğru Yanıt Oranı", value: "92", unit: "%", status: "İzleniyor" },
 ];
 
 const capabilities = [
   { title: "Entity Mapping", desc: "Global bilgi düğümleriyle marka varlıklarını ilişkilendirme" },
   { title: "Multi-modal Hazırlık", desc: "Görsel ve doküman verilerini vizyon modelleri için optimize etme" },
   { title: "Mention Monitoring", desc: "Generatif çıktılarda marka ses payı ve duygu takibi" },
-  { title: "Hallucination Prevention", desc: "AI modellerinin verilerinizi doğru sunmasını sağlayan teknik güvenceler" },
+  { title: "Yanlış Bilgi Tespiti", desc: "Düzenli sorgu testleriyle hatalı marka anlatımını yakalayıp düzeltici içerik ve kaynak sinyalleri üretme" },
 ];
 
 const faqItems = [
   { q: "GEO ile geleneksel SEO arasındaki fark nedir?", a: "Geleneksel SEO, anahtar kelimelere dayalı mavi link sıralamasını optimize eder. GEO ise üretici sürecin kendisini optimize eder. Bu, semantik bütünlük, varlık netliği ve LLM'lerin güvenip yeniden üretebileceği doğrulanabilir gerçekler oluşturmayı gerektirir." },
-  { q: "SGE organik trafiği bitirecek mi?", a: "Bitirmeyecek ama dönüştürecek. Kullanıcılar link değil yanıt arıyor. Markanız yanıtı sağlıyor ve otorite olarak atıf gösteriliyorsa, mümkün olan en yüksek niyetli trafiği kazanırsınız. Biz atıf slotunu yakalamaya odaklanıyoruz." },
+  { q: "AI Overviews (eski adıyla SGE) organik trafiği bitirecek mi?", a: "Bitirmeyecek ama dönüştürecek. Kullanıcılar link değil yanıt arıyor. Markanız yanıtı sağlıyor ve otorite olarak atıf gösteriliyorsa, mümkün olan en yüksek niyetli trafiği kazanırsınız. Biz atıf slotunu yakalamaya odaklanıyoruz." },
   { q: "Generative çağda SEO ölecek mi?", a: "SEO ölmüyor, evrimleşiyor. Geleneksel anahtar kelime hacmi azalabilir, ancak atıf yapılan uzman olmanın değeri artıyor. GEO bir sonraki mantıksal adımdır — bulmaktan bilmeye geçiş." },
-  { q: "Gemini kaynaklarını nasıl seçiyor?", a: "Gemini kaynak güvenilirliğine ve yapılandırılmış veri yoğunluğuna öncelik verir. Google'ın Knowledge Graph API'si ve özel şema etiketleri kullanarak markanızı modelin gözünde doğrulanmış hale getiriyoruz." },
-  { q: "AI atıflarını takip edebilir miyiz?", a: "Evet. Görünürlük Matrisi ile 15+ büyük LLM genelinde üretilen çıktılardaki marka varlığını izliyor, ses payı ve sentez doğruluğunu ölçüyoruz." },
-  { q: "Knowledge Graph Injection nedir?", a: "Marka verilerinizin benzersiz veri noktalarını, AI eğitim setleri tarafından kullanılan global bilgi grafiğindeki yerleşik düğümlere bağlama sürecimizdir. Wikidata, schema.org ve sektöre özgü veri tabanları ile entegrasyon sağlanır." },
-  { q: "GEO ile AEO aynı şey mi?", a: "Büyük ölçüde evet. GEO (Generative Engine Optimization) ve AEO (Answer Engine Optimization) çoğu zaman aynı işi anlatır: markanızı yapay zekanın ürettiği cevaplarda kaynak olarak çıkarmak. Bazıları AEO'yu 'doğrudan soruya yanıt veren içerik', GEO'yu ise 'üretici motorların tamamı için optimizasyon' olarak ayırır; pratikte ikisi iç içedir." },
+  { q: "Gemini kaynaklarını nasıl seçiyor?", a: "Gemini kaynak güvenilirliğine ve yapılandırılmış veri yoğunluğuna öncelik verir. Biz schema.org işaretlemelerini eksiksiz uygulayıp marka bilgilerinizin web genelinde tutarlı olmasını sağlıyoruz; bu, modelin markanızı doğru tanıma ve kaynak gösterme olasılığını artırır. Kaynak seçimi son kararda modele aittir — garanti değil, olasılık yönetiyoruz." },
+  { q: "AI atıflarını takip edebilir miyiz?", a: "Evet. Sektörünüze özel sabit bir sorgu seti kurup ChatGPT, Gemini, Claude ve Perplexity'de düzenli test ediyoruz: markanız anıldı mı, kaynak gösterildi mi, bilgi doğru mu, rakiplere göre ses payınız ne? Aylık raporda bu dört metriğin değişimini görürsünüz." },
+  { q: "Knowledge Graph Injection nedir?", a: "Resmî bir standart değil; marka verilerinizi Wikidata, schema.org ve sektörel veri tabanlarındaki yerleşik düğümlere bağlama sürecimize verdiğimiz ad. Amaç, AI modellerinin markanızı çevresindeki kavramlarla doğru ilişkilendirmesi. Bu bir 'enjeksiyon garantisi' değil, varlık tutarlılığı çalışmasıdır." },
+  { q: "GEO ile AEO aynı şey mi?", a: "Yakın ama aynı değil. SEO, arama sonuçlarındaki görünürlüğü; AEO (Answer Engine Optimization), öne çıkan snippet ve sesli yanıt gibi doğrudan cevap yüzeylerini; GEO ise üretken AI cevaplarında markanızın anılma ve kaynak gösterilme olasılığını hedefler. Pratikte iç içe çalışırlar — biz üçünü tek stratejide birleştiriyoruz." },
   { q: "Hangi GEO taktikleri gerçekten işe yarıyor?", a: "İşe yarayanlar: cevabı en başta veren, istatistik ve örnekle desteklenen, gerçek uzmanlıkla yazılmış içerik; tutarlı varlık (entity) ve şema; Reddit, YouTube ve yardım merkezi gibi kanallarda otantik varlık. İşe yaramayanlar: aşırı 'chunking', basit llms.txt hileleri, jenerik AI içeriği ve abartılı iddialar — yapay zeka bunları çapraz kontrol edip eler. Google'ın resmi tavsiyesi de net: insan odaklı, özgün içerik." },
 ];
 
@@ -155,7 +156,7 @@ export default function GeoPage() {
             name: "GEO - Generative Engine Optimization Hizmeti",
             provider: { "@type": "LocalBusiness", name: "SEOROAS" },
             description:
-              "ChatGPT, Gemini, Claude ve Perplexity gibi yapay zeka motorlarında marka görünürlüğü optimizasyonu. Entity mapping, knowledge graph injection ve AI atıf mühendisliği.",
+              "ChatGPT, Gemini, Claude ve Perplexity gibi yapay zeka motorlarında marka görünürlüğü optimizasyonu. Entity mapping, yapılandırılmış veri ve sabit sorgu setiyle aylık AI görünürlük ölçümü.",
           },
           {
             "@context": "https://schema.org",
@@ -183,10 +184,10 @@ export default function GeoPage() {
             Optimization ile AI Çağına Hazır Olun.
           </>
         }
-        subtitle="Artık insanlar her şeyi Google'a değil, ChatGPT ve Gemini'ye soruyor. GEO — yani Answer Engine Optimization (AEO) — ile markanızı bu yapay zeka motorlarının yanıtında atıf gösterilen birincil kaynak haline getiriyoruz."
+        subtitle="Artık insanlar her şeyi Google'a değil, ChatGPT ve Gemini'ye soruyor. GEO ile markanızın bu yanıtlarda anılma ve kaynak gösterilme olasılığını sistematik olarak artırıyoruz — sonucu da sabit sorgu setiyle her ay ölçüyoruz."
         stats={[
-          { value: "%92", label: "SGE Tercihi" },
-          { value: "3.4x", label: "Atıf Oranı" },
+          { value: "4", label: "AI Motorunda İzleme" },
+          { value: "30+", label: "Sorguluk Test Seti" },
         ]}
       />
 
@@ -204,8 +205,8 @@ export default function GeoPage() {
             </div>
             <div className="space-y-5 text-on-surface-variant leading-relaxed">
               <p>
-                Generative Engine Optimization (GEO) — yaygın adıyla{" "}
-                <strong className="text-on-background">AEO (Answer Engine Optimization)</strong> ya da yapay zeka SEO — markanızı ChatGPT, Gemini, Claude ve Perplexity gibi yapay zeka motorlarının yanıt üretirken güvenip atıf gösterdiği kaynak haline getirme işidir. Kısaca: artık sadece Google&apos;da değil, AI&apos;ın cevabında çıkmak gerekiyor.
+                Generative Engine Optimization (GEO), markanızın ChatGPT, Gemini, Claude ve Perplexity gibi yapay zeka motorlarının ürettiği yanıtlarda anılma ve kaynak gösterilme olasılığını artırma işidir. Sık karıştırılan{" "}
+                <strong className="text-on-background">AEO (Answer Engine Optimization)</strong> ise öne çıkan snippet gibi doğrudan cevap yüzeylerini hedefler; ikisi yakın akrabadır ama aynı şey değildir. Kısaca: artık sadece Google&apos;da değil, AI&apos;ın cevabında çıkmak gerekiyor.
               </p>
               <p>
                 Geleneksel SEO bağlantı otoritesine ve anahtar kelimelere odaklanırken, GEO{" "}
@@ -222,12 +223,12 @@ export default function GeoPage() {
             </div>
             <div className="grid grid-cols-2 gap-6">
               <div className="bg-surface-container-lowest border-[0.5px] border-outline-variant/10 p-6 rounded-2xl">
-                <span className="text-3xl font-extrabold text-primary block mb-1 tracking-tighter">%92</span>
-                <span className="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">SGE Tercihi</span>
+                <span className="text-3xl font-extrabold text-primary block mb-1 tracking-tighter">4</span>
+                <span className="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">AI Motorunda İzleme</span>
               </div>
               <div className="bg-surface-container-lowest border-[0.5px] border-outline-variant/10 p-6 rounded-2xl">
-                <span className="text-3xl font-extrabold text-on-background block mb-1 tracking-tighter">3.4x</span>
-                <span className="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Atıf Oranı</span>
+                <span className="text-3xl font-extrabold text-on-background block mb-1 tracking-tighter">30+</span>
+                <span className="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Sorguluk Test Seti</span>
               </div>
             </div>
           </div>
@@ -367,7 +368,7 @@ export default function GeoPage() {
               Her AI Motoru İçin Ayrı Strateji.
             </h2>
             <p className="text-white/50 font-light max-w-xl mx-auto">
-              Farklı LLM&apos;lerin farklı veri tüketim kalıpları vardır. Her motorun benzersiz mimarisine özel optimize ediyoruz.
+              Farklı LLM&apos;lerin farklı veri tüketim kalıpları vardır. Her platform için ayrı test ve içerik dağıtım stratejisi uyguluyor, sonuçları motor bazında ölçüyoruz.
             </p>
           </div>
 
@@ -469,11 +470,11 @@ export default function GeoPage() {
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-12 md:mb-16 gap-6">
               <div>
                 <h2 className="text-2xl font-bold tracking-tight text-on-background">AI Görünürlük Metrikleri</h2>
-                <p className="text-xs text-on-surface-variant font-medium uppercase tracking-widest mt-1">Canlı İstihbarat Terminali</p>
+                <p className="text-xs text-on-surface-variant font-medium uppercase tracking-widest mt-1">Aylık raporda izlediğimiz metrikler</p>
               </div>
               <div className="flex items-center gap-3">
                 <span className="w-2.5 h-2.5 rounded-full bg-red-400 animate-pulse" />
-                <span className="text-[10px] font-bold uppercase text-on-surface-variant">Gerçek Zamanlı</span>
+                <span className="text-[10px] font-bold uppercase text-on-surface-variant">Temsili panel örneği</span>
               </div>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-12 text-center">
@@ -487,7 +488,7 @@ export default function GeoPage() {
                   <div className="w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden">
                     <div
                       className="h-full bg-primary rounded-full"
-                      style={{ width: `${m.label === "Marka Güncelliği" ? 60 : parseInt(m.value)}%` }}
+                      style={{ width: `${parseInt(m.value)}%` }}
                     />
                   </div>
                   <p className="text-[10px] text-emerald-500 font-bold uppercase">{m.status}</p>
@@ -545,7 +546,7 @@ export default function GeoPage() {
               AI Görünürlüğünüzü Güvence Altına Alın.
             </h2>
             <p className="text-on-primary/70 text-xl font-light max-w-2xl mx-auto">
-              Markanızı yapay zeka motorlarının birincil kaynağı haline getirmek için bugün başlayın.
+              Markanız bugün ChatGPT&apos;de ne kadar görünür? Önce ölçelim, sonra atıf payınızı adım adım büyütelim.
             </p>
             <Link
               href="/iletisim"

@@ -48,8 +48,8 @@ const technicalColumns = [
     desc: "Eklentiyi kurmak yetmez; yanlış ayarlanmış şema, canonical ve indeks kuralları sıralamayı düşürür. Tema ve eklenti yığınınıza göre tek tek kalibre ediyor, çakışmaları temizliyoruz.",
   },
   {
-    title: "Güvenlik ve Altyapı Sağlamlaştırma",
-    desc: "Güvenlik başlıkları, gereksiz erişim noktalarının kapatılması, önbellek katmanları ve CDN ile siteniz hem botlar hem kullanıcılar için stabil ve hızlı kalır.",
+    title: "Stabilite ve Crawl Erişilebilirliği",
+    desc: "Sık düşen ya da hack'lenen site, Google'ın gözünde güveni kaybeder. Güvenlik başlıkları, gereksiz erişim noktalarının kapatılması, önbellek katmanları ve CDN'i bu yüzden ele alıyoruz: amaç tam kapsamlı siber güvenlik hizmeti değil, sitenizi botlar ve kullanıcılar için kesintisiz erişilebilir tutmak.",
   },
   {
     title: "Veritabanı ve Sorgu Optimizasyonu",
@@ -122,7 +122,7 @@ export default function WordPressSeoPage() {
           { name: "SEO", url: "/seo" },
           { name: "WordPress SEO", url: "/seo/wordpress-seo" },
         ]}
-        badge="WordPress · Kurumsal SEO"
+        badge="WordPress Teknik SEO & Performans"
         title={
           <>
             WordPress Sitenizin{" "}
@@ -143,11 +143,14 @@ export default function WordPressSeoPage() {
               Performans
             </span>
             <h2 className="text-3xl md:text-5xl font-black text-on-background tracking-[-0.04em] leading-tight">
-              98/100 Mobile Score: Gecikmesiz Deneyim
+              Hız: Lab Skoru Değil, Gerçek Kullanıcı Deneyimi
             </h2>
             <p className="text-on-surface-variant font-light leading-relaxed">
-              Laboratuvar skorlarını gerçek kullanıcı metrikleriyle birleştiriyor; WordPress özelinde
-              önbellek, varlık teslimi ve sunucu tarafı darboğazlarını aynı plan içinde çözüyoruz.
+              PageSpeed&apos;de 98 görüp sitesi yavaş kalan çok mağaza gördük. Google sıralamada lab
+              skoruna değil, gerçek ziyaretçilerin yaşadığı hıza (CrUX saha verisi: LCP ve INP)
+              bakar. Biz de öyle yapıyoruz: lab ölçümünü teşhis için kullanıyor, başarıyı gerçek
+              kullanıcı metrikleriyle doğruluyor; WordPress özelinde önbellek, varlık teslimi ve
+              sunucu tarafı darboğazlarını aynı plan içinde çözüyoruz.
             </p>
             <ul className="space-y-4 pt-2">
               {speedFeatures.map((line) => (
@@ -160,7 +163,7 @@ export default function WordPressSeoPage() {
               ))}
             </ul>
           </div>
-          <div className="flex justify-center md:justify-end">
+          <div className="flex flex-col items-center md:items-end gap-4">
             <div className="relative w-52 h-52 sm:w-60 sm:h-60 md:w-64 md:h-64">
               <div
                 className="absolute inset-0 rounded-full p-3 shadow-xl shadow-primary/10"
@@ -175,10 +178,13 @@ export default function WordPressSeoPage() {
                   98
                 </span>
                 <span className="text-xs uppercase tracking-widest text-on-surface-variant font-bold">
-                  / 100 Mobile
+                  / 100 Lab Skoru
                 </span>
               </div>
             </div>
+            <p className="text-xs text-on-surface-variant font-light max-w-[16rem] text-center md:text-right leading-relaxed">
+              Temsili lab ölçümü. Başarıyı skorla değil, CrUX saha verisiyle (LCP ve INP) ölçüyoruz.
+            </p>
           </div>
         </div>
       </section>

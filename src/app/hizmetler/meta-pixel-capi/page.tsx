@@ -58,7 +58,7 @@ const implementationSteps = [
   {
     title: "CAPI Entegrasyonu",
     description:
-      "Sunucu tarafı olay gönderimi, deduplikasyon ve kullanıcı verisi hash’leme ile güvenli, eksiksiz sinyal.",
+      "Sunucu tarafı olay gönderimi, event ID ile deduplikasyon ve kullanıcı verisi hash’leme. Not: hash’leme tek başına hukuki uyum sağlamaz; onay yönetimi ve KVKK/GDPR dayanağıyla birlikte kurgulanır.",
   },
   {
     title: "Domain Doğrulama",
@@ -182,15 +182,18 @@ export default function MetaPixelCapiPage() {
             <div className="relative z-10 grid md:grid-cols-2 gap-10 md:gap-16 items-center">
               <div className="space-y-4">
                 <span className="text-[10px] uppercase tracking-[0.25em] font-bold text-white/50">
-                  Vaka özeti
+                  Temsili senaryo
                 </span>
                 <h2 className="text-2xl md:text-4xl font-black tracking-tight leading-tight">
-                  Kayıp Attribution Verisinin %34&apos;ünü Geri Kazandık
+                  Tarayıcıda Kaybolan Dönüşüm Verisi Geri Kazanılabilir
                 </h2>
                 <p className="text-white/65 font-light leading-relaxed text-sm md:text-base">
-                  CAPI devreye alındıktan sonra raporlanan dönüşümler ile gerçek
-                  iş sonuçları hizalandı; kampanya öğrenmesi ve bütçe dağılımı
-                  yeniden dengelendi.
+                  Reklam engelleyiciler ve tarayıcı kısıtları yüzünden Pixel&apos;in
+                  göremediği dönüşümlerin bir bölümü, CAPI ile sunucudan
+                  tamamlanır. Raporlanan dönüşümler gerçek iş sonuçlarına
+                  yaklaştıkça kampanya öğrenmesi ve bütçe dağılımı da düzelir.
+                  CAPI tek başına ROAS artışı garanti etmez; sonucu yaratan,
+                  temiz event yapısı ve deduplikasyonla birlikte kurulmasıdır.
                 </p>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
@@ -205,7 +208,8 @@ export default function MetaPixelCapiPage() {
                     +118%
                   </p>
                   <p className="text-xs text-white/50 mt-2 font-light">
-                    Raporlanan verimlilik iyileşmesi
+                    Temsili senaryo — sonuç sektör, bütçe ve attribution
+                    penceresine göre değişir
                   </p>
                 </div>
                 <div className="rounded-3xl bg-white/5 border border-white/10 p-6 md:p-8 backdrop-blur-sm">
@@ -219,7 +223,8 @@ export default function MetaPixelCapiPage() {
                     -22%
                   </p>
                   <p className="text-xs text-white/50 mt-2 font-light">
-                    Daha isabetli hedefleme ve öğrenme
+                    Temsili senaryo — daha isabetli hedefleme ve öğrenmeyle
+                    ulaşılabilir aralık
                   </p>
                 </div>
               </div>

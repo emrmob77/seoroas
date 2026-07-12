@@ -54,11 +54,11 @@ const differentiators = [
   },
   {
     title: "Sektörel Deneyim",
-    desc: "E-ticaret, SaaS, B2B, sağlık ve finans sektörlerinde kanıtlanmış başarı hikâyeleri.",
+    desc: "E-ticaret, SaaS, B2B, sağlık ve finans projelerinde çalıştık. Her sektörün arama davranışı ve dönüşüm dinamiği farklı; stratejiyi şablondan değil, sektörün verisinden kuruyoruz.",
   },
   {
     title: "Beyaz Şapka SEO",
-    desc: "Google kurallarına %100 uyumlu, sürdürülebilir ve cezalanma riski olmayan yöntemler kullanıyoruz.",
+    desc: "Google yönergelerine uygun, sürdürülebilir yöntemlerle çalışıyoruz. PBN, link satışı ve kısa yollu taktiklere girmiyoruz — bir algoritma güncellemesinde çöken sıralamaların çoğu bu taktiklerin faturasıdır.",
   },
   {
     title: "Özel Ekip Ataması",
@@ -83,7 +83,7 @@ export default function SeoAjansiPage() {
             "@context": "https://schema.org",
             "@type": "ProfessionalService",
             name: "SEOROAS SEO Ajansı",
-            description: "Türkiye'nin lider SEO ajansı. Veri odaklı SEO stratejileri ile organik trafik ve gelir artışı.",
+            description: "Organik gelir odaklı SEO ajansı. Veri odaklı SEO stratejileri ile organik trafik ve gelir artışı.",
             provider: { "@type": "LocalBusiness", name: "SEOROAS" },
             areaServed: { "@type": "Country", name: "TR" },
           },
@@ -107,17 +107,17 @@ export default function SeoAjansiPage() {
         badge="Güvenilir SEO İş Ortağı"
         title={
           <>
-            Türkiye'nin Lider{" "}
+            Organik Geliri Büyüten{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-dim">
               SEO Ajansı.
             </span>
           </>
         }
-        subtitle="Veri odaklı stratejiler, şeffaf raporlama ve ölçülebilir sonuçlarla organik büyümenizi hızlandırıyoruz."
+        subtitle="Sıralama raporu değil, gelir raporu konuşuyoruz: veri odaklı strateji, şeffaf raporlama ve gerçek iş metrikleriyle ölçülen sonuçlar."
         stats={[
-          { value: "150+", label: "Aktif Müşteri" },
-          { value: "%94", label: "Müşteri Memnuniyeti" },
-          { value: "7+", label: "Yıllık Deneyim" },
+          { value: "3-4 ay", label: "İlk Anlamlı Sonuç" },
+          { value: "Aylık", label: "Şeffaf Rapor + Dashboard" },
+          { value: "0", label: "Garanti Sıralama Vaadi" },
         ]}
       />
 

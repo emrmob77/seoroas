@@ -19,8 +19,8 @@ export async function generateMetadata(): Promise<Metadata> {
 const services = [
   { title: "Keyword Araştırması", desc: "Arama hacmi, rekabet ve kullanıcı niyetini analiz ederek en yüksek ROI potansiyeline sahip anahtar kelimeleri belirliyoruz.", tags: ["Search Intent", "Volume", "KD"], large: true },
   { title: "İçerik Takvimi", desc: "Düzenli ve stratejik yayın planı oluşturarak organik büyümenizi sistematik hale getiriyoruz.", tags: [] },
-  { title: "SEO Uyumlu Yazım", desc: "NLP optimizasyonu, semantik zenginlik ve okunabilirlik standartlarına uygun içerikler üretiyoruz.", tags: [] },
-  { title: "Topic Cluster", desc: "Pillar page ve cluster content modeli ile topical authority inşa ederek geniş anahtar kelime gruplarında sıralama elde ediyoruz.", tags: [] },
+  { title: "SEO Uyumlu Yazım", desc: "Her içerik, arama niyetini, gerekli alt konuları, gerçek kullanıcı sorularını ve kanıt kaynaklarını kapsayan bir editoryal brief'ten çıkar; sonra editör kontrolünden geçer.", tags: [] },
+  { title: "Topic Cluster", desc: "Pillar page ve cluster content modeliyle içeriğinizi konu bütünlüğü içinde organize ediyor, Google'a uzmanlık sinyali veren bir yapı kuruyoruz.", tags: [] },
   { title: "Content Gap Analizi", desc: "Rakiplerinizin sıralandığı ama sizin hedeflemediğiniz anahtar kelimeleri tespit ederek fırsatları yakalıyoruz.", tags: [] },
   { title: "İçerik Güncelleme", desc: "Mevcut içeriklerinizi güncel veri, yeni anahtar kelimeler ve geliştirilmiş yapıyla yenileyerek sıralama kaybını önlüyoruz.", tags: [], wide: true },
 ];
@@ -33,7 +33,7 @@ const dashboardMetrics = [
 
 const faqItems = [
   { q: "İçerik SEO nedir?", a: "İçerik SEO, arama motorlarında üst sıralara çıkmak ve organik trafik çekmek amacıyla stratejik içerik üretimi ve optimizasyonu yapma sürecidir. Keyword araştırması, kullanıcı niyeti analizi ve semantik içerik zenginliği bu sürecin temel bileşenleridir." },
-  { q: "Topic cluster modeli nasıl çalışır?", a: "Topic cluster modelinde, geniş bir konuyu kapsayan bir pillar page (ana sayfa) ve bu konunun alt başlıklarını detaylandıran cluster (küme) içerikleri oluşturulur. İç linklerle birbirine bağlanan bu yapı, Google'a topical authority sinyali verir ve tüm kümedeki sayfaların sıralamasını yükseltir." },
+  { q: "Topic cluster modeli nasıl çalışır?", a: "Topic cluster modelinde, geniş bir konuyu kapsayan bir pillar page (ana sayfa) ve bu konunun alt başlıklarını detaylandıran cluster (küme) içerikleri oluşturulur. İç linklerle birbirine bağlanan bu yapı, Google'a konu bütünlüğü ve uzmanlık sinyali verir; tek başına sıralama garantisi olmasa da kümedeki sayfaların birbirini desteklemesini sağlar." },
   { q: "Content gap analizi ne işe yarar?", a: "Content gap analizi, rakiplerinizin sıralandığı ancak sizin henüz hedeflemediğiniz anahtar kelimeleri ve konuları ortaya çıkarır. Bu analiz sayesinde kaçırdığınız trafik fırsatlarını yakalayabilir ve içerik stratejinizi veri odaklı şekillendirebilirsiniz." },
   { q: "Mevcut içerikler ne sıklıkla güncellenmelidir?", a: "Yüksek performanslı içerikler yılda en az 1-2 kez güncellenmelidir. Hızla değişen sektörlerde bu süre daha kısa olabilir. İçerik güncellemesi, sıralama kaybını önler, taze sinyal verir ve mevcut trafiği koruyarak artırır." },
   { q: "İçerik SEO sonuçları ne kadar sürede görülür?", a: "Yeni yayımlanan içerikler genellikle 2-6 ay içinde hedef anahtar kelimelerinde sıralanmaya başlar. Düzenli içerik üretimi ve güncelleme ile organik trafik kümülatif olarak büyür. İlk 6 aydan sonra büyüme hızı belirgin şekilde artar." },
@@ -80,8 +80,8 @@ export default function IcerikSeoPage() {
         }
         subtitle="Veri odaklı içerik stratejileri ile arama motorlarında görünürlüğünüzü artırıyor, sürdürülebilir organik büyüme sağlıyoruz."
         stats={[
-          { value: "240+", label: "Published Content" },
-          { value: "+520%", label: "Organic Sessions" },
+          { value: "2-6 ay", label: "İlk Sıralama Penceresi" },
+          { value: "3 aylık", label: "Konu Kümesi Yol Haritası" },
         ]}
       />
 
@@ -146,7 +146,7 @@ export default function IcerikSeoPage() {
                 Ölçülebilir Mükemmellik.
               </h2>
               <p className="text-white/60 font-light">
-                İçerik performansını ve organik büyüme trendlerini gerçek zamanlı verilerle takip ediyoruz.
+                Her projede yayın hacmini, ortalama pozisyonu ve organik oturum trendini bu panelde olduğu gibi aylık raporluyoruz.
               </p>
             </div>
             <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-3 gap-6">
@@ -176,6 +176,9 @@ export default function IcerikSeoPage() {
               ))}
             </div>
           </div>
+          <p className="text-[11px] text-white/30 mt-8 text-center md:text-right">
+            Temsili dashboard verisidir; müşteri sonucu değildir. Gerçek rakamlar proje raporlarında kaynak ve tarih aralığıyla paylaşılır.
+          </p>
         </div>
       </section>
 
@@ -217,13 +220,13 @@ export default function IcerikSeoPage() {
               İçerik Stratejinizi Oluşturun.
             </h2>
             <p className="text-on-primary/70 text-xl font-light max-w-2xl mx-auto">
-              Veri odaklı içerik stratejileri ile organik trafiğinizi sürdürülebilir şekilde büyütün.
+              Hangi konularda içerik açığınız var, rakipler nereden trafik alıyor? 3 aylık konu kümesi ve fırsat haritasıyla görün.
             </p>
             <Link
               href="/iletisim"
               className="inline-flex items-center gap-2 bg-white text-primary px-10 py-5 rounded-full font-bold text-lg hover:scale-105 transition-all shadow-2xl"
             >
-              Ücretsiz İçerik Stratejisi
+              3 Aylık İçerik Fırsat Haritası Al
               <ArrowRight className="h-5 w-5" />
             </Link>
           </div>

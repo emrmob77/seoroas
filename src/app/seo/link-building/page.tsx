@@ -11,24 +11,24 @@ export async function generateMetadata(): Promise<Metadata> {
   return generateDynamicSeoMetadata({
     title: "Link Building Hizmeti — Backlink & Otorite Kazanımı",
     description:
-      "Editöryel kalitede backlink edinimi, dijital PR, guest posting ve rakip analizi ile domain otoritenizi güçlendirin. DR 80+ kaynaklardan link.",
+      "Editöryel kalitede backlink edinimi, dijital PR, guest posting ve rakip analizi ile domain otoritenizi güçlendirin. Gerçek trafiği olan sitelerden editoryal link.",
     path: "/seo/link-building",
   });
 }
 
 const services = [
-  { title: "Guest Posting", desc: "Sektörünüzle ilgili yüksek otoriteli sitelerde kaliteli misafir yazıları yayımlayarak doğal ve güçlü backlinkler kazanıyoruz.", tags: ["DA 50+", "Dofollow", "Niche"], large: true },
+  { title: "Guest Posting", desc: "Sektörünüzle ilgili, gerçek okuyucusu olan sitelerde misafir yazılar yayımlayarak editoryal backlinkler kazanıyoruz. Her yayını trafik, indeks durumu ve içerik kalitesi üzerinden elden geçiriyoruz; link satışı yapılan ağlarla çalışmıyoruz.", tags: ["Editoryal", "Gerçek Trafik", "Sektörel"], large: true },
   { title: "Dijital PR", desc: "Haber değeri taşıyan içerikler üreterek ulusal ve sektörel medya kuruluşlarından doğal backlinkler elde ediyoruz.", tags: [] },
   { title: "Broken Link Building", desc: "Rakip sitelerdeki kırık linkleri tespit edip kendi içeriklerinizle değiştirme fırsatlarını yakalıyoruz.", tags: [] },
-  { title: "Niche Edits", desc: "Mevcut yüksek otoriteli içeriklere doğal bağlamda link yerleştirme ile hızlı otorite transferi sağlıyoruz.", tags: [] },
+  { title: "Editoryal İçerik Güncellemeleri", desc: "Yayıncıların mevcut içeriklerine kaynak katkısı yapıyoruz: güncel veri, uzman görüşü, eksik kalan bölüm. Link, içeriğe değer kattığı için veriliyor; anchor dağılımını doğal tutuyoruz.", tags: [] },
   { title: "Rakip Backlink Analizi", desc: "Rakiplerinizin link profilini analiz ederek kaçırdığınız fırsatları ve yeni link kaynaklarını belirliyoruz.", tags: [] },
   { title: "İçerik Odaklı Link Kazanımı", desc: "Linklenebilir varlıklar (infografikler, araştırmalar, araçlar) üreterek organik link çekimi sağlıyoruz.", tags: [], wide: true },
 ];
 
 const dashboardMetrics = [
-  { label: "DA Growth", value: "+34", unit: "", status: "Rising" },
-  { label: "Referring Domains", value: "1,247", unit: "", status: "Growing" },
-  { label: "Trust Flow", value: "68", unit: "", status: "Strong" },
+  { label: "Gerçek Trafikli Referring Domain", value: "+18", unit: "/ay", status: "Örnek" },
+  { label: "Editoryal Mention", value: "+7", unit: "/ay", status: "Örnek" },
+  { label: "Link Verilen Sayfa Trafiği", value: "+42", unit: "%", status: "Örnek" },
 ];
 
 const faqItems = [
@@ -36,7 +36,7 @@ const faqItems = [
   { q: "Doğal link profili nasıl oluşturulur?", a: "Doğal link profili, farklı kaynaklardan çeşitli anchor text dağılımıyla zaman içinde kademeli olarak kazanılan linklerden oluşur. Spam link satın almak yerine editoryal bağlamda kazanılan linkler Google tarafından ödüllendirilir." },
   { q: "Guest posting hâlâ etkili mi?", a: "Evet, kaliteli ve sektörel olarak ilgili sitelerde yapılan guest posting hâlâ en etkili link building yöntemlerinden biridir. Önemli olan düşük kaliteli blog ağlarından kaçınıp gerçek okuyucu kitlesine sahip siteleri hedeflemektir." },
   { q: "Link building sonuçları ne kadar sürede görülür?", a: "Yeni kazanılan backlinklerin sıralama etkisi genellikle 4-12 hafta arasında hissedilir. Sürekli ve tutarlı link building çalışmaları ile domain otoritesindeki artış zamanla hızlanır ve kümülatif etki yaratır." },
-  { q: "Zararlı backlinkler nasıl temizlenir?", a: "Google Search Console'daki disavow aracı ile zararlı backlinkleri reddedebilirsiniz. Öncelikle kapsamlı bir backlink denetimi yapıp spam, düşük kaliteli ve ilgisiz siteleri tespit ediyor, ardından disavow dosyası oluşturuyoruz." },
+  { q: "Zararlı backlinkler nasıl temizlenir?", a: "Her düşük kaliteli link temizlik gerektirmez; Google çoğunu zaten kendiliğinden yok sayar. Disavow aracını yalnızca manuel işlem riski, geçmişte yapılmış manipülatif link çalışması veya açık bir Google uyarısı olan durumlarda kullanıyoruz. Önce kapsamlı bir backlink denetimiyle gerçek risk olup olmadığını netleştiriyoruz; gereksiz disavow, işe yarayan linkleri de reddetme riski taşır." },
 ];
 
 export default function LinkBuildingPage() {
@@ -80,8 +80,8 @@ export default function LinkBuildingPage() {
         }
         subtitle="Kaliteli ve sürdürülebilir backlink stratejileri ile sitenizin arama motoru otoritesini inşa ediyoruz."
         stats={[
-          { value: "+34", label: "DA Growth" },
-          { value: "1,247", label: "Referring Domains" },
+          { value: "0", label: "Link Ağı / PBN Kullanımı" },
+          { value: "4-12 hafta", label: "İlk Sıralama Etkisi" },
         ]}
       />
 
@@ -146,7 +146,12 @@ export default function LinkBuildingPage() {
                 Ölçülebilir Mükemmellik.
               </h2>
               <p className="text-white/60 font-light">
-                Link profilinizin büyümesini ve otorite artışını gerçek zamanlı verilerle izliyoruz.
+                Başarıyı DA veya Trust Flow gibi araç skorlarıyla değil, gerçek trafiği olan ilgili
+                domainler, editoryal mention&apos;lar ve link verilen sayfanın organik değişimiyle
+                ölçüyoruz. Araç skorları yalnızca ön eleme filtresi.
+              </p>
+              <p className="text-white/40 font-light text-xs">
+                Aşağıdaki panel temsili örnektir; müşteri sonucu değildir.
               </p>
             </div>
             <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-3 gap-6">

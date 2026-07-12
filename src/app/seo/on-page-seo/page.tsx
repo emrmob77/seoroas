@@ -20,8 +20,8 @@ const services = [
   { title: "Meta Etiketleri", desc: "Title, description ve Open Graph etiketlerini anahtar kelime odaklı optimize ederek tıklanma oranınızı artırıyoruz.", tags: ["Title", "Description", "OG"], large: true },
   { title: "Başlık Yapısı (H1-H6)", desc: "Semantik başlık hiyerarşisi ile içerik sinyallerini güçlendiriyor, arama motorlarının sayfanızı anlamasını kolaylaştırıyoruz.", tags: [] },
   { title: "İç Linkleme", desc: "Stratejik iç link ağı ile link equity dağılımını optimize edip önemli sayfalarınıza otorite aktarıyoruz.", tags: [] },
-  { title: "İçerik Optimizasyonu", desc: "TF-IDF ve NLP analiziyle içeriklerinizi rakiplerinizin önüne geçirecek şekilde zenginleştiriyoruz.", tags: [] },
-  { title: "Görsel ALT Etiketleri", desc: "Tüm görsellere SEO uyumlu ALT ve title etiketleri ekleyerek görsel arama trafiğinizi artırıyoruz.", tags: [] },
+  { title: "İçerik Optimizasyonu", desc: "Var olan sayfalarınızı arama niyetine, eksik alt konulara ve gerçek kullanıcı sorularına göre yeniden yapılandırıyoruz.", tags: [] },
+  { title: "Görsel Optimizasyonu", desc: "Anlam taşıyan görsellere bağlama uygun alt metin yazıyor, dekoratif görselleri erişilebilirlik standartlarına göre işaretliyoruz. Dosya adı, boyut, format ve lazy loading birlikte ele alınır.", tags: [] },
   { title: "URL Yapısı", desc: "Temiz, kısa ve anahtar kelime içeren URL yapıları ile hem kullanıcı hem bot dostu navigasyon sağlıyoruz.", tags: [], wide: true },
 ];
 
@@ -80,8 +80,8 @@ export default function OnPageSeoPage() {
         }
         subtitle="Sayfalarınızın her detayını arama motorları ve kullanıcılar için optimize ediyor, organik görünürlüğünüzü artırıyoruz."
         stats={[
-          { value: "94%", label: "Keyword Coverage" },
-          { value: "92/100", label: "Content Score" },
+          { value: "4-8 hafta", label: "Sıralama Etkisi Penceresi" },
+          { value: "10 URL", label: "Ücretsiz Fırsat Analizi" },
         ]}
       />
 
@@ -98,7 +98,12 @@ export default function OnPageSeoPage() {
               </h2>
             </div>
             <p className="text-on-surface-variant max-w-sm font-light">
-              Sayfalarınızın her katmanını optimize eden kapsamlı on-page SEO çözümleri.
+              On-Page SEO, var olan sayfalarınızı sıralatma işidir: title, içerik, iç link ve snippet.
+              Sıfırdan içerik stratejisi ve topic cluster kurulumu için{" "}
+              <Link href="/seo/icerik-seo" className="text-primary font-medium hover:underline">
+                İçerik SEO
+              </Link>{" "}
+              hizmetimize bakın.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
@@ -146,7 +151,7 @@ export default function OnPageSeoPage() {
                 Ölçülebilir Mükemmellik.
               </h2>
               <p className="text-white/60 font-light">
-                İçerik kalitesini ve optimizasyon seviyesini gerçek zamanlı verilerle takip ediyoruz.
+                Her projede içerik kapsamını, sayfa skorlarını ve iç link ağını bu panelde olduğu gibi metrik metrik izliyoruz.
               </p>
             </div>
             <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-3 gap-6">
@@ -176,6 +181,9 @@ export default function OnPageSeoPage() {
               ))}
             </div>
           </div>
+          <p className="text-[11px] text-white/30 mt-8 text-center md:text-right">
+            Örnek analiz ekranıdır; müşteri sonucu değildir. Skorlar üçüncü taraf araç metriğidir, ana başarı ölçütümüz marka dışı tıklama ve dönüşümdür.
+          </p>
         </div>
       </section>
 
@@ -217,13 +225,13 @@ export default function OnPageSeoPage() {
               İçeriğinizi Optimize Edin.
             </h2>
             <p className="text-on-primary/70 text-xl font-light max-w-2xl mx-auto">
-              Sayfalarınızı arama motorları için mükemmelleştirin, organik trafiğinizi katlayın.
+              En değerli 10 URL&apos;nizi inceleyelim; hangi sayfada hangi değişikliğin sıralama getireceğini görün.
             </p>
             <Link
               href="/iletisim"
               className="inline-flex items-center gap-2 bg-white text-primary px-10 py-5 rounded-full font-bold text-lg hover:scale-105 transition-all shadow-2xl"
             >
-              Ücretsiz İçerik Analizi
+              10 URL&apos;lik Ücretsiz On-Page Analizi Al
               <ArrowRight className="h-5 w-5" />
             </Link>
           </div>

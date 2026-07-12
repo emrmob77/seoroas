@@ -20,22 +20,22 @@ const services = [
   { title: "Ürün Sayfası Optimizasyonu", desc: "Tedarikçiden kopyalanan açıklamalar hem Google'ı hem alıcıyı sıkar. Her ürün sayfasını; alıcının gerçek sorusuna cevap veren özgün metin, kullanım görselleri, yukarıda yorumlar ve Product schema ile yeniden kuruyoruz. Büyük katalogda en yüksek cirolu ürünlerden başlıyoruz.", tags: ["Product Schema", "Özgün İçerik", "CTR"], large: true },
   { title: "Kategori SEO", desc: "Kategori sayfaları çoğu zaman ürün sayfasından daha çok aranır ve iyi kurgulanırsa daha çok dönüştürür. Anahtar kelime odaklı yapı, özgün kategori metni ve CollectionPage yapılandırılmış verisiyle bu sayfaları satış motoruna çeviriyoruz.", tags: [] },
   { title: "Teknik Altyapı", desc: "Filtreler kullanıcı için harika; ama yanlış yönetilirse Google'a milyonlarca düşük kaliteli URL sunarsın — 50 filtre, 1 milyondan fazla kombinasyon demek. Faceted URL'lerin çoğunu noindex'ler, canonical ve crawl bütçesini gerçek kategorilere yönlendiririz.", tags: [] },
-  { title: "Schema Markup (Product)", desc: "Product, Offer, Review ve Breadcrumb şemalarıyla arama sonucunda fiyat, stok ve yıldız puanı görünür hale gelir. Bu zengin sonuçlar tıklanma oranını %20-30 artırabilir ve seni rakiplerden görsel olarak ayırır.", tags: [] },
+  { title: "Schema Markup (Product)", desc: "Product, Offer, Review ve Breadcrumb şemalarıyla arama sonucunda fiyat, stok ve yıldız puanı görünür hale gelir. Zengin sonuç tıklanmayı iyileştirebilir — etkisi sorguya, rakiplere ve Google'ın gösterim tercihine göre değişir. Kesin olan şu: fiyatı ve puanı sonuç sayfasında gösteren mağaza, göstermeyenden önce fark edilir.", tags: [] },
   { title: "Blog & İçerik", desc: "Blog doğrudan \"al\" demez; önce öğretir. Karşılaştırma, beden/kullanım rehberi ve satın alma öncesi soruları cevaplayan içerikle alıcıyı farkındalıktan doğru ürün sayfasına taşırız.", tags: [] },
   { title: "Dönüşüm Optimizasyonu", desc: "Belirsiz aralık yerine \"2-3 iş günü içinde kargoda\", net bir aksiyon mesajı ve 2 saniyenin altında açılan sayfa — aynı trafikten daha çok satış demektir. Hız ve sayfa deneyimini sürekli iyileştiriyoruz.", tags: [], wide: true },
 ];
 
 const dashboardMetrics = [
   { label: "Organik Gelir", value: "+314", unit: "%", status: "Büyüyor" },
-  { label: "Satış Sayısı", value: "+184", unit: "%", status: "Artıyor" },
-  { label: "ROAS", value: "8.4", unit: "x", status: "Kârlı" },
+  { label: "Organik Sipariş", value: "+184", unit: "%", status: "Artıyor" },
+  { label: "SEO Yatırım Getirisi", value: "8.4", unit: "x", status: "Kârlı" },
 ];
 
 const faqItems = [
   { q: "E-ticaret SEO nedir?", a: "E-ticaret SEO, online mağazanızın ürün ve kategori sayfalarını arama motorlarında üst sıralara taşımak için uygulanan optimizasyon stratejilerinin bütünüdür. Organik arama trafiğini artırarak reklam maliyetlerinizi düşürür ve sürdürülebilir satış büyümesi sağlar." },
   { q: "Ürün sayfaları nasıl optimize edilir?", a: "Her ürün sayfasında benzersiz title ve description etiketleri, SEO uyumlu ürün açıklamaları, optimize edilmiş görseller, Product schema markup ve kullanıcı yorumları olmalıdır. Duplicate content'i önlemek için canonical tag kullanımı da kritik öneme sahiptir." },
   { q: "E-ticaret sitelerinde teknik SEO neden zor?", a: "En büyük tuzak faceted (filtreli) navigasyondur: 50 filtre, 1 milyondan fazla URL kombinasyonu üretebilir. Yanlış yönetilirse indekslenen sayfa sayısı patlar — gerçek vakalarda 1.600 sayfadan 24.000'e fırlayan siteler var — crawl bütçesi tükenir ve duplicate içerik oluşur. Doğru noindex, canonical ve sitemap stratejisiyle bu karmaşayı kontrol altına alıyoruz." },
-  { q: "Product schema markup ne işe yarar?", a: "Product schema markup, arama sonuçlarında fiyat, stok durumu, puan ve yorum sayısı gibi bilgilerin zengin snippet olarak gösterilmesini sağlar. Bu zengin sonuçlar tıklanma oranınızı %20-30 artırabilir ve rakiplerinizden görsel olarak ayrışmanızı sağlar." },
+  { q: "Product schema markup ne işe yarar?", a: "Product schema markup, arama sonuçlarında fiyat, stok durumu, puan ve yorum sayısı gibi bilgilerin zengin snippet olarak gösterilmesine uygunluk sağlar. Google gösterimi garanti etmez; ama zengin sonuç çıktığında tıklanma oranı çoğu sorguda iyileşir, çünkü fiyatı ve puanı sonuç sayfasında gösteren mağaza görsel olarak öne çıkar." },
   { q: "E-ticaret SEO sonuçları ne kadar sürede görülür?", a: "İlk organik trafik artışları genellikle 2-3 ayda başlar; sürdürülebilir gelir büyümesi ve bileşik etki 6-12 ayda oturur. Ama hızlı kazanımlar da mümkün: tek bir başlık ya da SSS düzenlemesi haftalar içinde tıklamayı artırabilir. Tam katalog çalışması aylar sürdüğü için en yüksek cirolu ürünlerden başlarız." },
   { q: "Binlerce ürünüm var, optimizasyona nereden başlamalı?", a: "Her şeyi aynı anda elle güncellemeye çalışmak en sık yapılan hatadır. En yüksek cirolu 100-200 üründen başlar, kazanan bir şablon kurar, sonra bu sistemi tüm kataloğa yayarız. Aylık bir bakım düzeniyle (son güncelleme tarihi, görsel ve dönüşüm notu) kalite düşmeden ölçeklenir." },
   { q: "E-ticaret SEO hizmeti ve danışmanlığı neleri kapsar?", a: "E-ticaret SEO hizmetimiz; teknik denetim, ürün ve kategori sayfası optimizasyonu, Product/Offer schema, site hızı, içerik ve link çalışmasını kapsar. İhtiyacınıza göre tek seferlik denetimden aylık sürekli danışmanlığa kadar farklı paketler sunuyoruz. Eticaret altyapınız (Shopify, WooCommerce, Ticimax vb.) ne olursa olsun çalışıyoruz." },
@@ -82,8 +82,8 @@ export default function ETicaretSeoPage() {
         }
         subtitle="Reklamı kapattığın an satışlar duruyorsa sorun ürününde değil, görünürlükte. E-ticaret SEO ile ürün ve kategori sayfalarınızı arama motorlarına açıyor, reklamsız da dönen organik satış kuruyoruz."
         stats={[
-          { value: "+314%", label: "Organic Revenue" },
-          { value: "8.4x", label: "ROAS" },
+          { value: "2-3 ay", label: "İlk Organik Trafik Artışı" },
+          { value: "6-12 ay", label: "Bileşik Gelir Büyümesi" },
         ]}
       />
 
@@ -100,15 +100,17 @@ export default function ETicaretSeoPage() {
               </h2>
             </div>
             <p className="text-on-surface-variant max-w-sm font-light">
-              Online mağazanızın her katmanını optimize eden kapsamlı e-ticaret SEO çözümleri.{" "}
+              Bu sayfa altyapıdan bağımsız stratejiyi anlatır: kategori mimarisi, ürün içeriği,
+              filtre yönetimi ve organik gelir ölçümü. Canonical davranışı ve tema katmanı gibi
+              platforma özgü teknik işler için{" "}
               <Link href="/seo/shopify-seo" className="text-primary font-medium hover:underline">
-                Shopify
-              </Link>{" "}
-              veya{" "}
+                Shopify SEO
+              </Link>
+              , WooCommerce tarafı için{" "}
               <Link href="/seo/wordpress-seo" className="text-primary font-medium hover:underline">
-                WordPress
+                WordPress SEO
               </Link>{" "}
-              gibi platforma özel çözümler de sunuyoruz.
+              sayfamıza bakın.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
@@ -172,11 +174,12 @@ export default function ETicaretSeoPage() {
                 Ölçülebilir Mükemmellik.
               </h2>
               <p className="text-white/60 font-light">
-                Organik gelir artışını, dönüşümü ve{" "}
+                Organik geliri, siparişi ve{" "}
                 <Link href="/blog/roas-nedir" className="text-white underline decoration-white/30 hover:decoration-white">
-                  ROAS
-                </Link>
-                &apos;ı gerçek zamanlı verilerle izliyoruz.
+                  SEO yatırım getirisini
+                </Link>{" "}
+                gerçek zamanlı izliyoruz. Yandaki ekran temsili bir izleme panelidir; siz kendi
+                panelinizde kendi gerçek rakamlarınızı görürsünüz.
               </p>
             </div>
             <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-3 gap-6">

@@ -17,27 +17,27 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 const services = [
-  { title: "Google Business Profile", desc: "Sıralamada en hızlı etki yaratan alan burası. Profili eksiksiz doldurmak yetmez; her hafta yeni fotoğraf, konum içeren güncelleme ve Q&A ile aktif tutmak gerekir. Pasif (dormant) profiller geriler, aktif ve zengin olanlar hem haritada hem Google'ın AI özetlerinde öne çıkar.", tags: ["GBP", "Maps", "Yerel Paket"], large: true },
+  { title: "Google Business Profile", desc: "Sıralamada en hızlı etki yaratan alan burası. Profili eksiksiz doldurmak yetmez; yeni fotoğraf, tamamlanan işlerden güncellemeler ve Q&A ile düzenli beslemek gerekir. Sıklığı sektörünüze ve elinizdeki gerçek içeriğe göre belirleriz — sırf sinyal üretmek için atılan gönderi spam'e döner. Uzun süre sessiz kalan profiller rakiplerin gerisinde kalır; aktif ve zengin olanlar hem haritada hem Google'ın AI özetlerinde öne çıkar.", tags: ["GBP", "Maps", "Yerel Paket"], large: true },
   { title: "Yerel Dizin Kayıtları", desc: "Kalite niceliği yener: 50 sağlam yerel atıf (Yelp, sektörel dizinler, ticaret odası), 200 junk kayıttan daha güçlüdür. Müşterilerin gerçekten kullandığı dizinlere, tutarlı NAP ile kayıt yaparız.", tags: [] },
   { title: "NAP Tutarlılığı", desc: "İsim, adres ve telefon her platformda birebir aynı olmalı — format dahil. Eski sahipten kalan adres ya da tutarsız bilgiler Google'ın güvenini ve harita sıralamanı düşürür; hepsini tek doğru bilgiye hizalarız.", tags: [] },
-  { title: "Konum Sayfaları & Yerel İçerik", desc: "Hedeflediğin her şehir için ayrı bir konum sayfası şart. Başlık, URL ve metada 'hizmet + şehir' kullanır, GBP kategorinle sayfayı eşleştiririz — 'nasıl yapılır' değil, doğrudan satın alma niyetli aramalar.", tags: [] },
+  { title: "Konum Sayfaları & Yerel İçerik", desc: "Ayrı şehir sayfasını yalnızca o bölgeye özgü gerçek bir şey sunabiliyorsan açarız: yerel ekip, referans, hizmet farkı, bölgeye özel içerik. Özgün değer taşımayan şablon sayfalar Google için doorway riskidir. Açtığımız sayfada başlık, URL ve metada 'hizmet + şehir' kullanır, GBP kategorinle sayfayı eşleştiririz.", tags: [] },
   { title: "Google Maps Optimizasyonu", desc: "Harita sıralamasında üç şey belirleyici: yakınlık, kategori/sayfa uyumu ve itibar (yorum + aktivite). Bazı sektörlerde harita paketi organikten bile kritiktir; sinyalleri buna göre kurarız.", tags: [] },
-  { title: "Review (Yorum) Yönetimi", desc: "Artık toplam yorum sayısı değil, tazelik (velocity) kazandırıyor: 90 günlük boşluk 'uyku' sinyali sayılıyor. Rakibin haftada 3-5 yorum alıyorsa sen de almalısın. Her müşteriden yorum ister, olumsuzlara 24 saatte profesyonelce cevap veririz.", tags: [], wide: true },
+  { title: "Review (Yorum) Yönetimi", desc: "Toplam sayı kadar düzen de önemli: aylarca sessiz kalan bir profil, düzenli ve doğal yorum kazanan rakibin gerisine düşer. Yorum hacmini ve tazeliğini rakip bağlamında izler, her müşteriden doğal yolla yorum ister, olumsuzlara 24 saatte profesyonelce cevap veririz.", tags: [], wide: true },
 ];
 
 const dashboardMetrics = [
-  { label: "Yerel Pakette", value: "12", unit: "", status: "İlk 3" },
-  { label: "GBP Görüntülenme", value: "+280", unit: "%", status: "Yükseliyor" },
-  { label: "Yerel Trafik", value: "+340", unit: "%", status: "Patlama" },
+  { label: "Yerel Pakette", value: "12", unit: "", status: "Örnek" },
+  { label: "GBP Görüntülenme", value: "+280", unit: "%", status: "Örnek" },
+  { label: "Telefon + Rota Tıklaması", value: "+340", unit: "%", status: "Örnek" },
 ];
 
 const faqItems = [
   { q: "Lokal SEO nedir?", a: "Lokal SEO, işletmenizin belirli bir coğrafi bölgedeki arama sonuçlarında görünürlüğünü artırmaya odaklanan optimizasyon çalışmalarıdır. 'Yakınımdaki' aramalarında ve Google Maps'te üst sıralarda yer almanızı sağlar." },
-  { q: "Google Business Profile (GMB) neden bu kadar önemli?", a: "Yerel aramada ve haritada görünmenizi sağlayan temel araçtır; sıralamada en hızlı etki yaratan alandır. Profili eksiksiz doldurmak yetmez, her hafta fotoğraf ve konum içeren güncellemelerle aktif tutmak gerekir. Pasif profiller geriler; aktif ve zengin profiller hem haritada hem Google'ın AI özetlerinde öne çıkar." },
-  { q: "Müşteri yorumları sıralamayı etkiler mi?", a: "Evet — ve artık toplam sayıdan çok tazelik (velocity) belirleyici. 2026'da 90 günlük yorum boşluğu 'uyku' sinyali sayılıyor. Rakiplerinizden daha çok ve daha düzenli yorum almak, her yoruma 24 saat içinde cevap vermek yerel sıralamayı doğrudan etkiler. Ani sahte yorum spike'larından ise kaçınmak gerekir; spam filtresini tetikler." },
+  { q: "Google Business Profile (GMB) neden bu kadar önemli?", a: "Yerel aramada ve haritada görünmenizi sağlayan temel araçtır; sıralamada en hızlı etki yaratan alandır. Profili eksiksiz doldurmak yetmez, gerçek içerikle düzenli beslemek gerekir: yeni fotoğraflar, tamamlanan işler, güncel bilgiler. Sıklık sektöre göre değişir; önemli olan süreklilik. Uzun süre sessiz kalan profiller rakiplerin gerisinde kalır; aktif ve zengin profiller hem haritada hem Google'ın AI özetlerinde öne çıkar." },
+  { q: "Müşteri yorumları sıralamayı etkiler mi?", a: "Evet. Yorumlar yerel sıralamanın bilinen faktörlerinden; sayı kadar düzenlilik ve cevaplama da önemli. Aylarca yorum almayan bir profil, düzenli ve doğal yorum kazanan rakibin gerisine düşer — bu yüzden yorum hacmini rakip bağlamında izler, her yoruma 24 saat içinde cevap veririz. Ani sahte yorum spike'larından ise kaçınmak gerekir; spam filtresini tetikler." },
   { q: "NAP tutarlılığı ne anlama gelir?", a: "NAP (Name, Address, Phone); işletme adınızın, adresinizin ve telefonunuzun tüm platformlarda birebir aynı olmasıdır — format dahil. Google bunu güven sinyali olarak okur. Eski sahipten kalan adres ya da tutarsız bilgiler hem harita sıralamasını hem AI özetlerindeki görünürlüğü düşürür." },
   { q: "Google işletme profilim neden askıya alınabilir?", a: "En sık nedenler: çok hızlı veya çok fazla değişiklik, yanıltıcı bilgi (sahte adres/isim), ani yorum spike'ları ve kural dışı kategori/içerik. Profili kararlı tutmak, gerçek bilgi kullanmak ve değişiklikleri ölçülü yapmak askıdan korur. Askıya alınmışsa doğru belgelerle itiraz sürecini biz yönetiriz." },
-  { q: "Birden çok şehirde hizmet veriyorum, ne yapmalıyım?", a: "Her hedef şehir için ayrı bir konum sayfası açmak en etkili yöntemdir. Sayfa başlığı ve URL'inde 'hizmet + şehir' kullanır, GBP'nizi ilgili sayfaya linkler ve adresinizi footer'a koyarız. Böylece her bölgede ayrı ayrı görünür olursunuz." },
+  { q: "Birden çok şehirde hizmet veriyorum, ne yapmalıyım?", a: "Bir şehirde gerçek varlığınız varsa — ekip, müşteri, referans, bölgeye özel hizmet — o şehir için ayrı konum sayfası açarız; başlık ve URL'de 'hizmet + şehir' kullanır, GBP'nizi ilgili sayfaya linkleriz. Özgün yerel değer sunamayacağınız şehirler için şablon sayfa çoğaltmayız: Google bunları doorway sayfası olarak değerlendirebilir ve tüm siteye zarar verir." },
   { q: "Lokal SEO sonuçları ne kadar sürede görülür?", a: "GBP optimizasyonu, dizin kayıtları ve NAP düzeltmeleri genellikle 2-4 hafta içinde erken etkisini gösterir. Review velocity, içerik ve linklerle gerçek Local Pack hakimiyeti 3-6 ayda oturur; rekabetçi bölgelerde daha uzun sürer. Sürekli aktivite şarttır — duran profiller geriler." },
 ];
 
@@ -82,8 +82,8 @@ export default function LokalSeoPage() {
         }
         subtitle="Biri telefonuna 'yakınımdaki [işiniz]' yazdığında çıkan ilk 3 işletmeden biri siz misiniz, yoksa rakipleriniz mi? Google Business Profile, yorumlar ve konum sayfalarıyla sizi yerel aramada ve haritada öne çıkarıyoruz."
         stats={[
-          { value: "12", label: "Local Pack Rankings" },
-          { value: "+280%", label: "GMB Views" },
+          { value: "2-4 hafta", label: "İlk Görünür Etki" },
+          { value: "İlk 3", label: "Yerel Paket Hedefi" },
         ]}
       />
 
@@ -168,7 +168,11 @@ export default function LokalSeoPage() {
                 Ölçülebilir Mükemmellik.
               </h2>
               <p className="text-white/60 font-light">
-                Yerel görünürlüğünüzü ve bölgesel performansınızı gerçek zamanlı verilerle takip ediyoruz.
+                Yerel görünürlüğü Local Pack pozisyonu, GBP görüntülenme ve telefon/rota
+                tıklamalarıyla ölçüyoruz — yani müşteriye dönüşen sinyallerle.
+              </p>
+              <p className="text-white/40 font-light text-xs">
+                Aşağıdaki panel temsili örnektir; müşteri sonucu değildir.
               </p>
             </div>
             <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-3 gap-6">

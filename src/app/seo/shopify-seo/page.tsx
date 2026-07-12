@@ -74,7 +74,7 @@ const faqItems = [
 const howToSteps = [
   {
     title: "Teknik Temel",
-    desc: "Markalı alan adı, Search Console & Bing Webmaster kurulumu, dinamik XML sitemap ve site hızı (Core Web Vitals) ile sağlam bir zemin kurarız.",
+    desc: "Shopify'ın kendine özgü sorunlarından başlarız: canonical davranışı, koleksiyon URL kopyaları, uygulama script yükü ve tema (Liquid) hızı. Markalı alan adı, Search Console kurulumu ve XML sitemap ilk haftanın rutinidir — asıl fark platform katmanında yaratılır.",
   },
   {
     title: "On-Page Optimizasyon",
@@ -92,20 +92,24 @@ const howToSteps = [
 
 const checklistItems = [
   {
+    title: "Temiz URL & Canonical",
+    desc: "Koleksiyon yolu, filtre, etiket ve varyant kaynaklı yinelenen URL'lerin canonical ile kontrol altına alınması.",
+  },
+  {
+    title: "Site Hızı & Core Web Vitals",
+    desc: "Liquid sadeleştirme, uygulama script temizliği, kritik CSS ve görsel WebP sıkıştırma.",
+  },
+  {
     title: "Markalı Alan Adı & Yapılandırma",
     desc: "myshopify.com yerine markalı domain, www/non-www tekilleştirme ve doğru yönlendirmeler.",
   },
   {
+    title: "Dinamik XML Sitemap & Robots",
+    desc: "robots.txt.liquid ile gereksiz parametre ve şablon yollarının kapatılması; tarama bütçesi gelir getiren sayfalara.",
+  },
+  {
     title: "Search Console & Bing Webmaster",
     desc: "Mülk doğrulama, sitemap gönderimi ve indeksleme/kapsam sorunlarının sürekli izlenmesi.",
-  },
-  {
-    title: "Dinamik XML Sitemap & Robots",
-    desc: "Gelir getiren sayfalara tarama bütçesi; gereksiz parametre ve şablon yollarının kapatılması.",
-  },
-  {
-    title: "Site Hızı & Core Web Vitals",
-    desc: "Liquid sadeleştirme, kritik CSS, görsel WebP sıkıştırma ve script yükünün azaltılması.",
   },
   {
     title: "Başlık Hiyerarşisi (H1–H6)",
@@ -122,10 +126,6 @@ const checklistItems = [
   {
     title: "Görsel Optimizasyonu & Alt Metin",
     desc: "Sıkıştırma, doğru boyutlandırma ve açıklayıcı alt metinlerle görsel aramada görünürlük.",
-  },
-  {
-    title: "Temiz URL & Canonical",
-    desc: "Filtre, etiket ve varyant kaynaklı yinelenen URL'lerin canonical ile kontrol altına alınması.",
   },
   {
     title: "Yapılandırılmış Veri (JSON-LD)",
@@ -550,8 +550,9 @@ export default function ShopifySeoPage() {
               <h3 className="text-lg font-bold text-on-background mb-2">Yinelenen İçerik</h3>
               <p className="text-sm text-primary font-bold uppercase tracking-wide mb-3">Canonical</p>
               <p className="text-on-surface-variant text-sm font-light leading-relaxed">
-                Filtre, etiket ve varyant kaynaklı kopya URL&apos;lerde tercih edilen adresi netleştirip otorite
-                sızıntısını önlüyoruz.
+                Shopify her ürünü hem /products/ hem /collections/ yolu altında üretir; buna etiket ve
+                ?variant= URL&apos;leri eklenince kopya sayfa katlanır. Tercih edilen adresi netleştirip
+                otorite sızıntısını önlüyoruz.
               </p>
             </div>
             <div className="bg-surface-container-lowest border border-outline-variant/10 p-8 rounded-[2rem] hover:shadow-xl transition-shadow">
@@ -561,7 +562,8 @@ export default function ShopifySeoPage() {
               <h3 className="text-lg font-bold text-on-background mb-2">Robots.txt Kontrolü</h3>
               <p className="text-sm text-primary font-bold uppercase tracking-wide mb-3">Tarama</p>
               <p className="text-on-surface-variant text-sm font-light leading-relaxed">
-                Gereksiz şablon ve parametre yollarını kapatıp bütçeyi gelir getiren sayfalara yönlendiriyoruz.
+                Shopify&apos;ın robots.txt.liquid dosyasıyla gereksiz şablon ve parametre yollarını kapatıp
+                tarama bütçesini gelir getiren sayfalara yönlendiriyoruz.
               </p>
             </div>
             <div className="bg-surface-container-lowest border border-outline-variant/10 p-8 rounded-[2rem] hover:shadow-xl transition-shadow">

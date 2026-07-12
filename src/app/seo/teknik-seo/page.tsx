@@ -18,9 +18,9 @@ export async function generateMetadata(): Promise<Metadata> {
 
 const services = [
   { title: "Core Web Vitals", desc: "LCP, INP ve CLS optimizasyonu ile hem kullanıcı deneyimini hem algoritmik tercihi güçlendiriyoruz.", tags: ["LCP", "INP", "CLS"], large: true },
-  { title: "Crawlability", desc: "Robots.txt mantığı ve XML sitemap hiyerarşisi ile derin indeksleme sağlıyoruz.", tags: [] },
+  { title: "Crawlability", desc: "Robots.txt mantığı ve XML sitemap hiyerarşisi ile tarama bütçesini değer üreten sayfalara yönlendiriyoruz.", tags: [] },
   { title: "Site Mimarisi", desc: "Düz site yapısı ve iç linkleme silolama ile link equity dağılımını koruyoruz.", tags: [] },
-  { title: "Schema Markup", desc: "JSON-LD ile zengin arama sonuçları için varlık ilişkilerini tanımlıyoruz.", tags: [] },
+  { title: "Schema Markup", desc: "JSON-LD ile varlık ilişkilerini tanımlıyoruz. Doğru işaretleme zengin sonuç uygunluğu sağlar; gösterime Google karar verir.", tags: [] },
   { title: "JS Rendering", desc: "SSR/ISR ile yüksek performanslı JavaScript uygulamaları için dinamik render çözümleri.", tags: [] },
   { title: "Hreflang", desc: "Çok bölgeli hedefleme ve dil çapraz referanslama mantığı ile uluslararası SEO.", tags: [], wide: true },
 ];
@@ -33,7 +33,7 @@ const cwvMetrics = [
 
 const faqItems = [
   { q: "Teknik SEO nedir?", a: "Teknik SEO, web sitenizin arama motorları tarafından taranabilirliğini, indekslenebilirliğini ve renderlanabilirliğini optimize eden altyapısal çalışmalar bütünüdür. Site hızı, mobil uyumluluk, yapılandırılmış veri ve güvenlik gibi faktörleri kapsar." },
-  { q: "Single Page Application (SPA) siteler nasıl optimize edilir?", a: "React, Vue veya Angular ile oluşturulmuş SPA sitelerde bot user-agent'ları için server-side rendering (SSR) veya dinamik rendering uyguluyoruz. Bu sayede client-side render gecikmesi olmadan içerik indekslenir." },
+  { q: "Single Page Application (SPA) siteler nasıl optimize edilir?", a: "React, Vue veya Angular projelerinde önceliğimiz SSR, SSG, ISR veya framework'ün yerleşik render çözümleridir. Rendered HTML ile kaynak HTML arasındaki farkı, hydration davranışını, route değişimlerinde canonical ve metadata yönetimini test ederiz. Bot user-agent'ına göre farklı içerik üreten dynamic rendering'i kalıcı çözüm olarak değil, yalnızca geçici ve kontrollü bir istisna olarak değerlendiririz." },
   { q: "Teknik SEO denetimi neleri kapsar?", a: "Site hızı analizi, crawl budget optimizasyonu, broken link taraması, redirect chain düzeltmesi, schema markup doğrulama, mobile-first indeksleme kontrolü, Core Web Vitals ölçümü ve log file analizi dahildir." },
   { q: "Core Web Vitals neden önemli?", a: "Google 2021'den bu yana Core Web Vitals'ı sıralama faktörü olarak kullanıyor. LCP, INP ve CLS metrikleri hem kullanıcı deneyimini hem de arama sıralamanızı doğrudan etkiler." },
   { q: "Teknik SEO ne kadar sürer?", a: "İlk teknik denetim 1-2 hafta içinde tamamlanır. Kritik düzeltmeler ilk ay, kapsamlı optimizasyonlar 2-3 ay içinde uygulanır. Sürekli izleme ve iyileştirme devam eder." },
@@ -80,8 +80,8 @@ export default function TeknikSeoPage() {
         }
         subtitle="Web sitenizin altyapısını arama motorları için kusursuz hale getiriyor, tarama bütçesini optimize ediyoruz."
         stats={[
-          { value: "99.9%", label: "İndeksleme Başarısı" },
-          { value: "< 100ms", label: "Render Yanıtı" },
+          { value: "1-2 hafta", label: "İlk Teknik Denetim Teslimi" },
+          { value: "LCP · INP · CLS", label: "Alan Verisiyle CWV Takibi" },
         ]}
       />
 
@@ -176,6 +176,9 @@ export default function TeknikSeoPage() {
               ))}
             </div>
           </div>
+          <p className="text-[11px] text-white/30 mt-8 text-center md:text-right">
+            Örnek hedef değerlerdir; projenizin mevcut ve hedef metrikleri denetim sonrasında birlikte belirlenir.
+          </p>
         </div>
       </section>
 
