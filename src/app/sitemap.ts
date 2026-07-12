@@ -23,6 +23,15 @@ interface SanityPageEntry {
   updatedAt: string;
 }
 
+// Sanity'de pageSeo kaydı olmayan statik route'lar (kodda page.tsx olarak yaşarlar)
+const STATIC_PATHS = [
+  "/ankara-seo-ajansi",
+  "/antalya-seo-ajansi",
+  "/bursa-seo-ajansi",
+  "/istanbul-seo-ajansi",
+  "/izmir-seo-ajansi",
+];
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const entries: MetadataRoute.Sitemap = [];
   let redirectSources = new Set<string>();
@@ -77,6 +86,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     } catch {
       // Sanity unavailable — return empty sitemap
     }
+  }
+
+  const seen = new Set(entries.map((e) => e.url));
+  for (const path of STATIC_PATHS) {
+    const url = `${SITE_URL}${path}`;
+    if (seen.has(url) || redirectSources.has(path)) continue;
+    entries.push({
+      url,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    });
   }
 
   return entries;
