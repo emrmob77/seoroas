@@ -13,6 +13,7 @@ export async function generateMetadata(): Promise<Metadata> {
     description:
       "İstanbul'da profesyonel SEO hizmeti. Yerel arama, teknik optimizasyon ve içerik stratejisi ile İstanbul pazarında organik büyüme sağlayın.",
     path: "/istanbul-seo-ajansi",
+    noIndex: true, // taslak — yayina alinirken kaldir (Sanity pageSeo kaydi da ezebilir)
   });
 }
 

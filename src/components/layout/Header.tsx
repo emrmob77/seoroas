@@ -78,16 +78,6 @@ const defaultMegaMenuGroups: MegaMenuGroup[] = [
       { title: "GEO (Generative Engine Optimization)", url: "/geo", icon: "Zap" },
     ],
   },
-  {
-    groupTitle: "Bölgeler",
-    links: [
-      { title: "İstanbul", url: "/istanbul-seo-ajansi", icon: "MapPin" },
-      { title: "Ankara", url: "/ankara-seo-ajansi", icon: "MapPin" },
-      { title: "İzmir", url: "/izmir-seo-ajansi", icon: "MapPin" },
-      { title: "Bursa", url: "/bursa-seo-ajansi", icon: "MapPin" },
-      { title: "Antalya", url: "/antalya-seo-ajansi", icon: "MapPin" },
-    ],
-  },
 ];
 
 const defaultMainLinks: NavLink[] = [

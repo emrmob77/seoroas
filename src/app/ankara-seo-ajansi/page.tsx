@@ -13,6 +13,7 @@ export async function generateMetadata(): Promise<Metadata> {
     description:
       "Ankara'da kurumsal ve kamu sektörüne yönelik SEO hizmeti. Teknik altyapı, içerik stratejisi ve yerel SEO ile dijital görünürlüğünüzü artırın.",
     path: "/ankara-seo-ajansi",
+    noIndex: true, // taslak — yayina alinirken kaldir (Sanity pageSeo kaydi da ezebilir)
   });
 }
 

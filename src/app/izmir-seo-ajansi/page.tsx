@@ -13,6 +13,7 @@ export async function generateMetadata(): Promise<Metadata> {
     description:
       "İzmir'de profesyonel SEO hizmeti. E-ticaret, turizm ve ihracat sektörlerinde uzmanlaşmış organik büyüme stratejileri.",
     path: "/izmir-seo-ajansi",
+    noIndex: true, // taslak — yayina alinirken kaldir (Sanity pageSeo kaydi da ezebilir)
   });
 }
 

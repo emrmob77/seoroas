@@ -28,16 +28,6 @@ const defaultFooterColumns: FooterColumn[] = [
     ],
   },
   {
-    title: "Bölgeler",
-    links: [
-      { title: "İstanbul SEO Ajansı", url: "/istanbul-seo-ajansi" },
-      { title: "Ankara SEO Ajansı", url: "/ankara-seo-ajansi" },
-      { title: "İzmir SEO Ajansı", url: "/izmir-seo-ajansi" },
-      { title: "Bursa SEO Ajansı", url: "/bursa-seo-ajansi" },
-      { title: "Antalya SEO Ajansı", url: "/antalya-seo-ajansi" },
-    ],
-  },
-  {
     title: "Şirket",
     links: [
       { title: "Hakkımızda", url: "/hakkimizda" },

@@ -13,6 +13,7 @@ export async function generateMetadata(): Promise<Metadata> {
     description:
       "Antalya'da turizm ve hizmet sektörü odaklı SEO hizmeti. Otelcilik, sağlık turizmi ve gayrimenkul için organik trafik ve rezervasyon artışı.",
     path: "/antalya-seo-ajansi",
+    noIndex: true, // taslak — yayina alinirken kaldir (Sanity pageSeo kaydi da ezebilir)
   });
 }
 

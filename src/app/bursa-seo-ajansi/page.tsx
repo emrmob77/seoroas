@@ -13,6 +13,7 @@ export async function generateMetadata(): Promise<Metadata> {
     description:
       "Bursa'da sanayi ve ticaret odaklı SEO hizmeti. Otomotiv, tekstil ve gıda sektörlerinde dijital görünürlük ve organik trafik artışı.",
     path: "/bursa-seo-ajansi",
+    noIndex: true, // taslak — yayina alinirken kaldir (Sanity pageSeo kaydi da ezebilir)
   });
 }
 

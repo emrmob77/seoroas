@@ -103,16 +103,8 @@ export default function LokalSeoPage() {
               Google Business Profile&apos;dan konum sayfalarına kadar uçtan uca yerel SEO. Profili sıfırdan kurmak için{" "}
               <Link href="/blog/google-benim-isletmem-rehberi" className="text-primary font-medium hover:underline">
                 Google Benim İşletmem rehberimize
-              </Link>
-              , şehre özel çalışma için{" "}
-              <Link href="/istanbul-seo-ajansi" className="text-primary font-medium hover:underline">
-                İstanbul
               </Link>{" "}
-              ve{" "}
-              <Link href="/ankara-seo-ajansi" className="text-primary font-medium hover:underline">
-                Ankara
-              </Link>{" "}
-              sayfalarımıza bakabilirsiniz.
+              bakabilirsiniz.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
