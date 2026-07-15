@@ -134,7 +134,9 @@ export function organizationSchema() {
     founder: {
       "@type": "Person",
       name: "Emrah Tonlak",
-      url: "https://www.linkedin.com/in/emrtonlak/",
+      jobTitle: "SEO Direktörü",
+      url: `${SITE_URL}/hakkimizda`,
+      sameAs: ["https://www.linkedin.com/in/emrtonlak/"],
     },
     areaServed: "TR",
   };
