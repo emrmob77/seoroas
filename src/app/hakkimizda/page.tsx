@@ -9,10 +9,9 @@ import {
   ClipboardCheck,
   Handshake,
   BookOpen,
-  Award,
   Search,
   LineChart,
-  Shield,
+  ShoppingBag,
   BarChart,
   CheckCircle,
 } from "lucide-react";
@@ -58,18 +57,17 @@ const values = [
 
 const stats = [
   { value: "2014", label: "Kuruluş Yılımız" },
-  { value: "500+", label: "Başarılı Proje" },
-  { value: "50+", label: "Sektör Uzmanı" },
+  { value: "100+", label: "Mutlu Müşteri" },
+  { value: "40+", label: "Kurumsal Marka" },
   { value: "%94", label: "Müşteri Memnuniyeti" },
 ];
 
 const certifications = [
-  { icon: Award, label: "Google Partner" },
+  { icon: BarChart, label: "GA4 Certified" },
+  { icon: ShoppingBag, label: "Shopify" },
   { icon: Search, label: "Semrush" },
   { icon: LineChart, label: "Ahrefs" },
-  { icon: Shield, label: "ISO 27001" },
   { icon: CheckCircle, label: "KVKK" },
-  { icon: BarChart, label: "GA4 Certified" },
 ];
 
 export default function HakkimizdaPage() {
@@ -295,7 +293,7 @@ export default function HakkimizdaPage() {
       <section className="px-6 md:px-8 py-16 md:py-32">
         <div className="max-w-7xl mx-auto">
           <p className="text-center text-xs font-semibold tracking-widest uppercase text-on-surface-variant mb-12 md:mb-16">
-            Global Standartlarda Güvenlik ve Uzmanlık
+            Çalıştığımız Araçlar ve Standartlar
           </p>
           <div className="grid grid-cols-3 md:grid-cols-6 gap-8 md:gap-12 items-center opacity-40">
             {certifications.map((c) => (
