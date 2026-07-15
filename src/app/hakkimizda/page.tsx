@@ -56,7 +56,7 @@ const values = [
 ];
 
 const stats = [
-  { value: "2014", label: "Kuruluş Yılımız" },
+  { value: "10+", label: "Yıl SEO Tecrübesi" },
   { value: "100+", label: "Mutlu Müşteri" },
   { value: "40+", label: "Kurumsal Marka" },
   { value: "%94", label: "Müşteri Memnuniyeti" },
