@@ -76,18 +76,46 @@ export default function HakkimizdaPage() {
   return (
     <>
       <SchemaOrg
-        schema={{
-          "@context": "https://schema.org",
-          "@type": "AboutPage",
-          name: "Hakkımızda — SEOROAS",
-          description:
-            "Arama motoru optimizasyonunu ölçülebilir bir yatırım getirisi (ROAS) odaklı büyüme motoruna dönüştürüyoruz.",
-          publisher: {
-            "@type": "Organization",
-            name: "SEOROAS",
-            url: "https://seoroas.com",
+        schema={[
+          {
+            "@context": "https://schema.org",
+            "@type": "AboutPage",
+            name: "Hakkımızda — SEOROAS",
+            description:
+              "Arama motoru optimizasyonunu ölçülebilir bir yatırım getirisi (ROAS) odaklı büyüme motoruna dönüştürüyoruz.",
+            publisher: {
+              "@type": "Organization",
+              name: "SEOROAS",
+              url: "https://seoroas.com",
+            },
           },
-        }}
+          {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            name: "Emrah Tonlak",
+            jobTitle: "SEO Direktörü",
+            description:
+              "SEOROAS'ın kurucusu. Teknik SEO, e-ticaret SEO'su ve yapay zekâ aramalarında görünürlük üzerine çalışan bir SEO direktörü.",
+            url: "https://seoroas.com/hakkimizda",
+            worksFor: {
+              "@type": "Organization",
+              name: "SEOROAS",
+              url: "https://seoroas.com",
+            },
+            knowsAbout: [
+              "SEO",
+              "Teknik SEO",
+              "E-ticaret SEO",
+              "Organik büyüme",
+              "GEO (Generative Engine Optimization)",
+            ],
+            alumniOf: {
+              "@type": "CollegeOrUniversity",
+              name: "Anadolu Üniversitesi",
+            },
+            sameAs: ["https://www.linkedin.com/in/emrtonlak/"],
+          },
+        ]}
       />
 
       <SubpageHero
@@ -140,6 +168,72 @@ export default function HakkimizdaPage() {
                   d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
                 />
               </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Founder */}
+      <section className="px-6 md:px-8 py-16 md:py-32">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-primary font-bold tracking-widest text-xs uppercase mb-10 md:mb-14">
+            SEOROAS'ın Arkasındaki İsim
+          </p>
+          <div className="grid md:grid-cols-[auto_1fr] gap-8 md:gap-14 items-start">
+            <div className="flex md:flex-col items-center md:items-start gap-5 md:gap-6">
+              <div className="w-24 h-24 md:w-32 md:h-32 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                <span className="text-primary font-black text-4xl md:text-5xl">E</span>
+              </div>
+              <div>
+                <h3 className="text-xl md:text-2xl font-bold text-on-background leading-tight">
+                  Emrah Tonlak
+                </h3>
+                <p className="text-sm text-on-surface-variant">
+                  SEO Direktörü &amp; Kurucu
+                </p>
+                <a
+                  href="https://www.linkedin.com/in/emrtonlak/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block mt-3 text-xs font-bold uppercase tracking-widest text-primary hover:underline"
+                >
+                  LinkedIn Profili →
+                </a>
+              </div>
+            </div>
+            <div className="space-y-5 text-on-surface-variant text-base md:text-lg leading-relaxed font-light">
+              <p>
+                SEOROAS&apos;ı SEO direktörü Emrah Tonlak kurdu. Kariyerine ajans
+                tarafında SEO uzmanı olarak başladı; yıllarını arama motorlarının
+                markaları neye göre sıraladığını sökmeye ve şirketleri organik
+                trafikle büyütmeye ayırdı.
+              </p>
+              <p>
+                Bugün odağında üç alan var:{" "}
+                <Link href="/seo/teknik-seo" className="text-primary font-medium hover:underline">
+                  teknik SEO
+                </Link>
+                ,{" "}
+                <Link href="/seo/e-ticaret-seo" className="text-primary font-medium hover:underline">
+                  e-ticaret SEO&apos;su
+                </Link>{" "}
+                ve yapay zekâ aramalarında (
+                <Link href="/geo" className="text-primary font-medium hover:underline">
+                  GEO
+                </Link>
+                ) görünürlük. Aynı zamanda OrucApp adlı mobil uygulamanın da
+                kurucusu; yani SEO&apos;yu yalnızca danışman gözüyle değil, kendi
+                ürününü büyüten biri olarak da uyguluyor.
+              </p>
+              <p>
+                Anadolu Üniversitesi İşletme mezunu. SEOROAS&apos;taki içerikleri,
+                sahada test ettiği yöntemlerle ve &ldquo;sıralama değil,
+                gelir&rdquo; bakışıyla hazırlıyor. Yazdığı rehberlere{" "}
+                <Link href="/blog" className="text-primary font-medium hover:underline">
+                  blogdan
+                </Link>{" "}
+                ulaşabilirsiniz.
+              </p>
             </div>
           </div>
         </div>
