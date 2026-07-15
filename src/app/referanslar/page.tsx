@@ -17,10 +17,10 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 const summaryStats = [
-  { value: "500+", label: "Tamamlanan Proje" },
+  { value: "40+", label: "Kurumsal Marka" },
+  { value: "100+", label: "Mutlu Müşteri" },
   { value: "94%", label: "Müşteri Sadakati" },
-  { value: "3.2X", label: "Ortalama ROI Artışı" },
-  { value: "+240%", label: "Organik Trafik İvmesi" },
+  { value: "%400", label: "Vakada Zirve Trafik Artışı" },
 ];
 
 const caseStudies = [
