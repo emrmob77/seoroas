@@ -1,6 +1,17 @@
 const SITE_URL = "https://seoroas.com";
 const SITE_NAME = "SEOROAS";
 
+// Yazar adı → doğrulanmış kişisel profil(ler). E-E-A-T: isimli yazarı gerçek
+// bir kimliğe bağlar. YALNIZCA doğrulanmış profil ekle.
+const AUTHOR_PROFILES: Record<string, string[]> = {
+  "Emrah Tonlak": ["https://www.linkedin.com/in/emrtonlak/"],
+};
+
+// Yazar kartında görünür profil linki için (şema ile tek kaynak).
+export function authorProfiles(name?: string): string[] {
+  return (name && AUTHOR_PROFILES[name]) || [];
+}
+
 export interface SiteContactInfo {
   phone?: string;
   email?: string;
@@ -74,6 +85,9 @@ export function articleSchema(params: {
           "@type": "Person",
           name: params.author,
           url: `${SITE_URL}/hakkimizda`,
+          ...(AUTHOR_PROFILES[params.author] && {
+            sameAs: AUTHOR_PROFILES[params.author],
+          }),
         }
       : { "@type": "Organization", name: SITE_NAME, url: SITE_URL },
     publisher: {
@@ -103,6 +117,11 @@ export function organizationSchema() {
     description:
       "Organik gelir odaklı SEO ajansı. Teknik SEO, içerik, e-ticaret ve AI arama görünürlüğü hizmetleri.",
     sameAs: ["https://linkedin.com/company/seoroas"],
+    founder: {
+      "@type": "Person",
+      name: "Emrah Tonlak",
+      url: "https://www.linkedin.com/in/emrtonlak/",
+    },
     areaServed: "TR",
   };
 }

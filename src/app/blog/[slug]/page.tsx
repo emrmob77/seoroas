@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { PortableText } from "@portabletext/react";
 import { Calendar, Clock, CheckCircle } from "lucide-react";
 import { generateSeoMetadata } from "@/lib/seo";
-import { articleSchema } from "@/lib/schema";
+import { articleSchema, authorProfiles } from "@/lib/schema";
 import { portableTextComponents } from "@/lib/portableText";
 import { SchemaOrg } from "@/components/seo/SchemaOrg";
 import { Breadcrumb } from "@/components/layout/Breadcrumb";
@@ -253,6 +253,17 @@ export default async function BlogPostPage({ params }: PageProps) {
                   dayalı SEO stratejileri ve sektör deneyimiyle
                   şekillenmektedir.
                 </p>
+                {authorProfiles(post.author).map((profileUrl) => (
+                  <a
+                    key={profileUrl}
+                    href={profileUrl}
+                    target="_blank"
+                    rel="noopener noreferrer author"
+                    className="w-full block text-center py-3 mb-3 border-[0.5px] border-outline-variant/20 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-surface-container-high transition-colors"
+                  >
+                    LinkedIn Profili
+                  </a>
+                ))}
                 <Link
                   href="/hakkimizda"
                   className="w-full block text-center py-3 border-[0.5px] border-outline-variant/20 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-surface-container-high transition-colors"
