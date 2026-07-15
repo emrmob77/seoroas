@@ -7,7 +7,7 @@ import { CookieBanner } from "@/components/layout/CookieBanner";
 import { GoogleTagManagerHead, GoogleTagManagerBody } from "@/components/analytics/GoogleTagManager";
 import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
 import { SchemaOrg } from "@/components/seo/SchemaOrg";
-import { localBusinessSchema, webSiteSchema, setSiteContactInfo } from "@/lib/schema";
+import { localBusinessSchema, webSiteSchema, organizationSchema, setSiteContactInfo } from "@/lib/schema";
 import { fetchNavigation } from "@/sanity/queries/navigation";
 import { sanityFetch } from "@/sanity/client";
 import "./globals.css";
@@ -75,7 +75,7 @@ export default async function RootLayout({
   return (
     <html lang="tr" className={`${manrope.variable} h-full antialiased`}>
       <head>
-        <SchemaOrg schema={[localBusinessSchema(), webSiteSchema()]} />
+        <SchemaOrg schema={[organizationSchema(), localBusinessSchema(), webSiteSchema()]} />
       </head>
       <body className="min-h-full flex flex-col font-sans bg-background text-on-surface">
         <GoogleTagManagerHead />

@@ -69,15 +69,41 @@ export function articleSchema(params: {
     datePublished: params.publishedAt,
     dateModified: params.modifiedAt || params.publishedAt,
     image: params.image,
-    author: {
-      "@type": "Organization",
-      name: params.author || SITE_NAME,
-    },
+    author: params.author
+      ? {
+          "@type": "Person",
+          name: params.author,
+          url: `${SITE_URL}/hakkimizda`,
+        }
+      : { "@type": "Organization", name: SITE_NAME, url: SITE_URL },
     publisher: {
       "@type": "Organization",
       name: SITE_NAME,
       url: SITE_URL,
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}/icon.svg`,
+      },
     },
+  };
+}
+
+// E-E-A-T: markayı arama motorlarına bir varlık olarak tanımlar (otorite + güven).
+// sameAs YALNIZCA gerçek, doğrulanmış profilleri içermeli — uydurma profil ekleme.
+export function organizationSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: SITE_NAME,
+    url: SITE_URL,
+    logo: {
+      "@type": "ImageObject",
+      url: `${SITE_URL}/icon.svg`,
+    },
+    description:
+      "Organik gelir odaklı SEO ajansı. Teknik SEO, içerik, e-ticaret ve AI arama görünürlüğü hizmetleri.",
+    sameAs: ["https://linkedin.com/company/seoroas"],
+    areaServed: "TR",
   };
 }
 

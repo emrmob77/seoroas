@@ -53,14 +53,23 @@ export default async function BlogPostPage({ params }: PageProps) {
     image: post.mainImage
       ? urlFor(post.mainImage).width(1200).height(630).url()
       : undefined,
+    modifiedAt: post.updatedAt,
     author: post.author,
   });
 
-  const formattedDate = new Date(post.publishedAt).toLocaleDateString("tr-TR", {
+  const dateFmt: Intl.DateTimeFormatOptions = {
     year: "numeric",
     month: "long",
     day: "numeric",
-  });
+  };
+  const formattedDate = new Date(post.publishedAt).toLocaleDateString("tr-TR", dateFmt);
+  // Yayın ile güncelleme aynı güne denk gelirse "güncellendi" göstermeye gerek yok.
+  const showUpdated =
+    post.updatedAt &&
+    new Date(post.updatedAt).toDateString() !== new Date(post.publishedAt).toDateString();
+  const formattedUpdated = showUpdated
+    ? new Date(post.updatedAt!).toLocaleDateString("tr-TR", dateFmt)
+    : null;
 
   return (
     <>
@@ -89,6 +98,12 @@ export default async function BlogPostPage({ params }: PageProps) {
                     <Calendar className="h-4 w-4" />
                     <time dateTime={post.publishedAt}>{formattedDate}</time>
                   </span>
+                  {formattedUpdated && (
+                    <span className="flex items-center gap-2">
+                      <span className="text-primary">Güncelleme:</span>
+                      <time dateTime={post.updatedAt}>{formattedUpdated}</time>
+                    </span>
+                  )}
                   {post.readingTime && (
                     <span className="flex items-center gap-2">
                       <Clock className="h-4 w-4" />
@@ -220,7 +235,9 @@ export default async function BlogPostPage({ params }: PageProps) {
               <div className="bg-surface-container-low rounded-xl p-8">
                 <div className="flex items-center gap-4 mb-6">
                   <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                    <span className="text-primary font-bold text-lg">S</span>
+                    <span className="text-primary font-bold text-lg">
+                      {(post.author || "SEOROAS").charAt(0)}
+                    </span>
                   </div>
                   <div>
                     <h4 className="font-bold text-on-background">

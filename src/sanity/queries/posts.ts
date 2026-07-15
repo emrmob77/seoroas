@@ -16,6 +16,7 @@ const detailFields = `
   title,
   slug,
   publishedAt,
+  "updatedAt": _updatedAt,
   excerpt,
   "seoTitle": seo.seoTitle,
   "seoDescription": seo.seoDescription,
