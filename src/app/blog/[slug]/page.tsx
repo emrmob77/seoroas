@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { PortableText } from "@portabletext/react";
 import { Calendar, Clock, CheckCircle } from "lucide-react";
 import { generateSeoMetadata } from "@/lib/seo";
-import { articleSchema, authorProfiles } from "@/lib/schema";
+import { articleSchema, authorProfiles, authorInfo } from "@/lib/schema";
 import { portableTextComponents } from "@/lib/portableText";
 import { SchemaOrg } from "@/components/seo/SchemaOrg";
 import { Breadcrumb } from "@/components/layout/Breadcrumb";
@@ -244,7 +244,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                       {post.author || "SEOROAS"}
                     </h4>
                     <p className="text-xs text-on-surface-variant uppercase tracking-wider">
-                      SEO Uzmanı
+                      {authorInfo(post.author)?.jobTitle || "SEO Uzmanı"}
                     </p>
                   </div>
                 </div>
