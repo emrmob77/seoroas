@@ -110,7 +110,11 @@ export default function ETicaretSeoPage() {
               <Link href="/seo/wordpress-seo" className="text-primary font-medium hover:underline">
                 WordPress SEO
               </Link>{" "}
-              sayfamıza bakın.
+              sayfamıza bakın. Reklam ve organik satışın dönüşümlerini doğru ölçmek için{" "}
+              <Link href="/hizmetler/meta-pixel-capi" className="text-primary font-medium hover:underline">
+                Meta Pixel &amp; CAPI
+              </Link>{" "}
+              kurulumunu da bu sürece dahil ediyoruz.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
